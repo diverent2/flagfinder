@@ -19,8 +19,8 @@
 
   .colorButton {
     box-sizing: border-box;
-    width: var(--spacing-large);
-    height: var(--spacing-large);
+    width: 100%;
+    height: 100%;
     background: yellow;
     border-radius: 50%;
     border-color: var(--gry);

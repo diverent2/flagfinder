@@ -3,10 +3,43 @@
   export let name;
 
   const colorFilterOptions = [
-    { id: "red", color: "red" },
-    { id: "red", color: "red" },
-    { id: "red", color: "red" },
-    { id: "red", color: "red" }
+    { id: "white", color: "#FFFFFF" },
+    { id: "red", color: "#FB0005" },
+    { id: "orange", color: "#FB8B07" },
+    { id: "yellow", color: "#FFE80A" },
+    { id: "green", color: "#20A30C" },
+    { id: "seegreen", color: "#1EC3C0" },
+    { id: "lightblue", color: "#60CEFA" },
+    { id: "blue", color: "#083CB3" },
+    { id: "purple", color: "#C000DC" },
+    { id: "deepurple", color: "#3F0097" },
+    { id: "cyan", color: "#D40070" },
+    { id: "darkviolet", color: "#9A4897" },
+    { id: "lightpink", color: "#F3A5B8" },
+    { id: "pink", color: "#FC008C" }
+  ];
+
+  const flags = [
+    {
+      id: "gay",
+      name: "gay pride flag",
+      colors: ["red", "orange", "yellow", "green", "blue", "purple"]
+    },
+    {
+      id: "bi",
+      name: "bisexual pride flag",
+      colors: ["cyan", "darkviolet", "deepurple"]
+    },
+    {
+      id: "trans",
+      name: "trans pride flag",
+      colors: ["lightpink", "lightblue", "white"]
+    },
+    {
+      id: "pan",
+      name: "pansexual pride flag",
+      colors: ["pink", "lightblue", "yellow"]
+    }
   ];
 </script>
 
@@ -28,9 +61,10 @@
   }
 
   .colorButtons {
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--spacing-large));
+    grid-template-rows: repeat(auto-fill, var(--spacing-large));
+    grid-gap: var(--spacing-small);
   }
 </style>
 
