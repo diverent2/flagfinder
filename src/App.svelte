@@ -49,51 +49,26 @@
     }
   ];
 
-  function checkIfAllColorsAreIncluded(flagColorIds, filterColorIds) {
-    filterColorIds.every(color => {
+  $: filtedFlags = getFilteredFlags();
+
+  function getFilteredFlags() {
+    const matchingFlags = flags.filter(flag => {
+      return checkIfFlagMatchesColorFilters(flag, filterColors);
+    });
+    return matchingFlags;
+  }
+
+  function checkIfFlagMatchesColorFilters(flag, colorFilters) {
+    let colorIds = colorFilters.map(filter => {
+      return filter.id;
+    });
+
+    let flagColorIds = flag.colors;
+    const areMatching = colorIds.every(color => {
       return flagColorIds.indexOf(color) !== -1;
     });
-  }
-
-  let filterColorsFunc;
-  let filterColorsIds;
-
-  function getFilter() {
-    filterColorsIds = [];
-
-    for (const filterColor of filterColors) {
-      filterColorsIds.push(filterColor.id);
+    return areMatching;
     }
-    return filterColorsIds;
-  }
-
-  filterColorsFunc = getFilter();
-
-  let flagColorsFunc;
-
-  let flagColorsIds;
-
-  function getFlagColors(flag) {
-    flagColorsIds = [];
-
-    for (const color of flag.colors) {
-      flagColorsIds.push(color);
-    }
-    return flagColorsIds;
-  }
-
-  function applyFilter() {
-    filterColorsFunc = getFilter();
-
-    for (const flag of flags) {
-      let flagColors = getFlagColors(flag);
-      checkIfAllColorsAreIncluded(flagColors, filterColorsFunc);
-    }
-  }
-
-  applyFilter();
-
-  // console.log(matchingFlags);
 </script>
 
 <style>
