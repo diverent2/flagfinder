@@ -1,5 +1,6 @@
 <script>
   import ColorButton from "./ColorButton.svelte";
+  import Flag from "./Flag.svelte";
   export let name;
 
   const colorFilterOptions = [
@@ -77,4 +78,9 @@
 
 </div>
 
-<div>Result goes here</div>
+<div class="results">
+  {#each flags as flag}
+    <Flag id={flag.id} />
+  {/each}
+
+</div>
