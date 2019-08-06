@@ -1,8 +1,8 @@
 <script>
   export let id = "text";
-  export let color;
-  export let selected;
-  export let disabled;
+  export let color = "#000";
+  let disabled = false;
+  let selected = false;
 </script>
 
 <style>
