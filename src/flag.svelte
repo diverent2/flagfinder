@@ -1,5 +1,5 @@
 <script>
-  export let id;
+  export let name;
 </script>
 
-<p>{id}</p>
+<p>{name}</p>

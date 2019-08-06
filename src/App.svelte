@@ -106,8 +106,11 @@
 </div>
 
 <div class="results">
-  {#each flags as flag}
-    <Flag id={flag.id} />
+  {#if filtedFlags.length}
+    {#each filtedFlags as flag}
+      <Flag name={flag.name} />
   {/each}
-
+  {:else}
+    <p>No matching flags</p>
+  {/if}
 </div>
