@@ -3,10 +3,16 @@
   import Flag from "./Flag.svelte";
   export let name;
 
-  const colorFilterOptions = [
-    { id: "white", color: "#FFFFFF" },
-    { id: "red", color: "#FB0005" },
-    { id: "orange", color: "#FB8B07" },
+  const filterColors = [
+    /*     { id: "white", color: "#FFFFFF" }, */
+    {
+      id: "red",
+      color: "#FB0005"
+    },
+    {
+      id: "orange",
+      color: "#FB8B07"
+    } /*
     { id: "yellow", color: "#FFE80A" },
     { id: "green", color: "#20A30C" },
     { id: "seegreen", color: "#1EC3C0" },
@@ -17,7 +23,7 @@
     { id: "cyan", color: "#D40070" },
     { id: "darkviolet", color: "#9A4897" },
     { id: "lightpink", color: "#F3A5B8" },
-    { id: "pink", color: "#FC008C" }
+    { id: "pink", color: "#FC008C" } */
   ];
 
   const flags = [
@@ -72,8 +78,8 @@
 <h1>Flagfinder</h1>
 
 <div class="colorButtons">
-  {#each colorFilterOptions as cButton}
-    <ColorButton {...cButton} />
+  {#each filterColors as cFilter}
+    <ColorButton {...cFilter} />
   {/each}
 
 </div>
