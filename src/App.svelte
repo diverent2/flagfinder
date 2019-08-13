@@ -1,19 +1,13 @@
 <script>
   /*Modules*/
-  import ColorButton from "./ColorButton.svelte";
-  import Flag from "./Flag.svelte";
+  import ColorButtons from "./ColorButtons.svelte";
+  import FlagsOutput from "./FlagsOutput.svelte";
 
-  /*Data*/
-  import filterColors from "./data/filter__colors";
-  import flags from "./data/flags";
-
-  let fillings = [];
-  $: fillings;
-
-  let filtedFlags = flags;
+  let filter = [];
+  $: filter;
 
   function handleClick(event) {
-    console.log(fillings);
+    console.log(filter);
   }
 </script>
 
@@ -39,7 +33,7 @@
 
 <button on:click={handleClick}>HEY</button>
 
-<ColorButton {filterColors} bind:matches={fillings} />
+<ColorButtons bind:active={filter} />
 
 <div class="results">
   {#if filtedFlags.length}

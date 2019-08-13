@@ -1,6 +1,8 @@
 <script>
-  export let filterColors = [];
-  export let matches = [];
+  /*Data*/
+  import filterColors from "./data/filter__colors";
+
+  export let active = [];
   let disabled = false;
 </script>
 
@@ -55,7 +57,7 @@
       <input
         type="checkbox"
         value={cFilter.id}
-        bind:group={matches}
+        bind:group={active}
         bind:checked={cFilter.selected} />
     </label>
   {/each}
