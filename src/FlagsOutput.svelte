@@ -4,8 +4,10 @@
 
   export let activeFilters = [];
 
-  let filtedFlags = [];
-  $: filtedFlags;
+  let filtedFlags;
+  $: if (activeFilters) {
+    filtedFlags = getFilteredFlags();
+  }
 
   function getFilteredFlags() {
     if (!activeFilters.length) {
@@ -24,18 +26,15 @@
     });
     return areMatching;
   }
-
-  function handleClick(event) {
-    filtedFlags = getFilteredFlags();
-  }
 </script>
 
 <div class="results">
-  <button on:click={handleClick}>HEY</button>
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
       <Flag name={flag.name} />
     {/each}
+  {:else if !activeFilters.length}
+    <p>Select some filters</p>
   {:else}
     <p>No matching flags</p>
   {/if}
