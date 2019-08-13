@@ -5,10 +5,6 @@
 
   let filter = [];
   $: filter;
-
-  function handleClick(event) {
-    console.log(filter);
-  }
 </script>
 
 <style>
@@ -29,10 +25,8 @@
   }
 </style>
 
-<h1>Flagfinder</h1>
-
-<button on:click={handleClick}>HEY</button>
+<h1>Flagfinder 🌈</h1>
 
 <ColorButtons bind:active={filter} />
 
-<FlagsOutput />
+<FlagsOutput activeFilters={filter} />

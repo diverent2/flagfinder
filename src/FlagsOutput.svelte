@@ -1,69 +1,37 @@
 <script>
-  /*Modules*/
   import Flag from "./Flag.svelte";
+  import flags from "./data/flags";
 
-  /*Data*/
-  import filtedFlags from "./data/flags";
-  /*
-  function getFilteredFlags() {
-    console.log("update");
-    const matchingFlags = flags.filter(flag => {
-      return checkIfFlagMatchesColorFilters(flag, filterColors);
-    });
-    console.log("update3");
-    return matchingFlags;
-  }
+  export let activeFilters = [];
 
-  function checkIfFlagMatchesColorFilters(flag, colorFilters) {
-    let activeColorFilters = document.querySelectorAll(".colorButton.selected");
-    console.log(activeColorFilters);
-    let colorIds = [];
-
-    let flagColorIds = flag.colors;
-    const areMatching = colorIds.every(color => {
-      return flagColorIds.indexOf(color) !== -1;
-    });
-    return areMatching;
-  }
-  */
-
-  /*
-  let activeColorFilters = document.querySelectorAll(".colorButton.selected");
-
-  $: activeColorFilters = console.log(activeColorFilters);
-
-  /*() => {
-    let activeColorFilters = document.querySelectorAll(".colorButton.selected");
-    return activeColorFilters;
-  };
-
-  console.log(selectedColorButtons);
-  /*
-
-  $: filtedFlags = getFilteredFlags();
+  let filtedFlags = [];
+  $: filtedFlags;
 
   function getFilteredFlags() {
+    if (!activeFilters.length) {
+      return [];
+    }
     const matchingFlags = flags.filter(flag => {
-      return checkIfFlagMatchesColorFilters(flag, filterColors);
+      return checkIfFlagMatchesColorFilters(flag, activeFilters);
     });
     return matchingFlags;
   }
 
   function checkIfFlagMatchesColorFilters(flag, colorFilters) {
-    let activeColorFilters = document.querySelectorAll(".colorButton.selected");
-    console.log(activeColorFilters);
-    let colorIds = [];
-
-    let flagColorIds = flag.colors;
-    const areMatching = colorIds.every(color => {
+    const flagColorIds = flag.colors;
+    const areMatching = colorFilters.every(color => {
       return flagColorIds.indexOf(color) !== -1;
     });
     return areMatching;
   }
-  */
+
+  function handleClick(event) {
+    filtedFlags = getFilteredFlags();
+  }
 </script>
 
 <div class="results">
+  <button on:click={handleClick}>HEY</button>
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
       <Flag name={flag.name} />
