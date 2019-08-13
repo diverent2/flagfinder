@@ -35,12 +35,4 @@
 
 <ColorButtons bind:active={filter} />
 
-<div class="results">
-  {#if filtedFlags.length}
-    {#each filtedFlags as flag}
-      <Flag name={flag.name} />
-    {/each}
-  {:else}
-    <p>No matching flags</p>
-  {/if}
-</div>
+<FlagsOutput />
