@@ -1,11 +1,15 @@
 <script>
-  export let id = "text";
-  export let color = "#000";
+  export let filterColors = [];
+  export let matches = [];
   let disabled = false;
-  let selected = false;
 </script>
 
 <style>
+  .colorButtons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--spacing-large));
+    grid-gap: var(--spacing-small);
+  }
   .colorButton {
     position: relative;
   }
@@ -19,8 +23,8 @@
 
   .colorButton {
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
+    width: var(--spacing-large);
+    height: var(--spacing-large);
     background: yellow;
     border-radius: 50%;
     border-color: var(--gry);
@@ -41,11 +45,19 @@
   }
 </style>
 
-<label
-  class="colorButton"
-  class:disabled
-  class:selected
-  title={id}
-  style="background: {color}">
-  <input type="checkbox" {disabled} bind:checked={selected} />
-</label>
+<div class="colorButtons">
+  {#each filterColors as cFilter}
+    <label
+      class:selected={cFilter.selected}
+      class="colorButton"
+      title={cFilter.id}
+      style="background: {cFilter.color}">
+      <input
+        type="checkbox"
+        value={cFilter.id}
+        bind:group={matches}
+        bind:checked={cFilter.selected} />
+    </label>
+  {/each}
+
+</div>
