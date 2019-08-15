@@ -1,4 +1,6 @@
 <script>
+  /*Styles*/
+  import StylesFont from "./styles/StylesFont.svelte";
   /*Modules*/
   import ColorButtons from "./ColorButtons.svelte";
   import FlagsOutput from "./FlagsOutput.svelte";
@@ -9,9 +11,15 @@
 
 <style>
   :root {
+    --spacing-tiny: 4px;
     --spacing-small: 8px;
     --spacing: 16px;
-    --spacing-large: 34px;
+    --spacing-large: 32px;
+
+    --white: #fff;
+
+    --black: #000;
+    --black-light: rgba(0, 0, 0, 0.527);
 
     --gry-light: lightgray;
     --gry: gray;
