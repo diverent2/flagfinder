@@ -28,13 +28,27 @@
   }
 </script>
 
+<style>
+  .results {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-gap: var(--spacing-large);
+    padding-top: var(--spacing-large);
+    overflow: scroll;
+  }
+</style>
+
 <div class="results">
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
-      <Flag name={flag.name} />
+      <Flag {flag} />
     {/each}
   {:else if !activeFilters.length}
-    <p>Select some filters</p>
+    {#each flags as flag}
+      <Flag {flag} />
+    {/each}
   {:else}
     <p>No matching flags</p>
   {/if}
