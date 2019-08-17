@@ -4,6 +4,7 @@
   /*Modules*/
   import ColorButtons from "./ColorButtons.svelte";
   import FlagCardsOutput from "./Flags/FlagCardsOutput.svelte";
+  import Footer from "./Footer.svelte";
 
   let filter = [];
   $: filter;
@@ -38,3 +39,5 @@
 <ColorButtons bind:active={filter} />
 
 <FlagCardsOutput activeFilters={filter} />
+
+<Footer />
