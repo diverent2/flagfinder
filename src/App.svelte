@@ -3,7 +3,7 @@
   import StylesFont from "./styles/StylesFont.svelte";
   /*Modules*/
   import ColorButtons from "./ColorButtons.svelte";
-  import FlagsOutput from "./FlagsOutput.svelte";
+  import FlagCardsOutput from "./FlagCardsOutput.svelte";
 
   let filter = [];
   $: filter;
@@ -33,8 +33,8 @@
   }
 </style>
 
-<h1>Flagfinder 🌈</h1>
+<h1>Prideflag Finder 🌈</h1>
 
 <ColorButtons bind:active={filter} />
 
-<FlagsOutput activeFilters={filter} />
+<FlagCardsOutput activeFilters={filter} />

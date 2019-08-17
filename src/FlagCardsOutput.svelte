@@ -1,5 +1,5 @@
 <script>
-  import Flag from "./Flag.svelte";
+  import FlagCard from "./FlagCard.svelte";
   import flags from "./data/flags";
 
   export let activeFilters = [];
@@ -43,11 +43,11 @@
 <div class="results">
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
-      <Flag {flag} />
+      <FlagCard {flag} />
     {/each}
   {:else if !activeFilters.length}
     {#each flags as flag}
-      <Flag {flag} />
+      <FlagCard {flag} />
     {/each}
   {:else}
     <p>No matching flags</p>

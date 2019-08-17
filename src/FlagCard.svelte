@@ -68,7 +68,7 @@
 </style>
 
 <div class="flagCard">
-  <img class="flagCard__image" src={flag.image.source} alt={flag.image.alt} />
+  <img class="flagCard__image" src={flag.image} alt />
   <span class="flagCard__category">{flag.category}</span>
   <div class="flagCard__info">
     <h3 class="flagCard__header">{flag.name}</h3>
