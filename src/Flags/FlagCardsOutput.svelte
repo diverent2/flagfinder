@@ -1,6 +1,6 @@
 <script>
   import FlagCard from "./FlagCard.svelte";
-  import flags from "./data/flags";
+  import flags from "../data/flags";
 
   export let activeFilters = [];
 

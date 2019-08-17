@@ -3,7 +3,7 @@
   import StylesFont from "./styles/StylesFont.svelte";
   /*Modules*/
   import ColorButtons from "./ColorButtons.svelte";
-  import FlagCardsOutput from "./FlagCardsOutput.svelte";
+  import FlagCardsOutput from "./Flags/FlagCardsOutput.svelte";
 
   let filter = [];
   $: filter;
