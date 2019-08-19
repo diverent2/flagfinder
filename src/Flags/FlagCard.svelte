@@ -12,19 +12,13 @@
     overflow: hidden;
   }
 
-  /*
-  .flagCard:hover .flagCard__text,
-  .flagCard:focus .flagCard__text {
-    bottom: 0;
-  }
-  */
-
   .flagCard__image {
     width: 100%;
     flex-grow: 1;
   }
 
   .flagCard__info {
+    height: 60px;
     width: 100%;
     color: var(--white);
     padding: var(--spacing-small);
@@ -32,20 +26,6 @@
     border-top: 1px solid var(--white);
     box-sizing: border-box;
   }
-
-  /*
-  .flagCard__text {
-    position: absolute;
-    width: 100%;
-    bottom: -22px;
-    padding: var(--spacing-small);
-    color: var(--white);
-    background: var(--black);
-    line-height: 1;
-    box-sizing: border-box;
-    transition: 0.25s bottom ease;
-  }
-  */
 
   .flagCard__header {
     margin: 0;
@@ -73,10 +53,4 @@
   <div class="flagCard__info">
     <h3 class="flagCard__header">{flag.name}</h3>
   </div>
-  <!--
-  <div class="flagCard__text">
-    <h3 class="flagCard__header">{flag.name}</h3>
-    <div class="flagCard__description">{flag.description}</div>
-  </div>
-  -->
 </div>
