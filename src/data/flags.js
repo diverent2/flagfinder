@@ -106,7 +106,7 @@ const flags = [
     name: 'twink pride flag',
     category: 'sexual',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Bear_Brotherhood_flag.svg/1024px-Bear_Brotherhood_flag.svg.png',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Twink_Pride_Flag_%28proposed%29.svg/1024px-Twink_Pride_Flag_%28proposed%29.svg.png',
     props: {
       colors: [
         {
