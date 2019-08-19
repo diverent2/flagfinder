@@ -47,19 +47,22 @@
   }
 </style>
 
-<div class="colorButtons">
-  {#each filterColors as cFilter}
-    <label
-      class:selected={cFilter.selected}
-      class="colorButton"
-      title={cFilter.id}
-      style="background: {cFilter.color}">
-      <input
-        type="checkbox"
-        value={cFilter.id}
-        bind:group={active}
-        bind:checked={cFilter.selected} />
-    </label>
-  {/each}
+<fieldset>
+  <legend>Colors</legend>
+  <div class="colorButtons">
+    {#each filterColors as cFilter}
+      <label
+        class:selected={cFilter.selected}
+        class="colorButton"
+        title={cFilter.id}
+        style="background: {cFilter.color}">
+        <input
+          type="checkbox"
+          value={cFilter.id}
+          bind:group={active}
+          bind:checked={cFilter.selected} />
+      </label>
+    {/each}
 
-</div>
+  </div>
+</fieldset>
