@@ -4,56 +4,56 @@ const filterColors = [
     color: '#FFFFFF'
   },
   {
-    id: 'red',
-    color: '#FB0005'
+    id: 'gry',
+    color: '#D3D3D3'
   },
   {
-    id: 'orange',
-    color: '#FB8B07'
+    id: 'black',
+    color: '#000000'
   },
   {
-    id: 'yellow',
-    color: '#FFE80A'
-  },
-  {
-    id: 'green',
-    color: '#20A30C'
-  },
-  {
-    id: 'seegreen',
-    color: '#1EC3C0'
-  },
-  {
-    id: 'lightblue',
-    color: '#60CEFA'
-  },
-  {
-    id: 'blue',
-    color: '#083CB3'
-  },
-  {
-    id: 'purple',
-    color: '#C000DC'
-  },
-  {
-    id: 'deepurple',
-    color: '#3F0097'
-  },
-  {
-    id: 'cyan',
-    color: '#D40070'
-  },
-  {
-    id: 'darkviolet',
-    color: '#9A4897'
+    id: 'brown',
+    color: '#603401'
   },
   {
     id: 'lightpink',
-    color: '#F3A5B8'
+    color: '#FDACFF'
   },
   {
     id: 'pink',
-    color: '#FC008C'
+    color: '#D50071'
+  },
+  {
+    id: 'red',
+    color: '#FC0006'
+  },
+  {
+    id: 'purple',
+    color: '#7E0080'
+  },
+  {
+    id: 'orange',
+    color: '#FDA507'
+  },
+  {
+    value: 'yellow',
+    value: '#FFFF0B'
+  },
+  {
+    id: 'lightgreen',
+    color: '#25DA69'
+  },
+  {
+    id: 'green',
+    color: '#118301'
+  },
+  {
+    id: 'lightblue',
+    color: '#60CFFA'
+  },
+  {
+    id: 'blue',
+    color: '#0000FF'
   }
 ];
 

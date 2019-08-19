@@ -55,7 +55,7 @@ const flags = [
         {
           id: 'brown',
           meaning: '',
-          value: '#603401'
+          value: '#613401'
         },
         {
           id: 'orange',
@@ -78,7 +78,7 @@ const flags = [
           value: '#fff'
         },
         {
-          id: 'gry',
+          id: 'darkgray',
           meaning: '',
           value: '#603401'
         },
@@ -97,7 +97,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['brown', 'range', 'yellow', 'white', 'darkgray', 'black'],
+      colors: ['brown', 'orange', 'yellow', 'white', 'gry', 'black'],
       symbols: ['paw']
     }
   },
@@ -185,7 +185,7 @@ const flags = [
         {
           id: 'pink',
           meaning: 'same gender attraction',
-          value: '#9B4797'
+          value: '#D50071'
         },
         {
           id: 'magenta',
@@ -200,7 +200,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['pink', 'magenta', 'blue'],
+      colors: ['pink', 'purple', 'blue'],
       symbols: []
     }
   },
@@ -236,7 +236,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['black', 'white', 'purple', 'lightgry'],
+      colors: ['black', 'white', 'purple', 'gry'],
       symbols: ['triangle']
     }
   },
@@ -420,16 +420,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: [
-        'pink',
-        'magenta',
-        'darkpink',
-        'pink',
-        'white',
-        'lightpink',
-        'lightred',
-        'darkred'
-      ],
+      colors: ['pink', 'purple', 'white', 'lightpink', 'red'],
       symbols: ['lips']
     }
   },
@@ -632,7 +623,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['pink', 'white', 'purple', 'black', 'darkblue'],
+      colors: ['pink', 'white', 'purple', 'black', 'blue'],
       symbols: []
     }
   },
@@ -663,7 +654,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['violet', 'white', 'green'],
+      colors: ['purple', 'white', 'green'],
       symbols: []
     }
   },
@@ -768,7 +759,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['magenta', 'white', 'blue', 'lightpink'],
+      colors: ['purple', 'white', 'blue', 'lightpink'],
       symbols: []
     }
   },
@@ -842,7 +833,7 @@ const flags = [
       ]
     },
     matches: {
-      colors: ['darkgreen', 'lightgreen', 'white', 'gry', 'black'],
+      colors: ['green', 'lightgreen', 'white', 'gry', 'black'],
       symbols: []
     }
   },
