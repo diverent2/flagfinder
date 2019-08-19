@@ -10,7 +10,7 @@ const flags = [
         {
           id: 'red',
           meaning: 'life',
-          color: '#FC0006'
+          value: '#FC0006'
         },
         {
           id: 'orange',
@@ -55,37 +55,37 @@ const flags = [
         {
           id: 'brown',
           meaning: '',
-          color: '#603401'
+          value: '#603401'
         },
         {
           id: 'orange',
           meaning: '',
-          color: '#D46004'
+          value: '#D46004'
         },
         {
           id: 'yellow',
           meaning: '',
-          color: '#D46004'
+          value: '#D46004'
         },
         {
           id: 'lightyellow',
           meaning: '',
-          color: '#FEE8BA'
+          value: '#FEE8BA'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#fff'
+          value: '#fff'
         },
         {
           id: 'gry',
           meaning: '',
-          color: '#603401'
+          value: '#603401'
         },
         {
           id: 'black',
           meaning: '',
-          color: '#000'
+          value: '#000'
         }
       ],
       symbols: [
@@ -112,17 +112,17 @@ const flags = [
         {
           id: 'lightpink',
           meaning: '',
-          color: '#FDACFF'
+          value: '#FDACFF'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#fff'
+          value: '#fff'
         },
         {
           id: 'lightyellow',
           meaning: '',
-          color: '#FFFF82'
+          value: '#FFFF82'
         }
       ],
       colors: [
@@ -149,22 +149,22 @@ const flags = [
         {
           id: 'black',
           meaning: 'asexuality',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'gry',
           meaning: 'gray-asexuality, demi-sexuality',
-          color: '#603401'
+          value: '#603401'
         },
         {
           id: 'white',
           meaning: 'sexuality',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'purple',
           meaning: 'community',
-          color: '#7F0081'
+          value: '#7F0081'
         }
       ]
     },
@@ -185,17 +185,17 @@ const flags = [
         {
           id: 'pink',
           meaning: 'same gender attraction',
-          color: '#9B4797'
+          value: '#9B4797'
         },
         {
           id: 'magenta',
           meaning: 'possibility anywhere the gender spectrum',
-          color: '#9B4797'
+          value: '#9B4797'
         },
         {
           id: 'blue',
           meaning: 'different gender attraction',
-          color: '#002BA9'
+          value: '#002BA9'
         }
       ]
     },
@@ -216,22 +216,22 @@ const flags = [
         {
           id: 'black',
           meaning: 'asexuality',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'white',
           meaning: 'sexuality',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'purple',
           meaning: 'community',
-          color: '#7F0081'
+          value: '#7F0081'
         },
         {
           id: 'lightgry',
           meaning: 'gray-ace and demisexuality',
-          color: '#D3D3D3'
+          value: '#D3D3D3'
         }
       ]
     },
@@ -252,17 +252,17 @@ const flags = [
         {
           id: 'lightblue',
           meaning: 'male sex',
-          color: '#ED5B9E'
+          value: '#ED5B9E'
         },
         {
           id: 'white',
           meaning: 'sexuality',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'pink',
           meaning: 'female sex',
-          color: '#ED5B9E'
+          value: '#ED5B9E'
         }
       ]
     },
@@ -283,7 +283,7 @@ const flags = [
         {
           id: 'red',
           meaning: 'life',
-          color: '#FC0006'
+          value: '#FC0006'
         },
         {
           id: 'orange',
@@ -336,17 +336,17 @@ const flags = [
         {
           id: 'white',
           meaning: '',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'black',
           meaning: '',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'purple',
           meaning: '',
-          color: '#7E0080'
+          value: '#7E0080'
         }
       ],
       symbols: [
@@ -373,42 +373,42 @@ const flags = [
         {
           id: 'magentarosa',
           meaning: '',
-          color: '#A60061'
+          value: '#A60061'
         },
         {
           id: 'magenta',
           meaning: '',
-          color: '#B94A94'
+          value: '#B94A94'
         },
         {
           id: 'darkpink',
           meaning: '',
-          color: '#D157A8'
+          value: '#D157A8'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'lightpink',
           meaning: '',
-          color: '#E4AAD1'
+          value: '#E4AAD1'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'rosared',
           meaning: '',
-          color: '#C64651'
+          value: '#C64651'
         },
         {
           id: 'darkred',
           meaning: '',
-          color: '#8C0B02'
+          value: '#8C0B02'
         }
       ],
       symbols: [
@@ -444,17 +444,17 @@ const flags = [
         {
           id: 'pink',
           meaning: 'female gendered persons (regardless of biological sex)',
-          color: '#FC008D'
+          value: '#FC008D'
         },
         {
           id: 'gold',
           meaning: 'mixed gendered, genderless, thirdgendered people',
-          color: '#FEDB09'
+          value: '#FEDB09'
         },
         {
           id: 'lightblue',
           meaning: 'male gendered persons (regardless of biological sex)',
-          color: '#27B1FF'
+          value: '#27B1FF'
         }
       ]
     },
@@ -475,17 +475,17 @@ const flags = [
         {
           id: 'magentopink',
           meaning: 'attaction to woman',
-          color: '#F300BA'
+          value: '#F300BA'
         },
         {
           id: 'lightgreen',
           meaning: 'attaction to people of other genders',
-          color: '#25DA69'
+          value: '#25DA69'
         },
         {
           id: 'mediumblue',
           meaning: 'attaction to man',
-          color: '#1E90F6'
+          value: '#1E90F6'
         }
       ]
     },
@@ -506,17 +506,17 @@ const flags = [
         {
           id: 'black',
           meaning: '',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'red',
           meaning: 'life',
-          color: '#FC0006'
+          value: '#FC0006'
         },
         {
           id: 'orange',
@@ -571,22 +571,22 @@ const flags = [
         {
           id: 'black',
           meaning: '',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'lightgry',
           meaning: '',
-          color: '#B6B6B6'
+          value: '#B6B6B6'
         },
         {
           id: 'white',
           meaning: '',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'lightgreen',
           meaning: '',
-          color: '#BBF884'
+          value: '#BBF884'
         }
       ]
     },
@@ -607,27 +607,27 @@ const flags = [
         {
           id: 'pink',
           meaning: 'femininity',
-          color: '#FD6EA4'
+          value: '#FD6EA4'
         },
         {
           id: 'white',
           meaning: 'all genders',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'purple',
           meaning: 'masculinity; femininity',
-          color: '#BD00D7'
+          value: '#BD00D7'
         },
         {
           id: 'black',
           meaning: 'a lack of gender',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'blue',
           meaning: 'masculinity',
-          color: '#2F2FBE'
+          value: '#2F2FBE'
         }
       ]
     },
@@ -648,17 +648,17 @@ const flags = [
         {
           id: 'lavenda',
           meaning: 'androgynous',
-          color: '#B578DD'
+          value: '#B578DD'
         },
         {
           id: 'white',
           meaning: 'agender',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'green',
           meaning: 'non-binary',
-          color: '#4B851E'
+          value: '#4B851E'
         }
       ]
     },
@@ -679,22 +679,22 @@ const flags = [
         {
           id: 'yellow',
           meaning: 'gender seperate from the binary',
-          color: '#FFF82F'
+          value: '#FFF82F'
         },
         {
           id: 'white',
           meaning: 'for those with multiple genders',
-          color: '#000'
+          value: '#000'
         },
         {
           id: 'purple',
           meaning: 'Mix of male and female',
-          color: '#9C4DD2'
+          value: '#9C4DD2'
         },
         {
           id: 'black',
           meaning: 'people without a gender',
-          color: '#000'
+          value: '#000'
         }
       ]
     },
@@ -715,19 +715,19 @@ const flags = [
       colors: [
         {
           id: 'lightblue',
-          meaning: 'traditionally color for boy',
-          color: '#60CFFA'
+          meaning: 'traditionally value for boy',
+          value: '#60CFFA'
         },
         {
           id: 'lightpink',
-          meaning: 'traditionally color for girls',
-          color: '#F4A8BA'
+          meaning: 'traditionally value for girls',
+          value: '#F4A8BA'
         },
         {
           id: 'white',
           meaning:
             'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
-          color: '#FFF'
+          value: '#FFF'
         }
       ]
     },
@@ -748,22 +748,22 @@ const flags = [
         {
           id: 'magenta',
           meaning: 'no gender',
-          color: '#F0A3FE'
+          value: '#F0A3FE'
         },
         {
           id: 'white',
           meaning: 'trans idenity',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'lightblue',
           meaning: 'masculinity',
-          color: '#A3CFEF'
+          value: '#A3CFEF'
         },
         {
           id: 'lightpink',
           meaning: 'femininity',
-          color: '#F3B7DF'
+          value: '#F3B7DF'
         }
       ]
     },
@@ -782,13 +782,13 @@ const flags = [
       colors: [
         {
           id: 'yellow',
-          meaning: 'intersex color',
-          color: '#FEDB09'
+          meaning: 'intersex value',
+          value: '#FEDB09'
         },
         {
           id: 'purple',
-          meaning: 'intersex color',
-          color: '#7800AB'
+          meaning: 'intersex value',
+          value: '#7800AB'
         }
       ],
       symbols: [
@@ -816,28 +816,28 @@ const flags = [
         {
           id: 'darkgreen',
           meaning: 'aromantisism',
-          color: '#338733'
+          value: '#338733'
         },
         {
           id: 'lightgreen',
           meaning: 'aromantic spectrum',
-          color: '#AAD77A'
+          value: '#AAD77A'
         },
         {
           id: 'white',
           meaning:
             'platonic and asthetic attraction; queerplatonic relationships',
-          color: '#FFF'
+          value: '#FFF'
         },
         {
           id: 'gry',
           meaning: 'gray-aromantic and demiromantic people',
-          color: '#AAAAAA'
+          value: '#AAAAAA'
         },
         {
           id: 'black',
           meaning: 'sexuality spectrum',
-          color: '#000'
+          value: '#000'
         }
       ]
     },
@@ -857,23 +857,23 @@ const flags = [
         {
           id: 'gold',
           meaning: 'value of emotional attachment to others',
-          color: '#FFFF0B'
+          value: '#FFFF0B'
         },
         {
           id: 'blue',
           meaning: 'openness and honesty among all partners',
-          color: '#0000FF'
+          value: '#0000FF'
         },
         {
           id: 'red',
           meaning: 'love and passion',
-          color: '#FC0006'
+          value: '#FC0006'
         },
         {
           id: 'black',
           meaning:
             'solidarity w/ those who have to hide their polyamorous identity',
-          color: '#000'
+          value: '#000'
         }
       ],
       symbols: [
