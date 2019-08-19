@@ -20,7 +20,7 @@
   }
 
   function checkIfFlagMatchesColorFilters(flag, colorFilters) {
-    const flagColorIds = flag.colors;
+    const flagColorIds = flag.matches.colors;
     const areMatching = colorFilters.every(color => {
       return flagColorIds.indexOf(color) !== -1;
     });
@@ -36,6 +36,7 @@
     grid-auto-flow: column;
     grid-gap: var(--spacing-large);
     padding-top: var(--spacing-large);
+    padding-bottom: var(--spacing-large);
     overflow: scroll;
   }
 </style>
