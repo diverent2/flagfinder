@@ -1,5 +1,5 @@
 <style>
-  .footer {
+  footer {
     display: flex;
     justify-content: space-between;
     padding: var(--spacing);
@@ -7,54 +7,26 @@
     background-color: var(--black);
   }
 
-  .footer a {
+  footer a {
     color: var(--white);
     text-decoration: none;
   }
 
-  .footer a:hover {
+  footer a:hover {
     text-decoration: underline;
-  }
-
-  .footer a span:nth-child(1) {
-    color: red;
-  }
-  .footer a span:nth-child(2) {
-    color: orange;
-  }
-  .footer a span:nth-child(3) {
-    color: yellow;
-  }
-  .footer a span:nth-child(4) {
-    color: green;
-  }
-  .footer a span:nth-child(5) {
-    color: blue;
-  }
-  .footer a span:nth-child(6) {
-    color: purple;
-  }
-
-  .username {
-    display: flex;
-    justify-content: flex-end;
   }
 </style>
 
-<div class="footer">
-
-  <span>Prideflag Finder @2019</span>
+<footer>
 
   <span>
-    made with ❤️❤️❤️ by
-    <a class="username" href="https://twitter.com/diverent2">
-      <span>D</span>
-      <span>iv</span>
-      <span>er</span>
-      <span>en</span>
-      <span>t</span>
-      <span>2</span>
-    </a>
+    <span class="color--rainbow">Prideflag Finder</span>
+    @2019
   </span>
 
-</div>
+  <span>
+    made with 💖 by
+    <a class="color--rainbow" href="https://twitter.com/diverent2">diverent2</a>
+  </span>
+
+</footer>

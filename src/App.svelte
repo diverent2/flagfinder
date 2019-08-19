@@ -28,16 +28,13 @@
     --green-light: lightgreen;
     --green: green;
   }
-
-  h1 {
-    color: purple;
-  }
 </style>
 
-<h1>Prideflag Finder 🌈</h1>
+<header>
+  <h1 class="color--rainbow">Prideflag Finder</h1>
+</header>
 
 <ColorButtons bind:active={filter} />
-
 <FlagCardsOutput activeFilters={filter} />
 
 <Footer />
