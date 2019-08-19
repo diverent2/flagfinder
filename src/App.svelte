@@ -2,7 +2,7 @@
   /*Styles*/
   import StylesFont from "./styles/StylesFont.svelte";
   /*Modules*/
-  import ColorButtons from "./ColorButtons.svelte";
+  import Filter from "./Filter.svelte";
   import FlagCardsOutput from "./Flags/FlagCardsOutput.svelte";
   import Footer from "./Footer.svelte";
 
@@ -34,7 +34,7 @@
   <h1 class="color--rainbow">Prideflag Finder</h1>
 </header>
 
-<ColorButtons bind:active={filter} />
+<Filter bind:active={filter} />
 <FlagCardsOutput activeFilters={filter} />
 
 <Footer />
