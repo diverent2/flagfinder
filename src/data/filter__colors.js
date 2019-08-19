@@ -36,8 +36,8 @@ const filterColors = [
     color: '#FDA507'
   },
   {
-    value: 'yellow',
-    value: '#FFFF0B'
+    id: 'yellow',
+    color: '#FFFF0B'
   },
   {
     id: 'lightgreen',
