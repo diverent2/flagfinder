@@ -12,6 +12,8 @@
   .flagDetails__title {
     width: 100%;
     text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--spacing-small);
   }
 
   .flagDetails__image {
@@ -34,45 +36,39 @@
     border-style: solid;
     cursor: pointer;
   }
+
+  .colorExplanations {
+    width: 100%;
+  }
+
+  .colorExplanation {
+    display: flex;
+    align-items: center;
+    margin: var(--spacing-small) 0;
+  }
+
+  .colorExplanation__line {
+    width: var(--spacing-tiny);
+    height: var(--spacing-large);
+    display: block;
+    margin-right: var(--spacing-tiny);
+    box-sizing: border-box;
+  }
 </style>
 
 <div class="flagDetails">
-  <h2 class="flagDetails__title color--rainbow">{activeFlag.name}</h2>
   <img class="flagDetails__image" src={activeFlag.image} alt />
-
-  <table class="flagDetails__colors">
-    <tr>
-      <th align="left">Color</th>
-      <th align="left">Meaning</th>
-    </tr>
-
+  <h2 class="flagDetails__title">{activeFlag.name}</h2>
+  <p class="flagDetails__description">{activeFlag.description}</p>
+  <h3>Color Meaning</h3>
+  <div class="colorExplanations">
     {#each activeFlag.props.colors as color}
-      <tr>
-        <td>
-          <span class="colorButton" style="background: {color.value}" />
-        </td>
-        <td>{color.meaning}</td>
-      </tr>
+      <div class="colorExplanation">
+        <span
+          class="colorExplanation__line"
+          style="background: {color.value}" />
+        <span>{color.meaning}</span>
+      </div>
     {/each}
-  </table>
-
-  <!--
-  <table>
-   <tr>
-    <th>Symbol</th>
-    <th>Meaning</th>
-    </tr>
-    {#each {flag.symbols} as symbol}
-      <tr>
-      <td>
-        {symbol.sign}
-          <td>
-        </td>
-       {symbol.meaning}
-      </td>
-      </tr>
-    {/each}
-  </table>
-  -->
-
+  </div>
 </div>
