@@ -4,10 +4,16 @@
   /*Modules*/
   import Filter from "./Filter.svelte";
   import FlagCardsOutput from "./Flags/FlagCardsOutput.svelte";
+  import FlagDetails from "./Flags/FlagDetails.svelte";
   import Footer from "./Footer.svelte";
+
+  import flags from "./data/flags";
 
   let filter = [];
   $: filter;
+
+  let activeFlag = flags[0];
+  $: activeFlag;
 </script>
 
 <style>
@@ -33,6 +39,10 @@
 <header>
   <h1 class="color--rainbow">Prideflag Finder</h1>
 </header>
+
+{#if activeFlag.length != 0}
+  <FlagDetails {activeFlag} />
+{/if}
 
 <Filter bind:active={filter} />
 <FlagCardsOutput activeFilters={filter} />
