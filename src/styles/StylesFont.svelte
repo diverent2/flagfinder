@@ -3,6 +3,10 @@
     font-weight: normal;
   }
 
+  :global(p) {
+    margin-top: 0;
+  }
+
   :global(.color--rainbow) {
     display: inline-block;
     -webkit-background-clip: text;
