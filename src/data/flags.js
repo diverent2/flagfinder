@@ -2,6 +2,7 @@ const flags = [
   {
     id: 'gay',
     name: 'gay pride flag',
+    description: 'Netus est himenaeos nec aptent duis integer',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Gay_Pride_Flag.svg/1024px-Gay_Pride_Flag.svg.png',
@@ -47,6 +48,7 @@ const flags = [
   {
     id: 'gay_bear',
     name: 'gay bear brotherhood flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Bear_Brotherhood_flag.svg/1024px-Bear_Brotherhood_flag.svg.png',
@@ -104,6 +106,7 @@ const flags = [
   {
     id: 'gay_twink',
     name: 'twink pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Twink_Pride_Flag_%28proposed%29.svg/1024px-Twink_Pride_Flag_%28proposed%29.svg.png',
@@ -141,6 +144,7 @@ const flags = [
   {
     id: 'asexual',
     name: 'asexual pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Asexual_Pride_Flag.svg/1024px-Asexual_Pride_Flag.svg.png',
@@ -177,6 +181,7 @@ const flags = [
   {
     id: 'bisexual',
     name: 'bisexual pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bisexual_Pride_Flag.svg/1600px-Bisexual_Pride_Flag.svg.png',
@@ -208,6 +213,7 @@ const flags = [
   {
     id: 'demisexual',
     name: 'demisexual pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Demisexual_Pride_Flag.svg/1024px-Demisexual_Pride_Flag.svg.png',
@@ -244,6 +250,7 @@ const flags = [
   {
     id: 'heterosexual',
     name: 'heterosexual pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/0/06/Bandera_heterosexual.PNG',
@@ -275,6 +282,7 @@ const flags = [
   {
     id: 'lesbian',
     name: 'lesbian pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lesbian_Pride_Flag.svg/1554px-Lesbian_Pride_Flag.svg.png',
@@ -328,6 +336,7 @@ const flags = [
   {
     id: 'lesbian_labry',
     name: 'lesbian pride labrys flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Lesbian_pride_labrys_flag.svg/1024px-Lesbian_pride_labrys_flag.svg.png',
@@ -365,6 +374,7 @@ const flags = [
   {
     id: 'lesbian_lipstick',
     name: 'lipstick lesbian pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Lipstick_lesbian_Pride_Flag.svg/1024px-Lipstick_lesbian_Pride_Flag.svg.png',
@@ -427,6 +437,7 @@ const flags = [
   {
     id: 'pansexual',
     name: 'pansexual pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pansexuality_Pride_Flag.svg/1024px-Pansexuality_Pride_Flag.svg.png',
@@ -458,6 +469,7 @@ const flags = [
   {
     id: 'polysexuality',
     name: 'polysexuality pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Polysexuality_Pride_Flag.svg/1024px-Polysexuality_Pride_Flag.svg.png',
@@ -489,6 +501,7 @@ const flags = [
   {
     id: 'straight_ally',
     name: 'stright ally flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Straight_Ally_flag.svg/1024px-Straight_Ally_flag.svg.png',
@@ -554,6 +567,7 @@ const flags = [
   {
     id: 'agender',
     name: 'agender pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Agender_pride_flag.svg/1024px-Agender_pride_flag.svg.png',
@@ -590,6 +604,7 @@ const flags = [
   {
     id: 'genderfluid',
     name: 'genderfluid pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Genderfluidity_Pride-Flag.svg/1024px-Genderfluidity_Pride-Flag.svg.png',
@@ -631,6 +646,7 @@ const flags = [
   {
     id: 'genderqueer',
     name: 'genderqueer pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Genderqueer_Pride_Flag.svg/1024px-Genderqueer_Pride_Flag.svg.png',
@@ -662,6 +678,7 @@ const flags = [
   {
     id: 'nonbinary',
     name: 'nonbinary pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Nonbinary_flag.svg/1024px-Nonbinary_flag.svg.png',
@@ -699,6 +716,7 @@ const flags = [
   {
     id: 'transgender',
     name: 'transgender pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1024px-Transgender_Pride_flag.svg.png',
@@ -731,6 +749,7 @@ const flags = [
   {
     id: 'bigender',
     name: 'bigender pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bigender_Pride_Flag.svg/1024px-Bigender_Pride_Flag.svg.png',
@@ -766,6 +785,7 @@ const flags = [
   {
     id: 'intersex',
     name: 'intersex pride flag',
+    description: '',
     category: 'gender',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Intersex_Pride_Flag.svg/1024px-Intersex_Pride_Flag.svg.png',
@@ -799,6 +819,7 @@ const flags = [
   {
     id: 'aromantic',
     name: 'aromantic pride flag',
+    description: '',
     category: 'attraction',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Aromantic_Pride_Flag.svg/1024px-Aromantic_Pride_Flag.svg.png',
@@ -840,6 +861,7 @@ const flags = [
   {
     id: 'polyamory',
     name: 'polyamory pride flag',
+    description: '',
     category: 'sexual',
     image:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Polyamory_Pride_Flag.svg/1024px-Polyamory_Pride_Flag.svg.png',
