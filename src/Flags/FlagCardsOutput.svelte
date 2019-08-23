@@ -2,19 +2,27 @@
   import FlagCard from "./FlagCard.svelte";
   import flags from "../data/flags";
 
-  export let activeFilters = [];
+  export let activeColorFilters = [];
+  export let activeCategoryFilters = [];
+  $: activeFilters = [activeColorFilters, activeCategoryFilters];
+
+  export let activeCard;
 
   let filtedFlags;
   $: if (activeFilters) {
     filtedFlags = getFilteredFlags();
+    console.log(activeFilters);
   }
 
   function getFilteredFlags() {
     if (!activeFilters.length) {
       return [];
     }
-    const matchingFlags = flags.filter(flag => {
-      return checkIfFlagMatchesColorFilters(flag, activeFilters);
+    let matchingFlags = flags.filter(flag => {
+      return (
+        checkIfFlagMatchesCategoryFilters(flag, activeCategoryFilters) &&
+        checkIfFlagMatchesColorFilters(flag, activeColorFilters)
+      );
     });
     return matchingFlags;
   }
@@ -23,6 +31,14 @@
     const flagColorIds = flag.matches.colors;
     const areMatching = colorFilters.every(color => {
       return flagColorIds.indexOf(color) !== -1;
+    });
+    return areMatching;
+  }
+
+  function checkIfFlagMatchesCategoryFilters(flag, categoryFilters) {
+    const flagCategory = flag.category;
+    const areMatching = categoryFilters.every(category => {
+      return flagCategory.indexOf(category) !== -1;
     });
     return areMatching;
   }
@@ -44,11 +60,11 @@
 <div class="results">
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
-      <FlagCard {flag} />
+      <FlagCard {flag} {activeCard} />
     {/each}
   {:else if !activeFilters.length}
     {#each flags as flag}
-      <FlagCard {flag} />
+      <FlagCard {flag} {activeCard} />
     {/each}
   {:else}
     <p>No matching flags</p>

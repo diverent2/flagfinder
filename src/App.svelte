@@ -9,8 +9,10 @@
 
   import flags from "./data/flags";
 
-  let filter = [];
-  $: filter;
+  let activeColorFilters = [];
+  let activeCategoryFilters = [];
+  $: activeColorFilters;
+  $: activeCategoryFilters;
 
   let activeFlag = flags[0];
   $: activeFlag;
@@ -51,10 +53,10 @@
 <main class="mainGrid">
   <div class="mainGrid__finder">
     <div class="mainGrid__filter">
-      <Filter bind:activeColorFilters={filter} />
+      <Filter bind:activeColorFilters bind:activeCategoryFilters />
     </div>
     <div class="mainGrid__flagCards">
-      <FlagCardsOutput activeFilters={filter} />
+      <FlagCardsOutput {activeColorFilters} {activeCategoryFilters} />
     </div>
   </div>
   <div class="mainGrid__details">
