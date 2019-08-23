@@ -21,25 +21,9 @@
     width: 100%;
   }
 
-  .flagDetails__colors {
-    width: 100%;
-  }
-
-  .colorButton {
-    display: block;
-    box-sizing: border-box;
-    width: var(--spacing-large);
-    height: var(--spacing-large);
-    background: yellow;
-    border-radius: 50%;
-    border-color: var(--gry);
-    border-width: 2px;
-    border-style: solid;
-    cursor: pointer;
-  }
-
   .colorExplanations {
     width: 100%;
+    padding: 0;
     text-transform: capitalize;
   }
 
@@ -63,14 +47,14 @@
   <h2 class="flagDetails__title">{activeFlag.name}</h2>
   <p class="flagDetails__description">{activeFlag.description}</p>
   <h3>Color Meaning</h3>
-  <div class="colorExplanations">
+  <ul class="colorExplanations">
     {#each activeFlag.props.colors as color}
-      <div class="colorExplanation">
+      <li class="colorExplanation">
         <span
           class="colorExplanation__line"
           style="background: {color.value}" />
         <span>{color.meaning}</span>
-      </div>
+      </li>
     {/each}
-  </div>
+  </ul>
 </div>
