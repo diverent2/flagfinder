@@ -51,8 +51,7 @@
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: column;
     grid-gap: var(--spacing-large);
-    padding-top: var(--spacing-large);
-    padding-bottom: var(--spacing-large);
+    padding: var(--spacing-large) var(--spacing);
     overflow: scroll;
   }
 </style>
