@@ -34,17 +34,37 @@
     --green-light: lightgreen;
     --green: green;
   }
+
+  .mainGrid {
+    display: grid;
+    grid-template:
+      auto
+      1fr
+      / minmax(0, 2fr) 1fr;
+  }
 </style>
 
 <header>
   <h1 class="color--rainbow">Prideflag Finder</h1>
 </header>
 
+<main class="mainGrid">
+  <div class="mainGrid__finder">
+    <div class="mainGrid__filter">
+      <Filter bind:activeColorFilters={filter} />
+    </div>
+    <div class="mainGrid__flagCards">
+      <FlagCardsOutput activeFilters={filter} />
+    </div>
+  </div>
+  <div class="mainGrid__details">
+    <FlagDetails {activeFlag} />
+  </div>
+</main>
+<Footer class="mainGrid__footer" />
+
+<!--
 {#if activeFlag.length != 0}
-  <FlagDetails {activeFlag} />
 {/if}
 
-<Filter bind:active={filter} />
-<FlagCardsOutput activeFilters={filter} />
-
-<Footer />
+-->

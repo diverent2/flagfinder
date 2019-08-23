@@ -4,9 +4,10 @@
 
 <style>
   .flagDetails {
-    max-width: 640px;
+    height: 100%;
     padding: var(--spacing) var(--spacing-small);
     background: var(--gry-light);
+    box-sizing: border-box;
   }
 
   .flagDetails__title {
@@ -39,6 +40,7 @@
 
   .colorExplanations {
     width: 100%;
+    text-transform: capitalize;
   }
 
   .colorExplanation {
