@@ -6,7 +6,13 @@
   export let activeCategoryFilters = [];
   $: activeFilters = [activeColorFilters, activeCategoryFilters];
 
-  export let activeCard;
+  export let activeFlag;
+  $: activeFlag;
+
+  function setActiveFlag(event) {
+    const newActiveFlag = event.detail.activeFlag;
+    activeFlag = newActiveFlag;
+  }
 
   let filtedFlags;
   $: if (activeFilters) {
@@ -59,11 +65,11 @@
 <div class="results">
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
-      <FlagCard {flag} {activeCard} />
+      <FlagCard {flag} on:setActiveFlag={setActiveFlag} />
     {/each}
   {:else if !activeFilters.length}
     {#each flags as flag}
-      <FlagCard {flag} {activeCard} />
+      <FlagCard {flag} on:setActiveFlag={setActiveFlag} />
     {/each}
   {:else}
     <p>No matching flags</p>

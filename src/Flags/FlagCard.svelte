@@ -1,5 +1,14 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   export let flag;
+
+  const dispatch = createEventDispatcher();
+
+  function setActiveFlag() {
+    dispatch("setActiveFlag", {
+      activeFlag: flag
+    });
+  }
 </script>
 
 <style>
@@ -10,6 +19,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .flagCard__image {
@@ -18,13 +28,14 @@
   }
 
   .flagCard__info {
-    height: 60px;
+    min-height: 60px;
     width: 100%;
     color: var(--white);
     padding: var(--spacing-small);
     background: var(--black);
     border-top: 1px solid var(--white);
     box-sizing: border-box;
+    text-transform: capitalize;
   }
 
   .flagCard__header {
@@ -47,7 +58,7 @@
   }
 </style>
 
-<div class="flagCard">
+<div class="flagCard" on:click={setActiveFlag}>
   <img class="flagCard__image" src={flag.image} alt />
   <span class="flagCard__category">{flag.category}</span>
   <div class="flagCard__info">

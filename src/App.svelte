@@ -14,8 +14,7 @@
   $: activeColorFilters;
   $: activeCategoryFilters;
 
-  let activeFlag = flags[0];
-  $: activeFlag;
+  let activeFlag;
 </script>
 
 <style>
@@ -37,6 +36,10 @@
     --green: green;
   }
 
+  header {
+    text-align: center;
+  }
+
   .mainGrid {
     display: grid;
     grid-template:
@@ -44,23 +47,31 @@
       1fr
       / minmax(0, 2fr) 1fr;
   }
+  .mainGrid.extend {
+    display: block;
+  }
 </style>
 
 <header>
   <h1 class="color--rainbow">Prideflag Finder</h1>
 </header>
 
-<main class="mainGrid">
+<main class="mainGrid" class:extend={!activeFlag}>
   <div class="mainGrid__finder">
     <div class="mainGrid__filter">
       <Filter bind:activeColorFilters bind:activeCategoryFilters />
     </div>
     <div class="mainGrid__flagCards">
-      <FlagCardsOutput {activeColorFilters} {activeCategoryFilters} />
+      <FlagCardsOutput
+        {activeColorFilters}
+        {activeCategoryFilters}
+        bind:activeFlag />
     </div>
   </div>
   <div class="mainGrid__details">
-    <FlagDetails {activeFlag} />
+    {#if activeFlag}
+      <FlagDetails {activeFlag} />
+    {/if}
   </div>
 </main>
 <Footer class="mainGrid__footer" />
