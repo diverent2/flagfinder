@@ -44,7 +44,7 @@
 
 <div class="flagDetails">
   <img class="flagDetails__image" src={activeFlag.image} alt />
-  <h2 class="flagDetails__title">{activeFlag.name}</h2>
+  <h2 class="flagDetails__title">{activeFlag.name} Flag</h2>
   <p class="flagDetails__description">{activeFlag.description}</p>
   <h3>Color Meaning</h3>
   <ul class="colorExplanations">

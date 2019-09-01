@@ -1,7 +1,7 @@
 const flags = [
   {
     id: 'gay',
-    name: 'gay pride flag',
+    name: 'gay pride',
     description: 'Netus est himenaeos nec aptent duis integer',
     category: 'sexuality',
     image:
@@ -47,7 +47,7 @@ const flags = [
   },
   {
     id: 'gay_bear',
-    name: 'gay bear brotherhood flag',
+    name: 'gay bear brotherhood',
     description: '',
     category: 'sexuality',
     image:
@@ -105,7 +105,7 @@ const flags = [
   },
   {
     id: 'gay_twink',
-    name: 'twink pride flag',
+    name: 'twink pride',
     description: '',
     category: 'sexuality',
     image:
@@ -143,7 +143,7 @@ const flags = [
   },
   {
     id: 'asexual',
-    name: 'asexual pride flag',
+    name: 'asexual pride',
     description: '',
     category: 'sexuality',
     image:
@@ -180,7 +180,7 @@ const flags = [
 
   {
     id: 'bisexual',
-    name: 'bisexual pride flag',
+    name: 'bisexual pride',
     description: '',
     category: 'sexuality',
     image:
@@ -212,7 +212,7 @@ const flags = [
 
   {
     id: 'demisexual',
-    name: 'demisexual pride flag',
+    name: 'demisexual pride',
     description: '',
     category: 'sexuality',
     image:
@@ -249,7 +249,7 @@ const flags = [
 
   {
     id: 'heterosexual',
-    name: 'heterosexual pride flag',
+    name: 'heterosexual pride',
     description: '',
     category: 'sexuality',
     image:
@@ -281,7 +281,7 @@ const flags = [
 
   {
     id: 'lesbian',
-    name: 'lesbian pride flag',
+    name: 'lesbian pride',
     description: '',
     category: 'sexuality',
     image:
@@ -335,7 +335,7 @@ const flags = [
 
   {
     id: 'lesbian_labry',
-    name: 'lesbian pride labrys flag',
+    name: 'lesbian pride labrys',
     description: '',
     category: 'sexuality',
     image:
@@ -373,7 +373,7 @@ const flags = [
   },
   {
     id: 'lesbian_lipstick',
-    name: 'lipstick lesbian pride flag',
+    name: 'lipstick lesbian pride',
     description: '',
     category: 'sexuality',
     image:
@@ -436,7 +436,7 @@ const flags = [
   },
   {
     id: 'pansexual',
-    name: 'pansexual pride flag',
+    name: 'pansexual pride',
     description: '',
     category: 'sexuality',
     image:
@@ -468,7 +468,7 @@ const flags = [
 
   {
     id: 'polysexuality',
-    name: 'polysexuality pride flag',
+    name: 'polysexuality pride',
     description: '',
     category: 'sexuality',
     image:
@@ -500,7 +500,7 @@ const flags = [
 
   {
     id: 'straight_ally',
-    name: 'stright ally flag',
+    name: 'stright ally',
     description: '',
     category: 'sexuality',
     image:
@@ -566,7 +566,7 @@ const flags = [
 
   {
     id: 'agender',
-    name: 'agender pride flag',
+    name: 'agender pride',
     description: '',
     category: 'gender',
     image:
@@ -603,7 +603,7 @@ const flags = [
 
   {
     id: 'genderfluid',
-    name: 'genderfluid pride flag',
+    name: 'genderfluid pride',
     description: '',
     category: 'gender',
     image:
@@ -645,7 +645,7 @@ const flags = [
 
   {
     id: 'genderqueer',
-    name: 'genderqueer pride flag',
+    name: 'genderqueer pride',
     description: '',
     category: 'gender',
     image:
@@ -677,7 +677,7 @@ const flags = [
 
   {
     id: 'nonbinary',
-    name: 'nonbinary pride flag',
+    name: 'nonbinary pride',
     description: '',
     category: 'gender',
     image:
@@ -715,7 +715,7 @@ const flags = [
 
   {
     id: 'transgender',
-    name: 'transgender pride flag',
+    name: 'transgender pride',
     description: '',
     category: 'sexuality',
     image:
@@ -748,7 +748,7 @@ const flags = [
 
   {
     id: 'bigender',
-    name: 'bigender pride flag',
+    name: 'bigender pride',
     description: '',
     category: 'gender',
     image:
@@ -784,7 +784,7 @@ const flags = [
   },
   {
     id: 'intersex',
-    name: 'intersex pride flag',
+    name: 'intersex pride',
     description: '',
     category: 'gender',
     image:
@@ -818,7 +818,7 @@ const flags = [
   },
   {
     id: 'aromantic',
-    name: 'aromantic pride flag',
+    name: 'aromantic pride',
     description: '',
     category: 'attraction',
     image:
@@ -860,7 +860,7 @@ const flags = [
   },
   {
     id: 'polyamory',
-    name: 'polyamory pride flag',
+    name: 'polyamory pride',
     description: '',
     category: 'sexuality',
     image:
