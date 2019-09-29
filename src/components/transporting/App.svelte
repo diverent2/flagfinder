@@ -2,6 +2,7 @@
   /*Styles*/
   import StylesFont from "./styles/StylesFont.svelte";
   /*Modules*/
+  import MainOptions from "./MainOptions.svelte";
   import Filter from "./Filter.svelte";
   import FlagCardsOutput from "./Flags/FlagCardsOutput.svelte";
   import FlagDetails from "./Flags/FlagDetails.svelte";
@@ -59,6 +60,7 @@
 <main class="mainGrid" class:extend={!activeFlag}>
   <div class="mainGrid__finder">
     <div class="mainGrid__filter">
+      <MainOptions />
       <Filter bind:activeColorFilters bind:activeCategoryFilters />
     </div>
     <div class="mainGrid__flagCards">
