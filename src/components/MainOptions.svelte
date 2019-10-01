@@ -1,5 +1,6 @@
 <script>
   import Search from "../components/Search.svelte";
+  import Filter from "../components/Filter.svelte";
 
   let expanded = false;
   let searched = true;
@@ -89,3 +90,5 @@
       alt />
   </div>
 </div>
+
+<Filter />

@@ -1,6 +1,6 @@
 <script>
   /*Data*/
-  import filterColors from "./data/filter__colors";
+  import filterColors from "../data/filter__colors";
 
   export let activeColorFilters = [];
   export let activeCategoryFilters = [];

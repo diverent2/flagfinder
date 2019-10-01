@@ -55,7 +55,7 @@
     bind:value={searchTerm}
     id="search"
     name="search"
-    placeholder="searchterm" />
+    placeholder="Searchterm goes here" />
   <img
     class="searchbox__delete"
     title="clear searchterm"
