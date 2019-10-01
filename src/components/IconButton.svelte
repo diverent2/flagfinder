@@ -22,7 +22,7 @@
 <div class="iconButton" style="background: {color}; height: {height}">
   <img
     class="iconButton__icon"
-    src="{icon}.svg"
+    src="icons/{icon}.svg"
     alt
     aria-hidden="true"
     style="height: {height}" />

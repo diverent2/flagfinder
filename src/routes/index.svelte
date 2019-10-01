@@ -100,7 +100,7 @@
 
 <nav>
   <a href="search" class="button button__search button--round">
-    <img src="search.svg" alt="search icon" aria-hidden height="64" />
+    <img src="icons/search.svg" alt="search icon" aria-hidden height="64" />
     <span>Search</span>
   </a>
 
