@@ -1,17 +1,17 @@
 <script>
   export let searchTerm;
 
-  const searchInputField = document.querySelector('.searchbox__inputfield');
+  const searchInputField = document.querySelector(".searchbox__inputfield");
 
   function clearSearch() {
-    searchTerm = '';
+    searchTerm = "";
   }
 </script>
 
 <style>
   .searchbox {
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     height: var(--spacing-xlarge);
 
     padding: var(--spacing-tiny);
@@ -56,7 +56,7 @@
     id="search"
     name="search"
     placeholder="searchterm" />
-      <img
+  <img
     class="searchbox__delete"
     title="clear searchterm"
     src="icons/cross.svg"

@@ -1,5 +1,5 @@
 <script>
-  import Search from "../components/Search.svelte";
+  import MainOptions from "../components/MainOptions.svelte";
 </script>
 
-<Search></Search>
+<MainOptions />
