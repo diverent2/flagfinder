@@ -1,28 +1,22 @@
 <script>
   /*Data*/
   import filterColors from "../data/filter__colors";
-
-  export let activeColorFilters = [];
-  export let activeCategoryFilters = [];
-  let disabled = false;
-
-  const filterCategories = [
-    { id: "sexuality" },
-    { id: "gender" },
-    { id: "attraction" }
-  ];
 </script>
 
 <style>
+  fieldset {
+    color: var(--white);
+  }
+  .filter {
+    /*   display: flex; */
+  }
+
   .colorButtons {
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--spacing-large));
-    grid-gap: var(--spacing-small);
+    grid-gap: 0.25rem;
   }
-  .colorButton,
-  .categoryLabel {
-    position: relative;
-  }
+
   input {
     position: absolute;
     opacity: 0;
@@ -31,82 +25,66 @@
     width: 0;
   }
 
-  .colorButton {
+  .button__color,
+  .button__category {
+    position: relative;
+  }
+
+  .button {
     box-sizing: border-box;
     width: var(--spacing-large);
     height: var(--spacing-large);
-    background: yellow;
+    background: var(--white);
     border-radius: 50%;
-    border-color: var(--gry);
+    border-color: var(--gry-light);
     border-width: 2px;
     border-style: solid;
     cursor: pointer;
   }
 
-  .colorButton.selected {
-    border-color: var(--green-light);
-    border-width: 3px;
-  }
-
-  .disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background: var(--gry-light) !important;
-  }
-
-  .categoryLabels {
+  .button__color {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .categoryLabel {
-    margin-right: var(--spacing-small);
-
-    padding: var(--spacing-tiny) var(--spacing-small);
-
-    background: var(--green-light);
-    border-radius: 25px;
-    border: 2px solid var(--green);
-
-    cursor: pointer;
-  }
-
-  .categoryLabel.selected {
-    color: var(--white);
-    background: var(--green);
+  .button__color > .colorSpot {
+    width: 12px;
+    height: 13px;
   }
 </style>
 
-<fieldset>
-  <legend>Colors</legend>
-  <div class="colorButtons">
-    {#each filterColors as colorFilter}
-      <label
-        class:selected={colorFilter.selected}
-        class="colorButton"
-        title={colorFilter.id}
-        style="background: {colorFilter.color}">
-        <input
-          type="checkbox"
-          value={colorFilter.id}
-          bind:group={activeColorFilters}
-          bind:checked={colorFilter.selected} />
-      </label>
-    {/each}
-  </div>
-</fieldset>
+<div class="filter">
 
-<fieldset>
-  <legend>Categories</legend>
-  <div class="categoryLabels">
-    {#each filterCategories as categoryFilter}
-      <label class="categoryLabel" class:selected={categoryFilter.selected}>
-        {categoryFilter.id}
-        <input
-          type="checkbox"
-          value={categoryFilter.id}
-          bind:group={activeCategoryFilters}
-          bind:checked={categoryFilter.selected} />
-      </label>
-    {/each}
-  </div>
-</fieldset>
+  <fieldset class="filter-color">
+    <legend>colors</legend>
+    <div class="colorButtons">
+      {#each filterColors as colorFilter}
+        <label class="button button__color" title={colorFilter.id}>
+
+          {#if (colorFilter.id === 'yellow') | (colorFilter.id === 'white')}
+            <svg
+              style="color: {colorFilter.color}"
+              class="colorSpot"
+              viewBox="0 0 12 13"
+              xmlns="http://www.w3.org/2000/svg">
+              <use href="icons/color-spot-with-frame.svg#color-spot" />
+            </svg>
+          {:else}
+            <svg
+              style="color: {colorFilter.color}"
+              class="colorSpot"
+              viewBox="0 0 12 13"
+              xmlns="http://www.w3.org/2000/svg">
+              <use href="icons/color-spot.svg#color-spot" />
+            </svg>
+          {/if}
+          <input
+            type="checkbox"
+            value={colorFilter.id}
+            bind:checked={colorFilter.selected} />
+        </label>
+      {/each}
+    </div>
+  </fieldset>
+</div>
