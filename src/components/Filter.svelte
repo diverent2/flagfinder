@@ -1,6 +1,8 @@
 <script>
   /*Data*/
   import filterColors from "../data/filter__colors";
+
+  export let colorFilters = [];
 </script>
 
 <style>
@@ -46,11 +48,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: border-color 0.2s ease;
   }
 
-  .button__color > .colorSpot {
+  .button__color > .ico-colorSpot {
     width: 12px;
     height: 13px;
+  }
+  .buttonColor__checkmark {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: -4px;
+    bottom: 0px;
+    color: var(--green-light);
+    transition: opacity 0.2s ease;
+    opacity: 0;
+  }
+
+  .button__color.selected {
+    border-color: var(--green-light);
+  }
+
+  .button__color.selected .buttonColor__checkmark {
+    opacity: 1;
   }
 </style>
 
@@ -60,12 +81,15 @@
     <legend>colors</legend>
     <div class="colorButtons">
       {#each filterColors as colorFilter}
-        <label class="button button__color" title={colorFilter.id}>
+        <label
+          class="button button__color"
+          title={colorFilter.id}
+          class:selected={colorFilter.selected}>
 
           {#if (colorFilter.id === 'yellow') | (colorFilter.id === 'white')}
             <svg
               style="color: {colorFilter.color}"
-              class="colorSpot"
+              class="ico-colorSpot"
               viewBox="0 0 12 13"
               xmlns="http://www.w3.org/2000/svg">
               <use href="icons/color-spot-with-frame.svg#color-spot" />
@@ -73,7 +97,7 @@
           {:else}
             <svg
               style="color: {colorFilter.color}"
-              class="colorSpot"
+              class="ico-colorSpot"
               viewBox="0 0 12 13"
               xmlns="http://www.w3.org/2000/svg">
               <use href="icons/color-spot.svg#color-spot" />
@@ -82,7 +106,16 @@
           <input
             type="checkbox"
             value={colorFilter.id}
+            bind:group={colorFilters}
             bind:checked={colorFilter.selected} />
+          <div class="buttonColor__checkmark">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="ico-checkmark">
+              <use href="icons/checkmark-circle.svg#checkmark-circle" />
+            </svg>
+          </div>
         </label>
       {/each}
     </div>
