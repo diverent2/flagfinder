@@ -1,19 +1,27 @@
 <script>
   /*Data*/
-  import filterColors from "../data/filter__colors";
+  import { filterColors, filterCategories } from "../data/filter__colors";
 
   export let colorFilters = [];
+  export let categoryFilters = [];
 </script>
 
 <style>
   fieldset {
     color: var(--white);
+    margin: 0;
+    border: none;
   }
   .filter {
-    /*   display: flex; */
+    display: flex;
   }
 
-  .colorButtons {
+  .filter-color {
+    flex-grow: 3;
+  }
+
+  .colorButtons,
+  .categoryButtons {
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--spacing-large));
     grid-gap: 0.25rem;
@@ -38,13 +46,13 @@
     height: var(--spacing-large);
     background: var(--white);
     border-radius: 50%;
-    border-color: var(--gry-light);
     border-width: 2px;
     border-style: solid;
     cursor: pointer;
   }
 
-  .button__color {
+  .button__color,
+  .button__category {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +80,10 @@
 
   .button__color.selected .buttonColor__checkmark {
     opacity: 1;
+  }
+
+  .button__category:not(.selected) {
+    border-color: var(--gry-light) !important;
   }
 </style>
 
@@ -116,6 +128,25 @@
               <use href="icons/checkmark-circle.svg#checkmark-circle" />
             </svg>
           </div>
+        </label>
+      {/each}
+    </div>
+  </fieldset>
+
+  <fieldset class="filter-categories">
+    <legend>categories</legend>
+    <div class="categoryButtons">
+      {#each filterCategories as category}
+        <label
+          class="button button__category"
+          title={category.id}
+          class:selected={category.selected}
+          style="border-color: {category.color}">
+          <input
+            type="checkbox"
+            value={category.id}
+            bind:group={categoryFilters}
+            bind:checked={category.selected} />
         </label>
       {/each}
     </div>

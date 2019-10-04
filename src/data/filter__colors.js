@@ -57,4 +57,12 @@ const filterColors = [
   }
 ];
 
-export default filterColors;
+const filterCategories = [
+  { id: 'sexuality', color: '#F271DE' },
+  { id: 'attraction', color: '#FF0000' },
+  { id: 'gender', color: '#FFAF2F' },
+  { id: 'kink', color: '#7f8cff' }
+];
+
+export default {};
+export { filterColors, filterCategories };
