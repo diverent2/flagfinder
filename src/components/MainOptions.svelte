@@ -14,12 +14,15 @@
   function minifyOptions() {
     expanded = false;
   }
+
+  function toggleExpand() {
+    expanded = !expanded;
+  }
 </script>
 
 <style>
   .mainOptions {
     width: 100vw;
-    height: 6rem;
     padding: var(--spacing);
     position: relative;
     color: var(--white);
@@ -30,20 +33,29 @@
     transition: height 0.3s ease;
   }
 
-  .mainOptions.expanded {
-    height: 10rem;
+  .filter {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out, height 0.25s ease-in-out;
+  }
+
+  .mainOptions.expanded .filter {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
   }
 
   .mainOptions__arrow {
     width: 100%;
     position: absolute;
-    padding-top: 1.5rem;
+    padding: 0.5rem 0;
     box-sizing: border-box;
     left: 0;
     bottom: 0;
     cursor: pointer;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   .mainOptions__arrow--icon {
@@ -53,8 +65,8 @@
   }
 
   .mainOptions.expanded .mainOptions__arrow {
-    opacity: 0;
     cursor: default;
+    transform: rotateX(0.5turn);
   }
 
   .mainOptions__resultInfo {
@@ -72,6 +84,10 @@
 
   <Search />
 
+  <div class="filter">
+    <Filter />
+  </div>
+
   {#if searched}
     <p class="mainOptions__resultInfo">
       Your search has returned
@@ -82,7 +98,7 @@
     </p>
   {/if}
 
-  <div class="mainOptions__arrow" on:click={extendOptions}>
+  <div class="mainOptions__arrow" on:click={toggleExpand}>
     <img
       class="mainOptions__arrow--icon"
       title="extend options"
@@ -90,5 +106,3 @@
       alt />
   </div>
 </div>
-
-<Filter />
