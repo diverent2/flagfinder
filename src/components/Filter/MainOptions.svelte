@@ -1,6 +1,6 @@
 <script>
-  import Search from "../components/Search.svelte";
-  import Filter from "../components/Filter.svelte";
+  import Search from "./Search.svelte";
+  import Filter from "./Filter.svelte";
 
   let expanded = false;
   let searched = true;

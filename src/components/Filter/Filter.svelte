@@ -1,6 +1,6 @@
 <script>
   /*Data*/
-  import { filterColors, filterCategories } from "../data/filter__colors";
+  import { filterColors, filterCategories } from "../../data/filter__colors";
 
   export let colorFilters = [];
   export let categoryFilters = [];

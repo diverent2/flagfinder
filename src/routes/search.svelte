@@ -1,5 +1,5 @@
 <script>
-  import MainOptions from "../components/MainOptions.svelte";
+  import MainOptions from "../components/Filter/MainOptions.svelte";
 </script>
 
 <MainOptions />
