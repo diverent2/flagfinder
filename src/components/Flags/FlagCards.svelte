@@ -1,7 +1,11 @@
 <script>
   import FlagCard from "./FlagCard.svelte";
-  import flags from "../data/flags";
+  import flags from "../../data/flags";
 
+  let filtedFlags = [];
+  filtedFlags = flags;
+  let activeFilters = filtedFlags;
+  /*
   export let activeColorFilters = [];
   export let activeCategoryFilters = [];
   $: activeFilters = [activeColorFilters, activeCategoryFilters];
@@ -47,29 +51,25 @@
       return flagCategory.indexOf(category) !== -1;
     });
     return areMatching;
-  }
+  } */
 </script>
 
 <style>
-  .results {
+  .flag-results {
+    margin: var(--spacing);
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
-    grid-gap: var(--spacing-large);
-    padding: var(--spacing-large) var(--spacing);
-    overflow: scroll;
+    grid-gap: var(--spacing);
   }
 </style>
 
-<div class="results">
+<div class="flag-results">
   {#if filtedFlags.length}
     {#each filtedFlags as flag}
-      <FlagCard {flag} on:setActiveFlag={setActiveFlag} />
+      <FlagCard {flag} />
     {/each}
   {:else if !activeFilters.length}
     {#each flags as flag}
-      <FlagCard {flag} on:setActiveFlag={setActiveFlag} />
+      <FlagCard {flag} />
     {/each}
   {:else}
     <p>No matching flags</p>
