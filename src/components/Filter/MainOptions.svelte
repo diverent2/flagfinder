@@ -37,7 +37,11 @@
     opacity: 0;
     height: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease-in-out, height 0.25s ease-in-out;
+    transition: height 0.25s ease-in-out;
+  }
+
+  .mainOptions.expanded {
+    box-shadow: var(--box-shadow);
   }
 
   .mainOptions.expanded .filter {
