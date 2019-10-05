@@ -23,6 +23,10 @@
     border-radius: inherit;
   }
 
+  .flagCard__category {
+    width: min-content;
+  }
+
   .flagCard__header {
     width: 100%;
     margin-top: 0.5rem;
@@ -47,13 +51,14 @@
     <img class="flagCard__image" src={flag.image} alt />
 
     <div class="flagCard__details">
-      <IconButton
-        class="flagCard__details"
-        color="var(--blue-dark)"
-        icon="about"
-        height="var(--spacing)">
-        {flag.category}
-      </IconButton>
+      <div class="flagCard__category">
+        <IconButton
+          color="var(--blue-dark)"
+          icon="about"
+          height="var(--spacing)">
+          {flag.category}
+        </IconButton>
+      </div>
       <h3 class="flagCard__header">{flag.name}</h3>
     </div>
     <img
