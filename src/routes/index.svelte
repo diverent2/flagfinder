@@ -5,6 +5,32 @@
 </script>
 
 <style>
+  header {
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header .header-image__background {
+    width: 128px;
+    height: 128px;
+    padding: var(--spacing-small);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--blue);
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: var(--white);
+    width: min-content;
+  }
+
   nav {
     max-width: 230px;
     margin: 0 auto;
@@ -71,12 +97,18 @@
     color: var(--white);
   }
 
+  .header__background,
   .footer__background {
     width: 100vw;
     position: absolute;
     bottom: 0;
     z-index: -1;
     left: 0;
+  }
+
+  .header__background {
+    top: 0;
+    transform: rotateX(180deg) rotateY(180deg);
   }
 
   .footer__background--back {
@@ -94,8 +126,15 @@
 </svelte:head>
 
 <header>
+  <img
+    class="header__background"
+    src="wave--darkblue.svg"
+    alt
+    aria-hidden="true" />
   <h1>Welcome to Prideflags.info</h1>
-  <img src="https://via.placeholder.com/128" alt="LOGO" />
+  <div class="header-image__background">
+    <img src="icons/search.svg" alt="LOGO" aria-hidden height="64" />
+  </div>
 </header>
 
 <nav>
