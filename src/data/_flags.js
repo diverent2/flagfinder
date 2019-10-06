@@ -46,7 +46,7 @@ const flags = [
     }
   },
   {
-    id: 'gay_bear',
+    id: 'gay-bear',
     name: 'gay bear brotherhood',
     description: '',
     category: 'sexuality',
