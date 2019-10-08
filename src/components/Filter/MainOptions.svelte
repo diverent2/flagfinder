@@ -62,15 +62,24 @@
     transition: transform 0.2s ease;
   }
 
+  .mainOptions__arrow:hover .mainOptions__arrow--icon {
+    transform: translateY(0.5rem) scaleY(1.2);
+  }
+
+   .mainOptions.expanded .mainOptions__arrow:hover .mainOptions__arrow--icon {
+    transform: translateY(0.5rem);
+  }
+
   .mainOptions__arrow--icon {
     height: var(--spacing);
     width: 100%;
     margin: 0 auto;
+    will-change: transform;
+    transition: transform 0.25s ease;
   }
 
   .mainOptions.expanded .mainOptions__arrow {
-    cursor: default;
-    transform: rotateX(0.5turn);
+    transform: scaleY(-1);
   }
 
   .mainOptions__resultInfo {

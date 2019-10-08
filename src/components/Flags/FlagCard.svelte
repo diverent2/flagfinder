@@ -15,6 +15,11 @@
     background: var(--white);
     border-radius: 6px;
     box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .flagCard:hover {
+    transform: scale(1.05);
   }
 
   .flagCard__image {
