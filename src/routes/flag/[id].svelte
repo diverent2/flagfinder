@@ -21,15 +21,26 @@
 </script>
 
 <script>
+  import Header from "./../../components/FlagDetails/Header.svelte";
+  import General from "./../../components/FlagDetails/General.svelte";
+  import Details from "./../../components/FlagDetails/Details.svelte";
+
   export let flag;
 </script>
 
 <style>
-
+  main {
+    padding: 1rem;
+  }
 </style>
 
 <svelte:head>
-  <title>{flag.name}</title>
+  <title>{flag.name} flag • details | Prideflags.info</title>
 </svelte:head>
 
-<h1>{flag.name}</h1>
+<Header {flag} />
+
+<main>
+  <General {flag} />
+  <Details {flag} />
+</main>
