@@ -23,13 +23,16 @@
 <style>
   .mainOptions {
     width: 100vw;
+    position: sticky;
+    top: 0;
+    left: 0;
     padding: var(--spacing);
-    position: relative;
     color: var(--white);
     box-sizing: border-box;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     background: var(--blue);
+    z-index: 1;
     transition: height 0.3s ease;
   }
 
@@ -66,7 +69,7 @@
     transform: translateY(0.5rem) scaleY(1.2);
   }
 
-   .mainOptions.expanded .mainOptions__arrow:hover .mainOptions__arrow--icon {
+  .mainOptions.expanded .mainOptions__arrow:hover .mainOptions__arrow--icon {
     transform: translateY(0.5rem);
   }
 
