@@ -51,7 +51,7 @@
   }
 </style>
 
-<a href={flag.id} title="{flag.name} flag">
+<a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard">
     <img class="flagCard__image" src={flag.image} alt />
 
