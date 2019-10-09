@@ -9,6 +9,9 @@
   $: activeFilters = [activeColorFilters];
 
   let filtedFlags;
+
+  $: searchresults_amount = filtedFlags.length;
+
   $: if (activeFilters.flat().length) {
     console.log("change", activeFilters.flat().length);
     filtedFlags = getFilteredFlags();
@@ -60,6 +63,6 @@
 
 <h1>Search</h1>
 
-<MainOptions bind:activeColorFilters />
+<MainOptions bind:activeColorFilters {searchresults_amount} />
 
 <FlagCards flags={filtedFlags} />

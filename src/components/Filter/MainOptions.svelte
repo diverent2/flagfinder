@@ -6,16 +6,7 @@
   $: activeColorFilters;
 
   let expanded = false;
-  let searched = true;
-  let searchresults_amount = 10;
-
-  function extendOptions() {
-    expanded = true;
-  }
-
-  function minifyOptions() {
-    expanded = false;
-  }
+  export let searchresults_amount = 0;
 
   function toggleExpand() {
     expanded = !expanded;
@@ -106,15 +97,11 @@
     <Filter bind:activeColorFilters />
   </div>
 
-  {#if searched}
-    <p class="mainOptions__resultInfo">
-      Your search has returned
-      <span class="mainOptions__resultInfo--amount">
-        {searchresults_amount}
-      </span>
-      results
-    </p>
-  {/if}
+  <p class="mainOptions__resultInfo">
+    Your search has returned
+    <span class="mainOptions__resultInfo--amount">{searchresults_amount}</span>
+    results
+  </p>
 
   <div class="mainOptions__arrow" on:click={toggleExpand}>
     <img
