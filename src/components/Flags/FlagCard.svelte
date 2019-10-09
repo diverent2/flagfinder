@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "../../components/IconButton.svelte";
+  import IconButton from "../../components/Elements/IconButton.svelte";
   export let flag;
 </script>
 
