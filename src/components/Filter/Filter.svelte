@@ -3,8 +3,8 @@
   import { filterColors, filterCategories } from "../../data/_filter";
   import ColorSpot from "../Elements/ColorSpot.svelte";
 
-  export let colorFilters = [];
-  export let categoryFilters = [];
+  export let activeColorFilters;
+  $: activeColorFilters;
 </script>
 
 <style>
@@ -104,7 +104,7 @@
           <input
             type="checkbox"
             value={colorFilter.id}
-            bind:group={colorFilters}
+            bind:group={activeColorFilters}
             bind:checked={colorFilter.selected} />
           <div class="buttonColor__checkmark">
             <svg
@@ -131,7 +131,6 @@
           <input
             type="checkbox"
             value={category.id}
-            bind:group={categoryFilters}
             bind:checked={category.selected} />
         </label>
       {/each}

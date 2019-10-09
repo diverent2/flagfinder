@@ -2,9 +2,11 @@
   import Search from "./Search.svelte";
   import Filter from "./Filter.svelte";
 
+  export let activeColorFilters = [];
+  $: activeColorFilters;
+
   let expanded = false;
   let searched = true;
-
   let searchresults_amount = 10;
 
   function extendOptions() {
@@ -101,7 +103,7 @@
   <Search />
 
   <div class="filter">
-    <Filter />
+    <Filter bind:activeColorFilters />
   </div>
 
   {#if searched}
