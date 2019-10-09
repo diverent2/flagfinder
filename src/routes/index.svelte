@@ -1,7 +1,7 @@
 <script>
   import IconButton from "../components/Elements/IconButton.svelte";
 
-  const versionNumber = "v0.9 ©2019";
+  const versionNumber = "ALPHA VERSION 0.2 ©2019";
 </script>
 
 <style>
@@ -76,7 +76,7 @@
 
   .navButtons--special .buttton__about {
     width: 100%;
-    margin-right: 1rem;
+    /*   margin-right: 1rem; */
   }
 
   .button__settings {
@@ -119,6 +119,21 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .banner__container {
+    position: absolute;
+    left: -3rem;
+    top: 3rem;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .banner {
+    padding: 0.3rem 3rem;
+    background: var(--white);
+    transform: rotateZ(-45deg);
+    box-shadow: var(--box-shadow);
+  }
 </style>
 
 <svelte:head>
@@ -137,20 +152,26 @@
   </div>
 </header>
 
+<div class="banner__container">
+  <div class="banner">
+    <span>ALPHA VERSION</span>
+  </div>
+</div>
+
 <nav>
   <a href="search" class="button button__search button--round">
     <img src="icons/search.svg" alt="search icon" aria-hidden height="64" />
     <span>Search</span>
   </a>
 
-  <a href="/bookmarks" class="buttton__bookmarks">
+  <!--   <a href="/bookmarks" class="buttton__bookmarks">
     <IconButton
       color="var(--blue-dark)"
       icon="bookmarks"
       height="var(--spacing-xlarge)">
       Bookmarks
     </IconButton>
-  </a>
+  </a> -->
 
   <div class="navButtons--special">
     <a href="/about" class="buttton__about">
@@ -162,12 +183,12 @@
       </IconButton>
     </a>
 
-    <a
+    <!--     <a
       class="button button__settings button--round"
       href="/settings"
       aria-label="settings">
       <img src="icons/settings.svg" alt aria-hidden="true" />
-    </a>
+    </a> -->
   </div>
 </nav>
 
@@ -183,7 +204,10 @@
     alt
     aria-hidden="true" />
   <div class="footer__links">
-    <span>Made by @diverent2</span>
+    <span>
+      Made with 💖 by
+      <a href="https://twitter.com/diverent2">diverent2</a>
+    </span>
     <span>{versionNumber}</span>
   </div>
 </footer>
