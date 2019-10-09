@@ -1,0 +1,29 @@
+<script>
+  export let withBorder = false;
+  export let color = pink;
+</script>
+
+<style>
+  .ico-colorSpot {
+    width: 12px;
+    height: 13px;
+  }
+</style>
+
+{#if !withBorder}
+  <svg
+    style="color: {color}"
+    class="ico-colorSpot"
+    viewBox="0 0 12 13"
+    xmlns="http://www.w3.org/2000/svg">
+    <use href="icons/color-spot.svg#color-spot" />
+  </svg>
+{:else}
+  <svg
+    style="color: {color}"
+    class="ico-colorSpot"
+    viewBox="0 0 12 13"
+    xmlns="http://www.w3.org/2000/svg">
+    <use href="icons/color-spot-with-frame.svg#color-spot" />
+  </svg>
+{/if}

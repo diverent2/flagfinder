@@ -1,6 +1,7 @@
 <script>
   /*Data*/
   import { filterColors, filterCategories } from "../../data/_filter";
+  import ColorSpot from "../Elements/ColorSpot.svelte";
 
   export let colorFilters = [];
   export let categoryFilters = [];
@@ -49,6 +50,7 @@
     border-width: 2px;
     border-style: solid;
     cursor: pointer;
+    box-shadow: var(--box-shadow);
   }
 
   .button__color,
@@ -59,10 +61,6 @@
     transition: border-color 0.2s ease;
   }
 
-  .button__color > .ico-colorSpot {
-    width: 12px;
-    height: 13px;
-  }
   .buttonColor__checkmark {
     width: 12px;
     height: 12px;
@@ -82,7 +80,7 @@
     opacity: 1;
   }
 
-  .button__category:not(.selected) {
+  .button:not(.selected) {
     border-color: var(--gry-light) !important;
   }
 </style>
@@ -99,21 +97,9 @@
           class:selected={colorFilter.selected}>
 
           {#if (colorFilter.id === 'yellow') | (colorFilter.id === 'white')}
-            <svg
-              style="color: {colorFilter.color}"
-              class="ico-colorSpot"
-              viewBox="0 0 12 13"
-              xmlns="http://www.w3.org/2000/svg">
-              <use href="icons/color-spot-with-frame.svg#color-spot" />
-            </svg>
+            <ColorSpot color={colorFilter.color} withBorder="true" />
           {:else}
-            <svg
-              style="color: {colorFilter.color}"
-              class="ico-colorSpot"
-              viewBox="0 0 12 13"
-              xmlns="http://www.w3.org/2000/svg">
-              <use href="icons/color-spot.svg#color-spot" />
-            </svg>
+            <ColorSpot color={colorFilter.color} />
           {/if}
           <input
             type="checkbox"
