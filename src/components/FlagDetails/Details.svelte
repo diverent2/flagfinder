@@ -35,8 +35,8 @@
 
   .colorExplanation__colorSpot {
     box-sizing: border-box;
-    width: var(--spacing-large);
-    height: var(--spacing-large);
+    width: var(--spacing-xlarge);
+    height: var(--spacing-xlarge);
     background: var(--white);
 
     display: flex;
@@ -59,6 +59,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    min-width: 5rem;
   }
 
   .colorExplanation__meaning > p {
@@ -74,6 +75,10 @@
       rgba(0, 0, 0, 0.75),
       rgba(0, 0, 0, 0)
     );
+  }
+
+  ul.sources {
+    padding-left: 1rem;
   }
 </style>
 
