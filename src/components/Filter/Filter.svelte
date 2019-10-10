@@ -24,8 +24,8 @@
   .colorButtons,
   .categoryButtons {
     display: grid;
-    grid-template-columns: repeat(auto-fill, var(--spacing-large));
-    grid-gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, var(--spacing-xlarge));
+    grid-gap: 0.5rem;
   }
 
   input {
@@ -43,8 +43,8 @@
 
   .button {
     box-sizing: border-box;
-    width: var(--spacing-large);
-    height: var(--spacing-large);
+    width: var(--spacing-xlarge);
+    height: var(--spacing-xlarge);
     background: var(--white);
     border-radius: 50%;
     border-width: 2px;
@@ -62,8 +62,8 @@
   }
 
   .buttonColor__checkmark {
-    width: 12px;
-    height: 12px;
+    width: 1rem;
+    height: 1.1rem;
     position: absolute;
     right: -4px;
     bottom: 0px;
@@ -76,12 +76,22 @@
     border-color: var(--green-light);
   }
 
+  .ico-category {
+    width: 1rem;
+    height: 1rem;
+  }
+
   .button__color.selected .buttonColor__checkmark {
     opacity: 1;
   }
 
   .button:not(.selected) {
     border-color: var(--gry-light) !important;
+  }
+
+
+  .button__category:not(.selected) .ico-category {
+        color: var(--gry-light) !important;
   }
 </style>
 
@@ -132,6 +142,13 @@
             type="checkbox"
             value={category.id}
             bind:checked={category.selected} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="ico-category"
+            style="color: {category.color}">
+            <use href="icons/{category.id}.svg#{category.id}" />
+          </svg>
         </label>
       {/each}
     </div>

@@ -5,8 +5,8 @@
 
 <style>
   .ico-colorSpot {
-    width: 12px;
-    height: 13px;
+    width: 1rem;
+    height: 1.1rem;
   }
 </style>
 
