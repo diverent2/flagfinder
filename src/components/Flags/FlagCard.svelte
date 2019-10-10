@@ -57,12 +57,32 @@
 
     <div class="flagCard__details">
       <div class="flagCard__category">
+        {#if flag.category === 'sexuality'}
+          <IconButton
+            color="#F271DE"
+            icon="sexuality-white"
+            height="var(--spacing)">
+            sexuality
+          </IconButton>
+        {:else if flag.category === 'gender'}
         <IconButton
-          color="var(--blue-dark)"
-          icon="about"
+            color="#FF0000"
+            icon="attraction-white"
+            height="var(--spacing)">
+            attraction
+          </IconButton>
+        {:else if flag.category === 'kink'}
+          <IconButton color="#7f8cff" icon="kink-white" height="var(--spacing)">
+            kink
+          </IconButton>
+        {:else}
+          <IconButton
+            color="#FFAF2F"
+            icon="gender-white"
           height="var(--spacing)">
-          {flag.category}
+            gender
         </IconButton>
+        {/if}
       </div>
       <h3 class="flagCard__header">{flag.name}</h3>
     </div>

@@ -1,4 +1,6 @@
 <script>
+  import IconButton from "../Elements/IconButton.svelte";
+
   export let flag;
 </script>
 
@@ -49,6 +51,10 @@
     display: block;
     text-align: center;
   }
+
+  .general__category {
+    width: max-content;
+  }
 </style>
 
 <section title="general">
@@ -77,4 +83,32 @@
       </li>
     {/each}
   </ul>
+
+  <h3>Category</h3>
+
+  <div class="general__category">
+    {#if flag.category === 'sexuality'}
+      <IconButton
+        color="#F271DE"
+        icon="sexuality-white"
+        height="var(--spacing)">
+        sexuality
+      </IconButton>
+    {:else if flag.category === 'gender'}
+      <IconButton
+        color="#FF0000"
+        icon="attraction-white"
+        height="var(--spacing)">
+        attraction
+      </IconButton>
+    {:else if flag.category === 'kink'}
+      <IconButton color="#7f8cff" icon="kink-white" height="var(--spacing)">
+        kink
+      </IconButton>
+    {:else}
+      <IconButton color="#FFAF2F" icon="gender-white" height="var(--spacing)">
+        gender
+      </IconButton>
+    {/if}
+  </div>
 </section>
