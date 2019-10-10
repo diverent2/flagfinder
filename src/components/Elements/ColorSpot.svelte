@@ -1,6 +1,6 @@
 <script>
   export let withBorder = false;
-  export let color = pink;
+  export let color;
 </script>
 
 <style>
