@@ -7,19 +7,15 @@
   let activeColorFilters = [];
   let searchterm = "";
 
-  $: activeFilters = [activeColorFilters, searchterm];
+  $: activeFilters = [activeColorFilters];
 
   let filtedFlags;
 
   $: searchresults_amount = filtedFlags.length;
 
-  $: if (activeFilters.flat().length) {
-    console.log("change", activeFilters.flat().length);
+  $: if (activeFilters.flat().length || searchterm.length) {
     filtedFlags = getFilteredFlags();
-    console.log(activeFilters);
-    console.log("search", searchterm);
   } else {
-    console.log("reset");
     filtedFlags = flags;
   }
 
@@ -28,7 +24,6 @@
     matchingFlags = flags.filter(flag => {
       return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
     });
-    console.log("flags", matchingFlags);
     matchingFlags = matchingFlags.filter(flag => {
       return checkIfFlagMatchesSearchRequest(flag, searchterm);
     });
@@ -46,30 +41,31 @@
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
-    const fieldsToCheck = [];
+    const { name, description, origin, props } = flag;
+    const { firstAppearance, timeframe } = origin;
+    const colors = [];
+    props.colors.forEach(color => {
+      colors.push(color.meaning);
+    });
 
-    const fieldToCheck = flag.description;
+    const fieldsToCheck = [
+      name,
+      description,
+      firstAppearance,
+      timeframe,
+      colors
+    ].flat();
 
-    if (fieldToCheck.includes(searchterm)) {
+    const didMatch = fieldsToCheck.findIndex(field => {
+      return field.includes(searchterm);
+    });
+
+    // return if match was found
+    if (didMatch != -1) {
       return true;
     }
-    return false;
+    console.log("nop");
   }
-
-  /*
-  
-  function getFilteredFlags() {
-    console.log("lenght", activeFilters.length);
-    if (!activeFilters.length) {
-      return []; //return empty
-    }
-    const matchingFlags = flags.filter(flag => {
-      return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
-    });
-    console.log("flags", matchingFlags);
-    return matchingFlags;
-  }
-  */
 </script>
 
 <style>
