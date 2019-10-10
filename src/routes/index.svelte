@@ -147,9 +147,12 @@
     alt
     aria-hidden="true" />
   <h1>Welcome to Prideflags.info</h1>
-  <div class="header-image__background">
-    <img src="icons/search.svg" alt="LOGO" aria-hidden height="64" />
-  </div>
+  <img
+    class="header-image__background"
+    src="flagfinder-logo.png"
+    alt="LOGO"
+    aria-hidden
+    height="128" />
 </header>
 
 <div class="banner__container">
