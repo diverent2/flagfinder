@@ -5,8 +5,9 @@
   import flags from "../data/_flags";
 
   let activeColorFilters = [];
+  let searchterm = "";
 
-  $: activeFilters = [activeColorFilters];
+  $: activeFilters = [activeColorFilters, searchterm];
 
   let filtedFlags;
 
@@ -16,6 +17,7 @@
     console.log("change", activeFilters.flat().length);
     filtedFlags = getFilteredFlags();
     console.log(activeFilters);
+    console.log("search", searchterm);
   } else {
     console.log("reset");
     filtedFlags = flags;
@@ -27,6 +29,10 @@
       return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
     });
     console.log("flags", matchingFlags);
+    matchingFlags = matchingFlags.filter(flag => {
+      return checkIfFlagMatchesSearchRequest(flag, searchterm);
+    });
+    console.log("flagsV2", matchingFlags);
     return matchingFlags;
   }
 
@@ -37,6 +43,17 @@
       return flagColorsIds.indexOf(color) !== -1;
     });
     return areMatching; //true or false
+  }
+
+  function checkIfFlagMatchesSearchRequest(flag, searchterm) {
+    const fieldsToCheck = [];
+
+    const fieldToCheck = flag.description;
+
+    if (fieldToCheck.includes(searchterm)) {
+      return true;
+    }
+    return false;
   }
 
   /*
@@ -63,6 +80,6 @@
 
 <h1>Search</h1>
 
-<MainOptions bind:activeColorFilters {searchresults_amount} />
+<MainOptions bind:activeColorFilters bind:searchterm {searchresults_amount} />
 
 <FlagCards flags={filtedFlags} />

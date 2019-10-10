@@ -5,6 +5,9 @@
   export let activeColorFilters = [];
   $: activeColorFilters;
 
+  export let searchterm = "";
+  $: searchterm;
+
   let expanded = false;
   export let searchresults_amount = 0;
 
@@ -91,7 +94,7 @@
 
 <div class="mainOptions" class:expanded>
 
-  <Search />
+  <Search bind:searchterm />
 
   <div class="filter">
     <Filter bind:activeColorFilters />

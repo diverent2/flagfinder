@@ -1,5 +1,6 @@
 <script>
-  export let searchTerm;
+  export let searchterm;
+  $: searchterm;
 
   const searchInputField = document.querySelector(".searchbox__inputfield");
 
@@ -52,7 +53,7 @@
     height="24" />
   <input
     class="searchbox__inputfield"
-    bind:value={searchTerm}
+    bind:value={searchterm}
     id="search"
     name="search"
     placeholder="Searchterm goes here" />
