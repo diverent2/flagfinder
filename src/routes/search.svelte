@@ -64,7 +64,6 @@
     if (didMatch != -1) {
       return true;
     }
-    console.log("nop");
   }
 </script>
 

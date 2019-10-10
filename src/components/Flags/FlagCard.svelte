@@ -53,7 +53,10 @@
 
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard">
-    <img class="flagCard__image" src={flag.image} alt />
+    <img
+      class="flagCard__image"
+      src="flags/{flag.image}"
+      alt="{flag.name} flag" />
 
     <div class="flagCard__details">
       <div class="flagCard__category">
@@ -65,7 +68,7 @@
             sexuality
           </IconButton>
         {:else if flag.category === 'gender'}
-        <IconButton
+          <IconButton
             color="#FF0000"
             icon="attraction-white"
             height="var(--spacing)">
@@ -79,9 +82,9 @@
           <IconButton
             color="#FFAF2F"
             icon="gender-white"
-          height="var(--spacing)">
+            height="var(--spacing)">
             gender
-        </IconButton>
+          </IconButton>
         {/if}
       </div>
       <h3 class="flagCard__header">{flag.name}</h3>

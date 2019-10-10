@@ -4,7 +4,7 @@ const filterColors = [
     color: '#FFFFFF'
   },
   {
-    id: 'gry',
+    id: 'gray',
     color: '#D3D3D3'
   },
   {

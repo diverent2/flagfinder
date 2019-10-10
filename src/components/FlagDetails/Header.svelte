@@ -62,6 +62,6 @@
   </div>
   <img
     class="flagDetails__headerImage"
-    src={flag.image}
+    src="flags/{flag.image}"
     alt="{flag.name} flag" />
 </header>
