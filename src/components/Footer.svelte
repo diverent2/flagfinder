@@ -26,7 +26,17 @@
     z-index: 1000;
   }
 
+  .footer__home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 65%;
+    bottom: 0;
+  }
+
   .footer__links {
+    width: 100%;
     text-align: end;
   }
 
@@ -42,7 +52,8 @@
 </style>
 
 <footer>
-  <a href="/">
+  <a href="/" class="footer__home">
+    <span>Home</span>
     <img
       class="logo"
       src="flagfinder-logo.png"
