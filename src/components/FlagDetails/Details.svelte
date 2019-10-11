@@ -89,8 +89,9 @@
   }
 </style>
 
-<h2>Details</h2>
 <section title="details">
+  <h2>Details</h2>
+
   <h3>🎨Color meanings</h3>
 
   {#if flag.props.colors.length}

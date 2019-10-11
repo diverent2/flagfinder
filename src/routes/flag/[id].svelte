@@ -32,6 +32,13 @@
   main {
     padding: 1rem;
   }
+
+  @media only screen and (min-width: 600px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 </style>
 
 <svelte:head>
