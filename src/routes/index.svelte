@@ -67,6 +67,11 @@
     text-decoration: none;
   }
 
+  .button__search h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
   .buttton__bookmarks {
     margin-bottom: 1rem;
   }
