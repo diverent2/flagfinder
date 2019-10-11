@@ -73,6 +73,10 @@
   }
 </style>
 
+<svelte:head>
+  <title>Search | Prideflags.info</title>
+</svelte:head>
+
 <h1>Search</h1>
 
 <MainOptions bind:activeColorFilters bind:searchterm {searchresults_amount} />

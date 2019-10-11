@@ -153,7 +153,7 @@
 </style>
 
 <svelte:head>
-  <title>🏳️‍🌈Prideflags | Home</title>
+  <title>Home | Prideflags.info</title>
 </svelte:head>
 
 <header>
