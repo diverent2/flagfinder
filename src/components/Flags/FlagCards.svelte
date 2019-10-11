@@ -9,6 +9,7 @@
     margin: var(--spacing);
     display: grid;
     grid-gap: var(--spacing);
+    grid-template-columns: 100%; /*fix overflow*/
   }
 </style>
 

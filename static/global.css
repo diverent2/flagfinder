@@ -18,6 +18,10 @@ body {
   line-height: 1.5;
   color: #333;
   background-color: var(--blue-light);
+
+  /* fix ocational overflow */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
