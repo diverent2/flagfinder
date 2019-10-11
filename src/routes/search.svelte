@@ -6,9 +6,10 @@
   import flags from "../data/_flags";
 
   let activeColorFilters = [];
+  let activeCategoryFilters = [];
   let searchterm = "";
 
-  $: activeFilters = [activeColorFilters];
+  $: activeFilters = [activeColorFilters, activeCategoryFilters];
 
   let filtedFlags;
 
@@ -21,14 +22,22 @@
   }
 
   function getFilteredFlags() {
-    let matchingFlags;
-    matchingFlags = flags.filter(flag => {
-      return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
-    });
-    matchingFlags = matchingFlags.filter(flag => {
-      return checkIfFlagMatchesSearchRequest(flag, searchterm);
-    });
-    console.log("flagsV2", matchingFlags);
+    let matchingFlags = flags;
+    if (activeColorFilters.length) {
+      matchingFlags = flags.filter(flag => {
+        return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
+      });
+    }
+    if (searchterm.length) {
+      matchingFlags = matchingFlags.filter(flag => {
+        return checkIfFlagMatchesSearchRequest(flag, searchterm);
+      });
+    }
+    if (activeCategoryFilters.length) {
+      matchingFlags = matchingFlags.filter(flag => {
+        return checkIfFlagMatchesCategories(flag, activeCategoryFilters);
+      });
+    }
     return matchingFlags;
   }
 
@@ -39,6 +48,13 @@
       return flagColorsIds.indexOf(color) !== -1;
     });
     return areMatching; //true or false
+  }
+
+  function checkIfFlagMatchesCategories(flag, categories) {
+    const flagCategory = flag.category;
+    console.log(flagCategory);
+    console.log(categories.includes(flagCategory));
+    return categories.includes(flagCategory);
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
@@ -80,7 +96,11 @@
 
 <h1>Search</h1>
 
-<MainOptions bind:activeColorFilters bind:searchterm {searchresults_amount} />
+<MainOptions
+  bind:activeColorFilters
+  bind:searchterm
+  bind:activeCategoryFilters
+  {searchresults_amount} />
 
 <FlagCards flags={filtedFlags} />
 

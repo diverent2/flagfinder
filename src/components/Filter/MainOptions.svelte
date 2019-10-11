@@ -5,6 +5,9 @@
   export let activeColorFilters = [];
   $: activeColorFilters;
 
+  export let activeCategoryFilters = [];
+  $: activeCategoryFilters;
+
   export let searchterm = "";
   $: searchterm;
 
@@ -98,7 +101,7 @@
   <Search bind:searchterm />
 
   <div class="filter">
-    <Filter bind:activeColorFilters />
+    <Filter bind:activeColorFilters bind:activeCategoryFilters />
   </div>
 
   <p class="mainOptions__resultInfo">

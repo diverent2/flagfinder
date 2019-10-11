@@ -5,6 +5,9 @@
 
   export let activeColorFilters;
   $: activeColorFilters;
+
+  export let activeCategoryFilters;
+  $: activeCategoryFilters;
 </script>
 
 <style>
@@ -140,7 +143,8 @@
           <input
             type="checkbox"
             value={category.id}
-            bind:checked={category.selected} />
+            bind:checked={category.selected}
+            bind:group={activeCategoryFilters} />
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
