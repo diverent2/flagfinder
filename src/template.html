@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#4949ba" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/favicons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/favicons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/favicons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/favicons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/favicons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/favicons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/favicons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/favicons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#4949ba" />
+    <meta
+      name="msapplication-TileImage"
+      content="/favicons/ms-icon-144x144.png"
+    />
+
+    %sapper.base%
+
+    <link rel="stylesheet" href="global.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+
+    <meta name="author" content="diverent2 (Maximilian Becher)" />
+    <meta name="publisher" content="diverent2 (Maximilian Becher)" />
+    <meta name="copyright" content="diverent2 (Maximilian Becher)" />
+    <meta
+      name="description"
+      content="A collection of pride flags to provide information on different identities."
+    />
+    <meta
+      name="keywords"
+      content="LGTBQ, queer, pride, flags, gender, biological sex, sexuality, identity, attraction, information, colors"
+    />
+    <meta name="page-topic" content="Gesellschaft" />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Sapper generates a <style> tag containing critical CSS
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
+    %sapper.styles%
+
+    <!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+    %sapper.head%
+  </head>
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+
+      --blue: #4949ba;
+      --blue-dark: #2525a8;
+      --blue-dark-500: #3e3e7c;
+      --blue-light: #c6cfea;
+
+      --gry-light: #dbd3d3;
+      --gry-dark: #707070;
+
+      --green-light: #63d7aa;
+
+      --spacing-tiny: 0.25rem; /* 4px */
+      --spacing-small: 0.5rem; /* 8px */
+      --spacing: 1rem; /* 16px */
+      --spacing-large: 1.5rem; /* 24px */
+      --spacing-xlarge: 2rem; /* 32px */
+
+      --box-shadow: #0000003d 3px 6px 5px 0px;
+    }
+  </style>
+  <body>
+    <!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+    <div id="sapper">%sapper.html%</div>
+
+    <!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+    %sapper.scripts%
+  </body>
+</html>
