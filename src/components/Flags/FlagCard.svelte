@@ -67,7 +67,7 @@
             height="var(--spacing)">
             sexuality
           </IconButton>
-        {:else if flag.category === 'gender'}
+        {:else if flag.category === 'attraction'}
           <IconButton
             color="#FF0000"
             icon="attraction-white"
@@ -78,7 +78,7 @@
           <IconButton color="#7f8cff" icon="kink-white" height="var(--spacing)">
             kink
           </IconButton>
-        {:else}
+        {:else if flag.category === 'gender'}
           <IconButton
             color="#FFAF2F"
             icon="gender-white"
