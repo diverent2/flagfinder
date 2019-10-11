@@ -25,6 +25,8 @@
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
 
+  import Footer from "./../../components/Footer.svelte";
+
   export let flag;
 </script>
 
@@ -51,3 +53,5 @@
   <General {flag} />
   <Details {flag} />
 </main>
+
+<Footer />

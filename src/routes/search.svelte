@@ -1,6 +1,7 @@
 <script>
   import MainOptions from "../components/Filter/MainOptions.svelte";
   import FlagCards from "../components/Flags/FlagCards.svelte";
+  import Footer from "../components/Footer.svelte";
 
   import flags from "../data/_flags";
 
@@ -82,3 +83,5 @@
 <MainOptions bind:activeColorFilters bind:searchterm {searchresults_amount} />
 
 <FlagCards flags={filtedFlags} />
+
+<Footer />

@@ -89,9 +89,8 @@
     border-color: var(--gry-light) !important;
   }
 
-
   .button__category:not(.selected) .ico-category {
-        color: var(--gry-light) !important;
+    color: var(--gry-light) !important;
   }
 </style>
 

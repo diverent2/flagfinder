@@ -1,3 +1,7 @@
+<script>
+  import Footer from "./../components/Footer.svelte";
+</script>
+
 <style>
   .container {
     padding: 2rem;
@@ -144,3 +148,5 @@
     </address>
   </section>
 </div>
+
+<Footer />
