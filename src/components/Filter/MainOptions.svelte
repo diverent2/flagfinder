@@ -35,6 +35,7 @@
   .filter {
     opacity: 0;
     height: 0;
+    margin-top: 0.5rem;
     visibility: hidden;
     transition: height 0.25s ease-in-out;
   }

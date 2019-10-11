@@ -35,6 +35,12 @@
     background: transparent;
   }
 
+  .searchbox__inputfield::placeholder {
+    font-family: Saira, Helvetica Neue, sans-serif;
+    color: var(--white);
+    opacity: 0.7;
+  }
+
   .searchbox__delete {
     width: var(--spacing);
     height: var(--spacing);

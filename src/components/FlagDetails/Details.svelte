@@ -16,6 +16,13 @@
     text-decoration-thickness: 3px;
   }
 
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
   ul.colorExplanations {
     margin-bottom: 0;
     padding: 0;
@@ -47,7 +54,6 @@
     border-width: 2px;
     border-style: solid;
     border-radius: 50%;
-    cursor: pointer;
     box-shadow: var(--box-shadow);
     transition: border-color 0.2s ease;
   }
@@ -79,12 +85,13 @@
 
   ul.sources {
     padding-left: 1rem;
+    margin-top: 0;
   }
 </style>
 
 <h2>Details</h2>
 <section title="details">
-  <h3>Color meanings</h3>
+  <h3>🎨Color meanings</h3>
 
   {#if flag.props.colors.length}
     <ul class="colorExplanations">
@@ -107,14 +114,14 @@
     <p>No descriptions found</p>
   {/if}
 
-  <h3>Sources</h3>
+  <h3>🔎Sources</h3>
 
   {#if flag.sources.length}
     <ul class="sources">
       {#each flag.sources as source}
         <li class="source">
+          <span>📅 {source.researchDate || 'YYYY.MM.DD'} |</span>
           <a href={source.link} target="blank">{source.name}</a>
-          <span>| {source.researchDate || 'date unknown'}</span>
         </li>
       {/each}
     </ul>

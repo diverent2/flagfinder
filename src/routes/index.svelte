@@ -29,6 +29,7 @@
   h1 {
     color: var(--white);
     width: min-content;
+    margin-left: 3rem;
   }
 
   nav {
@@ -121,9 +122,10 @@
   }
 
   .banner__container {
+    font-size: 0.8rem;
     position: absolute;
     left: -3rem;
-    top: 3rem;
+    top: 2rem;
     opacity: 0.8;
     pointer-events: none;
   }
@@ -133,6 +135,15 @@
     background: var(--white);
     transform: rotateZ(-45deg);
     box-shadow: var(--box-shadow);
+  }
+
+  .buttton__about {
+    display: flex;
+    justify-content: center;
+  }
+  .buttton__about h2 {
+    font-size: 1.5rem;
+    margin: 0;
   }
 </style>
 
@@ -155,16 +166,16 @@
     height="128" />
 </header>
 
-<div class="banner__container">
+<aside class="banner__container">
   <div class="banner">
     <span>ALPHA VERSION</span>
   </div>
-</div>
+</aside>
 
 <nav>
   <a href="search" class="button button__search button--round">
     <img src="icons/search.svg" alt="search icon" aria-hidden height="64" />
-    <span>Search</span>
+    <h2>Search</h2>
   </a>
 
   <!--   <a href="/bookmarks" class="buttton__bookmarks">
@@ -182,7 +193,7 @@
         color="var(--blue-dark)"
         icon="about"
         height="var(--spacing-large)">
-        About
+        <h2>About</h2>
       </IconButton>
     </a>
 

@@ -18,6 +18,17 @@
     text-decoration-thickness: 3px;
   }
 
+  h3 {
+    font-size: 0.8rem;
+    line-height: 1;
+    margin-top: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
   .general__origin {
     display: flex;
     justify-content: space-between;
@@ -58,33 +69,22 @@
 </style>
 
 <section title="general">
-  <h2>Genderal</h2>
-  <h3>Description</h3>
+  <h2>General</h2>
+  <h3>📝Description</h3>
   <p>{flag.description || 'unknown'}</p>
 
   <div class="general__origin">
     <div>
-      <h3>First known appearance</h3>
+      <h3>🖌️First known appearance</h3>
       <span>{flag.origin.firstAppearance || 'unknown'}</span>
     </div>
     <div>
-      <h3>Timeframe</h3>
+      <h3>📅Timeframe</h3>
       <span>{flag.origin.timeframe || 'unknown'}</span>
     </div>
   </div>
 
-  <h3>Color palate</h3>
-
-  <ul class="colors">
-    {#each flag.props.colors as color}
-      <li class="color">
-        <div class="color__field" style="background: {color.value}" />
-        <span class="color__text">{color.value}</span>
-      </li>
-    {/each}
-  </ul>
-
-  <h3>Category</h3>
+  <h3>🏷️Category</h3>
 
   <div class="general__category">
     {#if flag.category === 'sexuality'}
@@ -111,4 +111,16 @@
       </IconButton>
     {/if}
   </div>
+
+  <h3>🎨Color palate</h3>
+
+  <ul class="colors">
+    {#each flag.props.colors as color}
+      <li class="color">
+        <div class="color__field" style="background: {color.value}" />
+        <span class="color__text">{color.value}</span>
+      </li>
+    {/each}
+  </ul>
+
 </section>
