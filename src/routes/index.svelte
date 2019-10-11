@@ -150,6 +150,18 @@
     font-size: 1.5rem;
     margin: 0;
   }
+
+  .discaimer_desktop {
+    text-align: center;
+    color: var(--white);
+    display: none;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .discaimer_desktop {
+      display: block;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -212,6 +224,10 @@
     </a> -->
   </div>
 </nav>
+
+<aside class="discaimer_desktop">
+  <p>Desktop version coming soon</p>
+</aside>
 
 <footer>
   <img
