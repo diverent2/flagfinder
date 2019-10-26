@@ -24,6 +24,7 @@
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
+  import Tabs from "./../../components/Elements/Tabs.svelte";
 
   import Footer from "./../../components/Footer.svelte";
 
@@ -50,8 +51,14 @@
 <Header {flag} />
 
 <main>
-  <General {flag} />
-  <Details {flag} />
+  <Tabs>
+    <div slot="tab1">
+      <General {flag} />
+    </div>
+    <div slot="tab2">
+      <Details {flag} />
+    </div>
+  </Tabs>
 </main>
 
 <Footer />
