@@ -1,5 +1,8 @@
 <script>
+  import Tabs from "./../../components/Elements/Tabs.svelte";
+
   export let flag;
+  export let activeTab;
 </script>
 
 <style>
@@ -62,4 +65,7 @@
     class="flagDetails__headerImage"
     src="flags/{flag.image}"
     alt="{flag.name} flag" />
+  <div class="flagDetails__tabButtons">
+    <Tabs tab1="General" tab2="Details" bind:activeTab />
+  </div>
 </header>

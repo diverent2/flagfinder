@@ -24,11 +24,11 @@
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-  import Tabs from "./../../components/Elements/Tabs.svelte";
 
   import Footer from "./../../components/Footer.svelte";
 
   export let flag;
+  let activeTab;
 </script>
 
 <style>
@@ -48,17 +48,14 @@
   <title>{flag.name} flag • details | Prideflags.info</title>
 </svelte:head>
 
-<Header {flag} />
+<Header {flag} bind:activeTab />
 
 <main>
-  <Tabs>
-    <div slot="tab1">
+  {#if activeTab === 1}
       <General {flag} />
-    </div>
-    <div slot="tab2">
+  {:else}
       <Details {flag} />
-    </div>
-  </Tabs>
+  {/if}
 </main>
 
 <Footer />

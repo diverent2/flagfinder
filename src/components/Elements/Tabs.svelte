@@ -1,8 +1,8 @@
 <script>
-  export let tab1 = "overview";
-  export let tab2 = "details";
+  export let tab1;
+  export let tab2;
 
-  let activeTab = 1;
+  export let activeTab = 1;
   $: activeTab;
 
   function switchTab(e, newTab) {
@@ -51,9 +51,3 @@
   </button>
   <button class="tabButton" on:click={e => switchTab(e, 2)}>{tab2}</button>
 </div>
-
-{#if activeTab === 1}
-  <slot name="tab1" />
-{:else}
-  <slot name="tab2" />
-{/if}
