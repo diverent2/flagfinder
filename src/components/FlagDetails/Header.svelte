@@ -29,13 +29,13 @@
 
   .flagDetails__goBack {
     grid-area: back;
+
+    width: max-content;
   }
 
   .flagDetails__title {
     grid-area: title;
-  }
 
-  .flagDetails__title {
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -55,17 +55,17 @@
   }
 
   .flagDetails__headerImage {
+    grid-area: flag;
     width: auto;
     height: 60px;
-    grid-area: flag;
     justify-self: end;
 
     border: var(--white) 2px solid;
   }
 
   .flagDetails__tabButtons {
-    width: 60vw;
     grid-area: tabs;
+    width: 60vw;
     position: absolute;
     justify-self: center;
   }
