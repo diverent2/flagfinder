@@ -18,24 +18,28 @@
 
 <style>
   .tabButtons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border-radius: 35px;
     background: var(--blue-dark);
   }
 
   .tabButton {
-    width: 100%;
-    padding: var(--spacing-small);
+    padding-top: var(--spacing-tiny);
+    padding-bottom: var(--spacing-tiny);
+    padding-left: var(--spacing-small);
+    padding-right: var(--spacing-small);
     box-sizing: border-box;
     border: none;
     border-radius: 35px;
     color: var(--white);
     text-transform: capitalize;
+    cursor: pointer;
     background: transparent;
   }
 
   .tabButton--activeTab {
-    border: 1px var(--white) solid;
+    border: 1.5px var(--white) solid;
   }
 </style>
 
