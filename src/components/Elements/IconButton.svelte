@@ -6,7 +6,7 @@
 
 <style>
   .iconButton {
-    padding: var(--spacing-small);
+    padding: var(--spacing) var(--spacing-small);
     display: flex;
     align-items: center;
     border-radius: 35px;
