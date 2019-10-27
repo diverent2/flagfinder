@@ -33,7 +33,7 @@
 
 <style>
   main {
-    padding: 1rem;
+    margin-top: 25vh;
   }
 
   @media only screen and (min-width: 600px) {
@@ -52,9 +52,9 @@
 
 <main>
   {#if activeTab === 1}
-      <General {flag} />
+    <General {flag} />
   {:else}
-      <Details {flag} />
+    <Details {flag} />
   {/if}
 </main>
 
