@@ -45,7 +45,6 @@
   }
 
   .button {
-    box-sizing: border-box;
     width: var(--spacing-xlarge);
     height: var(--spacing-xlarge);
     background: var(--white);

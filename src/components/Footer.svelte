@@ -12,7 +12,6 @@
     padding: 1rem;
     color: var(--white);
 
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -47,7 +46,6 @@
 
     background: var(--blue);
     border-radius: 50%;
-    box-sizing: border-box;
   }
 </style>
 

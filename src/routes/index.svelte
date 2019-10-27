@@ -23,7 +23,6 @@
 
     background: var(--blue);
     border-radius: 50%;
-    box-sizing: border-box;
   }
 
   h1 {
@@ -40,7 +39,6 @@
     flex-direction: column;
   }
   .button {
-    box-sizing: border-box;
     padding: var(--spacing-small);
 
     background: var(--blue-dark);
@@ -98,7 +96,6 @@
     width: 100vw;
     position: absolute;
     bottom: 0;
-    box-sizing: border-box;
     padding: var(--spacing-large);
     color: var(--white);
   }

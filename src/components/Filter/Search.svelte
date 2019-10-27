@@ -11,7 +11,6 @@
 
 <style>
   .searchbox {
-    box-sizing: border-box;
     width: 100%;
     height: var(--spacing-xlarge);
 
