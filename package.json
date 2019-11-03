@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "prideflagsdotinfo",
+  "description": "A website for finding different LGBTQ+ prideflags and explanations about queer identities.",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
