@@ -70,9 +70,9 @@
     font-size: 1.5rem;
   }
 
-  .buttton__bookmarks {
+  /*   .buttton__bookmarks {
     margin-bottom: 1rem;
-  }
+  } */
 
   .navButtons--special {
     display: flex;
@@ -83,14 +83,14 @@
     /*   margin-right: 1rem; */
   }
 
-  .button__settings {
+  /*   .button__settings {
     display: block;
     width: 40px;
     height: 40px;
   }
   .button__settings img {
     height: var(--spacing-large);
-  }
+  } */
 
   footer {
     width: 100vw;
