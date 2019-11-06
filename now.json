@@ -1,5 +1,11 @@
 {
   "name": "flagfinder",
-  "version": 1,
-  "public": true
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "__sapper__/build/index.js",
+      "use": "@now/node-server"
+    }
+  ]
 }
