@@ -4,7 +4,7 @@
   "public": true,
   "builds": [
     {
-      "src": "build/index.js",
+      "src": "*.js",
       "use": "@now/node-server"
     }
   ]
