@@ -4,8 +4,8 @@
   "public": true,
   "builds": [
     {
-      "src": "*.js",
-      "use": "@now/node-server"
+      "src": "package.json",
+      "use": "now-sapper"
     }
   ]
 }
