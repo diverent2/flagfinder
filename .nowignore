@@ -1,2 +1,3 @@
-__sapper__/dev/
-__sapper__/export/
+__sapper__
+cypress
+node_modules
