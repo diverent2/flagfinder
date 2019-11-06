@@ -1,0 +1,11 @@
+{
+  "name": "flagfinder",
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "now-sapper"
+    }
+  ]
+}
