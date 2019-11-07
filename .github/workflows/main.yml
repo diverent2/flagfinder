@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+        node: [ '12', '10' ]
+    name: Node ${{ matrix.node }} (${{ matrix.platform }})
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: install dependencies
+        run: yarn
+      - name: build sources
+        run: yarn build
+      - name: run tests
+        run: yarn test
+
+  build_latest:
+    name: Node latest
+    runs-on: ubuntu-latest
+    container: node:latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install system dependencies
+        run: apt-get update && apt-get -y install xvfb libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+      - name: install dependencies
+        run: yarn
+      - name: build sources
+        run: yarn build
+      - name: run tests
+        run: yarn test
