@@ -18,7 +18,6 @@
     justify-content: space-around;
 
     color: var(--white);
-    box-sizing: border-box;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     background: var(--blue);
@@ -31,7 +30,6 @@
 
     align-self: flex-start;
 
-    box-sizing: border-box;
     border: var(--white) 2px solid;
   }
 

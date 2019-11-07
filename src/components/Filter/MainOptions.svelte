@@ -27,7 +27,6 @@
     left: 0;
     padding: var(--spacing);
     color: var(--white);
-    box-sizing: border-box;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
     background: var(--blue);
@@ -57,7 +56,6 @@
     width: 100%;
     position: absolute;
     padding: 0.5rem 0;
-    box-sizing: border-box;
     left: 0;
     bottom: 0;
     cursor: pointer;

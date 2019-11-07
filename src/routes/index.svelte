@@ -23,7 +23,6 @@
 
     background: var(--blue);
     border-radius: 50%;
-    box-sizing: border-box;
   }
 
   h1 {
@@ -40,7 +39,6 @@
     flex-direction: column;
   }
   .button {
-    box-sizing: border-box;
     padding: var(--spacing-small);
 
     background: var(--blue-dark);
@@ -72,9 +70,9 @@
     font-size: 1.5rem;
   }
 
-  .buttton__bookmarks {
+  /*   .buttton__bookmarks {
     margin-bottom: 1rem;
-  }
+  } */
 
   .navButtons--special {
     display: flex;
@@ -85,20 +83,19 @@
     /*   margin-right: 1rem; */
   }
 
-  .button__settings {
+  /*   .button__settings {
     display: block;
     width: 40px;
     height: 40px;
   }
   .button__settings img {
     height: var(--spacing-large);
-  }
+  } */
 
   footer {
     width: 100vw;
     position: absolute;
     bottom: 0;
-    box-sizing: border-box;
     padding: var(--spacing-large);
     color: var(--white);
   }
