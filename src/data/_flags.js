@@ -71,7 +71,7 @@ const flags = [
     id: 'gay-bear',
     name: 'gay bear brotherhood',
     description:
-      'A gay subculture formed from the interest of more sturdier and hairy men*, which are also called "bears"',
+      'A gay subculture formed from the interest of more sturdier and hairy men*, which are also called "bears".',
     origin: {
       firstAppearance: 'by Craig Byrnes for the International Bear Brotherhood',
       timeframe: '1995'
@@ -206,7 +206,7 @@ const flags = [
     id: 'asexual',
     name: 'asexual pride',
     description:
-      'An asexual person is someone, who has little or no interest in sexual activity. Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheater or not they enjoy sexual activity or completly avoid it. It can also be used as an umbrella term',
+      'An asexual person is someone, who has little or no interest in sexual activity. Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheter or not they enjoy sexual activity or completly avoid it. It can also be used as an umbrella term.',
     origin: {
       firstAppearance: '',
       timeframe: '2010'
@@ -326,7 +326,7 @@ const flags = [
     id: 'demisexual',
     name: 'demisexual/graysexual pride',
     description:
-      'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone',
+      'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone.',
     origin: {
       firstAppearance: '',
       timeframe: ''
@@ -384,7 +384,7 @@ const flags = [
   {
     id: 'heterosexual',
     name: 'Heterosexual/Straight',
-    description: 'People who are sexaully attracted to the opposite sex.',
+    description: 'People who are sexually attracted to the opposite sex.',
     origin: {
       firstAppearance: '',
       timeframe: ''
@@ -494,7 +494,7 @@ const flags = [
   {
     id: 'lesbian-labry',
     name: 'lesbian pride labrys',
-    description: 'A lesbian flag that puts emphasis on "female* empowerment"',
+    description: 'A lesbian flag that puts emphasis on "female* empowerment".',
     origin: {
       firstAppearance: ' Sean Campbell',
       timeframe: '1999'
@@ -549,7 +549,7 @@ const flags = [
     id: 'lesbian-lipstick',
     name: 'lipstick lesbian pride',
     description:
-      'A lesbian pride flag that puts emphasis on "femininity / being femme"',
+      'A lesbian pride flag that puts emphasis on "femininity / being femme".',
     origin: {
       firstAppearance: 'Natalie',
       timeframe: 'JULY 28, 2010'
@@ -602,7 +602,7 @@ const flags = [
       symbols: [
         {
           id: 'lips',
-          meaning: 'extremly feminine character',
+          meaning: 'extremely feminine character',
           icon: ''
         }
       ]
@@ -737,7 +737,7 @@ const flags = [
     id: 'straight-ally',
     name: 'straight ally',
     description:
-      'People who identify as straight but support LGBTQ+ people in their identities',
+      'People who identify as straight but support LGBTQ+ people in their identities.',
     origin: {
       firstAppearance: '',
       timeframe: ''
@@ -999,7 +999,7 @@ const flags = [
         },
         {
           id: 'purple',
-          meaning: 'Mix of male* and female*',
+          meaning: 'mix of male* and female*',
           value: '#9C4DD2'
         },
         {
@@ -1032,12 +1032,12 @@ const flags = [
     id: 'transgender',
     name: 'transgender pride',
     description:
-      'transgender people are people who´s gender identity doesn´t match their sex assigned at birth.',
+      'Transgender people are people who´s gender identity doesn´t match their sex assigned at birth.',
     origin: {
       firstAppearance: 'Monica Helms',
       timeframe: '1999'
     },
-    category: 'sexuality',
+    category: 'gender',
     image: 'transgender.png',
     props: {
       colors: [
@@ -1127,7 +1127,7 @@ const flags = [
     id: 'intersex',
     name: 'intersex pride',
     description:
-      'intersex people are often seen as the third sex. Their body features don´t fit typical "male*" or "female*" definitions',
+      'Intersex people are often seen as the third sex. Their body features don´t fit typical "male*" or "female*" definitions.',
     origin: {
       firstAppearance: 'the organization Intersex International Australia',
       timeframe: '2013'
@@ -1185,7 +1185,7 @@ const flags = [
     id: 'aromantic',
     name: 'aromantic pride',
     description:
-      'An aromantic person is someone, who has little to no interest in a romantic relationship. They often can´t develop romantic feelings and usually don´t "fall in love", however they often experience stronger platonic feelings. Aromantic can also be used as an umbrella term for the aro spectrum',
+      'An aromantic person is someone, who has little to no interest in a romantic relationship. They often can´t develop romantic feelings and usually don´t "fall in love", however they often experience stronger platonic feelings. Aromantic can also be used as an umbrella term for the aro spectrum.',
     origin: {
       firstAppearance: 'Cameron Whimsey',
       timeframe: '2014'
@@ -1244,12 +1244,12 @@ const flags = [
     id: 'polyamory',
     name: 'polyamory pride',
     description:
-      'polyamory describes the love/relationships to multiple partner at the same time. All involved parties are consenting to this sort of relationship.',
+      'Polyamory describes the love/relationships to multiple partner at the same time. All involved parties are consenting to this sort of relationship.',
     origin: {
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    category: 'attraction',
     image: 'polyamory.png',
     props: {
       colors: [
