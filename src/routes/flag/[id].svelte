@@ -28,11 +28,12 @@
   import Footer from "./../../components/Footer.svelte";
 
   export let flag;
+  let activeTab;
 </script>
 
 <style>
   main {
-    padding: 1rem;
+    margin-top: 25vh;
   }
 
   @media only screen and (min-width: 600px) {
@@ -47,11 +48,14 @@
   <title>{flag.name} flag • details | Prideflags.info</title>
 </svelte:head>
 
-<Header {flag} />
+<Header {flag} bind:activeTab />
 
 <main>
-  <General {flag} />
-  <Details {flag} />
+  {#if activeTab === 1}
+    <General {flag} />
+  {:else}
+    <Details {flag} />
+  {/if}
 </main>
 
 <Footer />

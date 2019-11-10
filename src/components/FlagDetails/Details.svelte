@@ -10,10 +10,9 @@
   }
 
   h2 {
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-thickness: 3px;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
   }
 
   h3 {
