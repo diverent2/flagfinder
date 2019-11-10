@@ -1,6 +1,6 @@
 # Prideflags.info 🔎🏳️‍🌈
 
-This is the official repository for the **upcomming** website prideflags.info.  
+This is the official repository for the **upcoming** website prideflags.info.  
 A website for finding different LGBTQ+ prideflags and explanations about queer identities.
 
 ## ✨ Feature List
@@ -76,11 +76,20 @@ This will open a port with the compiled app running
 
 #### Static Export
 
-It is also possible to export the project which works simular to a static site generator
+It is also possible to export the project which works similar to a static site generator
 
 ```sh
 yarn export
 ```
 
+## Credits
+
+made with 🌈🦄, ☕ and 💕 by [@diverent2](https://twitter.com/diverent2)
+
+### special thanks to
+
+[DanielRuf](https://github.com/DanielRuf) | [JohpoJohannes](https://github.com/JohpoJohannes)
+
+---
+
 Be kind 🤗
-made with ❤️🧡💛💚💙💜 by [diverent2](https://twitter.com/diverent2)
