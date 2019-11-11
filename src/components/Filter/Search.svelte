@@ -1,9 +1,9 @@
 <script>
-  export let searchterm;
-  $: searchterm;
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
 
+  export let searchterm;
   export let allowFilterReset = false;
-  $: allowFilterReset;
 </script>
 
 <style>
@@ -73,5 +73,6 @@
     class:visible={allowFilterReset}
     title="clear searchterm"
     src="icons/cross.svg"
+    on:click={() => dispatch('clearFiltersEvent')}
     alt />
 </div>

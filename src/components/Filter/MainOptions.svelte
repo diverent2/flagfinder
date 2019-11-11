@@ -11,7 +11,6 @@
   $: activeCategoryFilters;
 
   export let searchterm = "";
-  $: searchterm;
 
   let expanded = false;
   export let searchresults_amount = 0;
@@ -28,6 +27,12 @@
     allowFilterReset = true;
   } else {
     allowFilterReset = false;
+  }
+
+  function clearFilters(event) {
+    activeCategoryFilters = [];
+    activeColorFilters = [];
+    searchterm = "";
   }
 </script>
 
@@ -108,7 +113,10 @@
 
 <div class="mainOptions" class:expanded>
 
-  <Search bind:searchterm {allowFilterReset} />
+  <Search
+    bind:searchterm
+    {allowFilterReset}
+    on:clearFiltersEvent={clearFilters} />
 
   <div class="filter">
     <Filter bind:activeColorFilters bind:activeCategoryFilters />
