@@ -2,11 +2,8 @@
   export let searchterm;
   $: searchterm;
 
-  const searchInputField = document.querySelector(".searchbox__inputfield");
-
-  function clearSearch() {
-    searchTerm = "";
-  }
+  export let allowFilterReset = false;
+  $: allowFilterReset;
 </script>
 
 <style>
@@ -41,11 +38,20 @@
   }
 
   .searchbox__delete {
+    transform: scale(0);
     width: var(--spacing);
     height: var(--spacing);
-    opacity: 0.8;
+    opacity: 0;
     border-radius: 50%;
     cursor: pointer;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .searchbox__delete.visible {
+    opacity: 0.8;
+    border-radius: 50%;
+    visibility: visible;
+    transform: scale(1);
   }
 </style>
 
@@ -64,8 +70,8 @@
     placeholder="Searchterm goes here" />
   <img
     class="searchbox__delete"
+    class:visible={allowFilterReset}
     title="clear searchterm"
     src="icons/cross.svg"
-    on:click={clearSearch}
     alt />
 </div>

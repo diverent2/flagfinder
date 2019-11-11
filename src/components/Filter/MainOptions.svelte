@@ -2,6 +2,8 @@
   import Search from "./Search.svelte";
   import Filter from "./Filter.svelte";
 
+  export let allowFilterReset = false;
+
   export let activeColorFilters = [];
   $: activeColorFilters;
 
@@ -16,6 +18,16 @@
 
   function toggleExpand() {
     expanded = !expanded;
+  }
+
+  $: if (
+    searchterm.length ||
+    activeColorFilters.length ||
+    activeCategoryFilters.length
+  ) {
+    allowFilterReset = true;
+  } else {
+    allowFilterReset = false;
   }
 </script>
 
@@ -96,7 +108,7 @@
 
 <div class="mainOptions" class:expanded>
 
-  <Search bind:searchterm />
+  <Search bind:searchterm {allowFilterReset} />
 
   <div class="filter">
     <Filter bind:activeColorFilters bind:activeCategoryFilters />
