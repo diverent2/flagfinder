@@ -8,6 +8,20 @@
 
   export let activeCategoryFilters;
   $: activeCategoryFilters;
+
+  function clearFilters() {
+    for (const filter of filterColors) {
+      filter.selected = false;
+    };
+    for (const filter of filterCategories) {
+      filter.selected = false;
+    };
+
+    const filterButtons = document.querySelectorAll(".filter label.selected");
+    filterButtons.forEach(filter => {
+      filter.classList.remove("selected");
+    });
+  }
 </script>
 
 <style>
@@ -156,3 +170,4 @@
     </div>
   </fieldset>
 </div>
+<button on:click={clearFilters}>clear filters [test]</button>
