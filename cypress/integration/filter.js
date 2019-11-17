@@ -16,13 +16,17 @@ describe('Searchfilter', () => {
 
     // color search
     cy.get('.searchbox__delete').should('not.have.class', 'visible');
-    cy.get('.colorButtons .button__color:nth-child(2)').click();
+    cy.get('.colorButtons .button__color')
+      .first()
+      .click();
     cy.get('.searchbox__delete').should('have.class', 'visible');
     cy.get('.searchbox__delete').click();
 
     // color search
     cy.get('.searchbox__delete').should('not.have.class', 'visible');
-    cy.get('.filter-categories .button__category:nth-child(2)').click();
+    cy.get('.filter-categories .button__category')
+      .first()
+      .click();
     cy.get('.searchbox__delete').should('have.class', 'visible');
     cy.get('.searchbox__delete').click();
   });
