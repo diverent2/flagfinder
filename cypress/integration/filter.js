@@ -32,6 +32,10 @@ describe('Searchfilter', () => {
   });
 
   it('removes all filters through remove filter button', () => {
+    cy.get('.mainOptions__resultInfo--amount')
+      .invoke('text')
+      .as('resultCount');
+
     cy.get('.mainOptions .mainOptions__arrow--icon').click();
     cy.get('#search').type('g');
     cy.get('.colorButtons .button__color:nth-child(2)').click();
@@ -48,5 +52,9 @@ describe('Searchfilter', () => {
       'have.length',
       0
     );
+
+    cy.get('@resultCount').then(resultCount => {
+      cy.get('.flag-results .flagCard').should('have.length', resultCount);
+    });
   });
 });
