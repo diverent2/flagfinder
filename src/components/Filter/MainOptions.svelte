@@ -1,6 +1,6 @@
 <script>
   import Search from "./Search.svelte";
-  import Filter from "./Filter.svelte";
+  import Filter, { clearFilter } from "./Filter.svelte";
 
   export let allowFilterReset = false;
 
@@ -30,9 +30,10 @@
   }
 
   function clearFilters(event) {
+    searchterm = "";
     activeCategoryFilters = [];
     activeColorFilters = [];
-    searchterm = "";
+    clearFilter();
   }
 </script>
 
