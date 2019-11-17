@@ -5,9 +5,26 @@ describe('Searchfilter', () => {
   });
 
   it('shows/hides remove filter button correctly', () => {
+    //open search filters
+    cy.get('.mainOptions .mainOptions__arrow--icon').click();
+
+    // text search
     cy.get('.searchbox__delete').should('not.have.class', 'visible');
     cy.get('#search').type('g');
     cy.get('.searchbox__delete').should('have.class', 'visible');
+    cy.get('.searchbox__delete').click();
+
+    // color search
+    cy.get('.searchbox__delete').should('not.have.class', 'visible');
+    cy.get('.colorButtons .button__color:nth-child(2)').click();
+    cy.get('.searchbox__delete').should('have.class', 'visible');
+    cy.get('.searchbox__delete').click();
+
+    // color search
+    cy.get('.searchbox__delete').should('not.have.class', 'visible');
+    cy.get('.filter-categories .button__category:nth-child(2)').click();
+    cy.get('.searchbox__delete').should('have.class', 'visible');
+    cy.get('.searchbox__delete').click();
   });
 
   it('removes all filters through remove filter button', () => {
