@@ -52,8 +52,6 @@
 
   function checkIfFlagMatchesCategories(flag, categories) {
     const flagCategory = flag.category;
-    console.log(flagCategory);
-    console.log(categories.includes(flagCategory));
     return categories.includes(flagCategory);
   }
 

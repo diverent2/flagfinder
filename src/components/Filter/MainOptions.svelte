@@ -1,6 +1,8 @@
 <script>
   import Search from "./Search.svelte";
-  import Filter from "./Filter.svelte";
+  import Filter, { clearFilter } from "./Filter.svelte";
+
+  export let allowFilterReset = false;
 
   export let activeColorFilters = [];
   $: activeColorFilters;
@@ -9,13 +11,29 @@
   $: activeCategoryFilters;
 
   export let searchterm = "";
-  $: searchterm;
 
   let expanded = false;
   export let searchresults_amount = 0;
 
   function toggleExpand() {
     expanded = !expanded;
+  }
+
+  $: if (
+    searchterm.length ||
+    activeColorFilters.length ||
+    activeCategoryFilters.length
+  ) {
+    allowFilterReset = true;
+  } else {
+    allowFilterReset = false;
+  }
+
+  function clearFilters(event) {
+    searchterm = "";
+    activeCategoryFilters = [];
+    activeColorFilters = [];
+    clearFilter();
   }
 </script>
 
@@ -96,7 +114,10 @@
 
 <div class="mainOptions" class:expanded>
 
-  <Search bind:searchterm />
+  <Search
+    bind:searchterm
+    {allowFilterReset}
+    on:clearFiltersEvent={clearFilters} />
 
   <div class="filter">
     <Filter bind:activeColorFilters bind:activeCategoryFilters />

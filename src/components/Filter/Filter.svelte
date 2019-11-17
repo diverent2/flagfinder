@@ -1,3 +1,19 @@
+<script context="module">
+  export function clearFilter() {
+    for (const filter of filterColors) {
+      filter.selected = false;
+    }
+    for (const filter of filterCategories) {
+      filter.selected = false;
+    }
+
+    const filterButtons = document.querySelectorAll(".filter label.selected");
+    filterButtons.forEach(filter => {
+      filter.classList.remove("selected");
+    });
+  }
+</script>
+
 <script>
   /*Data*/
   import { filterColors, filterCategories } from "../../data/_filter";
