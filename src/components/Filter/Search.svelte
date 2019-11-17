@@ -67,6 +67,7 @@
     bind:value={searchterm}
     id="search"
     name="search"
+    autocomplete="off"
     placeholder="Searchterm goes here" />
   <img
     class="searchbox__delete"
