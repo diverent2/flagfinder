@@ -7,8 +7,13 @@ describe('Flagfinder', () => {
     cy.contains('h1', 'Welcome to Prideflags.info');
   });
 
-  it('navigates to /search', () => {
+  it('navigates to search', () => {
     cy.get('a.button__search').click();
     cy.url().should('include', '/search');
+  });
+
+  it('navigates to a obout page', () => {
+    cy.get('a.button__about').click();
+    cy.url().should('include', '/about');
   });
 });

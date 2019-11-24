@@ -63,9 +63,9 @@
       <a href="mailto:diverent2@gmail.com">per mail</a>
       Or on twitter
       <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
-      , or open a PR in
+      , or open a PR in the
       <a href="https://github.com/diverent2/flagfinder" target="blank">
-        github/diverent2/flagfinder
+        github repo
       </a>
       <br />
       Thank you for contributing!
