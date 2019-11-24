@@ -9,6 +9,7 @@
 
   h1 {
     text-align: center;
+    text-decoration: underline;
   }
 
   section {
@@ -24,7 +25,7 @@
 
   <h1>About "Prideflags.info"</h1>
 
-  <section title="FAQ">
+  <section>
 
     <h2>FAQ</h2>
     <p>
@@ -34,7 +35,12 @@
     </p>
     <p>
       As
-      <a href="www.twitter.com/diverent2" target="blank">I´m</a>
+      <a
+        href="https://www.twitter.com/diverent2"
+        target="_blank"
+        title="@diverent2 on twitter">
+        I´m
+      </a>
       working on this app, I would like to address some likely commonly asked
       questions
     </p>
@@ -55,7 +61,7 @@
       Hey sounds like you´ve found something I´ve missed. Hit me up
       <a href="mailto:diverent2@gmail.com">per mail</a>
       Or on twitter
-      <a href="www.twitter.com/diverent2" target="blank">@diverent2</a>
+      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
       , or open a PR in
       <a href="https://github.com/diverent2/flagfinder" target="blank">
         github/diverent2/flagfinder
@@ -68,7 +74,7 @@
     <p>
       I try to keep everything gender neutral or at least gender inclusive. For
       some description this is pretty hard. So please feel free to
-      <a href="#contribute">improve</a>
+      <a href="/about/#contribute">improve</a>
       the content.
       <br />
       To achieve gender neutral/inclusive language, I´ve decided to use singluar
@@ -95,7 +101,7 @@
       YES! You can give provide feedback or content improvements
       <a href="mailto:diverent2@gmail.com">by mail</a>
       Or hit me up per PN on twitter
-      <a href="www.twitter.com/diverent2" target="blank">@diverent2</a>
+      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
       <br />
       The whole project also is open source on
       <a href="https://github.com/diverent2/flagfinder" target="blank">
@@ -107,8 +113,13 @@
     <h3>Who decides what makes it into the listings</h3>
     <p>
       For now, that´s
-      <a href="www.twitter.com/diverent2" target="blank">me</a>
-      . To do so, I research the content and try not to be too opionated while
+      <a
+        href="https://www.twitter.com/diverent2"
+        target="blank"
+        title="@diverent2 on twitter">
+        me.
+      </a>
+      To do so, I research the content and try not to be too opionated while
       also trying my hardest to keep the list organised and clean.
     </p>
 
@@ -125,18 +136,17 @@
 
   </section>
 
-  <section title="sources">
+  <section>
     <h2>Sources</h2>
 
     <h3>Icons</h3>
     Icon made by
     <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
     from
-    <a href="www.">www.flaticon.com</a>
+    <a href="https://www.flaticon.com">flaticon</a>
   </section>
 
-  <section title="imprint">
-
+  <section>
     <h2>Imprint</h2>
     <h3>Legal notice according to § 5 TMG is</h3>
     <address>[TBA]</address>
