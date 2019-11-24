@@ -7,9 +7,47 @@
     padding: 2rem;
   }
 
-  h1 {
+  header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    padding: 1rem;
+    color: var(--white);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: var(--blue);
     text-align: center;
-    text-decoration: underline;
+    z-index: 1;
+
+    display: grid;
+    grid-template:
+      "back ." max-content
+      "title title" 1fr
+      / 1fr 1fr;
+  }
+
+  .header__goBack {
+    grid-area: back;
+    width: max-content;
+  }
+
+  .ico-arrowBack {
+    width: 1rem;
+    height: 1rem;
+    transition: color 0.2s ease;
+  }
+
+  .ico-arrowBack:hover {
+    color: var(--green-light);
+  }
+
+  h1 {
+    grid-area: title;
+  }
+
+  h2,
+  h3 {
+    text-decoration-line: underline;
   }
 
   section {
@@ -21,9 +59,20 @@
   <title>About | Prideflags.info</title>
 </svelte:head>
 
-<div class="container">
+<header>
+  <a href="./" class="header__goBack">
+    <svg
+      class="ico-arrowBack"
+      aria-label="Go back to search"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg">
+      <use href="icons/arrow-back.svg#arrow-back" />
+    </svg>
+  </a>
+  <h1>About</h1>
+</header>
 
-  <h1>About "Prideflags.info"</h1>
+<div class="container">
 
   <section>
 
