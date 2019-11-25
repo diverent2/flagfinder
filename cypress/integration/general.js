@@ -12,7 +12,7 @@ describe('Flagfinder', () => {
     cy.url().should('include', '/search');
   });
 
-  it('navigates to a obout page', () => {
+  it('navigates to about page', () => {
     cy.get('a.button__about').click();
     cy.url().should('include', '/about');
   });
