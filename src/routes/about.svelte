@@ -1,5 +1,6 @@
 <script>
   import Footer from "./../components/Footer.svelte";
+  import Header from "./../components/Header.svelte";
 </script>
 
 <style>
@@ -7,12 +8,27 @@
     padding: 2rem;
   }
 
-  h1 {
-    text-align: center;
+  h2,
+  h3 {
+    margin-top: 0.5rem;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+  }
+
+  h2 {
+    text-decoration-thickness: 3px;
+  }
+
+  h3 {
+    text-decoration-thickness: 1px;
   }
 
   section {
     margin-bottom: 3rem;
+  }
+
+  section:last-of-type {
+    margin-bottom: 0;
   }
 </style>
 
@@ -20,24 +36,31 @@
   <title>About | Prideflags.info</title>
 </svelte:head>
 
+<Header>About</Header>
+
 <div class="container">
 
-  <h1>About "Prideflags.info"</h1>
+  <p>
+    Hello there 👋
+    <br />
+    nice to see you here!
+  </p>
 
-  <section title="FAQ">
+  <p>
+    As
+    <a
+      href="https://www.twitter.com/diverent2"
+      target="_blank"
+      title="@diverent2 on twitter">
+      I´m
+    </a>
+    working on this app, I would like to address some likely commonly asked
+    questions
+  </p>
 
-    <h2>FAQ</h2>
-    <p>
-      Hello there 👋
-      <br />
-      nice to see you here!
-    </p>
-    <p>
-      As
-      <a href="www.twitter.com/diverent2" target="blank">I´m</a>
-      working on this app, I would like to address some likely commonly asked
-      questions
-    </p>
+  <section>
+
+    <h2>FAQ 🤔</h2>
 
     <h3>What is this about?</h3>
     <p>
@@ -55,10 +78,10 @@
       Hey sounds like you´ve found something I´ve missed. Hit me up
       <a href="mailto:diverent2@gmail.com">per mail</a>
       Or on twitter
-      <a href="www.twitter.com/diverent2" target="blank">@diverent2</a>
-      , or open a PR in
+      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
+      , or open a PR in the
       <a href="https://github.com/diverent2/flagfinder" target="blank">
-        github/diverent2/flagfinder
+        github repo
       </a>
       <br />
       Thank you for contributing!
@@ -68,7 +91,7 @@
     <p>
       I try to keep everything gender neutral or at least gender inclusive. For
       some description this is pretty hard. So please feel free to
-      <a href="#contribute">improve</a>
+      <a href="/about/#contribute">improve</a>
       the content.
       <br />
       To achieve gender neutral/inclusive language, I´ve decided to use singluar
@@ -95,7 +118,7 @@
       YES! You can give provide feedback or content improvements
       <a href="mailto:diverent2@gmail.com">by mail</a>
       Or hit me up per PN on twitter
-      <a href="www.twitter.com/diverent2" target="blank">@diverent2</a>
+      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
       <br />
       The whole project also is open source on
       <a href="https://github.com/diverent2/flagfinder" target="blank">
@@ -107,8 +130,13 @@
     <h3>Who decides what makes it into the listings</h3>
     <p>
       For now, that´s
-      <a href="www.twitter.com/diverent2" target="blank">me</a>
-      . To do so, I research the content and try not to be too opionated while
+      <a
+        href="https://www.twitter.com/diverent2"
+        target="blank"
+        title="@diverent2 on twitter">
+        me.
+      </a>
+      To do so, I research the content and try not to be too opionated while
       also trying my hardest to keep the list organised and clean.
     </p>
 
@@ -125,24 +153,39 @@
 
   </section>
 
-  <section title="sources">
-    <h2>Sources</h2>
+  <section>
+    <h2>Sources 🔎</h2>
 
     <h3>Icons</h3>
-    Icon made by
-    <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
-    from
-    <a href="www.">www.flaticon.com</a>
+    <p>
+      Icon made by
+      <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
+      from
+      <a href="https://www.flaticon.com">flaticon</a>
+    </p>
+    <h3>Literature sources</h3>
+    <p>Indiviual sources are named at the corresponding detail page.</p>
   </section>
 
-  <section title="imprint">
-
-    <h2>Imprint</h2>
-    <h3>Legal notice according to § 5 TMG is</h3>
-    <address>[TBA]</address>
+  <section>
+    <h2>Imprint 🦉</h2>
+    <h3>Legal notice</h3>
+    <p>
+      according to §5
+      <abbr title="Telemediengesetz in Germany">TMG</abbr>
+    </p>
+    <address>
+      Maxi Becher
+      <br />
+      Postfach 41 01 05
+      <br />
+      68309 Mannheim
+      <br />
+      Germany
+    </address>
     <h3>Content responsibility</h3>
     <address>
-      Maximilian Becher
+      Maxi Becher
       <br />
       <a href="https://www.twitter.com/diverent2">twitter/@diverent2</a>
     </address>

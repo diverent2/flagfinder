@@ -78,7 +78,7 @@
     display: flex;
   }
 
-  .navButtons--special .buttton__about {
+  .navButtons--special .button__about {
     width: 100%;
     /*   margin-right: 1rem; */
   }
@@ -139,11 +139,11 @@
     box-shadow: var(--box-shadow);
   }
 
-  .buttton__about {
+  .button__about {
     display: flex;
     justify-content: center;
   }
-  .buttton__about h2 {
+  .button__about h2 {
     font-size: 1.5rem;
     margin: 0;
   }
@@ -204,7 +204,7 @@
   </a> -->
 
   <div class="navButtons--special">
-    <a href="/about" class="buttton__about">
+    <a href="/about" class="button__about">
       <IconButton
         color="var(--blue-dark)"
         icon="about"
