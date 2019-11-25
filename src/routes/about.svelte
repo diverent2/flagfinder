@@ -10,11 +10,25 @@
 
   h2,
   h3 {
+    margin-top: 0.5rem;
     text-decoration-line: underline;
+    text-transform: capitalize;
+  }
+
+  h2 {
+    text-decoration-thickness: 3px;
+  }
+
+  h3 {
+    text-decoration-thickness: 1px;
   }
 
   section {
     margin-bottom: 3rem;
+  }
+
+  section:last-of-type {
+    margin-bottom: 0;
   }
 </style>
 
