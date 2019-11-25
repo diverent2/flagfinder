@@ -40,25 +40,27 @@
 
 <div class="container">
 
+  <p>
+    Hello there 👋
+    <br />
+    nice to see you here!
+  </p>
+
+  <p>
+    As
+    <a
+      href="https://www.twitter.com/diverent2"
+      target="_blank"
+      title="@diverent2 on twitter">
+      I´m
+    </a>
+    working on this app, I would like to address some likely commonly asked
+    questions
+  </p>
+
   <section>
 
-    <h2>FAQ</h2>
-    <p>
-      Hello there 👋
-      <br />
-      nice to see you here!
-    </p>
-    <p>
-      As
-      <a
-        href="https://www.twitter.com/diverent2"
-        target="_blank"
-        title="@diverent2 on twitter">
-        I´m
-      </a>
-      working on this app, I would like to address some likely commonly asked
-      questions
-    </p>
+    <h2>FAQ 🤔</h2>
 
     <h3>What is this about?</h3>
     <p>
@@ -152,22 +154,38 @@
   </section>
 
   <section>
-    <h2>Sources</h2>
+    <h2>Sources 🔎</h2>
 
     <h3>Icons</h3>
-    Icon made by
-    <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
-    from
-    <a href="https://www.flaticon.com">flaticon</a>
+    <p>
+      Icon made by
+      <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
+      from
+      <a href="https://www.flaticon.com">flaticon</a>
+    </p>
+    <h3>Literature sources</h3>
+    <p>Indiviual sources are named at the corresponding detail page.</p>
   </section>
 
   <section>
-    <h2>Imprint</h2>
-    <h3>Legal notice according to § 5 TMG is</h3>
-    <address>[TBA]</address>
+    <h2>Imprint 🦉</h2>
+    <h3>Legal notice</h3>
+    <p>
+      according to §5
+      <abbr title="Telemediengesetz in Germany">TMG</abbr>
+    </p>
+    <address>
+      Maxi Becher
+      <br />
+      Postfach 41 01 05
+      <br />
+      68309 Mannheim
+      <br />
+      Germany
+    </address>
     <h3>Content responsibility</h3>
     <address>
-      Maximilian Becher
+      Maxi Becher
       <br />
       <a href="https://www.twitter.com/diverent2">twitter/@diverent2</a>
     </address>
