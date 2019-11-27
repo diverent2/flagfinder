@@ -15,9 +15,6 @@ describe('Flagfinder', () => {
   it('resolves absolute link correctly', () => {
     cy.get('a.button__about').click();
     cy.url().should('include', '/about');
-    cy.get('a[href*="twitter"]')
-      .first()
-      .should('have.attr', 'href')
-      .and('eq', 'https://www.twitter.com/diverent2');
+    cy.get('a[href*="https://www.twitter.com"]').should('exist');
   });
 });
