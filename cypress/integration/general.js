@@ -18,6 +18,6 @@ describe('Flagfinder', () => {
     cy.get('a[href*="twitter"]')
       .first()
       .should('have.attr', 'href')
-      .and('eq', 'https://www.twitter.com/diverent2');
+      .and('include', 'https://www.twitter.com/diverent2');
   });
 });
