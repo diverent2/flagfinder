@@ -30,8 +30,11 @@
 
   .flagCard {
     padding: 0.5rem;
+    max-width: 350px;
+    height: auto;
     position: relative;
     display: flex;
+    flex-direction: column;
     background: var(--white);
     border-radius: 6px;
     box-shadow: var(--box-shadow);
@@ -43,31 +46,33 @@
   }
 
   .flagCard__image {
-    width: 150px;
-    height: 100%;
+    width: 100%;
+    height: auto;
     border-radius: inherit;
   }
 
-  .flagCard__category {
-    width: min-content;
+  .flagCard__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .flagCard__header {
     width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+    margin-top: var(--spacing-small);
     color: var(--gry-dark);
     text-transform: capitalize;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
-  .flagCard__arrow {
-    position: absolute;
-    bottom: var(--spacing);
-    right: var(--spacing);
-  }
-
-  .flagCard__details {
-    margin-left: 1rem;
+  .flagCard__category {
+    width: max-content;
   }
 </style>
 
@@ -78,8 +83,8 @@
       src="flags/{flag.image}"
       alt="{flag.name} flag" />
 
+    <h3 class="flagCard__header">{flag.name}</h3>
     <div class="flagCard__details">
-      <h3 class="flagCard__header">{flag.name}</h3>
       <div class="flagCard__category">
         <IconButton
           backgroundColor={getCategoryColor(flag.category)}
@@ -90,7 +95,7 @@
       </div>
       <img
         class="flagCard__arrow"
-        height="16px"
+        height="24"
         area-hidden="true"
         src="icons/arrow-right.svg"
         alt="go to flag" />
