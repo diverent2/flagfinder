@@ -12,8 +12,12 @@ describe('Flagfinder', () => {
     cy.url().should('include', '/search');
   });
 
-  it('navigates to about page', () => {
+  it('resolves absolute link correctly', () => {
     cy.get('a.button__about').click();
     cy.url().should('include', '/about');
+    cy.get('a[href*="twitter"]')
+      .first()
+      .should('have.attr', 'href')
+      .and('eq', 'https://www.twitter.com/diverent2');
   });
 });
