@@ -47,10 +47,15 @@
   }
 
   .iconButton--below {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background: var(--background);
   }
 
   .iconButton--below-with-space {
+    text-align: center;
     padding: 0;
   }
 
