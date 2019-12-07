@@ -10,16 +10,18 @@
 
 <style>
   .iconButton {
+    height: 100%;
     padding: var(--spacing-tiny) var(--spacing-small);
     border-radius: 35px;
     text-align: center;
     line-height: 1;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .iconButton__icon {
     width: var(--scale);
-    height: 100%;
+    height: auto;
   }
 
   .iconButton__text {
