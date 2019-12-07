@@ -38,31 +38,13 @@
     display: flex;
     flex-direction: column;
   }
-  .button {
-    padding: var(--spacing-small);
-
-    background: var(--blue-dark);
-  }
-  .button--round {
-    border-radius: 50%;
-  }
 
   .button__search {
     width: 128px;
     height: 128px;
-
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
-
-    color: var(--white);
-
-    align-self: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
   }
 
   .button__search h2 {
@@ -70,27 +52,13 @@
     font-size: 1.5rem;
   }
 
-  /*   .buttton__bookmarks {
-    margin-bottom: 1rem;
-  } */
-
   .navButtons--special {
     display: flex;
   }
 
   .navButtons--special .button__about {
     width: 100%;
-    /*   margin-right: 1rem; */
   }
-
-  /*   .button__settings {
-    display: block;
-    width: 40px;
-    height: 40px;
-  }
-  .button__settings img {
-    height: var(--spacing-large);
-  } */
 
   footer {
     width: 100vw;
@@ -189,36 +157,27 @@
 </aside>
 
 <nav>
-  <a href="search" class="button button__search button--round">
-    <img src="icons/search.svg" alt="search icon" aria-hidden height="64" />
-    <h2>Search</h2>
-  </a>
-
-  <!--   <a href="/bookmarks" class="buttton__bookmarks">
+  <a href="search" class="button button__search">
     <IconButton
-      color="var(--blue-dark)"
-      icon="bookmarks"
-      height="var(--spacing-xlarge)">
-      Bookmarks
+      backgroundColor="var(--blue-dark)"
+      icon="search"
+      scale="64px"
+      layout="below"
+      borderStyle="round">
+      <h2>Search</h2>
     </IconButton>
-  </a> -->
+  </a>
 
   <div class="navButtons--special">
     <a href="/about" class="button__about">
       <IconButton
-        color="var(--blue-dark)"
+        backgroundColor="var(--blue-dark)"
         icon="about"
-        height="var(--spacing-large)">
+        scale="var(--spacing-large)">
         <h2>About</h2>
       </IconButton>
     </a>
 
-    <!--     <a
-      class="button button__settings button--round"
-      href="/settings"
-      aria-label="settings">
-      <img src="icons/settings.svg" alt aria-hidden="true" />
-    </a> -->
   </div>
 </nav>
 
