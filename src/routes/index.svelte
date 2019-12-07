@@ -38,31 +38,13 @@
     display: flex;
     flex-direction: column;
   }
-  .button {
-    padding: var(--spacing-small);
-
-    background: var(--blue-dark);
-  }
-  .button--round {
-    border-radius: 50%;
-  }
 
   .button__search {
     width: 128px;
     height: 128px;
-
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
-
-    color: var(--white);
-
-    align-self: center;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-decoration: none;
   }
 
   .button__search h2 {
@@ -70,27 +52,13 @@
     font-size: 1.5rem;
   }
 
-  /*   .buttton__bookmarks {
-    margin-bottom: 1rem;
-  } */
-
   .navButtons--special {
     display: flex;
   }
 
   .navButtons--special .button__about {
     width: 100%;
-    /*   margin-right: 1rem; */
   }
-
-  /*   .button__settings {
-    display: block;
-    width: 40px;
-    height: 40px;
-  }
-  .button__settings img {
-    height: var(--spacing-large);
-  } */
 
   footer {
     width: 100vw;
@@ -189,9 +157,15 @@
 </aside>
 
 <nav>
-  <a href="search" class="button button__search button--round">
-    <img src="icons/search.svg" alt="search icon" aria-hidden height="64" />
-    <h2>Search</h2>
+  <a href="search" class="button button__search">
+    <IconButton
+      backgroundColor="var(--blue-dark)"
+      icon="search"
+      scale="64px"
+      layout="below"
+      borderStyle="round">
+      <h2>Search</h2>
+    </IconButton>
   </a>
 
   <div class="navButtons--special">

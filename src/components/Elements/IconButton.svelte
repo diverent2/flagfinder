@@ -1,5 +1,5 @@
 <script>
-  export let backgroundColor = "var(--black)";
+  export let backgroundColor = "var(--blue-dark)";
   export let scale = "1.2rem;";
   export let fontSize = "1rem;";
   export let icon = "search";
