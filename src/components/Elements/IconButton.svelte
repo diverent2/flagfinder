@@ -6,7 +6,7 @@
 
 <style>
   .iconButton {
-    padding: var(--spacing) var(--spacing-small);
+    padding: var(--spacing-tiny) var(--spacing-small);
     display: flex;
     align-items: center;
     border-radius: 35px;
@@ -19,14 +19,14 @@
   }
 </style>
 
-<div class="iconButton" style="background: {color}; height: {height}">
+<div class="iconButton" style="background: {color};">
   <img
     class="iconButton__icon"
     src="icons/{icon}.svg"
     alt
     aria-hidden="true"
     style="height: {height}" />
-  <span class="iconButton__text" style="font-size: {height}">
+  <span class="iconButton__text">
     <slot />
   </span>
 </div>
