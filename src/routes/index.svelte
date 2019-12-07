@@ -194,31 +194,16 @@
     <h2>Search</h2>
   </a>
 
-  <!--   <a href="/bookmarks" class="buttton__bookmarks">
-    <IconButton
-      color="var(--blue-dark)"
-      icon="bookmarks"
-      height="var(--spacing-xlarge)">
-      Bookmarks
-    </IconButton>
-  </a> -->
-
   <div class="navButtons--special">
     <a href="/about" class="button__about">
       <IconButton
-        color="var(--blue-dark)"
+        backgroundColor="var(--blue-dark)"
         icon="about"
-        height="var(--spacing-large)">
+        scale="var(--spacing-large)">
         <h2>About</h2>
       </IconButton>
     </a>
 
-    <!--     <a
-      class="button button__settings button--round"
-      href="/settings"
-      aria-label="settings">
-      <img src="icons/settings.svg" alt aria-hidden="true" />
-    </a> -->
   </div>
 </nav>
 
