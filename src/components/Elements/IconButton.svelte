@@ -1,9 +1,11 @@
 <script>
   export let backgroundColor = "var(--black)";
   export let scale = "1.2rem;";
+  export let fontSize = "1rem;";
   export let icon = "search";
   export let titleVisibility = true;
   export let layout = "aside"; // aside | below | below-with-space
+  export let borderStyle = "rounded"; // rounded | round
 </script>
 
 <style>
@@ -31,7 +33,7 @@
     opacity: 0;
   }
 
-  /*button styles */
+  /*button layouts */
   .iconButton--aside {
     display: flex;
     align-items: center;
@@ -55,19 +57,33 @@
     padding: var(--spacing-tiny);
     border-radius: 35px;
   }
+
+  /* type */
+  .iconButton--rounded,
+  .iconButton--rounded .iconButton__iconFrame {
+    border-radius: 25px;
+  }
+
+  .iconButton--round,
+  .iconButton--round .iconButton__iconFrame {
+    border-radius: 100%;
+  }
 </style>
 
 <div
-  class="iconButton iconButton--{layout}"
-  style="--background: {backgroundColor}; --scale: {scale}">
+  class="iconButton iconButton--{layout} iconButton--{borderStyle}"
+  style="--scale: {scale}; --background: {backgroundColor};">
   <div class="iconButton__iconFrame">
-  <img
-    class="iconButton__icon"
-    src="icons/{icon}.svg"
-    alt
+    <img
+      class="iconButton__icon"
+      src="icons/{icon}.svg"
+      alt
       aria-hidden="true" />
   </div>
-  <span class="iconButton__text" data-visible={titleVisibility}>
+  <span
+    class="iconButton__text"
+    data-visible={titleVisibility}
+    style="font-size: {fontSize}">
     <slot />
   </span>
 </div>
