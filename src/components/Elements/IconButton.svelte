@@ -1,7 +1,8 @@
 <script>
   export let color = "var(--black)";
-  export let icon = "search";
   export let height = "1.2rem;";
+  export let icon = "search";
+  export let titleVisibility = true;
 </script>
 
 <style>
@@ -11,11 +12,16 @@
     align-items: center;
     border-radius: 35px;
   }
-  .iconButton__icon {
-    padding-right: var(--spacing-small);
-  }
+
   .iconButton__text {
+    padding-left: var(--spacing-small);
     color: var(--white);
+  }
+  .iconButton__text[data-visible="false"] {
+    width: 0;
+    height: 0;
+    padding: 0;
+    opacity: 0;
   }
 </style>
 
@@ -26,7 +32,7 @@
     alt
     aria-hidden="true"
     style="height: {height}" />
-  <span class="iconButton__text">
+  <span class="iconButton__text" data-visible={titleVisibility}>
     <slot />
   </span>
 </div>
