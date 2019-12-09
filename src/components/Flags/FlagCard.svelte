@@ -28,42 +28,20 @@
     text-decoration: none;
   }
 
-  .flagCard {
-    padding: 0.5rem;
-    max-width: 350px;
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: var(--white);
-    border-radius: 6px;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.2s ease-in-out;
-  }
-
   .flagCard:hover {
     transform: scale(1.05);
   }
 
   .flagCard__image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 100px;
     border-radius: inherit;
-  }
-
-  .flagCard__details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .flagCard__header {
     width: 100%;
-    margin-bottom: 0.5rem;
-    margin-top: var(--spacing-small);
     color: var(--gry-dark);
     text-transform: capitalize;
-
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -74,17 +52,78 @@
   .flagCard__category {
     width: max-content;
   }
+
+  .flagCard__arrow {
+    position: absolute;
+    bottom: var(--spacing-small);
+    right: var(--spacing-small);
+  }
+
+  /*mobile*/
+  .flagCard {
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    background: var(--white);
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .flagCard__header {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
+  }
+
+  .flagCard__details {
+    margin-left: 1rem;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width: 250px),
+    only screen and (min-width: 650px) {
+    .flagCard {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .flagCard__image {
+      width: 100%;
+      height: auto;
+    }
+
+    .flagCard__details {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    .flagCard__header {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 180px) {
+    .flagCard__arrow {
+      display: none;
+    }
+  }
 </style>
 
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard">
     <img
+      width="150"
       class="flagCard__image"
       src="flags/{flag.image}"
       alt="{flag.name} flag" />
 
-    <h3 class="flagCard__header">{flag.name}</h3>
     <div class="flagCard__details">
+      <h3 class="flagCard__header">{flag.name}</h3>
       <div class="flagCard__category">
         <IconButton
           backgroundColor={getCategoryColor(flag.category)}
