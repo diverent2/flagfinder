@@ -93,6 +93,7 @@
     .flagCard__image {
       width: 100%;
       height: auto;
+      flex-grow: 1;
     }
 
     .flagCard__details {
