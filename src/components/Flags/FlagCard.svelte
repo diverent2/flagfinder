@@ -1,6 +1,26 @@
 <script>
   import IconButton from "../../components/Elements/IconButton.svelte";
   export let flag;
+
+  function getCategoryColor(category) {
+    let color;
+    switch (category) {
+      case "attraction":
+        color = "#FF0000";
+        break;
+      case "gender":
+        color = "#FFAF2F";
+        break;
+      case "kink":
+        color = "#7f8cff";
+        break;
+      //sexuality
+      default:
+        color = "#F271DE";
+        break;
+    }
+    return color;
+  }
 </script>
 
 <style>
@@ -8,6 +28,38 @@
     text-decoration: none;
   }
 
+  .flagCard:hover {
+    transform: scale(1.05);
+  }
+
+  .flagCard__image {
+    width: 150px;
+    height: 100px;
+    border-radius: inherit;
+  }
+
+  .flagCard__header {
+    width: 100%;
+    color: var(--gry-dark);
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .flagCard__category {
+    width: max-content;
+  }
+
+  .flagCard__arrow {
+    position: absolute;
+    bottom: var(--spacing-small);
+    right: var(--spacing-small);
+  }
+
+  /*mobile*/
   .flagCard {
     padding: 0.5rem;
     position: relative;
@@ -18,85 +70,75 @@
     transition: transform 0.2s ease-in-out;
   }
 
-  .flagCard:hover {
-    transform: scale(1.05);
-  }
-
-  .flagCard__image {
-    width: 150px;
-    height: 100%;
-    border-radius: inherit;
-  }
-
-  .flagCard__category {
-    width: min-content;
-  }
-
   .flagCard__header {
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    color: var(--gry-dark);
-    text-transform: capitalize;
-  }
-
-  .flagCard__arrow {
-    position: absolute;
-    bottom: var(--spacing);
-    right: var(--spacing);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    overflow-wrap: break-word;
   }
 
   .flagCard__details {
     margin-left: 1rem;
+    overflow: hidden;
+  }
+
+  @media only screen and (max-width: 250px),
+    only screen and (min-width: 650px) {
+    .flagCard {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .flagCard__image {
+      width: 100%;
+      height: auto;
+      flex-grow: 1;
+    }
+
+    .flagCard__details {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    .flagCard__header {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 180px) {
+    .flagCard__arrow {
+      display: none;
+    }
   }
 </style>
 
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard">
     <img
+      width="150"
       class="flagCard__image"
       src="flags/{flag.image}"
       alt="{flag.name} flag" />
 
     <div class="flagCard__details">
-      <div class="flagCard__category">
-        {#if flag.category === 'sexuality'}
-          <IconButton
-            backgroundColor="#F271DE"
-            icon="sexuality-white"
-            scale="var(--spacing)">
-            sexuality
-          </IconButton>
-        {:else if flag.category === 'attraction'}
-          <IconButton
-            backgroundColor="#FF0000"
-            icon="attraction-white"
-            scale="var(--spacing)">
-            attraction
-          </IconButton>
-        {:else if flag.category === 'kink'}
-          <IconButton
-            backgroundColor="#7f8cff"
-            icon="kink-white"
-            scale="var(--spacing)">
-            kink
-          </IconButton>
-        {:else if flag.category === 'gender'}
-          <IconButton
-            backgroundColor="#FFAF2F"
-            icon="gender-white"
-            scale="var(--spacing)">
-            gender
-          </IconButton>
-        {/if}
-      </div>
       <h3 class="flagCard__header">{flag.name}</h3>
+      <div class="flagCard__category">
+        <IconButton
+          backgroundColor={getCategoryColor(flag.category)}
+          icon="{flag.category}-white"
+          scale="var(--spacing)">
+          {flag.category}
+        </IconButton>
+      </div>
+      <img
+        class="flagCard__arrow"
+        height="24"
+        area-hidden="true"
+        src="icons/arrow-right.svg"
+        alt="go to flag" />
     </div>
-    <img
-      class="flagCard__arrow"
-      height="16px"
-      area-hidden="true"
-      src="icons/arrow-right.svg"
-      alt="go to flag" />
   </div>
 </a>
