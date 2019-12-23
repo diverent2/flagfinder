@@ -14,31 +14,43 @@ const flags = [
       colors: [
         {
           id: 'red',
+          name: 'red',
+          hue: 'red',
           meaning: 'life',
           value: '#FC0006'
         },
         {
           id: 'orange',
+          name: 'orange',
+          hue: 'orange',
           meaning: 'healing',
           value: '#FDA507'
         },
         {
-          value: 'yellow',
+          id: 'yellow',
+          name: 'yellow',
+          hue: 'yellow',
           meaning: 'sunlight',
           value: '#FFFF0B'
         },
         {
           id: 'green',
+          name: 'green',
+          hue: 'green',
           meaning: 'nature',
           value: '#118301'
         },
         {
           id: 'blue',
+          name: 'blue',
+          hue: 'blue',
           meaning: 'harmony',
           value: '#0000FF'
         },
         {
           id: 'purple',
+          name: 'purple',
+          hue: 'purple',
           meaning: 'spirit',
           value: '#7E0080'
         }
@@ -81,37 +93,51 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'brown',
+          id: 'maroon',
+          name: 'maroon',
+          hue: 'brown',
           meaning: 'the colors represent different bear fur types',
           value: '#613401'
         },
         {
-          id: 'orange',
+          id: 'tenne',
+          name: 'tenne',
+          hue: 'orange',
           meaning: 'the colors represent different bear fur types',
           value: '#D46004'
         },
         {
-          id: 'yellow',
+          id: 'dandelion',
+          name: 'dandelion',
+          hue: 'yellow',
           meaning: 'the colors represent different bear fur types',
-          value: '#D46004'
+          value: '#FEDD63'
         },
         {
-          id: 'lightyellow',
+          id: 'moccasin',
+          name: 'moccasin',
+          hue: 'yellow',
           meaning: 'the colors represent different bear fur types',
           value: '#FEE8BA'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'the colors represent different bear fur types',
           value: '#FFFFFF'
         },
         {
-          id: 'darkgray',
+          id: 'mortar',
+          name: 'mortar',
+          hue: 'gray',
           meaning: 'the colors represent different bear fur types',
-          value: '#603401'
+          value: '#545454'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'the colors represent different bear fur types',
           value: '#000000'
         }
@@ -119,7 +145,7 @@ const flags = [
       symbols: [
         {
           id: 'paw',
-          meaning: '🐻',
+          meaning: '🐻🐾',
           icon: ''
         }
       ]
@@ -156,22 +182,30 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'lightpink',
+          id: 'mauve',
+          name: 'mauve',
+          hue: 'lightpink',
           meaning: 'feminine nature',
           value: '#FDACFF'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: '',
           value: '#FFFFFF'
         },
         {
-          id: 'lightyellow',
+          id: 'canary',
+          name: 'canary',
+          hue: 'yellow',
           meaning: '',
           value: '#FFFF82'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: '',
           value: '#000000'
         }
@@ -217,21 +251,29 @@ const flags = [
       colors: [
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'asexuality',
           value: '#000000'
         },
         {
-          id: 'gray',
+          id: 'maroon',
+          name: 'maroon',
+          hue: 'gray',
           meaning: 'gray-asexuality, demi-sexuality',
           value: '#603401'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'sexuality',
           value: '#FFFFFF'
         },
         {
-          id: 'purple',
+          id: 'indigo',
+          name: 'indigo',
+          hue: 'purple',
           meaning: 'community',
           value: '#7F0081'
         }
@@ -275,18 +317,24 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'pink',
+          id: 'razzmatazz',
+          name: 'razzmatazz',
+          hue: 'pink',
           meaning: 'same sex/gender attraction / sterotypical for girl*',
           value: '#D50071'
         },
         {
-          id: 'magenta',
+          id: 'violet_blue',
+          name: 'violet blue',
+          hue: 'purple',
           meaning:
             'possible attraction to anywhere on the gender spectrum / blending in between both straight and gay communitites',
           value: '#9B4797'
         },
         {
-          id: 'blue',
+          id: 'international_klein_blue',
+          name: 'international klein blue',
+          hue: 'blue',
           meaning: 'different sex/gender attraction  / sterotypical for boy*',
           value: '#002BA9'
         }
@@ -337,21 +385,29 @@ const flags = [
       colors: [
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'asexuality',
           value: '#000000'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'sexuality',
           value: '#FFFFFF'
         },
         {
-          id: 'purple',
+          id: 'indigo',
+          name: 'indigo',
+          hue: 'purple',
           meaning: 'community',
           value: '#7F0081'
         },
         {
-          id: 'lightgray',
+          id: 'light_gray',
+          name: 'light gray',
+          hue: 'gray',
           meaning: 'gray-ace and demisexuality',
           value: '#D3D3D3'
         }
@@ -394,17 +450,23 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'lightblue',
+          id: 'royal_blue',
+          name: 'royal blue',
+          hue: 'lightblue',
           meaning: 'male sex',
-          value: '#ED5B9E'
+          value: '#4687e6'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'sexuality',
           value: '#FFFFFF'
         },
         {
-          id: 'pink',
+          id: 'dark_pink',
+          name: 'dark pink',
+          hue: 'pink',
           meaning: 'female sex',
           value: '#ED5B9E'
         }
@@ -436,31 +498,43 @@ const flags = [
       colors: [
         {
           id: 'red',
+          name: 'red',
+          hue: 'red',
           meaning: 'life',
           value: '#FC0006'
         },
         {
           id: 'orange',
+          name: 'orange',
+          hue: 'orange',
           meaning: 'healing',
           value: '#FDA507'
         },
         {
           value: 'yellow',
+          namelue: 'yellow',
+          hue: 'yellow',
           meaning: 'sunlight',
           value: '#FFFF0B'
         },
         {
           id: 'green',
+          name: 'green',
+          hue: 'green',
           meaning: 'nature',
           value: '#118301'
         },
         {
           id: 'blue',
+          name: 'blue',
+          hue: 'blue',
           meaning: 'Serenity',
           value: '#0000FF'
         },
         {
-          id: 'purple',
+          id: 'indigo',
+          name: 'indigo',
+          hue: 'purple',
           meaning: 'Spirit',
           value: '#7E0080'
         }
@@ -505,16 +579,22 @@ const flags = [
       colors: [
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: '',
           value: '#FFFFFF'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: '',
           value: '#000000'
         },
         {
-          id: 'purple',
+          id: 'indigo',
+          name: 'indigo',
+          hue: 'purple',
           meaning: '',
           value: '#7E0080'
         }
@@ -559,42 +639,51 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'magentarosa',
+          id: 'eggplant',
+          name: 'eggplant',
+          hue: 'purple',
           meaning: '',
           value: '#A60061'
         },
         {
-          id: 'magenta',
+          id: 'mulberry',
+          name: 'mulberry',
+          hue: 'purple',
           meaning: '',
           value: '#B94A94'
         },
         {
-          id: 'darkpink',
+          id: 'mulberry',
+          name: 'mulberry',
+          hue: 'pink',
           meaning: '',
           value: '#D157A8'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: '',
           value: '#FFFFFF'
         },
         {
-          id: 'lightpink',
+          id: 'plum',
+          name: 'plum',
+          hue: 'lightpink',
           meaning: '',
           value: '#E4AAD1'
         },
         {
-          id: 'white',
-          meaning: '',
-          value: '#FFFFFF'
-        },
-        {
-          id: 'rosared',
+          id: 'sunset',
+          name: 'sunset',
+          hue: 'red',
           meaning: '',
           value: '#C64651'
         },
         {
-          id: 'darkred',
+          id: 'dark_red',
+          name: 'dark red',
+          hue: 'red',
           meaning: '',
           value: '#8C0B02'
         }
@@ -645,17 +734,23 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'pink',
+          id: 'hollywood_cerise',
+          name: 'hollywood cerise',
+          hue: 'pink',
           meaning: 'female* gendered persons (regardless of biological sex)',
           value: '#FC008D'
         },
         {
-          id: 'gold',
+          id: 'school_bus_yellow',
+          name: 'school bus yellow',
+          hue: 'yellow',
           meaning: 'mixed gendered, genderless, thirdgendered people',
           value: '#FEDB09'
         },
         {
-          id: 'lightblue',
+          id: 'dodger_blue',
+          name: 'dodger blue',
+          hue: 'lightblue',
           meaning: 'male* gendered persons (regardless of biological sex)',
           value: '#27B1FF'
         }
@@ -699,17 +794,23 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'magentapink',
+          id: 'hot_magenta',
+          name: 'hot magenta',
+          hue: 'pink',
           meaning: 'attraction to females*',
           value: '#F300BA'
         },
         {
-          id: 'lightgreen',
+          id: 'mountain_meadow',
+          name: 'mountain meadow',
+          hue: 'lightgreen',
           meaning: 'attraction to people of other genders',
           value: '#25DA69'
         },
         {
-          id: 'mediumblue',
+          id: 'dodger_blue',
+          name: 'dodger blue',
+          hue: 'blue',
           meaning: 'attraction to males*',
           value: '#1E90F6'
         }
@@ -748,41 +849,57 @@ const flags = [
       colors: [
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'part of the old heterosexual flag',
           value: '#000000'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'part of the old heterosexual flag',
           value: '#FFFFFF'
         },
         {
           id: 'red',
+          name: 'red',
+          hue: 'red',
           meaning: 'life',
           value: '#FC0006'
         },
         {
           id: 'orange',
+          name: 'orange',
+          hue: 'orange',
           meaning: 'healing',
           value: '#FDA507'
         },
         {
           value: 'yellow',
+          namelue: 'yellow',
+          hue: 'yellow',
           meaning: 'sunlight',
           value: '#FFFF0B'
         },
         {
           id: 'green',
+          name: 'green',
+          hue: 'green',
           meaning: 'nature',
           value: '#118301'
         },
         {
           id: 'blue',
+          name: 'blue',
+          hue: 'blue',
           meaning: 'Serenity',
           value: '#0000FF'
         },
         {
-          id: 'purple',
+          id: 'indigo',
+          name: 'indigo',
+          hue: 'purple',
           meaning: 'Spirit',
           value: '#7E0080'
         }
@@ -830,21 +947,29 @@ const flags = [
       colors: [
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'absence of gender',
           value: '#000000'
         },
         {
-          id: 'lightgray',
+          id: 'silver',
+          name: 'silver',
+          hue: 'gray',
           meaning: '',
           value: '#B6B6B6'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'absence of gender',
-          value: '#000000'
+          value: '#FFFFFF'
         },
         {
-          id: 'lightgreen',
+          id: 'pale_green',
+          name: 'pale green',
+          hue: 'lightgreen',
           meaning: 'nonbinary; as the opposite of the highly gendered purple',
           value: '#BBF884'
         }
@@ -882,27 +1007,37 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'pink',
+          id: 'hot_pink',
+          name: 'hot pink',
+          hue: 'pink',
           meaning: 'femininity',
           value: '#FD6EA4'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'a lack of gender',
           value: '#FFFFFF'
         },
         {
-          id: 'purple',
+          id: 'dark_violet',
+          name: 'dark violet',
+          hue: 'purple',
           meaning: 'masculinity; femininity',
           value: '#BD00D7'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'all genders',
           value: '#000000'
         },
         {
-          id: 'blue',
+          id: 'cerulean_blue',
+          name: 'cerulean blue',
+          hue: 'blue',
           meaning: 'masculinity',
           value: '#2F2FBE'
         }
@@ -940,17 +1075,23 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'lavender',
+          id: 'medium_urple',
+          name: 'medium purple',
+          hue: 'purple',
           meaning: 'androgynous',
           value: '#B578DD'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'agender',
-          value: '#000000'
+          value: '#FFFFFF'
         },
         {
-          id: 'green',
+          id: 'limeade',
+          name: 'limeade',
+          hue: 'green',
           meaning: 'non-binary',
           value: '#4B851E'
         }
@@ -988,22 +1129,30 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'yellow',
+          id: 'gorse',
+          name: 'gorse',
+          hue: 'yellow',
           meaning: 'gender seperate from the binary',
           value: '#FFF82F'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning: 'for those with multiple genders',
           value: '#000000'
         },
         {
-          id: 'purple',
+          id: 'medium_orchid',
+          name: 'medium orchid',
+          hue: 'purple',
           meaning: 'mix of male* and female*',
           value: '#9C4DD2'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'people without a gender',
           value: '#000000'
         }
@@ -1042,17 +1191,23 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'lightblue',
+          id: 'maya_blue',
+          name: 'maya blue',
+          hue: 'lightblue',
           meaning: 'traditionally value for boy',
           value: '#60CFFA'
         },
         {
-          id: 'lightpink',
+          id: 'cupid',
+          name: 'cupid',
+          hue: 'lightpink',
           meaning: 'traditionally value for girls',
           value: '#F4A8BA'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning:
             'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
           value: '#FFFFFF'
@@ -1090,22 +1245,30 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'magenta',
+          id: 'mauve',
+          name: 'mauve',
+          hue: 'purple',
           meaning: 'no gender',
           value: '#F0A3FE'
         },
         {
           id: 'white',
-          meaning: 'trans idenity',
+          name: 'white',
+          hue: 'white',
+          meaning: 'trans identity',
           value: '#FFFFFF'
         },
         {
-          id: 'lightblue',
+          id: 'pale_cornflower_blue',
+          name: 'pale cornflower blue',
+          hue: 'blue',
           meaning: 'masculinity',
           value: '#A3CFEF'
         },
         {
-          id: 'lightpink',
+          id: 'classic_rose',
+          name: 'classic rose',
+          hue: 'lightpink',
           meaning: 'femininity',
           value: '#F3B7DF'
         }
@@ -1137,13 +1300,17 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'yellow',
+          id: 'school bus yellow',
+          name: 'school bus yellow',
+          hue: 'yellow',
           meaning:
             'neutrality in gender; stays away from typically gendered colors like blue and pink.',
           value: '#FEDB09'
         },
         {
-          id: 'purple',
+          id: 'dark violet',
+          name: 'dark violet',
+          hue: 'purple',
           meaning: '',
           value: '#7800AB'
         }
@@ -1151,6 +1318,8 @@ const flags = [
       symbols: [
         {
           id: 'circle',
+          name: 'red',
+          hue: 'red',
           meaning:
             'unbroken; symobolising wholeness and completeness as well as their	potentialities',
           icon: ''
@@ -1195,28 +1364,38 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'darkgreen',
+          id: 'japanese laurel',
+          name: 'japanese laurel',
+          hue: 'green',
           meaning: 'aromanticism',
           value: '#338733'
         },
         {
-          id: 'lightgreen',
+          id: 'feijoa',
+          name: 'feijoa',
+          hue: 'lightgreen',
           meaning: 'aromantic spectrum',
           value: '#AAD77A'
         },
         {
           id: 'white',
+          name: 'white',
+          hue: 'white',
           meaning:
             'platonic and aesthetic attraction; queerplatonic relationships',
           value: '#FFFFFF'
         },
         {
-          id: 'gray',
+          id: 'dark gray',
+          name: 'dark gray',
+          hue: 'gray',
           meaning: 'gray-aromantic and demiromantic people',
           value: '#AAAAAA'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning: 'sexuality spectrum',
           value: '#000000'
         }
@@ -1255,21 +1434,29 @@ const flags = [
       colors: [
         {
           id: 'gold',
+          name: 'gold',
+          hue: 'yellow',
           meaning: 'value of emotional attachment to others',
           value: '#FFFF0B'
         },
         {
           id: 'blue',
+          name: 'blue',
+          hue: 'blue',
           meaning: 'openness and honesty among all partners',
           value: '#0000FF'
         },
         {
           id: 'red',
+          name: 'red',
+          hue: 'red',
           meaning: 'love and passion',
           value: '#FC0006'
         },
         {
           id: 'black',
+          name: 'black',
+          hue: 'black',
           meaning:
             'solidarity with those who have to hide their polyamorous identity',
           value: '#000000'
