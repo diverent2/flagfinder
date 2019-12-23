@@ -6,15 +6,16 @@
 
 <style>
   .colorField {
-    width: 4rem;
+    width: 100%;
   }
 
   .colorField__color {
     height: 2rem;
+    margin-bottom: var(--spacing-tiny);
     border-color: var(--black);
     border-width: 1px;
     border-style: solid;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow-light);
   }
 
   .colorField__name {

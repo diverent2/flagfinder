@@ -35,9 +35,8 @@
   }
 
   .colorExplanation {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: minmax(4rem, 8rem) 2fr;
   }
 
   .colorExplanation__field {
@@ -75,7 +74,7 @@
       {#each flag.props.colors as color, i}
         <li class="colorExplanation">
           <div class="colorExplanation__field">
-            <ColorField name={color.id} hue={color.hue} color={color.value} />
+            <ColorField name={color.name} hue={color.hue} color={color.value} />
           </div>
           <div class="colorExplanation__meaning">
             <p>{color.meaning || 'no explanation provided'}</p>
