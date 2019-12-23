@@ -324,7 +324,7 @@ const flags = [
   },
   {
     id: 'demisexual',
-    name: 'demisexual/graysexual pride',
+    name: 'demisexual / graysexual pride',
     description:
       'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone.',
     origin: {
@@ -383,7 +383,7 @@ const flags = [
   },
   {
     id: 'heterosexual',
-    name: 'Heterosexual/Straight',
+    name: 'heterosexual / straight',
     description: 'People who are sexually attracted to the opposite sex.',
     origin: {
       firstAppearance: '',
@@ -870,7 +870,7 @@ const flags = [
   },
   {
     id: 'genderfluid',
-    name: 'genderfluid/Genderflex pride',
+    name: 'genderfluid / genderflex pride',
     description:
       'As the name suggests, genderfluid/genderflex aren´t locked in one gender identity. Their identity can shift and vary over time.',
     origin: {
