@@ -34,32 +34,18 @@
   }
 
   ul.colors {
-    margin: -0.25rem;
-    margin-bottom: 0;
+    margin: 0;
     padding: 0;
-
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
     list-style: none;
   }
 
   .color {
-    margin-top: 0.25rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-
     flex-grow: 1;
   }
 
   .color__field {
     height: 2rem;
-  }
-
-  .color__text {
-    display: block;
-    text-align: center;
   }
 
   .general__category {
@@ -117,13 +103,15 @@
     {/if}
   </div>
 
-  <h3>🎨Color palate</h3>
+  <h3>🎨Color palette</h3>
 
   <ul class="colors">
     {#each flag.props.colors as color}
       <li class="color">
-        <div class="color__field" style="background: {color.value}" />
-        <span class="color__text">{color.value}</span>
+        <div
+          class="color__field"
+          title={color.name}
+          style="background: {color.value}" />
       </li>
     {/each}
   </ul>

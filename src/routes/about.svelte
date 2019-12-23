@@ -156,6 +156,14 @@
   <section>
     <h2>Sources 🔎</h2>
 
+    <h3>Color Names</h3>
+    <p>
+      The names of the colors originate from
+      <a href="https://www.color-blindness.com/color-name-hue/">
+        color-blindness.com/color-name-hue
+      </a>
+    </p>
+
     <h3>Icons</h3>
     <p>
       Icon made by
@@ -165,6 +173,13 @@
     </p>
     <h3>Literature sources</h3>
     <p>Indiviual sources are named at the corresponding detail page.</p>
+
+    <h3>Found a mistake?</h3>
+    <p>
+      Feel free to report and your findings
+      <a href="/about/#contribute">here</a>
+      .
+    </p>
   </section>
 
   <section>

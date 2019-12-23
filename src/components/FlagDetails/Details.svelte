@@ -1,5 +1,6 @@
 <script>
   import ColorSpot from "./../Elements/ColorSpot.svelte";
+  import ColorField from "./../Elements/ColorField.svelte";
 
   export let flag;
 </script>
@@ -34,40 +35,20 @@
   }
 
   .colorExplanation {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-  }
-
-  .colorExplanation__colorSpot {
-    width: var(--spacing-xlarge);
-    height: var(--spacing-xlarge);
-    background: var(--white);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-color: var(--gry-light);
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    transition: border-color 0.2s ease;
+    display: grid;
+    grid-template-columns: minmax(4rem, 8rem) 2fr;
   }
 
   .colorExplanation__field {
     margin-right: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 5rem;
   }
 
   .colorExplanation__meaning > p {
     margin-top: 0;
+  }
+
+  .colorExplanation__meaning > p:first-letter {
+    text-transform: uppercase;
   }
 
   hr {
@@ -90,27 +71,29 @@
 <section title="details">
   <h2>Details</h2>
 
-  <h3>🎨Color meanings</h3>
+  <h3>🎨 Color meanings</h3>
 
   {#if flag.props.colors.length}
     <ul class="colorExplanations">
       {#each flag.props.colors as color, i}
         <li class="colorExplanation">
           <div class="colorExplanation__field">
-            <div class="colorExplanation__colorSpot">
-              <ColorSpot color={color.value} />
-            </div>
-            <span class="colorExplanation__text">{color.value}</span>
+            <ColorField name={color.name} hue={color.hue} color={color.value} />
           </div>
           <div class="colorExplanation__meaning">
-            <p>{color.meaning || 'no explanation provided'}</p>
+            {#if color.meaning}
+              <p>{color.meaning}</p>
+            {:else}
+              <p class="field--empty">no explanation provided</p>
+            {/if}
+            <p />
           </div>
         </li>
         <hr />
       {/each}
     </ul>
   {:else}
-    <p>No descriptions found</p>
+    <p class="field--empty">No descriptions found</p>
   {/if}
 
   <h3>🔎Sources</h3>
