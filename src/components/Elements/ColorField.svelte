@@ -21,6 +21,11 @@
   .colorField__name {
     font-size: 0.8rem;
     line-height: 1;
+    text-transform: capitalize;
+  }
+
+  .colorField__name--hue {
+    text-transform: lowercase;
   }
 
   .colorField__value {
@@ -33,7 +38,7 @@
   <div class="colorField__name">
     {name}
     {#if name.includes(hue) == false}
-      <span>({hue})</span>
+      <span class="colorField__name--hue">({hue})</span>
     {/if}
   </div>
   <div class="colorField__value">{color}</div>
