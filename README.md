@@ -88,7 +88,20 @@ made with 🌈🦄, ☕ and 💕 by [@diverent2](https://twitter.com/diverent2)
 
 ### special thanks to
 
-[DanielRuf](https://github.com/DanielRuf) | [JohpoJohannes](https://github.com/JohpoJohannes)
+[DanielRuf](https://github.com/DanielRuf)
+
+- Gitlab CI
+
+[JohpoJohannes](https://github.com/JohpoJohannes)
+
+- Content updates
+- Color names #21
+- Testing
+
+[chomchom02](https://github.com/chomchom02)
+
+- Feedback
+- Testing
 
 ---
 
