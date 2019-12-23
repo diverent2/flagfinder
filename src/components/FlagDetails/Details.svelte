@@ -47,6 +47,10 @@
     margin-top: 0;
   }
 
+  .colorExplanation__meaning > p:first-letter {
+    text-transform: uppercase;
+  }
+
   hr {
     border: 0;
     height: 1px;
