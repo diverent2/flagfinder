@@ -1,5 +1,6 @@
 <script>
   import ColorSpot from "./../Elements/ColorSpot.svelte";
+  import ColorField from "./../Elements/ColorField.svelte";
 
   export let flag;
 </script>
@@ -39,31 +40,8 @@
     justify-content: start;
   }
 
-  .colorExplanation__colorSpot {
-    width: var(--spacing-xlarge);
-    height: var(--spacing-xlarge);
-    background: var(--white);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-color: var(--gry-light);
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    transition: border-color 0.2s ease;
-  }
-
   .colorExplanation__field {
     margin-right: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 5rem;
   }
 
   .colorExplanation__meaning > p {
@@ -90,17 +68,14 @@
 <section title="details">
   <h2>Details</h2>
 
-  <h3>🎨Color meanings</h3>
+  <h3>🎨 Color meanings</h3>
 
   {#if flag.props.colors.length}
     <ul class="colorExplanations">
       {#each flag.props.colors as color, i}
         <li class="colorExplanation">
           <div class="colorExplanation__field">
-            <div class="colorExplanation__colorSpot">
-              <ColorSpot color={color.value} />
-            </div>
-            <span class="colorExplanation__text">{color.value}</span>
+            <ColorField name={color.id} hue={color.hue} color={color.value} />
           </div>
           <div class="colorExplanation__meaning">
             <p>{color.meaning || 'no explanation provided'}</p>
