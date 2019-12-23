@@ -13,14 +13,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Changelog
+- ColorField component
+- Flag data (colorinfos) through [color-blindness.com/color-name-hue](https://www.color-blindness.com/color-name-hue/)
 
 ### 🔄 Changed
 
 - Refactor Flagcards for mobile AND desktop
+- Flag color palette
+- Flag color meanings
 
 ### 🛠️ Fixed
 
 - Flagcard text overflow
+- Flag data (colors)
 
 ## [0.2] - 2019-12-08
 
