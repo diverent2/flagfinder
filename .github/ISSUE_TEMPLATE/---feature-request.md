@@ -1,6 +1,7 @@
 ---
 name: "\U0001F4A1 Feature request"
 about: Suggest your idea
+labels: enhancement
 ---
 
 # 💡 feature request
@@ -10,9 +11,7 @@ about: Suggest your idea
 - add this feature
 - change the current behavior
 
-### Expectation
-
-> **What is the expected behavior?**
+### Expected Behavior
 
 [short description]
 

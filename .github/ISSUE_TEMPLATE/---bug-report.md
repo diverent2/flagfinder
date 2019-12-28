@@ -1,35 +1,26 @@
 ---
 name: "\U0001F41E Bug report"
 about: Report a bug
+labels: bug
 ---
 
 # 🐞 bug report
 
-[short description]
-
 ## Current behavior 👎
-
-> **What's the current behavior?**
 
 [error]
 
 ## Expected behavior 👍
-
-> **What is the expected behavior?**
 
 1. [step]
 2. [step]
 
 ## Steps to reproduce
 
-> **Please provide the steps to reproduce the bug and, if possible, a minimal demo of the problem**
-
 1. [step]
 2. [step]
 
 ### Environment information 🖥️
-
-> **Please tell us about your environment**
 
 |                     | your environment     |
 | ------------------- | -------------------- |
