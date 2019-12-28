@@ -27,8 +27,6 @@ about: Report a bug
 1. [step]
 2. [step]
 
-Demo for example via [codepen](https://codepen.io/pen/)
-
 ### Environment information 🖥️
 
 > **Please tell us about your environment**
