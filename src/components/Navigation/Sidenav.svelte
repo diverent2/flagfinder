@@ -48,13 +48,15 @@
     padding: var(--spacing-small);
   }
 
-  a[href*="search"],
-  a[href*="about"],
-  a[href*="settings"] {
+  a {
     text-decoration: none;
   }
 
-  a[href*="search"] {
+  footer a {
+    text-decoration: underline;
+  }
+
+  a.sidenav__main {
     display: inline-block;
     margin-top: 10%;
     height: 13rem;
@@ -70,7 +72,7 @@
     alt
     aria-hidden="true" />
   <div class="sidenav__primary">
-    <a href="/search">
+    <a class="sidenav__main" href="/search">
       <IconButton
         icon="search"
         scale="5rem"
