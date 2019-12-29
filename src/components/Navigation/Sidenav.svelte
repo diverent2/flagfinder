@@ -8,10 +8,18 @@
   .sidenav {
     top: 0;
     position: fixed;
+    width: 200px;
     height: 100vh;
     padding: var(--spacing-large);
-    background: var(--blue);
     z-index: 1;
+  }
+
+  .sidenav__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
   }
 
   .sidenav__primary {
@@ -44,18 +52,24 @@
 
   a[href*="search"] {
     display: inline-block;
-    height: 150px;
-    width: 150px;
-    transform: translateX(-2.5rem);
+    margin-top: 10%;
+    height: 13rem;
+    width: 13rem;
+    transform: translateX(-4rem);
   }
 </style>
 
 <nav class="sidenav">
+  <img
+    class="sidenav__background"
+    src="wave--right.svg"
+    alt
+    aria-hidden="true" />
   <div class="sidenav__primary">
     <a href="/search">
       <IconButton
         icon="search"
-        scale="5rem"
+        scale="6rem"
         titleVisibility="false"
         layout="below"
         borderStyle="round">
