@@ -1,11 +1,13 @@
 <script>
   export let backgroundColor = "var(--blue-dark)";
+  export let backgroundColorHover = backgroundColor;
   export let scale = "1.2rem;";
   export let fontSize = "1rem;";
   export let icon = "search";
   export let titleVisibility = true;
   export let layout = "aside"; // aside | below | below-with-space
   export let borderStyle = "rounded"; // rounded | round
+  export let border = false;
 </script>
 
 <style>
@@ -17,7 +19,7 @@
     line-height: 1;
     cursor: pointer;
     text-decoration: none;
-    overflow: hidden;
+    transition: background-color 0.2s ease;
   }
 
   .iconButton__icon {
@@ -43,6 +45,12 @@
     display: flex;
     align-items: center;
     background: var(--background);
+    transition: background-color 0.2s ease;
+  }
+
+  .iconButton--aside:hover,
+  .iconButton--aside:focus {
+    background: var(--background-hover);
   }
 
   .iconButton--aside .iconButton__text {
@@ -57,6 +65,12 @@
     flex-direction: column;
     align-items: center;
     background: var(--background);
+    transition: background-color 0.2s ease;
+  }
+
+  .iconButton--below:hover,
+  .iconButton--below:focus {
+    background: var(--background-hover);
   }
 
   .iconButton--below-with-space {
@@ -68,6 +82,12 @@
     background: var(--background);
     padding: var(--spacing-tiny);
     border-radius: 35px;
+    transition: background-color 0.2s ease;
+  }
+
+  .iconButton--below-with-space:hover .iconButton__iconFrame,
+  .iconButton--below-with-space:focus .iconButton__iconFrame {
+    background: var(--background-hover);
   }
 
   /* type */
@@ -80,11 +100,16 @@
   .iconButton--round .iconButton__iconFrame {
     border-radius: 100%;
   }
+
+  .iconButton--border {
+    border: 3px solid #fff;
+  }
 </style>
 
 <div
-  class="iconButton iconButton--{layout} iconButton--{borderStyle}"
-  style="--scale: {scale}; --background: {backgroundColor};">
+  class="iconButton iconButton--{layout} iconButton--{borderStyle}
+  {border ? 'iconButton--border' : ''}"
+  style="--scale: {scale}; --background: {backgroundColor}; --background-hover: {backgroundColorHover}">
   <div class="iconButton__iconFrame">
     <img
       class="iconButton__icon"
