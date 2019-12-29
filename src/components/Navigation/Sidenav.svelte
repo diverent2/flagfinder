@@ -10,7 +10,6 @@
     position: fixed;
     width: 200px;
     height: 100vh;
-    padding: var(--spacing-large);
     z-index: 1;
   }
 
@@ -20,6 +19,8 @@
     top: 0;
     height: 100vh;
     width: 100%;
+    pointer-events: none;
+    z-index: -1;
   }
 
   .sidenav__primary {
@@ -30,8 +31,11 @@
   }
 
   .sidenav__secondary {
-    display: flex;
-    justify-content: space-between;
+    margin: var(--spacing-small);
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--spacing);
   }
 
   .sidenav__info {
@@ -55,7 +59,7 @@
     margin-top: 10%;
     height: 13rem;
     width: 13rem;
-    transform: translateX(-4rem);
+    transform: translateX(-3rem);
   }
 </style>
 
@@ -69,7 +73,7 @@
     <a href="/search">
       <IconButton
         icon="search"
-        scale="6rem"
+        scale="5rem"
         titleVisibility="false"
         layout="below"
         borderStyle="round">
