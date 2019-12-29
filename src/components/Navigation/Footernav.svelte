@@ -57,12 +57,13 @@
     alt
     aria-hidden="true" />
 
-  <a class="footernav__main" href="/index">
+  <a class="footernav__main" href="/search">
     <IconButton
       icon="search"
       scale="4rem"
       titleVisibility="false"
       layout="below"
+      border="true"
       borderStyle="round">
       search
     </IconButton>

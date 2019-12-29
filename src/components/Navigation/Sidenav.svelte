@@ -77,8 +77,11 @@
       <IconButton
         icon="search"
         scale="5rem"
+        backgroundColor="var(--blue-dark)"
+        backgroundColorHover="var(--blue-dark-500)"
         titleVisibility="false"
         layout="below"
+        border="true"
         borderStyle="round">
         search
       </IconButton>
@@ -87,8 +90,10 @@
       <a href="/about">
         <IconButton
           icon="about"
+          scale="1.4rem"
+          fontSize="0.8rem"
           backgroundColor="var(--blue)"
-          fontSize="1rem"
+          backgroundColorHover="var(--blue-dark)"
           layout="below-with-space"
           borderStyle="rounded">
           about
@@ -97,8 +102,10 @@
       <a href="/settings">
         <IconButton
           icon="settings"
+          scale="1.4rem"
+          fontSize="0.8rem"
           backgroundColor="var(--blue)"
-          fontSize="1rem"
+          backgroundColorHover="var(--blue-dark)"
           layout="below-with-space"
           borderStyle="rounded">
           settings
