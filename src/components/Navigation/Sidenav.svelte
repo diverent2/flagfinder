@@ -1,7 +1,8 @@
 <script>
   import IconButton from "../Elements/IconButton.svelte";
 
-  const versionNumber = "ALPHA VERSION 0.2 ©2019";
+  export let version = "";
+  export let year = "";
 </script>
 
 <style>
@@ -106,11 +107,15 @@
     </div>
   </div>
 
-  <div class="sidenav__info">
+  <footer class="sidenav__info">
     <div>
-      Made with 💖 by
+      <span class="sidenav__info--extended">Made with 💖</span>
+      by
       <a href="https://twitter.com/diverent2">diverent2</a>
     </div>
-    <div>{versionNumber}</div>
-  </div>
+    <small>
+      <span class="sidenav__info--extended">{version}</span>
+      ©{year}
+    </small>
+  </footer>
 </nav>
