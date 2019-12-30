@@ -4,7 +4,7 @@
   import Metainfos from "../components/Helpers/Metainfos.svelte";
   import MainOptions from "../components/Filter/MainOptions.svelte";
   import FlagCards from "../components/Flags/FlagCards.svelte";
-  import Footer from "../components/Footer.svelte";
+  import Navigation from "../components/Navigation/Navigation.svelte";
 
   import flags from "../data/_flags";
 
@@ -119,11 +119,24 @@
   h1 {
     display: none;
   }
+
+  .container {
+    margin-bottom: 8rem;
+  }
+
+  @media only screen and (min-width: 650px) and (min-height: 450px) {
+    .container {
+      margin-left: 200px;
+      margin-bottom: 0;
+    }
+  }
 </style>
 
 <Metainfos {...meta} />
 
 <h1>Search</h1>
+
+<Navigation />
 
 <MainOptions
   bind:activeColorFilters
@@ -131,6 +144,7 @@
   bind:activeCategoryFilters
   {searchresults_amount} />
 
-<FlagCards flags={filtedFlags} />
+<div class="container">
 
-<Footer />
+  <FlagCards flags={filtedFlags} />
+</div>

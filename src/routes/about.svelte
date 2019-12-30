@@ -2,8 +2,8 @@
   import { app_name, app_baseUrl } from "../data/global.js";
 
   import Metainfos from "./../components/Helpers/Metainfos.svelte";
-  import Footer from "./../components/Footer.svelte";
   import Header from "./../components/Header.svelte";
+  import Navigation from "./../components/Navigation/Navigation.svelte";
 
   const meta = {
     title: `About | ${app_name}`,
@@ -17,6 +17,19 @@
   .anchor {
     scroll-margin-top: 120px;
   }
+
+  .container {
+    padding: 2rem;
+    margin-bottom: 8rem;
+  }
+
+  @media only screen and (min-width: 650px) and (min-height: 450px) {
+    .container {
+      margin-left: 200px;
+      margin-bottom: 0;
+    }
+  }
+
   h2,
   h3 {
     margin-top: 0.5rem;
@@ -52,6 +65,7 @@
 <Metainfos {...meta} />
 
 <Header>About</Header>
+<Navigation />
 
 <div class="container">
 
@@ -292,5 +306,3 @@
     </p>
   </section>
 </div>
-
-<Footer />

@@ -29,7 +29,7 @@
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-  import Footer from "./../../components/Footer.svelte";
+  import Navigation from "./../../components/Navigation/Navigation.svelte";
 
   export let flag;
 
@@ -58,18 +58,28 @@
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  .container {
+    margin-bottom: 8rem;
+  }
+
+  @media only screen and (min-width: 650px) and (min-height: 450px) {
+    .container {
+      margin-left: 200px;
+      margin-bottom: 0;
+    }
+  }
 </style>
 
 <Metainfos {...meta} />
 
 <Header {flag} bind:activeTab />
+<Navigation />
 
-<main>
+<main class="container">
   {#if activeTab === 1}
     <General {flag} />
   {:else}
     <Details {flag} />
   {/if}
 </main>
-
-<Footer />
