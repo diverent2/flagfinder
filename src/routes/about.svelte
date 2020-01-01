@@ -21,6 +21,7 @@
   .container {
     padding: 2rem;
     margin-bottom: 8rem;
+    padding-top: 120px;
   }
 
   @media only screen and (min-width: 650px) and (min-height: 450px) {
@@ -64,7 +65,7 @@
 
 <Metainfos {...meta} />
 
-<Header>About</Header>
+<Header backLink="/">About</Header>
 <Navigation />
 
 <div class="container">
