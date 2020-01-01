@@ -31,6 +31,12 @@
     justify-content: space-between;
   }
 
+  .sidenav__primary-home {
+    position: absolute;
+    right: 40px;
+    top: 210px;
+  }
+
   .sidenav__secondary {
     margin: var(--spacing-small);
     width: 60%;
@@ -86,32 +92,45 @@
         search
       </IconButton>
     </a>
-    <div class="sidenav__secondary">
-      <a href="/about">
-        <IconButton
-          icon="about"
-          scale="1.4rem"
-          fontSize="0.8rem"
-          backgroundColor="var(--blue)"
-          backgroundColorHover="var(--blue-dark)"
-          layout="below-with-space"
-          borderStyle="rounded">
-          about
-        </IconButton>
-      </a>
-      <a href="/settings">
-        <IconButton
-          icon="settings"
-          scale="1.4rem"
-          fontSize="0.8rem"
-          backgroundColor="var(--blue)"
-          backgroundColorHover="var(--blue-dark)"
-          layout="below-with-space"
-          borderStyle="rounded">
-          settings
-        </IconButton>
-      </a>
-    </div>
+    <a href="/" class="sidenav__primary-home">
+      <IconButton
+        icon="home"
+        scale="2rem"
+        fontSize="0.8rem"
+        backgroundColor="var(--blue)"
+        backgroundColorHover="var(--blue-dark)"
+        layout="below-with-space"
+        borderStyle="round"
+        titleVisibility="false">
+        home
+      </IconButton>
+    </a>
+  </div>
+  <div class="sidenav__secondary">
+    <a href="/about">
+      <IconButton
+        icon="about"
+        scale="1.4rem"
+        fontSize="0.8rem"
+        backgroundColor="var(--blue)"
+        backgroundColorHover="var(--blue-dark)"
+        layout="below-with-space"
+        borderStyle="rounded">
+        about
+      </IconButton>
+    </a>
+    <a href="/settings">
+      <IconButton
+        icon="settings"
+        scale="1.4rem"
+        fontSize="0.8rem"
+        backgroundColor="var(--blue)"
+        backgroundColorHover="var(--blue-dark)"
+        layout="below-with-space"
+        borderStyle="rounded">
+        settings
+      </IconButton>
+    </a>
   </div>
 
   <footer class="sidenav__info">

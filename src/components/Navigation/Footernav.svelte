@@ -26,9 +26,21 @@
   }
 
   .footernav__main {
+    position: relative;
+    display: inline-block;
+  }
+
+  .footernav__main-search {
     height: 8rem;
     width: 8rem;
     display: inline-block;
+  }
+
+  .footernav__main-home {
+    position: absolute;
+    right: 5px;
+    transform: translateX(50px);
+    bottom: 25px;
   }
 
   .footernav__info {
@@ -56,18 +68,34 @@
     src="wave--darkblue.svg"
     alt
     aria-hidden="true" />
-
-  <a class="footernav__main" href="/search">
-    <IconButton
-      icon="search"
-      scale="4rem"
-      titleVisibility="false"
-      layout="below"
-      border="true"
-      borderStyle="round">
-      search
-    </IconButton>
-  </a>
+  <div class="footernav__main">
+    <a class="footernav__main-search" href="/search">
+      <IconButton
+        icon="search"
+        scale="4rem"
+        backgroundColor="var(--blue-dark)"
+        backgroundColorHover="var(--blue)"
+        titleVisibility="false"
+        layout="below"
+        border="true"
+        borderStyle="round">
+        search
+      </IconButton>
+    </a>
+    <a href="/" class="footernav__main-home">
+      <IconButton
+        icon="home"
+        scale="1.7rem"
+        backgroundColor="var(--blue-dark)"
+        backgroundColorHover="var(--blue)"
+        fontSize="0.8rem"
+        layout="below-with-space"
+        titleVisibility="false"
+        borderStyle="round">
+        home
+      </IconButton>
+    </a>
+  </div>
   <footer class="footernav__info">
     <div>
       <span class="footernav__info--extended">Made with 💖</span>
