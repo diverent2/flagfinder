@@ -32,6 +32,7 @@
   }
 
   .iconButton__text[data-visible="false"] {
+    display: block;
     width: 0;
     height: 0;
     padding: 0;
