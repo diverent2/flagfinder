@@ -55,7 +55,7 @@
     display: none;
   }
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 380px) {
     .footernav__info--extended {
       display: inline;
     }
