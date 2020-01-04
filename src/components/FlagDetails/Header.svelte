@@ -10,7 +10,7 @@
     display: grid;
     grid-template:
       "back flag" max-content
-      "title ." 1fr
+      "title flag" 1fr
       / 1fr 1fr;
     width: 100vw;
     padding: var(--spacing-large) var(--spacing-xlarge);
@@ -55,7 +55,6 @@
 
   .flagDetails__headerImage {
     grid-area: flag;
-    position: absolute;
     width: auto;
     height: 80px;
     justify-self: end;
@@ -76,9 +75,14 @@
       margin-left: 150px;
 
       padding-top: var(--spacing-large);
-      padding-bottom: var(--spacing-large);
+      padding-bottom: var(--spacing-xlarge);
       padding-left: 4rem;
       padding-right: 3rem;
+    }
+
+    .flagDetails__headerImage {
+      height: 20vh;
+      max-height: 300px;
     }
   }
 </style>
