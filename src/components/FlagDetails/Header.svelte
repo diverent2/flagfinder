@@ -71,13 +71,24 @@
 
   @media only screen and (min-width: 650px) and (min-height: 450px) {
     header {
-      width: calc(100vw - 150px);
-      margin-left: 150px;
-
+      width: calc(100vw - 200px);
+      margin-left: 200px;
       padding-top: var(--spacing-large);
       padding-bottom: var(--spacing-xlarge);
-      padding-left: 4rem;
-      padding-right: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    header:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 60%;
+      top: 0;
+      left: 0;
+      background: var(--blue-dark-500);
+      transform: translateX(-200px);
     }
 
     .flagDetails__headerImage {
