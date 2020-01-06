@@ -22,4 +22,19 @@ describe('Search', () => {
       cy.get($categoryTag).contains('attraction');
     });
   });
+
+  it('can find flags independent of case or spacing', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+    cy.get('#search').type('gay');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+
+    cy.get('#search').type('Gay');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+
+    cy.get('#search').type('Gay Pride ');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+  });
 });
