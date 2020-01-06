@@ -58,9 +58,24 @@
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
     const { name, description, origin, category, props } = flag;
     const { firstAppearance, timeframe } = origin;
+
     const colors = [];
     props.colors.forEach(color => {
-      colors.push(color.meaning);
+      const {
+        name: colorName,
+        hue: colorHue,
+        meaning: colorMeaning,
+        value: colorValue
+      } = color;
+
+      const _color = [
+        cleanValue(colorName),
+        cleanValue(colorHue),
+        cleanValue(colorMeaning),
+        cleanValue(colorValue)
+      ];
+
+      colors.push(_color);
     });
 
     const fieldsToCheck = [
@@ -68,7 +83,7 @@
       cleanValue(description),
       cleanValue(firstAppearance),
       cleanValue(category),
-      colors,
+      colors.flat(),
       cleanValue(timeframe)
     ].flat();
 
