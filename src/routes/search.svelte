@@ -64,21 +64,27 @@
     });
 
     const fieldsToCheck = [
-      name,
-      description,
-      firstAppearance,
-      timeframe,
+      cleanValue(name),
+      cleanValue(description),
+      cleanValue(firstAppearance),
+      cleanValue(timeframe),
       colors
     ].flat();
 
     const didMatch = fieldsToCheck.findIndex(field => {
-      return field.includes(searchterm);
+      const searchterm_cleaned = cleanValue(searchterm);
+      return field.includes(searchterm_cleaned);
     });
 
     // return if match was found
     if (didMatch != -1) {
       return true;
     }
+  }
+
+  // solve case issues and spacing
+  function cleanValue(val) {
+    return val.toLowerCase().trim();
   }
 </script>
 
