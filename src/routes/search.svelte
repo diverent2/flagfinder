@@ -84,7 +84,7 @@
   }
 
   // solve case issues and spacing
-  function cleanValue(val) {
+  function cleanValue(val = "") {
     return val.toLowerCase().trim();
   }
 </script>
