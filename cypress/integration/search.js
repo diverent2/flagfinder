@@ -37,4 +37,19 @@ describe('Search', () => {
     cy.get('.flag-results .flagCard').should('not.have.length', 0);
     cy.get('.searchbox__delete').click();
   });
+  it('can find flags based on on searchterm with origin', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+
+    cy.get('#search').type('Baker');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+    cy.get('#search').type('2010');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+  });
+  it('can find flags based on searchterm with color values', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+
+    cy.get('#search').type('#fff');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+  });
 });
