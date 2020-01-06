@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased - 0.4]
 
+## [0.3.1] - 2010-01-06
+
+### 🛠️ Fixed
+
+- `package.json` version number which fixes cypress tests
+
 ## [0.3] - 2019-12-23
 
 ### Added
