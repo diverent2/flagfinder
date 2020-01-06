@@ -10,9 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased - 0.4]
 
+### Added
+
+- Tests for search results
+
+### 🔄 Changed
+
+- Search results (include color data)
+
 ### 🛠️ Fixed
 
 - Lock node version for now deployment
+- Search results when using different text cases or spacing
 
 ## [0.3.1] - 2010-01-06
 
