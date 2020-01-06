@@ -56,7 +56,7 @@
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
-    const { name, description, origin, props } = flag;
+    const { name, description, origin, category, props } = flag;
     const { firstAppearance, timeframe } = origin;
     const colors = [];
     props.colors.forEach(color => {
@@ -67,8 +67,9 @@
       cleanValue(name),
       cleanValue(description),
       cleanValue(firstAppearance),
-      cleanValue(timeframe),
-      colors
+      cleanValue(category),
+      colors,
+      cleanValue(timeframe)
     ].flat();
 
     const didMatch = fieldsToCheck.findIndex(field => {
