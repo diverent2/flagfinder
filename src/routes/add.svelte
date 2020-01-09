@@ -1,5 +1,6 @@
 <script>
   import Header from "./../components/Header.svelte";
+  import FormColor from "./../components/Form-elements/FormColor.svelte";
 
   let colors = [
     {
@@ -45,11 +46,22 @@
     margin-top: var(--spacing-large);
     padding: 0 20px;
     max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--spacing);
+    grid-template-areas:
+      "name name"
+      "id category"
+      "description description"
+      "origin origin"
+      "imageurl imageurl"
+      "colors colors";
   }
 
   ul.colors {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: var(--spacing);
   }
 
   li.color {
@@ -69,27 +81,36 @@
 <Header>Add a flag</Header>
 
 <form action="#" id="form--addFlag">
-  <label for="id">
-    ID:
-    <input type="text" name="id" placeholder="gay" required />
-  </label>
 
-  <label for="name">
+  <label for="name" style="grid-area: name;">
     name:
     <input type="text" name="name" placeholder="gay pride" required />
   </label>
 
-  <label for="description">
+  <label for="id" style="grid-area: id;">
+    ID:
+    <input type="text" name="id" placeholder="gay" required />
+  </label>
+
+  <label for="category" style="grid-area: category;">
+    category
+    <select name="category" size="1" required>
+      <option>sexuality</option>
+      <option>gender</option>
+      <option>attraction</option>
+      <option>kink</option>
+    </select>
+  </label>
+
+  <label for="description" style="grid-area: description;">
     description:
     <textarea
       name="description"
-      placeholder="Traditional symbol of the LGBTQ+ movement. It represents
-      people who identify as homosexual as well as the queer community as a
-      whole."
+      placeholder="Traditional symbol of the LGBTQ+ movement…"
       rows="3" />
   </label>
 
-  <fieldset>
+  <fieldset class="origin" style="grid-area: origin;">
     <legend>Origin</legend>
     <label for="firstAppearance">
       first appearance:
@@ -104,17 +125,7 @@
     </label>
   </fieldset>
 
-  <label>
-    category
-    <select name="category" size="1" required>
-      <option>sexuality</option>
-      <option>gender</option>
-      <option>attraction</option>
-      <option>kink</option>
-    </select>
-  </label>
-
-  <label for="image">
+  <label for="image" style="grid-area: imageurl;">
     image-url:
     <input
       type="text"
@@ -123,7 +134,7 @@
       required />
   </label>
 
-  <fieldset>
+  <fieldset style="grid-area: colors;">
     <legend>Colors</legend>
     <ul class="colors">
       {#each colors as color}
