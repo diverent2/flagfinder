@@ -58,23 +58,16 @@
       "colors colors";
   }
 
-  ul.colors {
+  .origin {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--spacing);
   }
 
-  li.color {
+  ul.colors {
     display: grid;
-    padding: var(--spacing);
-    background: var(--blue);
-    color: var(--white);
     grid-template-columns: 1fr 1fr;
-    grid-gap: var(--spacing-small);
-  }
-
-  ul.colors label[for="meaning"] {
-    grid-column: span 2;
+    grid-gap: var(--spacing);
   }
 </style>
 
@@ -139,55 +132,7 @@
     <ul class="colors">
       {#each colors as color}
         <li class="color">
-
-          <label for="id">
-            ID:
-            <input
-              type="text"
-              name="id"
-              placeholder="violet_blue"
-              bind:value={color.id}
-              required />
-          </label>
-
-          <label for="name">
-            name
-            <input
-              type="text"
-              name="name"
-              placeholder="violet blue"
-              bind:value={color.name}
-              required />
-
-          </label>
-          <label for="hue">
-            hue
-            <input
-              type="text"
-              name="hue"
-              placeholder="purple"
-              bind:value={color.hue}
-              required />
-          </label>
-
-          <label for="value">
-            hex-value
-            <input
-              type="text"
-              name="value"
-              placeholder="#9B4797"
-              bind:value={color.value}
-              required />
-          </label>
-          <label for="meaning">
-            meaning of the color
-            <textarea
-              name="meaning"
-              placeholder="possible attraction to anywhere on the gender
-              spectrum / blending in between both straight and gay communitites"
-              rows="2"
-              bind:value={color.meaning} />
-          </label>
+          <FormColor {colors} />
         </li>
       {/each}
     </ul>
