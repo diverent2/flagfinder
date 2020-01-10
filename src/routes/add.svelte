@@ -55,6 +55,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--spacing);
+
+    padding: 0;
+    border: 0;
   }
 
   ul.colors {
@@ -76,7 +79,7 @@
 <form action="#" id="form--addFlag">
 
   <label for="name" style="grid-area: name;">
-    name:
+    Name:
     <input type="text" name="name" placeholder="gay pride" required />
   </label>
 
@@ -86,7 +89,7 @@
   </label>
 
   <label for="category" style="grid-area: category;">
-    category
+    Category
     <select name="category" size="1" required>
       <option>sexuality</option>
       <option>gender</option>
@@ -96,27 +99,12 @@
   </label>
 
   <label for="description" style="grid-area: description;">
-    description:
+    Description:
     <textarea
       name="description"
       placeholder="Traditional symbol of the LGBTQ+ movement…"
       rows="3" />
   </label>
-
-  <fieldset class="origin" style="grid-area: origin;">
-    <legend>Origin</legend>
-    <label for="firstAppearance">
-      first appearance:
-      <input
-        type="text"
-        name="firstAppearance"
-        placeholder="Gilbert Baker in San Francisco" />
-    </label>
-    <label for="timeframe">
-      timeframe:
-      <input type="text" name="timeframe" placeholder="1979" />
-    </label>
-  </fieldset>
 
   <label for="image" style="grid-area: imageurl;">
     image-url:
@@ -126,6 +114,21 @@
       placeholder="url to flag image"
       required />
   </label>
+
+  <fieldset class="origin" style="grid-area: origin;">
+    <legend>Origin</legend>
+    <label for="firstAppearance">
+      First Appearance:
+      <input
+        type="text"
+        name="firstAppearance"
+        placeholder="Gilbert Baker in San Francisco" />
+    </label>
+    <label for="timeframe">
+      Timeframe:
+      <input type="text" name="timeframe" placeholder="1979" />
+    </label>
+  </fieldset>
 
   <fieldset style="grid-area: colors;">
     <legend>Colors</legend>
