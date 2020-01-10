@@ -1,6 +1,9 @@
 <script>
   import Header from "./../components/Header.svelte";
   import FormColor from "./../components/Form-elements/FormColor.svelte";
+  import { filterCategories } from "./../data/_filter";
+
+  let activeCategory = "sexuality";
 
   let colors = [
     {
@@ -43,8 +46,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--spacing);
     grid-template-areas:
-      "name name"
-      "id category"
+      "name id"
+      "category category"
       "description description"
       "origin origin"
       "imageurl imageurl"
@@ -64,6 +67,51 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--spacing);
+  }
+
+  /* categoryButtons */
+
+  .categoryButtons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .button__category input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .button__category {
+    width: var(--spacing-xlarge);
+    height: var(--spacing-xlarge);
+    position: relative;
+    background: var(--white);
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color 0.2s ease;
+  }
+
+  .ico-category {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .button__category:not(.selected) {
+    border-color: var(--gry-light) !important;
+  }
+
+  .button__category:not(.selected) .ico-category {
+    color: var(--gry-light) !important;
   }
 </style>
 
@@ -88,15 +136,33 @@
     <input type="text" name="id" placeholder="gay" required />
   </label>
 
-  <label for="category" style="grid-area: category;">
-    Category
-    <select name="category" size="1" required>
-      <option>sexuality</option>
-      <option>gender</option>
-      <option>attraction</option>
-      <option>kink</option>
-    </select>
-  </label>
+  <fieldset style="grid-area: category;">
+    <legend>Category</legend>
+    <div class="categoryButtons">
+      {#each filterCategories as category}
+        <div>
+          <label
+            class="button__category"
+            title={category.id}
+            class:selected={activeCategory === category.id}
+            style="border-color: {category.color}">
+            <input
+              type="radio"
+              bind:group={activeCategory}
+              value={category.id}
+              required />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="ico-category"
+              style="color: {category.color}">
+              <use href="icons/{category.id}.svg#{category.id}" />
+            </svg>
+          </label>
+        </div>
+      {/each}
+    </div>
+  </fieldset>
 
   <label for="description" style="grid-area: description;">
     Description:
