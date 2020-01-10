@@ -41,6 +41,10 @@
     resize: vertical;
   }
 
+  p {
+    text-align: center;
+  }
+
   #form--addFlag {
     margin: 0 auto;
     margin-top: var(--spacing-large);
@@ -72,6 +76,13 @@
 </style>
 
 <Header>Add a flag</Header>
+
+<p>
+  👩‍💻 This form is intended to be used as a help to create new flags.
+  <br />
+  It's meant for
+  <strong>[developement only]</strong>
+</p>
 
 <form action="#" id="form--addFlag">
 
