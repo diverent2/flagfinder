@@ -41,16 +41,6 @@
       placeholder="violet blue"
       bind:value={color.name}
       required />
-
-  </label>
-  <label for="hue">
-    hue
-    <input
-      type="text"
-      name="hue"
-      placeholder="purple"
-      bind:value={color.hue}
-      required />
   </label>
 
   <label for="value">
@@ -63,6 +53,17 @@
       bind:value={color.value}
       required />
   </label>
+
+  <label for="hue">
+    hue
+    <select name="hue" size="1" bind:value={color.hue} required>
+      <option value="" disabled selected>Please select</option>
+      {#each filterColors as filterColor}
+        <option>{filterColor.id}</option>
+      {/each}
+    </select>
+  </label>
+
   <label for="meaning">
     meaning of the color
     <textarea
