@@ -17,6 +17,8 @@
     );
     hueValue = matchingHue.color;
   }
+
+  let hexValue = "transparent";
 </script>
 
 <style>
@@ -32,7 +34,8 @@
     grid-column: span 2;
   }
 
-  [name="hue"] {
+  [name="hue"],
+  [name="value"] {
     padding-left: var(--spacing-tiny);
     border-left-width: var(--spacing-tiny);
     border-left-style: solid;
@@ -69,6 +72,7 @@
       placeholder="#9B4797"
       pattern="#[a-fA-F0-9]+"
       bind:value={color.value}
+      style="border-left-color: {color.value}"
       required />
   </label>
 
