@@ -1,4 +1,6 @@
 <script>
+  import { filterColors } from "../../data/_filter";
+
   let color = {
     id: "",
     name: "",
@@ -6,6 +8,15 @@
     meaning: "",
     value: ""
   };
+
+  let hueValue = "transparent";
+
+  function updateHuePreview() {
+    const matchingHue = filterColors.find(
+      filterColor => filterColor.id === color.hue
+    );
+    hueValue = matchingHue.color;
+  }
 </script>
 
 <style>
@@ -19,6 +30,12 @@
 
   label[for="meaning"] {
     grid-column: span 2;
+  }
+
+  [name="hue"] {
+    padding-left: var(--spacing-tiny);
+    border-left-width: var(--spacing-tiny);
+    border-left-style: solid;
   }
 </style>
 
@@ -57,7 +74,13 @@
 
   <label for="hue">
     hue
-    <select name="hue" size="1" bind:value={color.hue} required>
+    <select
+      name="hue"
+      size="1"
+      style="border-left-color: {hueValue}"
+      bind:value={color.hue}
+      on:change={updateHuePreview}
+      required>
       <option value="" disabled selected>Please select</option>
       {#each filterColors as filterColor}
         <option>{filterColor.id}</option>
