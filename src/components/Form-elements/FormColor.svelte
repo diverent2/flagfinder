@@ -17,21 +17,12 @@
     grid-gap: var(--spacing-small);
   }
 
-  ul.colors label[for="meaning"] {
+  label[for="meaning"] {
     grid-column: span 2;
   }
 </style>
 
 <div class="form-color">
-  <label for="id">
-    ID:
-    <input
-      type="text"
-      name="id"
-      placeholder="violet_blue"
-      bind:value={color.id}
-      required />
-  </label>
 
   <label for="name">
     name
@@ -40,6 +31,16 @@
       name="name"
       placeholder="violet blue"
       bind:value={color.name}
+      required />
+  </label>
+
+  <label for="id">
+    ID:
+    <input
+      type="text"
+      name="id"
+      placeholder="violet_blue"
+      bind:value={color.id}
       required />
   </label>
 
