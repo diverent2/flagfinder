@@ -74,3 +74,22 @@ code {
 .field--empty {
   opacity: 0.5;
 }
+
+/* FORMS */
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-small);
+  border: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 0;
+}

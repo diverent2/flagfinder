@@ -30,17 +30,6 @@
     padding: 0;
   }
 
-  input,
-  textarea,
-  select {
-    display: block;
-    width: 100%;
-  }
-
-  textarea {
-    resize: vertical;
-  }
-
   p {
     text-align: center;
   }
