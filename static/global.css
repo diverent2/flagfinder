@@ -94,10 +94,16 @@ fieldset {
   margin: 0;
 }
 
+label {
+  display: block;
+  position: relative;
+  font-size: 0.75rem;
+  margin-bottom: 0.1rem;
+}
+
 .formField--required:after {
   content: ' *';
   position: absolute;
-  margin-left: 4px;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   color: red;
 }
