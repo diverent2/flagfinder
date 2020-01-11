@@ -62,27 +62,24 @@
     const colors = [];
     props.colors.forEach(_color => {
       const { name, hue, meaning, value } = _color;
-
-      const color = [
-        cleanValue(name),
-        cleanValue(hue),
-        cleanValue(meaning),
-        cleanValue(value)
-      ];
-
+      const color = [name, hue, meaning, value];
       colors.push(color);
     });
 
     const fieldsToCheck = [
-      cleanValue(name),
-      cleanValue(description),
-      cleanValue(firstAppearance),
-      cleanValue(category),
+      name,
+      description,
+      firstAppearance,
+      category,
       colors.flat(),
-      cleanValue(timeframe)
+      timeframe
     ].flat();
 
-    const didMatch = fieldsToCheck.findIndex(field => {
+    const fieldsToCheck_cleaned = Array.from(fieldsToCheck, field => {
+      return cleanValue(field);
+    });
+
+    const didMatch = fieldsToCheck_cleaned.findIndex(field => {
       const searchterm_cleaned = cleanValue(searchterm);
       return field.includes(searchterm_cleaned);
     });

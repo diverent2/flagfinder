@@ -49,7 +49,7 @@ describe('Search', () => {
   it('can find flags based on searchterm with color values', () => {
     cy.get('.mainOptions__arrow--icon').click();
 
-    cy.get('#search').type('#fff');
+    cy.get('#search').type(' #fFfFff');
     cy.get('.flag-results .flagCard').should('not.have.length', 0);
   });
 });
