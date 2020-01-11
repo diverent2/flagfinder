@@ -24,9 +24,10 @@
 <style>
   .form-color {
     display: grid;
-    color: var(--white);
+    color: var(--black);
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--spacing-small);
+    margin-bottom: var(--spacing-large);
   }
 
   .meaning {
@@ -41,7 +42,7 @@
   }
 </style>
 
-<label class="form-color">
+<div class="form-color">
 
   <div>
     <label for="name" class="formField--required">Name</label>
@@ -98,5 +99,4 @@
       rows="2"
       bind:value={color.meaning} />
   </div>
-
-</label>
+</div>
