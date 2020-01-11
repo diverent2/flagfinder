@@ -60,22 +60,17 @@
     const { firstAppearance, timeframe } = origin;
 
     const colors = [];
-    props.colors.forEach(color => {
-      const {
-        name: colorName,
-        hue: colorHue,
-        meaning: colorMeaning,
-        value: colorValue
-      } = color;
+    props.colors.forEach(_color => {
+      const { name, hue, meaning, value } = _color;
 
-      const _color = [
-        cleanValue(colorName),
-        cleanValue(colorHue),
-        cleanValue(colorMeaning),
-        cleanValue(colorValue)
+      const color = [
+        cleanValue(name),
+        cleanValue(hue),
+        cleanValue(meaning),
+        cleanValue(value)
       ];
 
-      colors.push(_color);
+      colors.push(color);
     });
 
     const fieldsToCheck = [
