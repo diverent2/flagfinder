@@ -45,13 +45,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--spacing);
-    grid-template-areas:
-      "name id"
-      "category category"
-      "description description"
-      "origin origin"
-      "imageurl imageurl"
-      "colors colors";
   }
 
   .origin {
@@ -61,12 +54,6 @@
 
     padding: 0;
     border: 0;
-  }
-
-  ul.colors {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--spacing);
   }
 
   /* categoryButtons */
@@ -126,18 +113,18 @@
 
 <form action="#" id="form--addFlag">
 
-  <label for="name" style="grid-area: name;">
-    Name:
+  <div>
+    <label class="formField--required" for="name">Name</label>
     <input type="text" name="name" placeholder="gay pride" required />
-  </label>
+  </div>
 
-  <label for="id" style="grid-area: id;">
-    ID:
+  <div>
+    <label for="id" class="formField--required">ID</label>
     <input type="text" name="id" placeholder="gay" required />
-  </label>
+  </div>
 
-  <fieldset style="grid-area: category;">
-    <legend>Category</legend>
+  <fieldset style="grid-column: span 2;">
+    <legend class="formField--required">Category</legend>
     <div class="categoryButtons">
       {#each filterCategories as category}
         <div>
@@ -164,39 +151,39 @@
     </div>
   </fieldset>
 
-  <label for="description" style="grid-area: description;">
-    Description:
-    <textarea
-      name="description"
-      placeholder="Traditional symbol of the LGBTQ+ movement…"
-      rows="3" />
-  </label>
-
-  <label for="image" style="grid-area: imageurl;">
-    image-url:
+  <div style="grid-column: span 2;">
+    <label for="image" class="formField--required">Image-URL</label>
     <input
       type="text"
       name="timeframe"
       placeholder="url to flag image"
       required />
-  </label>
+  </div>
 
-  <fieldset class="origin" style="grid-area: origin;">
+  <div style="grid-column: span 2;">
+    <label for="description">Description</label>
+    <textarea
+      name="description"
+      placeholder="Traditional symbol of the LGBTQ+ movement…"
+      rows="3" />
+  </div>
+
+  <fieldset class="origin" style="grid-column: span 2;">
     <legend>Origin</legend>
-    <label for="firstAppearance">
-      First Appearance:
+    <div>
+      <label for="firstAppearance">First Appearance</label>
       <input
         type="text"
         name="firstAppearance"
         placeholder="Gilbert Baker in San Francisco" />
-    </label>
-    <label for="timeframe">
-      Timeframe:
+    </div>
+    <div>
+      <label for="timeframe">Timeframe</label>
       <input type="text" name="timeframe" placeholder="1979" />
-    </label>
+    </div>
   </fieldset>
 
-  <fieldset style="grid-area: colors;">
+  <fieldset style="grid-column: span 2;">
     <legend>Colors</legend>
     <ul class="colors">
       {#each colors as color}

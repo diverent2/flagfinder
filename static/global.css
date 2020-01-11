@@ -93,3 +93,11 @@ textarea {
 fieldset {
   margin: 0;
 }
+
+.formField--required:after {
+  content: ' *';
+  position: absolute;
+  margin-left: 4px;
+  font-size: 0.75rem;
+  color: red;
+}
