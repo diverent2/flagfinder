@@ -116,6 +116,16 @@
     margin: 0;
   }
 
+  .superSecretLink {
+    position: absolute;
+    font-size: 0;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    cursor: default;
+  }
+
   .discaimer_desktop {
     text-align: center;
     color: var(--white);
@@ -133,6 +143,7 @@
   <title>Home | Prideflags.info</title>
 </svelte:head>
 
+<a href="/add" class="superSecretLink">Add Flag</a>
 <header>
   <img
     class="header__background"
