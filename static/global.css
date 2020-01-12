@@ -75,6 +75,16 @@ code {
   opacity: 0.5;
 }
 
+button {
+  background: var(--blue-dark);
+  color: var(--white);
+  padding: var(--spacing-small) var(--spacing-large);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
 /* FORMS */
 
 input,
