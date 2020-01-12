@@ -92,10 +92,10 @@
     </select>
   </div>
   <div class="meaning">
-    <label for="meaning">meaning of the color</label>
+    <label for="meaning">Meaning of the color</label>
     <textarea
       name="meaning"
-      placeholder="possible attraction to …"
+      placeholder="Possible attraction to …"
       rows="2"
       bind:value={color.meaning} />
   </div>
