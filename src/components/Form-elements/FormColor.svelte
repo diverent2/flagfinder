@@ -27,15 +27,15 @@
     color: var(--black);
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--spacing-small);
-    margin-bottom: var(--spacing-large);
+    margin-bottom: var(--spacing-xlarge);
   }
 
   .meaning {
     grid-column: span 2;
   }
 
-  [name="hue"],
-  [name="value"] {
+  [name="colorHue"],
+  [name="colorValue"] {
     padding-left: var(--spacing-tiny);
     border-left-width: var(--spacing-tiny);
     border-left-style: solid;
@@ -45,30 +45,30 @@
 <div class="form-color">
 
   <div>
-    <label for="name" class="formField--required">Name</label>
+    <label for="colorName" class="formField--required">Name</label>
     <input
       type="text"
-      name="name"
+      name="colorName"
       placeholder="violet blue"
       bind:value={color.name}
       required />
   </div>
 
   <div>
-    <label for="id" class="formField--required">ID</label>
+    <label for="colorId" class="formField--required">ID</label>
     <input
       type="text"
-      name="id"
+      name="colorId"
       placeholder="violet_blue"
       bind:value={color.id}
       required />
   </div>
 
   <div>
-    <label for="value" class="formField--required">Value (Hex)</label>
+    <label for="colorValue" class="formField--required">Value (Hex)</label>
     <input
       type="text"
-      name="value"
+      name="colorValue"
       placeholder="#9B4797"
       pattern="#[a-fA-F0-9]+"
       bind:value={color.value}
@@ -77,9 +77,9 @@
   </div>
 
   <div>
-    <label for="hue" class="formField--required">Hue</label>
+    <label for="colorHue" class="formField--required">Hue</label>
     <select
-      name="hue"
+      name="colorHue"
       size="1"
       style="border-left-color: {hueValue}"
       bind:value={color.hue}
@@ -92,9 +92,9 @@
     </select>
   </div>
   <div class="meaning">
-    <label for="meaning">Meaning of the color</label>
+    <label for="colorMeaning">Meaning of the color</label>
     <textarea
-      name="meaning"
+      name="colorMeaning"
       placeholder="Possible attraction to …"
       rows="2"
       bind:value={color.meaning} />
