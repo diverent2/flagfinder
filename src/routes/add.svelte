@@ -24,6 +24,22 @@
       value: ""
     });
   }
+
+  let sources = [
+    {
+      link: "",
+      name: "",
+      researchDate: ""
+    }
+  ];
+
+  function addSource() {
+    sources = sources.concat({
+      link: "",
+      name: "",
+      researchDate: ""
+    });
+  }
 </script>
 
 <style>
@@ -194,4 +210,17 @@
     </ul>
     <button on:click={addColor}>Add color</button>
   </fieldset>
+
+  <fieldset style="grid-column: span 2;">
+    <legend>Sources</legend>
+    <ul class="sources">
+      {#each sources as source}
+        <li class="source">
+          <FormSource {sources} />
+        </li>
+      {/each}
+    </ul>
+    <button on:click={addSource}>Add source</button>
+  </fieldset>
+
 </form>
