@@ -1,7 +1,7 @@
 <script>
   import { filterColors } from "../../data/_filter";
 
-  let color = {
+  export let color = {
     id: "",
     name: "",
     hue: "",

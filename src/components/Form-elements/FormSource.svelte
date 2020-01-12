@@ -1,5 +1,5 @@
 <script>
-  let source = {
+  export let source = {
     link: "",
     name: "",
     researchDate: ""

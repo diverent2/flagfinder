@@ -1,22 +1,37 @@
 <script>
   import Header from "./../components/Header.svelte";
   import FormColor from "./../components/Form-elements/FormColor.svelte";
+  import FormSource from "./../components/Form-elements/FormSource.svelte";
   import { filterCategories } from "./../data/_filter";
 
-  let activeCategory = "sexuality";
-
-  let colors = [
-    {
-      id: "",
-      name: "",
-      hue: "",
-      meaning: "",
-      value: ""
-    }
-  ];
+  const flagData = {
+    id: "",
+    name: "",
+    description: "",
+    origin: {
+      firstAppearance: "",
+      timeframe: ""
+    },
+    category: "",
+    image: "",
+    props: {
+      colors: [
+        {
+          id: "",
+          name: "",
+          hue: "",
+          meaning: "",
+          value: ""
+        }
+      ],
+      matches: [{}]
+    },
+    sources: [{}]
+  };
 
   function addColor() {
-    colors = colors.concat({
+    let flagColorsData = flagData.props.colors;
+    flagData.props.colors = flagColorsData.concat({
       id: "",
       name: "",
       hue: "",
@@ -34,11 +49,18 @@
   ];
 
   function addSource() {
-    sources = sources.concat({
+    let flagSourcesData = flagData.sources;
+    flagData.sources = flagSourcesData.concat({
       link: "",
       name: "",
       researchDate: ""
     });
+  }
+
+  function generateCode() {
+    console.log(flagData.props.colors);
+    const prettyJsonOutput = JSON.stringify(flagData, null, 2);
+    document.getElementById("output").value = prettyJsonOutput;
   }
 </script>
 
@@ -56,7 +78,7 @@
   #form--addFlag {
     margin: 0 auto;
     margin-top: var(--spacing-large);
-    padding: 0 20px;
+    padding: 0 var(--spacing-large);
     max-width: 800px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -116,6 +138,25 @@
   .button__category:not(.selected) .ico-category {
     color: var(--gry-light) !important;
   }
+
+  .buttonContainer {
+    text-align: center;
+  }
+
+  .form__submit {
+    grid-column: span 2;
+    margin-bottom: var(--spacing-xlarge);
+  }
+  .form__submit button {
+    background: var(--green-light);
+  }
+
+  .outputContainer {
+    margin: 0 auto;
+    margin-bottom: var(--spacing-large);
+    padding: 0 var(--spacing-large);
+    max-width: 800px;
+  }
 </style>
 
 <Header>Add a flag</Header>
@@ -127,16 +168,26 @@
   <strong>[developement only]</strong>
 </p>
 
-<form action="#" id="form--addFlag">
+<form on:submit|preventDefault={generateCode} id="form--addFlag">
 
   <div>
     <label class="formField--required" for="name">Name</label>
-    <input type="text" name="name" placeholder="gay pride" required />
+    <input
+      type="text"
+      name="name"
+      placeholder="gay pride"
+      bind:value={flagData.name}
+      required />
   </div>
 
   <div>
     <label for="id" class="formField--required">ID</label>
-    <input type="text" name="id" placeholder="gay" required />
+    <input
+      type="text"
+      name="id"
+      placeholder="gay"
+      bind:value={flagData.id}
+      required />
   </div>
 
   <fieldset style="grid-column: span 2;">
@@ -147,11 +198,12 @@
           <label
             class="button__category"
             title={category.id}
-            class:selected={activeCategory === category.id}
+            class:selected={flagData.category === category.id}
             style="border-color: {category.color}">
             <input
               type="radio"
-              bind:group={activeCategory}
+              name="category"
+              bind:group={flagData.category}
               value={category.id}
               required />
             <svg
@@ -171,8 +223,9 @@
     <label for="image" class="formField--required">Image-URL</label>
     <input
       type="text"
-      name="timeframe"
+      name="image"
       placeholder="url to flag image"
+      bind:value={flagData.image}
       required />
   </div>
 
@@ -181,6 +234,7 @@
     <textarea
       name="description"
       placeholder="Traditional symbol of the LGBTQ+ movement…"
+      bind:value={flagData.description}
       rows="3" />
   </div>
 
@@ -191,36 +245,67 @@
       <input
         type="text"
         name="firstAppearance"
+        bind:value={flagData.origin.firstApperance}
         placeholder="Gilbert Baker in San Francisco" />
     </div>
     <div>
       <label for="timeframe">Timeframe</label>
-      <input type="text" name="timeframe" placeholder="1979" />
+      <input
+        type="text"
+        name="timeframe"
+        bind:value={flagData.origin.timeframe}
+        placeholder="1979" />
     </div>
   </fieldset>
 
   <fieldset style="grid-column: span 2;">
     <legend>Colors</legend>
     <ul class="colors">
-      {#each colors as color}
+      {#each flagData.props.colors as color}
         <li class="color">
-          <FormColor {colors} />
+          <FormColor {color} />
         </li>
       {/each}
     </ul>
-    <button on:click={addColor}>Add color</button>
+    <div class="buttonContainer">
+      <button on:click={addColor}>Add color</button>
+    </div>
   </fieldset>
 
   <fieldset style="grid-column: span 2;">
     <legend>Sources</legend>
     <ul class="sources">
-      {#each sources as source}
+      {#each flagData.sources as source}
         <li class="source">
           <FormSource {sources} />
         </li>
       {/each}
     </ul>
-    <button on:click={addSource}>Add source</button>
+    <div class="buttonContainer">
+      <button on:click={addSource}>Add source</button>
+    </div>
   </fieldset>
 
+  <div class="form__submit">
+    <p>
+      Click this button to generate the new flag in JSON. You can use this to
+      open a
+      <a href="#https://github.com/diverent2/flagfinder/issues/new/choose">
+        content update request
+      </a>
+      on
+      <a href="https://github.com/diverent2/flagfinder">github.</a>
+      <br />
+      Thank you for your help!
+      <br />
+      <small>!Note: Requesting a change won't guarantee its addition!</small>
+    </p>
+    <div class="buttonContainer">
+      <button>Generate Code</button>
+    </div>
+  </div>
 </form>
+
+<div class="outputContainer">
+  <textarea id="output" readonly rows="10" />
+</div>
