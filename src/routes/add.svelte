@@ -26,7 +26,13 @@
       ],
       matches: [{}]
     },
-    sources: [{}]
+      sources: [
+        {
+          link: "",
+          name: "",
+          researchDate: ""
+        }
+      ]
   };
 
   function addColor() {
