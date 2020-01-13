@@ -75,6 +75,10 @@ code {
   opacity: 0.5;
 }
 
+.container {
+  padding: 0 var(--spacing-large);
+}
+
 button {
   background: var(--blue-dark);
   color: var(--white);

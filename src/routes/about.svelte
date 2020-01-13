@@ -4,10 +4,6 @@
 </script>
 
 <style>
-  .container {
-    padding: 2rem;
-  }
-
   h2,
   h3 {
     margin-top: 0.5rem;
