@@ -212,7 +212,7 @@ const flags = [
       ],
       symbols: [
         {
-          id: 'double_mars',
+          id: 'double-mars',
           meaning: 'male* sexuality',
           icon: ''
         }
@@ -324,7 +324,7 @@ const flags = [
           value: '#D50071'
         },
         {
-          id: 'violet_blue',
+          id: 'violet-blue',
           name: 'violet blue',
           hue: 'purple',
           meaning:
@@ -332,7 +332,7 @@ const flags = [
           value: '#9B4797'
         },
         {
-          id: 'international_klein_blue',
+          id: 'international-klein-blue',
           name: 'international klein blue',
           hue: 'blue',
           meaning: 'different sex/gender attraction  / sterotypical for boy*',
@@ -405,7 +405,7 @@ const flags = [
           value: '#7F0081'
         },
         {
-          id: 'light_gray',
+          id: 'light-gray',
           name: 'light gray',
           hue: 'gray',
           meaning: 'gray-ace and demisexuality',
@@ -450,7 +450,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'royal_blue',
+          id: 'royal-blue',
           name: 'royal blue',
           hue: 'lightblue',
           meaning: 'male sex',
@@ -464,7 +464,7 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'dark_pink',
+          id: 'dark-pink',
           name: 'dark pink',
           hue: 'pink',
           meaning: 'female sex',
@@ -681,7 +681,7 @@ const flags = [
           value: '#C64651'
         },
         {
-          id: 'dark_red',
+          id: 'dark-red',
           name: 'dark red',
           hue: 'red',
           meaning: '',
@@ -734,21 +734,21 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hollywood_cerise',
+          id: 'hollywood-cerise',
           name: 'hollywood cerise',
           hue: 'pink',
           meaning: 'female* gendered persons (regardless of biological sex)',
           value: '#FC008D'
         },
         {
-          id: 'school_bus_yellow',
+          id: 'school-bus-yellow',
           name: 'school bus yellow',
           hue: 'yellow',
           meaning: 'mixed gendered, genderless, thirdgendered people',
           value: '#FEDB09'
         },
         {
-          id: 'dodger_blue',
+          id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'lightblue',
           meaning: 'male* gendered persons (regardless of biological sex)',
@@ -794,21 +794,21 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hot_magenta',
+          id: 'hot-magenta',
           name: 'hot magenta',
           hue: 'pink',
           meaning: 'attraction to females*',
           value: '#F300BA'
         },
         {
-          id: 'mountain_meadow',
+          id: 'mountain-meadow',
           name: 'mountain meadow',
           hue: 'lightgreen',
           meaning: 'attraction to people of other genders',
           value: '#25DA69'
         },
         {
-          id: 'dodger_blue',
+          id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'blue',
           meaning: 'attraction to males*',
@@ -967,7 +967,7 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'pale_green',
+          id: 'pale-green',
           name: 'pale green',
           hue: 'lightgreen',
           meaning: 'nonbinary; as the opposite of the highly gendered purple',
@@ -1007,7 +1007,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hot_pink',
+          id: 'hot-pink',
           name: 'hot pink',
           hue: 'pink',
           meaning: 'femininity',
@@ -1021,7 +1021,7 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'dark_violet',
+          id: 'dark-violet',
           name: 'dark violet',
           hue: 'purple',
           meaning: 'masculinity; femininity',
@@ -1035,7 +1035,7 @@ const flags = [
           value: '#000000'
         },
         {
-          id: 'cerulean_blue',
+          id: 'cerulean-blue',
           name: 'cerulean blue',
           hue: 'blue',
           meaning: 'masculinity',
@@ -1075,7 +1075,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'medium_urple',
+          id: 'medium-purple',
           name: 'medium purple',
           hue: 'purple',
           meaning: 'androgynous',
@@ -1143,7 +1143,7 @@ const flags = [
           value: '#000000'
         },
         {
-          id: 'medium_orchid',
+          id: 'medium-orchid',
           name: 'medium orchid',
           hue: 'purple',
           meaning: 'mix of male* and female*',
@@ -1191,7 +1191,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'maya_blue',
+          id: 'maya-blue',
           name: 'maya blue',
           hue: 'lightblue',
           meaning: 'traditionally value for boy',
@@ -1259,14 +1259,14 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'pale_cornflower_blue',
+          id: 'pale-cornflower-blue',
           name: 'pale cornflower blue',
           hue: 'blue',
           meaning: 'masculinity',
           value: '#A3CFEF'
         },
         {
-          id: 'classic_rose',
+          id: 'classic-rose',
           name: 'classic rose',
           hue: 'lightpink',
           meaning: 'femininity',

@@ -8,27 +8,27 @@
 
   function setEmptyFlagData() {
     return {
-    id: "",
-    name: "",
-    description: "",
-    origin: {
-      firstAppearance: "",
-      timeframe: ""
-    },
-    category: "",
-    image: "",
-    props: {
-      colors: [
-        {
-          id: "",
-          name: "",
-          hue: "",
-          meaning: "",
-          value: ""
-        }
-      ],
-      matches: [{}]
-    },
+      id: "",
+      name: "",
+      description: "",
+      origin: {
+        firstAppearance: "",
+        timeframe: ""
+      },
+      category: "",
+      image: "",
+      props: {
+        colors: [
+          {
+            id: "",
+            name: "",
+            hue: "",
+            meaning: "",
+            value: ""
+          }
+        ],
+        matches: [{}]
+      },
       sources: [
         {
           link: "",
@@ -36,7 +36,7 @@
           researchDate: ""
         }
       ]
-  };
+    };
   }
 
   function addColor() {
@@ -233,7 +233,8 @@
     <input
       type="text"
       name="id"
-      placeholder="gay"
+      placeholder="gay-bear"
+      pattern="[a-zA-Z0-9-]+"
       bind:value={flagData.id}
       required />
   </div>

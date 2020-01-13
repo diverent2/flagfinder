@@ -59,7 +59,8 @@
     <input
       type="text"
       name="colorId"
-      placeholder="violet_blue"
+      placeholder="violet-blue"
+      pattern="[a-zA-Z0-9-]+"
       bind:value={color.id}
       required />
   </div>
