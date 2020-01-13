@@ -4,7 +4,10 @@
   import FormSource from "./../components/Form-elements/FormSource.svelte";
   import { filterCategories } from "./../data/_filter";
 
-  const flagData = {
+  let flagData = setEmptyFlagData();
+
+  function setEmptyFlagData() {
+    return {
     id: "",
     name: "",
     description: "",
@@ -34,6 +37,7 @@
         }
       ]
   };
+  }
 
   function addColor() {
     let flagColorsData = flagData.props.colors;
@@ -64,7 +68,6 @@
   }
 
   function generateCode() {
-    console.log(flagData.props.colors);
     const prettyJsonOutput = JSON.stringify(flagData, null, 2);
     document.getElementById("output").value = prettyJsonOutput;
   }
@@ -78,6 +81,20 @@
     document.execCommand("copy");
 
     alert("Text copied to clipboard!");
+  }
+
+  function resetForm() {
+    var confirmation = confirm("Are you sure you want to reset the form?");
+    if (confirmation) {
+      document.getElementById("form--addFlag").reset();
+      document.getElementById("output").value = "";
+
+      flagData = setEmptyFlagData();
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
   }
 </script>
 
@@ -341,5 +358,6 @@
   <textarea id="output" readonly rows="10" />
   <div class="outputContainer__buttons">
     <button on:click={copyOutput}>Copy</button>
+    <button on:click={resetForm} style="background: red">Reset</button>
   </div>
 </div>
