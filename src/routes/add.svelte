@@ -73,6 +73,7 @@
 
   p {
     text-align: center;
+    padding: 0 var(--spacing-large);
   }
 
   #form--addFlag {
@@ -139,7 +140,10 @@
     color: var(--gry-light) !important;
   }
 
-  .buttonContainer {
+  .text--right {
+    text-align: right;
+  }
+  .text--center {
     text-align: center;
   }
 
@@ -157,7 +161,17 @@
     padding: 0 var(--spacing-large);
     max-width: 800px;
   }
+
+  .outputContainer__buttons {
+    margin-top: var(--spacing-small);
+    display: flex;
+    justify-content: space-between;
+  }
 </style>
+
+<svelte:head>
+  <title>[👩‍💻 DEV] Add a flag | Prideflags.info</title>
+</svelte:head>
 
 <Header>Add a flag</Header>
 
@@ -267,7 +281,7 @@
         </li>
       {/each}
     </ul>
-    <div class="buttonContainer">
+    <div class="text--right">
       <button on:click={addColor}>Add color</button>
     </div>
   </fieldset>
@@ -277,11 +291,11 @@
     <ul class="sources">
       {#each flagData.sources as source}
         <li class="source">
-          <FormSource {sources} />
+          <FormSource {source} />
         </li>
       {/each}
     </ul>
-    <div class="buttonContainer">
+    <div class="text--right">
       <button on:click={addSource}>Add source</button>
     </div>
   </fieldset>
@@ -300,8 +314,8 @@
       <br />
       <small>!Note: Requesting a change won't guarantee its addition!</small>
     </p>
-    <div class="buttonContainer">
-      <button>Generate Code</button>
+    <div class="text--center">
+      <button type="submit">Generate Code</button>
     </div>
   </div>
 </form>
