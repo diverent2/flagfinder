@@ -208,10 +208,9 @@
 
 <div class="container">
   <p>
-  👩‍💻 This form is intended to be used as a help to create new flags.
+    This form is intended to be used as a help to create new flags.
     <br />
-  It's meant for
-  <strong>[developement only]</strong>
+    <strong>[👩‍💻 for developement only]</strong>
   </p>
 
   <form on:submit|preventDefault={generateCode} id="form--addFlag">
