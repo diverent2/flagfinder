@@ -62,6 +62,17 @@
     const prettyJsonOutput = JSON.stringify(flagData, null, 2);
     document.getElementById("output").value = prettyJsonOutput;
   }
+
+  function copyOutput() {
+    const copyText = document.getElementById("output");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    document.execCommand("copy");
+
+    alert("Text copied to clipboard!");
+  }
 </script>
 
 <style>
@@ -322,4 +333,7 @@
 
 <div class="outputContainer">
   <textarea id="output" readonly rows="10" />
+  <div class="outputContainer__buttons">
+    <button on:click={copyOutput}>Copy</button>
+  </div>
 </div>
