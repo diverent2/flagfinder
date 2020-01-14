@@ -36,3 +36,9 @@ jobs:
         run: yarn build
       - name: run tests
         run: yarn test
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy on Zeit
+        uses: actions/zeit-now@master
