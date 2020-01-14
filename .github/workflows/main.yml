@@ -38,7 +38,10 @@ jobs:
         run: yarn test
   deploy:
     name: Deploy
+    needs: [build, build_latest]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v1
       - name: Deploy on Zeit
         uses: actions/zeit-now@master
