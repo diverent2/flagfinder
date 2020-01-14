@@ -1,7 +1,7 @@
 describe('Search', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.get('a.button__search').click();
+    cy.visit('/search');
+    cy.wait(100);
   });
 
   it('updates result count correctly', () => {
