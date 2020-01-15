@@ -1,7 +1,7 @@
 describe('Searchfilter', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.get('a.button__search').click();
+    cy.visit('/search');
+    cy.wait(100);
   });
 
   it('shows/hides remove filter button correctly', () => {

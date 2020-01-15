@@ -1,7 +1,7 @@
 describe('Search', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.get('a.button__search').click();
+    cy.visit('/search');
+    cy.wait(100);
   });
 
   it('updates result count correctly', () => {
@@ -21,5 +21,35 @@ describe('Search', () => {
     ).each($categoryTag => {
       cy.get($categoryTag).contains('attraction');
     });
+  });
+
+  it('can find flags independent of case or spacing', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+    cy.get('#search').type('gay');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+
+    cy.get('#search').type('Gay');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+
+    cy.get('#search').type('Gay Pride ');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+  });
+  it('can find flags based on on searchterm with origin', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+
+    cy.get('#search').type('Baker');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+    cy.get('.searchbox__delete').click();
+    cy.get('#search').type('2010');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+  });
+  it('can find flags based on searchterm with color values', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+
+    cy.get('#search').type(' #fFfFff');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
   });
 });

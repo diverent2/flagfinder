@@ -56,29 +56,43 @@
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
-    const { name, description, origin, props } = flag;
+    const { name, description, origin, category, props } = flag;
     const { firstAppearance, timeframe } = origin;
+
     const colors = [];
-    props.colors.forEach(color => {
-      colors.push(color.meaning);
+    props.colors.forEach(_color => {
+      const { name, hue, meaning, value } = _color;
+      const color = [name, hue, meaning, value];
+      colors.push(color);
     });
 
     const fieldsToCheck = [
       name,
       description,
       firstAppearance,
-      timeframe,
-      colors
+      category,
+      colors.flat(),
+      timeframe
     ].flat();
 
-    const didMatch = fieldsToCheck.findIndex(field => {
-      return field.includes(searchterm);
+    const fieldsToCheck_cleaned = Array.from(fieldsToCheck, field => {
+      return cleanValue(field);
+    });
+
+    const didMatch = fieldsToCheck_cleaned.findIndex(field => {
+      const searchterm_cleaned = cleanValue(searchterm);
+      return field.includes(searchterm_cleaned);
     });
 
     // return if match was found
     if (didMatch != -1) {
       return true;
     }
+  }
+
+  // solve case issues and spacing
+  function cleanValue(val = "") {
+    return val.toLowerCase().trim();
   }
 </script>
 
