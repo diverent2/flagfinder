@@ -16,10 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
+- Deployment pipeline
 - Search results (include color data)
 
 ### 🛠️ Fixed
 
+- Deployment pipeline; Cypress should no longer fail because of missing memory
 - Lock node version for now deployment
 - Search results when using different text cases or spacing
 
