@@ -60,6 +60,7 @@ const flags = [
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -154,6 +155,7 @@ const flags = [
       colors: ['brown', 'orange', 'yellow', 'white', 'gray', 'black'],
       symbols: ['paw']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -222,6 +224,7 @@ const flags = [
       colors: ['lightpink', 'white', 'yellow', 'black'],
       symbols: ['mars']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -283,6 +286,7 @@ const flags = [
       colors: ['black', 'gray', 'white', 'purple'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -344,6 +348,7 @@ const flags = [
       colors: ['pink', 'purple', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -417,6 +422,7 @@ const flags = [
       colors: ['black', 'white', 'purple', 'gray'],
       symbols: ['triangle']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -476,6 +482,7 @@ const flags = [
       colors: ['lightblue', 'white', 'pink'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -551,6 +558,7 @@ const flags = [
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: ['venus']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -611,6 +619,7 @@ const flags = [
       colors: ['purple', 'black', 'white'],
       symbols: ['labrys']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -700,6 +709,7 @@ const flags = [
       colors: ['pink', 'purple', 'white', 'lightpink', 'red'],
       symbols: ['lips']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -760,6 +770,7 @@ const flags = [
       colors: ['pink', 'yellow', 'lightblue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -820,6 +831,7 @@ const flags = [
       colors: ['pink', 'lightgreen', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -924,6 +936,7 @@ const flags = [
         }
       ]
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -979,6 +992,7 @@ const flags = [
       colors: ['black', 'gray', 'white', 'lightgreen'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1047,6 +1061,7 @@ const flags = [
       colors: ['pink', 'white', 'purple', 'black', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1101,6 +1116,7 @@ const flags = [
       colors: ['purple', 'white', 'green'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1163,6 +1179,7 @@ const flags = [
       colors: ['yellow', 'white', 'purple', 'black'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1218,6 +1235,7 @@ const flags = [
       colors: ['lightblue', 'lightpink', 'white'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1278,6 +1296,7 @@ const flags = [
       colors: ['purple', 'white', 'blue', 'lightpink'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1330,6 +1349,7 @@ const flags = [
       colors: ['yellow', 'purple'],
       symbols: ['circle']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1405,6 +1425,7 @@ const flags = [
       colors: ['green', 'lightgreen', 'white', 'gray', 'black'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1475,6 +1496,7 @@ const flags = [
       colors: ['blue', 'red', 'black', 'yellow'],
       symbols: ['pi']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',

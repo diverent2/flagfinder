@@ -14,6 +14,7 @@ describe('Add Flag form', () => {
     );
     cy.get('input[name="firstAppearance"]').type('Gilbert Backer');
     cy.get('input[name="timeframe"]').type('1979');
+    cy.get('input[name="keywords"]').type('gay, masc ');
     cy.get('input[name="colorName"]').type('violet blue');
     cy.get('input[name="colorId"]').type('violet-blue');
     cy.get('input[name="colorValue"]').type('#9B4797');
@@ -32,6 +33,8 @@ describe('Add Flag form', () => {
       .should('contain.value', 'A most awesome group of people!')
       .should('contain.value', 'Gilbert Backer')
       .should('contain.value', '1979')
+      .should('contain.value', '"gay",\n    "masc"')
+      .and('not.contain.value', 'masc ')
       .should('contain.value', 'violet blue')
       .should('contain.value', 'violet-blue')
       .should('contain.value', '#9B4797')

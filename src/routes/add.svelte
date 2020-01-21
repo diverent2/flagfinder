@@ -27,8 +27,16 @@
             value: ""
           }
         ],
-        matches: [{}]
+        symbols: [
+          {
+            id: "",
+            meaning: "",
+            icon: ""
+          }
+        ]
       },
+      matches: [{}],
+      keywords: [],
       sources: [
         {
           link: "",
@@ -67,7 +75,15 @@
     });
   }
 
+  let keywords__string = "";
+
   function generateCode() {
+    const keywords__seperated = Array.from(keywords__string.split(","));
+    const keywords = keywords__seperated.map(keyword => {
+      return keyword.trim().toLowerCase();
+    });
+    flagData.keywords = keywords;
+
     const prettyJsonOutput = JSON.stringify(flagData, null, 2);
     document.getElementById("output").value = prettyJsonOutput;
   }
@@ -303,6 +319,15 @@
           placeholder="1979" />
       </div>
     </fieldset>
+
+    <div style="grid-column: span 2;">
+      <label for="keywords">Keywords (comma-separated)</label>
+      <input
+        type="text"
+        name="keywords"
+        placeholder="gay, masc, ..."
+        bind:value={keywords__string} />
+    </div>
 
     <fieldset style="grid-column: span 2;">
       <legend>Colors</legend>
