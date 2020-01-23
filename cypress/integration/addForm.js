@@ -23,6 +23,17 @@ describe('Add Flag form', () => {
     cy.get('input[name="sourceName"]').type('Awesome Website');
     cy.get('input[name="sourceLink"]').type('https://www.awesome-website.com');
     cy.get('input[name="sourceResearchDate"]').type('2020-01-01');
+    cy.log('Add second source');
+    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .eq(1)
+      .type('Another Source Site');
+    cy.get('input[name="sourceLink"]')
+      .eq(1)
+      .type('https://www.another-source.org');
+    cy.get('input[name="sourceResearchDate"]')
+      .eq(1)
+      .type('2019-01-01');
     cy.get('#form--addFlag button[type="submit"]').click();
 
     cy.get('#output')
@@ -42,10 +53,13 @@ describe('Add Flag form', () => {
       .should('contain.value', 'Possible attraction to ...')
       .should('contain.value', 'Awesome Website')
       .should('contain.value', 'https://www.awesome-website.com')
-      .should('contain.value', '2020-01-01');
+      .should('contain.value', '2020-01-01')
+      .should('contain.value', 'Another Source Site')
+      .should('contain.value', 'https://www.another-source.org')
+      .should('contain.value', '2019-01-01');
   });
 
-  it.only('can add and remove multiple sources', () => {
+  it('can add and remove multiple sources', () => {
     cy.get('#form--addFlag .sources .source').should('have.length', 1);
     cy.get('#form--addFlag .sources .source input[name="sourceName"]')
       .first()

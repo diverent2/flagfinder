@@ -1,7 +1,7 @@
 <script>
   import Header from "./../components/Header.svelte";
   import FormColor from "./../components/Form-elements/FormColor.svelte";
-  import FormSource from "./../components/Form-elements/FormSource.svelte";
+  import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import { filterCategories } from "./../data/_filter";
 
   let flagData = setEmptyFlagData();
@@ -56,35 +56,6 @@
       meaning: "",
       value: ""
     });
-  }
-
-  let sources = [
-    {
-      link: "",
-      name: "",
-      researchDate: ""
-    }
-  ];
-
-  function addSource() {
-    let flagSourcesData = flagData.sources;
-    flagData.sources = flagSourcesData.concat({
-      link: "",
-      name: "",
-      researchDate: ""
-    });
-  }
-
-  function removeSourceElement(event) {
-    const sourceToDeleteIndex = event.detail.index;
-
-    let flagSourcesData = flagData.sources;
-    flagSourcesData = flagSourcesData.filter(source => {
-      //return if not the one element to get deleted
-      return source !== flagSourcesData[sourceToDeleteIndex];
-    });
-
-    flagData.sources = [...flagSourcesData];
   }
 
   let keywords__string = "";
@@ -348,24 +319,9 @@
       </div>
     </fieldset>
 
-    <fieldset style="grid-column: span 2;">
-      <legend>Sources</legend>
-      <ul class="sources">
-        {#each flagData.sources as source, index}
-          <li class="source">
-            <FormSource
-              {source}
-              {index}
-              on:removeSource={removeSourceElement} />
-          </li>
-        {/each}
-      </ul>
-      <div class="text--center">
-        <button data-ql-add-source-button on:click={addSource}>
-          Add source
-        </button>
-      </div>
-    </fieldset>
+    <div style="grid-column: span 2;">
+      <FormSources sources={flagData.sources} bind:sources={flagData.sources} />
+    </div>
 
     <div class="form__submit">
       <p>
