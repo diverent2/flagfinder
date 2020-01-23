@@ -44,4 +44,34 @@ describe('Add Flag form', () => {
       .should('contain.value', 'https://www.awesome-website.com')
       .should('contain.value', '2020-01-01');
   });
+
+  it.only('can add and remove multiple sources', () => {
+    cy.get('#form--addFlag .sources .source').should('have.length', 1);
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .first()
+      .type('name_A');
+    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
+    cy.get('#form--addFlag .sources .source').should('have.length', 2);
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .eq(1)
+      .type('name_B');
+    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
+    cy.get('#form--addFlag .sources .source').should('have.length', 3);
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .eq(2)
+      .type('name_C');
+    cy.log('Remove second source element');
+    cy.get('#form--addFlag .source .removeButton')
+      .eq(1)
+      .click();
+    cy.get('#form--addFlag .sources .source').should('have.length', 2);
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .first()
+      .invoke('val')
+      .should('eq', 'name_A');
+    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+      .last()
+      .invoke('val')
+      .should('eq', 'name_C');
+  });
 });

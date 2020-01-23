@@ -75,6 +75,18 @@
     });
   }
 
+  function removeSourceElement(event) {
+    const sourceToDeleteIndex = event.detail.index;
+
+    let flagSourcesData = flagData.sources;
+    flagSourcesData = flagSourcesData.filter(source => {
+      //return if not the one element to get deleted
+      return source !== flagSourcesData[sourceToDeleteIndex];
+    });
+
+    flagData.sources = [...flagSourcesData];
+  }
+
   let keywords__string = "";
 
   function generateCode() {
@@ -346,14 +358,19 @@
     <fieldset style="grid-column: span 2;">
       <legend>Sources</legend>
       <ul class="sources">
-        {#each flagData.sources as source}
+        {#each flagData.sources as source, index}
           <li class="source">
-            <FormSource {source} />
+            <FormSource
+              {source}
+              {index}
+              on:removeSource={removeSourceElement} />
           </li>
         {/each}
       </ul>
-      <div class="text--right">
-        <button on:click={addSource}>Add source</button>
+      <div class="text--center">
+        <button data-ql-add-source-button on:click={addSource}>
+          Add source
+        </button>
       </div>
     </fieldset>
 
