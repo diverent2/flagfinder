@@ -89,6 +89,13 @@ button {
   transition: var(--transition);
 }
 
+.text--right {
+  text-align: right;
+}
+.text--center {
+  text-align: center;
+}
+
 /* FORMS */
 
 input,

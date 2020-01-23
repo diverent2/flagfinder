@@ -200,13 +200,6 @@
     color: var(--gry-light) !important;
   }
 
-  .text--right {
-    text-align: right;
-  }
-  .text--center {
-    text-align: center;
-  }
-
   .form__submit {
     grid-column: span 2;
     margin-bottom: var(--spacing-xlarge);
