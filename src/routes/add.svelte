@@ -1,6 +1,6 @@
 <script>
   import Header from "./../components/Header.svelte";
-  import FormColor from "./../components/Form-elements/FormColor.svelte";
+  import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import { filterCategories } from "./../data/_filter";
 
@@ -47,17 +47,6 @@
     };
   }
 
-  function addColor() {
-    let flagColorsData = flagData.props.colors;
-    flagData.props.colors = flagColorsData.concat({
-      id: "",
-      name: "",
-      hue: "",
-      meaning: "",
-      value: ""
-    });
-  }
-
   let keywords__string = "";
 
   function generateCode() {
@@ -98,12 +87,6 @@
 </script>
 
 <style>
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   p {
     text-align: center;
   }
@@ -304,20 +287,11 @@
         placeholder="gay, masc, ..."
         bind:value={keywords__string} />
     </div>
-
-    <fieldset style="grid-column: span 2;">
-      <legend>Colors</legend>
-      <ul class="colors">
-        {#each flagData.props.colors as color}
-          <li class="color">
-            <FormColor {color} />
-          </li>
-        {/each}
-      </ul>
-      <div class="text--right">
-        <button on:click={addColor}>Add color</button>
-      </div>
-    </fieldset>
+    <div style="grid-column: span 2;">
+      <FormColors
+        colors={flagData.props.colors}
+        bind:colors={flagData.props.colors} />
+    </div>
 
     <div style="grid-column: span 2;">
       <FormSources sources={flagData.sources} bind:sources={flagData.sources} />

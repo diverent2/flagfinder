@@ -59,7 +59,46 @@ describe('Add Flag form', () => {
       .should('contain.value', '2019-01-01');
   });
 
-  it('can add and remove multiple sources', () => {
+  it('colors: can preview colors', () => {
+    cy.get('#form--addFlag .colors .color select[name="colorHue"]')
+      .should('have.css', 'border-left-color', 'rgba(0, 0, 0, 0)')
+      .select('purple')
+      .should('have.css', 'border-left-color', 'rgb(126, 0, 128)')
+      .select('green')
+      .should('have.css', 'border-left-color', 'rgb(17, 131, 1)');
+  });
+
+  it('colors: can add and remove multiple colors', () => {
+    cy.get('#form--addFlag .colors .color').should('have.length', 1);
+    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+      .first()
+      .type('color_name_A');
+    cy.get('#form--addFlag button[data-ql-add-color-button]').click();
+    cy.get('#form--addFlag .colors .color').should('have.length', 2);
+    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+      .eq(1)
+      .type('color_name_B');
+    cy.get('#form--addFlag button[data-ql-add-color-button]').click();
+    cy.get('#form--addFlag .colors .color').should('have.length', 3);
+    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+      .eq(2)
+      .type('color_name_C');
+    cy.log('Remove second color element');
+    cy.get('#form--addFlag .color .removeButton')
+      .eq(1)
+      .click();
+    cy.get('#form--addFlag .colors .color').should('have.length', 2);
+    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+      .first()
+      .invoke('val')
+      .should('eq', 'color_name_A');
+    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+      .last()
+      .invoke('val')
+      .should('eq', 'color_name_C');
+  });
+
+  it('sources: can add and remove multiple sources', () => {
     cy.get('#form--addFlag .sources .source').should('have.length', 1);
     cy.get('#form--addFlag .sources .source input[name="sourceName"]')
       .first()
