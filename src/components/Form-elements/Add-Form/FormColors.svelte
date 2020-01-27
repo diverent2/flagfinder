@@ -79,6 +79,15 @@
     background: var(--red);
     cursor: pointer;
   }
+
+  .colorSelector {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .colorSelector select[name="colorHue"] {
+    flex-grow: 1;
+  }
 </style>
 
 <fieldset style="grid-column: span 2;">
@@ -128,7 +137,7 @@
               required />
           </div>
 
-          <div>
+          <div class="colorSelector">
             <label for="colorHue" class="formField--required">Hue</label>
             <select
               name="colorHue"
