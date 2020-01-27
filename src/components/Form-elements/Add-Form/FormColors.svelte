@@ -59,10 +59,6 @@
     margin-bottom: var(--spacing-xlarge);
   }
 
-  .meaning {
-    grid-column: span 2;
-  }
-
   [name="colorHue"],
   [name="colorValue"] {
     padding-left: var(--spacing-tiny);
@@ -147,7 +143,7 @@
               {/each}
             </select>
           </div>
-          <div class="meaning">
+          <div style="grid-column: 1 / -1;">
             <label for="colorMeaning">Meaning of the color</label>
             <textarea
               name="colorMeaning"
