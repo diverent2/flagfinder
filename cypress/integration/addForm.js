@@ -19,6 +19,10 @@ describe('Add Flag form', () => {
     cy.get('input[name="colorId"]').type('violet-blue');
     cy.get('input[name="colorValue"]').type('#9B4797');
     cy.get('select[name="colorHue"]').select('purple');
+    cy.get('input[name="symbolName"]').type('double mars');
+    cy.get('input[name="symbolId"]').type('double-mars');
+    cy.get('input[name="symbolIcon"]').type('./icons/double-mars.svg');
+    cy.get('textarea[name="symbolMeaning"]').type('male* sexuality');
     cy.get('textarea[name="colorMeaning"]').type('Possible attraction to ...');
     cy.get('input[name="sourceName"]').type('Awesome Website');
     cy.get('input[name="sourceLink"]').type('https://www.awesome-website.com');
@@ -51,6 +55,10 @@ describe('Add Flag form', () => {
       .should('contain.value', '#9B4797')
       .should('contain.value', 'purple')
       .should('contain.value', 'Possible attraction to ...')
+      .should('contain.value', 'double mars')
+      .should('contain.value', 'double-mars')
+      .should('contain.value', './icons/double-mars.svg')
+      .should('contain.value', 'male* sexuality')
       .should('contain.value', 'Awesome Website')
       .should('contain.value', 'https://www.awesome-website.com')
       .should('contain.value', '2020-01-01')
@@ -96,6 +104,36 @@ describe('Add Flag form', () => {
       .last()
       .invoke('val')
       .should('eq', 'color_name_C');
+  });
+
+  it('sources: can add and remove multiple symbols', () => {
+    cy.get('#form--addFlag .symbols .symbol').should('have.length', 1);
+    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+      .first()
+      .type('symbol_name_A');
+    cy.get('#form--addFlag button[data-ql-add-symbol-button]').click();
+    cy.get('#form--addFlag .symbols .symbol').should('have.length', 2);
+    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+      .eq(1)
+      .type('symbol_name_B');
+    cy.get('#form--addFlag button[data-ql-add-symbol-button]').click();
+    cy.get('#form--addFlag .symbols .symbol').should('have.length', 3);
+    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+      .eq(2)
+      .type('symbol_name_C');
+    cy.log('Remove second symbol element');
+    cy.get('#form--addFlag .symbol .removeButton')
+      .eq(1)
+      .click();
+    cy.get('#form--addFlag .symbols .symbol').should('have.length', 2);
+    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+      .first()
+      .invoke('val')
+      .should('eq', 'symbol_name_A');
+    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+      .last()
+      .invoke('val')
+      .should('eq', 'symbol_name_C');
   });
 
   it('sources: can add and remove multiple sources', () => {

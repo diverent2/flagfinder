@@ -54,7 +54,8 @@ const flags = [
           meaning: 'spirit',
           value: '#7E0080'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
@@ -146,6 +147,7 @@ const flags = [
       symbols: [
         {
           id: 'paw',
+          name: 'paw',
           meaning: '🐻🐾',
           icon: ''
         }
@@ -215,6 +217,7 @@ const flags = [
       symbols: [
         {
           id: 'double-mars',
+          name: 'double mars',
           meaning: 'male* sexuality',
           icon: ''
         }
@@ -280,7 +283,8 @@ const flags = [
           meaning: 'community',
           value: '#7F0081'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['black', 'gray', 'white', 'purple'],
@@ -342,7 +346,8 @@ const flags = [
           meaning: 'different sex/gender attraction  / sterotypical for boy*',
           value: '#002BA9'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'purple', 'blue'],
@@ -416,6 +421,14 @@ const flags = [
           meaning: 'gray-ace and demisexuality',
           value: '#D3D3D3'
         }
+      ],
+      symbols: [
+        {
+          id: 'triangle',
+          name: 'triangle',
+          meaning: '',
+          icon: ''
+        }
       ]
     },
     matches: {
@@ -476,7 +489,8 @@ const flags = [
           meaning: 'female sex',
           value: '#ED5B9E'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['lightblue', 'white', 'pink'],
@@ -549,6 +563,7 @@ const flags = [
       symbols: [
         {
           id: 'venus',
+          name: 'venus',
           meaning: 'symbol for female* sex',
           icon: ''
         }
@@ -610,6 +625,7 @@ const flags = [
       symbols: [
         {
           id: 'labrys',
+          name: 'labrys',
           meaning: '',
           icon: ''
         }
@@ -700,6 +716,7 @@ const flags = [
       symbols: [
         {
           id: 'lips',
+          name: 'lips',
           meaning: 'extremely feminine character',
           icon: ''
         }
@@ -764,7 +781,8 @@ const flags = [
           meaning: 'male* gendered persons (regardless of biological sex)',
           value: '#27B1FF'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'yellow', 'lightblue'],
@@ -825,7 +843,8 @@ const flags = [
           meaning: 'attraction to males*',
           value: '#1E90F6'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'lightgreen', 'blue'],
@@ -915,6 +934,14 @@ const flags = [
           meaning: 'Spirit',
           value: '#7E0080'
         }
+      ],
+      symbols: [
+        {
+          id: 'A',
+          name: 'A',
+          meaning: '"A" as in "ally"',
+          icon: ''
+        }
       ]
     },
     matches: {
@@ -928,13 +955,7 @@ const flags = [
         'blue',
         'purple'
       ],
-      symbols: [
-        {
-          id: 'A',
-          meaning: '"A" as in "ally"',
-          icon: ''
-        }
-      ]
+      symbols: ['A']
     },
     keywords: [],
     sources: [
@@ -986,7 +1007,8 @@ const flags = [
           meaning: 'nonbinary; as the opposite of the highly gendered purple',
           value: '#BBF884'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['black', 'gray', 'white', 'lightgreen'],
@@ -1055,7 +1077,8 @@ const flags = [
           meaning: 'masculinity',
           value: '#2F2FBE'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'white', 'purple', 'black', 'blue'],
@@ -1110,7 +1133,8 @@ const flags = [
           meaning: 'non-binary',
           value: '#4B851E'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['purple', 'white', 'green'],
@@ -1172,9 +1196,9 @@ const flags = [
           meaning: 'people without a gender',
           value: '#000000'
         }
-      ]
+      ],
+      symbols: []
     },
-
     matches: {
       colors: ['yellow', 'white', 'purple', 'black'],
       symbols: []
@@ -1229,7 +1253,8 @@ const flags = [
             'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
           value: '#FFFFFF'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['lightblue', 'lightpink', 'white'],
@@ -1290,7 +1315,7 @@ const flags = [
           meaning: 'femininity',
           value: '#F3B7DF'
         }
-      ]
+      ],symbols: []
     },
     matches: {
       colors: ['purple', 'white', 'blue', 'lightpink'],
@@ -1337,8 +1362,7 @@ const flags = [
       symbols: [
         {
           id: 'circle',
-          name: 'red',
-          hue: 'red',
+          name: 'circle',
           meaning:
             'unbroken; symobolising wholeness and completeness as well as their	potentialities',
           icon: ''
@@ -1419,7 +1443,8 @@ const flags = [
           meaning: 'sexuality spectrum',
           value: '#000000'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['green', 'lightgreen', 'white', 'gray', 'black'],
@@ -1486,6 +1511,7 @@ const flags = [
       symbols: [
         {
           id: 'pi',
+          name: 'pi',
           meaning:
             'greek letter for "pi" (first letter of the word "polyamory") ',
           icon: ''

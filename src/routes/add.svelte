@@ -2,6 +2,7 @@
   import Header from "./../components/Header.svelte";
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
+  import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
   import { filterCategories } from "./../data/_filter";
 
   let flagData = setEmptyFlagData();
@@ -30,6 +31,7 @@
         symbols: [
           {
             id: "",
+            name: "",
             meaning: "",
             icon: ""
           }
@@ -291,6 +293,12 @@
       <FormColors
         colors={flagData.props.colors}
         bind:colors={flagData.props.colors} />
+    </div>
+
+    <div style="grid-column: span 2;">
+      <FormSymbols
+        symbols={flagData.props.symbols}
+        bind:symbols={flagData.props.symbols} />
     </div>
 
     <div style="grid-column: span 2;">
