@@ -54,12 +54,14 @@ const flags = [
           meaning: 'spirit',
           value: '#7E0080'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -145,6 +147,7 @@ const flags = [
       symbols: [
         {
           id: 'paw',
+          name: 'paw',
           meaning: '🐻🐾',
           icon: ''
         }
@@ -154,6 +157,7 @@ const flags = [
       colors: ['brown', 'orange', 'yellow', 'white', 'gray', 'black'],
       symbols: ['paw']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -212,7 +216,8 @@ const flags = [
       ],
       symbols: [
         {
-          id: 'double_mars',
+          id: 'double-mars',
+          name: 'double mars',
           meaning: 'male* sexuality',
           icon: ''
         }
@@ -222,6 +227,7 @@ const flags = [
       colors: ['lightpink', 'white', 'yellow', 'black'],
       symbols: ['mars']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -277,12 +283,14 @@ const flags = [
           meaning: 'community',
           value: '#7F0081'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['black', 'gray', 'white', 'purple'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -324,7 +332,7 @@ const flags = [
           value: '#D50071'
         },
         {
-          id: 'violet_blue',
+          id: 'violet-blue',
           name: 'violet blue',
           hue: 'purple',
           meaning:
@@ -332,18 +340,20 @@ const flags = [
           value: '#9B4797'
         },
         {
-          id: 'international_klein_blue',
+          id: 'international-klein-blue',
           name: 'international klein blue',
           hue: 'blue',
           meaning: 'different sex/gender attraction  / sterotypical for boy*',
           value: '#002BA9'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'purple', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -405,11 +415,19 @@ const flags = [
           value: '#7F0081'
         },
         {
-          id: 'light_gray',
+          id: 'light-gray',
           name: 'light gray',
           hue: 'gray',
           meaning: 'gray-ace and demisexuality',
           value: '#D3D3D3'
+        }
+      ],
+      symbols: [
+        {
+          id: 'triangle',
+          name: 'triangle',
+          meaning: '',
+          icon: ''
         }
       ]
     },
@@ -417,6 +435,7 @@ const flags = [
       colors: ['black', 'white', 'purple', 'gray'],
       symbols: ['triangle']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -450,7 +469,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'royal_blue',
+          id: 'royal-blue',
           name: 'royal blue',
           hue: 'lightblue',
           meaning: 'male sex',
@@ -464,18 +483,20 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'dark_pink',
+          id: 'dark-pink',
           name: 'dark pink',
           hue: 'pink',
           meaning: 'female sex',
           value: '#ED5B9E'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['lightblue', 'white', 'pink'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -542,6 +563,7 @@ const flags = [
       symbols: [
         {
           id: 'venus',
+          name: 'venus',
           meaning: 'symbol for female* sex',
           icon: ''
         }
@@ -551,6 +573,7 @@ const flags = [
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: ['venus']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -602,6 +625,7 @@ const flags = [
       symbols: [
         {
           id: 'labrys',
+          name: 'labrys',
           meaning: '',
           icon: ''
         }
@@ -611,6 +635,7 @@ const flags = [
       colors: ['purple', 'black', 'white'],
       symbols: ['labrys']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -681,7 +706,7 @@ const flags = [
           value: '#C64651'
         },
         {
-          id: 'dark_red',
+          id: 'dark-red',
           name: 'dark red',
           hue: 'red',
           meaning: '',
@@ -691,6 +716,7 @@ const flags = [
       symbols: [
         {
           id: 'lips',
+          name: 'lips',
           meaning: 'extremely feminine character',
           icon: ''
         }
@@ -700,6 +726,7 @@ const flags = [
       colors: ['pink', 'purple', 'white', 'lightpink', 'red'],
       symbols: ['lips']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -734,32 +761,34 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hollywood_cerise',
+          id: 'hollywood-cerise',
           name: 'hollywood cerise',
           hue: 'pink',
           meaning: 'female* gendered persons (regardless of biological sex)',
           value: '#FC008D'
         },
         {
-          id: 'school_bus_yellow',
+          id: 'school-bus-yellow',
           name: 'school bus yellow',
           hue: 'yellow',
           meaning: 'mixed gendered, genderless, thirdgendered people',
           value: '#FEDB09'
         },
         {
-          id: 'dodger_blue',
+          id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'lightblue',
           meaning: 'male* gendered persons (regardless of biological sex)',
           value: '#27B1FF'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'yellow', 'lightblue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -794,32 +823,34 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hot_magenta',
+          id: 'hot-magenta',
           name: 'hot magenta',
           hue: 'pink',
           meaning: 'attraction to females*',
           value: '#F300BA'
         },
         {
-          id: 'mountain_meadow',
+          id: 'mountain-meadow',
           name: 'mountain meadow',
           hue: 'lightgreen',
           meaning: 'attraction to people of other genders',
           value: '#25DA69'
         },
         {
-          id: 'dodger_blue',
+          id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'blue',
           meaning: 'attraction to males*',
           value: '#1E90F6'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'lightgreen', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -903,6 +934,14 @@ const flags = [
           meaning: 'Spirit',
           value: '#7E0080'
         }
+      ],
+      symbols: [
+        {
+          id: 'A',
+          name: 'A',
+          meaning: '"A" as in "ally"',
+          icon: ''
+        }
       ]
     },
     matches: {
@@ -916,14 +955,9 @@ const flags = [
         'blue',
         'purple'
       ],
-      symbols: [
-        {
-          id: 'A',
-          meaning: '"A" as in "ally"',
-          icon: ''
-        }
-      ]
+      symbols: ['A']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -967,18 +1001,20 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'pale_green',
+          id: 'pale-green',
           name: 'pale green',
           hue: 'lightgreen',
           meaning: 'nonbinary; as the opposite of the highly gendered purple',
           value: '#BBF884'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['black', 'gray', 'white', 'lightgreen'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1007,7 +1043,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'hot_pink',
+          id: 'hot-pink',
           name: 'hot pink',
           hue: 'pink',
           meaning: 'femininity',
@@ -1021,7 +1057,7 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'dark_violet',
+          id: 'dark-violet',
           name: 'dark violet',
           hue: 'purple',
           meaning: 'masculinity; femininity',
@@ -1035,18 +1071,20 @@ const flags = [
           value: '#000000'
         },
         {
-          id: 'cerulean_blue',
+          id: 'cerulean-blue',
           name: 'cerulean blue',
           hue: 'blue',
           meaning: 'masculinity',
           value: '#2F2FBE'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['pink', 'white', 'purple', 'black', 'blue'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1075,7 +1113,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'medium_urple',
+          id: 'medium-purple',
           name: 'medium purple',
           hue: 'purple',
           meaning: 'androgynous',
@@ -1095,12 +1133,14 @@ const flags = [
           meaning: 'non-binary',
           value: '#4B851E'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['purple', 'white', 'green'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1143,7 +1183,7 @@ const flags = [
           value: '#000000'
         },
         {
-          id: 'medium_orchid',
+          id: 'medium-orchid',
           name: 'medium orchid',
           hue: 'purple',
           meaning: 'mix of male* and female*',
@@ -1156,13 +1196,14 @@ const flags = [
           meaning: 'people without a gender',
           value: '#000000'
         }
-      ]
+      ],
+      symbols: []
     },
-
     matches: {
       colors: ['yellow', 'white', 'purple', 'black'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1191,7 +1232,7 @@ const flags = [
     props: {
       colors: [
         {
-          id: 'maya_blue',
+          id: 'maya-blue',
           name: 'maya blue',
           hue: 'lightblue',
           meaning: 'traditionally value for boy',
@@ -1212,12 +1253,14 @@ const flags = [
             'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
           value: '#FFFFFF'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['lightblue', 'lightpink', 'white'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1259,25 +1302,26 @@ const flags = [
           value: '#FFFFFF'
         },
         {
-          id: 'pale_cornflower_blue',
+          id: 'pale-cornflower-blue',
           name: 'pale cornflower blue',
           hue: 'blue',
           meaning: 'masculinity',
           value: '#A3CFEF'
         },
         {
-          id: 'classic_rose',
+          id: 'classic-rose',
           name: 'classic rose',
           hue: 'lightpink',
           meaning: 'femininity',
           value: '#F3B7DF'
         }
-      ]
+      ],symbols: []
     },
     matches: {
       colors: ['purple', 'white', 'blue', 'lightpink'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1318,8 +1362,7 @@ const flags = [
       symbols: [
         {
           id: 'circle',
-          name: 'red',
-          hue: 'red',
+          name: 'circle',
           meaning:
             'unbroken; symobolising wholeness and completeness as well as their	potentialities',
           icon: ''
@@ -1330,6 +1373,7 @@ const flags = [
       colors: ['yellow', 'purple'],
       symbols: ['circle']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1399,12 +1443,14 @@ const flags = [
           meaning: 'sexuality spectrum',
           value: '#000000'
         }
-      ]
+      ],
+      symbols: []
     },
     matches: {
       colors: ['green', 'lightgreen', 'white', 'gray', 'black'],
       symbols: []
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1465,6 +1511,7 @@ const flags = [
       symbols: [
         {
           id: 'pi',
+          name: 'pi',
           meaning:
             'greek letter for "pi" (first letter of the word "polyamory") ',
           icon: ''
@@ -1475,6 +1522,7 @@ const flags = [
       colors: ['blue', 'red', 'black', 'yellow'],
       symbols: ['pi']
     },
+    keywords: [],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',

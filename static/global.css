@@ -74,3 +74,61 @@ code {
 .field--empty {
   opacity: 0.5;
 }
+
+.container {
+  padding: 0 var(--spacing-large);
+}
+
+button {
+  background: var(--blue-dark);
+  color: var(--white);
+  padding: var(--spacing-small) var(--spacing-large);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.text--right {
+  text-align: right;
+}
+.text--center {
+  text-align: center;
+}
+
+/* FORMS */
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-small);
+  border: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 0;
+}
+
+label {
+  display: block;
+  position: relative;
+  font-size: 0.75rem;
+  margin-bottom: 0.1rem;
+}
+
+.formField--required:after {
+  content: ' *';
+  position: absolute;
+  font-size: 0.5rem;
+  color: red;
+}
+
+.grid__column--fullWidth {
+  grid-column: 1 / -1;
+}
