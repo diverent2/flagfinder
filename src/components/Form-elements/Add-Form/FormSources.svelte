@@ -30,11 +30,11 @@
 
   .form-source {
     position: relative;
-    padding-top: var(--spacing-large);
+    padding-top: var(--spacing-xlarge);
     display: grid;
     color: var(--black);
     grid-template-columns: 1fr;
-    grid-gap: var(--spacing-small);
+    grid-gap: var(--spacing);
     margin-bottom: var(--spacing-xlarge);
   }
 

@@ -43,12 +43,25 @@
 
   .form-color {
     position: relative;
-    padding-top: var(--spacing-large);
+    padding-top: var(--spacing-xlarge);
     display: grid;
     color: var(--black);
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--spacing-small);
+    grid-gap: var(--spacing);
     margin-bottom: var(--spacing-xlarge);
+  }
+
+  [name="colorHue"] {
+    flex-grow: 1;
+    height: 29px;
+  }
+
+  @media only screen and (min-width: 360px) {
+    .form-color {
+      grid-template-columns: 1fr 1fr;
+    }
+    [name="colorHue"] {
+      height: auto;
+    }
   }
 
   [name="colorHue"],
@@ -76,13 +89,9 @@
     display: flex;
     flex-direction: column;
   }
-
-  .colorSelector select[name="colorHue"] {
-    flex-grow: 1;
-  }
 </style>
 
-<fieldset style="grid-column: span 2;">
+<fieldset class="grid__column--fullWidth">
   <legend>Colors</legend>
   <ul class="colors">
     {#each colors as color, index}
@@ -144,7 +153,7 @@
               {/each}
             </select>
           </div>
-          <div style="grid-column: 1 / -1;">
+          <div class="grid__column--fullWidth">
             <label for="colorMeaning">Meaning of the color</label>
             <textarea
               name="colorMeaning"

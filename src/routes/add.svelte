@@ -111,17 +111,27 @@
     margin-top: var(--spacing-large);
     max-width: 800px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--spacing);
   }
 
   .origin {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: var(--spacing);
-
     padding: 0;
     border: 0;
+  }
+
+  .origin__container {
+    display: grid;
+    grid-gap: var(--spacing);
+  }
+
+  @media only screen and (min-width: 360px) {
+    #form--addFlag {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .origin__container {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   /* categoryButtons */
@@ -170,7 +180,6 @@
   }
 
   .form__submit {
-    grid-column: span 2;
     margin-bottom: var(--spacing-xlarge);
   }
   .form__submit button {
@@ -226,7 +235,7 @@
         required />
     </div>
 
-    <fieldset style="grid-column: span 2;">
+    <fieldset class="grid__column--fullWidth">
       <legend class="formField--required">Category</legend>
       <div class="categoryButtons">
         {#each filterCategories as category}
@@ -255,7 +264,7 @@
       </div>
     </fieldset>
 
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <label for="image" class="formField--required">Image-URL</label>
       <input
         type="text"
@@ -265,7 +274,7 @@
         required />
     </div>
 
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <label for="description">Description</label>
       <textarea
         name="description"
@@ -274,27 +283,29 @@
         rows="3" />
     </div>
 
-    <fieldset class="origin" style="grid-column: span 2;">
+    <fieldset class="origin grid__column--fullWidth">
       <legend>Origin</legend>
-      <div>
-        <label for="firstAppearance">First Appearance</label>
-        <input
-          type="text"
-          name="firstAppearance"
-          bind:value={flagData.origin.firstApperance}
-          placeholder="Gilbert Baker in San Francisco" />
-      </div>
-      <div>
-        <label for="timeframe">Timeframe</label>
-        <input
-          type="text"
-          name="timeframe"
-          bind:value={flagData.origin.timeframe}
-          placeholder="1979" />
+      <div class="origin__container">
+        <div>
+          <label for="firstAppearance">First Appearance</label>
+          <input
+            type="text"
+            name="firstAppearance"
+            bind:value={flagData.origin.firstApperance}
+            placeholder="Gilbert Baker in San Francisco" />
+        </div>
+        <div>
+          <label for="timeframe">Timeframe</label>
+          <input
+            type="text"
+            name="timeframe"
+            bind:value={flagData.origin.timeframe}
+            placeholder="1979" />
+        </div>
       </div>
     </fieldset>
 
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <label for="keywords">Keywords (comma-separated)</label>
       <input
         type="text"
@@ -302,26 +313,26 @@
         placeholder="gay, masc, ..."
         bind:value={keywords__string} />
     </div>
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <FormColors
         colors={flagData.props.colors}
         bind:colors={flagData.props.colors} />
     </div>
 
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <FormSymbols
         symbols={flagData.props.symbols}
         bind:symbols={flagData.props.symbols} />
     </div>
 
-    <div style="grid-column: span 2;">
+    <div class="grid__column--fullWidth">
       <FormSources
         sources={flagData.sources}
         bind:sources={flagData.sources}
         {currentDate} />
     </div>
 
-    <div class="form__submit">
+    <div class="form__submit grid__column--fullWidth">
       <p>
         Click this button to generate the new flag in JSON. You can use this to
         open a
