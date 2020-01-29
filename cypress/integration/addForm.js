@@ -49,6 +49,9 @@ describe('Add Flag form', () => {
       .should('contain.value', 'Gilbert Backer')
       .should('contain.value', '1979')
       .should('contain.value', '"gay",\n    "masc"')
+      // matches
+      .should('contain.value', '"colors": [\n      "purple"\n    ]')
+      .should('contain.value', '"symbols": [\n      "double-mars"\n    ]')
       .and('not.contain.value', 'masc ')
       .should('contain.value', 'violet blue')
       .should('contain.value', 'violet-blue')

@@ -50,7 +50,10 @@
           }
         ]
       },
-      matches: [{}],
+      matches: {
+        colors: [],
+        symbols: []
+      },
       keywords: [],
       sources: [
         {
@@ -70,6 +73,20 @@
       return keyword.trim().toLowerCase();
     });
     flagData.keywords = keywords;
+
+    const flagColors = flagData.props.colors;
+    const flagMatchesColors = [];
+    flagColors.forEach(color => {
+      flagMatchesColors.push(color.hue);
+    });
+    flagData.matches.colors = flagMatchesColors;
+
+    const flagSymbols = flagData.props.symbols;
+    const flagMatchesSymbols = [];
+    flagSymbols.forEach(symbol => {
+      flagMatchesSymbols.push(symbol.id);
+    });
+    flagData.matches.symbols = flagMatchesSymbols;
 
     const prettyJsonOutput = JSON.stringify(flagData, null, 2);
     document.getElementById("output").value = prettyJsonOutput;
