@@ -5,6 +5,19 @@
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
   import { filterCategories } from "./../data/_filter";
 
+  let currentDate = getCurrentDate();
+
+  function getCurrentDate() {
+    const date = new Date();
+    const dateString = new Date(
+      date.getTime() - date.getTimezoneOffset() * 60000
+    )
+      .toISOString()
+      .split("T")[0];
+
+    return dateString;
+  }
+
   let flagData = setEmptyFlagData();
 
   function setEmptyFlagData() {
@@ -43,7 +56,7 @@
         {
           link: "",
           name: "",
-          researchDate: ""
+          researchDate: currentDate
         }
       ]
     };
@@ -302,7 +315,10 @@
     </div>
 
     <div style="grid-column: span 2;">
-      <FormSources sources={flagData.sources} bind:sources={flagData.sources} />
+      <FormSources
+        sources={flagData.sources}
+        bind:sources={flagData.sources}
+        {currentDate} />
     </div>
 
     <div class="form__submit">

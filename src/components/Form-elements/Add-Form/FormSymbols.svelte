@@ -1,12 +1,5 @@
 <script>
-  export let symbols = [
-    {
-      id: "",
-      name: "",
-      meaning: "",
-      icon: ""
-    }
-  ];
+  export let symbols = [];
 
   function addSymbolElement() {
     symbols = symbols.concat({

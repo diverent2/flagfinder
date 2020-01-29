@@ -1,15 +1,7 @@
 <script>
   import { filterColors } from "../../../data/_filter";
 
-  export let colors = [
-    {
-      id: "",
-      name: "",
-      hue: "",
-      meaning: "",
-      value: ""
-    }
-  ];
+  export let colors = [];
 
   let hueValue = "transparent";
 

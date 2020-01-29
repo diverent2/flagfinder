@@ -1,17 +1,13 @@
 <script>
-  export let sources = [
-    {
-      link: "",
-      name: "",
-      researchDate: ""
-    }
-  ];
+  export let sources = [];
+
+  export let currentDate;
 
   function addSource() {
     sources = sources.concat({
       link: "",
       name: "",
-      researchDate: ""
+      researchDate: currentDate
     });
   }
 
@@ -94,12 +90,13 @@
 
           <div>
             <label for="sourceResearchDate" class="formField--required">
-              Research Date
+              Research Date [YYYY-MM-DD]
             </label>
             <input
-              value="2017-06-01"
               type="date"
+              placeholder="2020-01-01"
               name="sourceResearchDate"
+              title="Date using the format Year-Month-Day [YYYY-MM-DD]"
               bind:value={source.researchDate}
               required />
           </div>
