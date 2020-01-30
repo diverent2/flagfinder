@@ -1,4 +1,6 @@
-<style>
+<style lang="scss" global>
+  @import "./styles/global.scss";
+
   main {
     width: 100vw;
     height: auto;
