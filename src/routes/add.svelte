@@ -29,7 +29,7 @@
         firstAppearance: "",
         timeframe: ""
       },
-      category: "",
+      categories: [],
       image: "",
       props: {
         colors: [
@@ -255,19 +255,20 @@
     </div>
 
     <fieldset class="grid__column--fullWidth">
-      <legend class="formField--required">Category</legend>
+      <legend class="formField--required">Categories</legend>
       <div class="categoryButtons">
         {#each filterCategories as category}
           <div>
             <label
               class="button__category"
               title={category.id}
-              class:selected={flagData.category === category.id}
+              class:selected={category.checked}
               style="border-color: {category.color}">
               <input
-                type="radio"
-                name="category"
-                bind:group={flagData.category}
+                type="checkbox"
+                name="category[]"
+                bind:checked={category.checked}
+                bind:group={flagData.categories}
                 value={category.id}
                 required />
               <svg
