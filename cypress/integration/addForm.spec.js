@@ -8,6 +8,7 @@ describe('Add Flag form', () => {
     cy.get('input[name="name"]').type('gay bear pride');
     cy.get('input[name="id"]').type('gay-bear');
     cy.get('.button__category[title="sexuality"]').click();
+    cy.get('.button__category[title="gender"]').click();
     cy.get('input[name="image"]').type('https://prideflags.info/');
     cy.get('textarea[name="description"]').type(
       'A most awesome group of people!'
@@ -44,6 +45,7 @@ describe('Add Flag form', () => {
       .should('contain.value', 'gay bear pride')
       .should('contain.value', 'gay-bear')
       .should('contain.value', 'sexuality')
+      .should('contain.value', 'gender')
       .should('contain.value', 'https://prideflags.info/')
       .should('contain.value', 'A most awesome group of people!')
       .should('contain.value', 'Gilbert Backer')

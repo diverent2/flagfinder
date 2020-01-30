@@ -7,6 +7,24 @@
 
   let currentDate = getCurrentDate();
 
+  function updateCategoriesRequired() {
+    const categoryButtons = document.querySelectorAll(
+      'input[name="category[]"]'
+    );
+    const categoryButtonsChecked = document.querySelectorAll(
+      'input[name="category[]"]:checked'
+    );
+    if (categoryButtonsChecked.length) {
+      categoryButtons.forEach(category => {
+        category.removeAttribute("required");
+      });
+    } else {
+      categoryButtons.forEach(category => {
+        category.setAttribute("required", "required");
+      });
+    }
+  }
+
   function getCurrentDate() {
     const date = new Date();
     const dateString = new Date(
@@ -270,6 +288,7 @@
                 bind:checked={category.checked}
                 bind:group={flagData.categories}
                 value={category.id}
+                on:change={updateCategoriesRequired}
                 required />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
