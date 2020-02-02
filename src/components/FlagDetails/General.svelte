@@ -2,6 +2,26 @@
   import IconButton from "../Elements/IconButton.svelte";
 
   export let flag;
+
+  function getCategoryColor(category) {
+    let color;
+    switch (category) {
+      case "attraction":
+        color = "#FF0000";
+        break;
+      case "gender":
+        color = "#FFAF2F";
+        break;
+      case "kink":
+        color = "#7f8cff";
+        break;
+      //sexuality
+      default:
+        color = "#F271DE";
+        break;
+    }
+    return color;
+  }
 </script>
 
 <style>
@@ -48,8 +68,18 @@
     height: 2rem;
   }
 
-  .general__category {
-    width: max-content;
+  .general__categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .category {
+    padding-right: var(--spacing);
+    padding-bottom: var(--spacing);
+  }
+
+  .category:last-child {
+    padding-right: 0;
   }
 </style>
 
@@ -69,38 +99,19 @@
     </div>
   </div>
 
-  <h3>🏷️Category</h3>
+  <h3>🏷️Categories</h3>
 
-  <div class="general__category">
-    {#if flag.category === 'sexuality'}
-      <IconButton
-        backgroundColor="#F271DE"
-        icon="sexuality-white"
-        scale="var(--spacing)">
-        sexuality
-      </IconButton>
-    {:else if flag.category === 'attraction'}
-      <IconButton
-        backgroundColor="#FF0000"
-        icon="attraction-white"
-        scale="var(--spacing)">
-        attraction
-      </IconButton>
-    {:else if flag.category === 'kink'}
-      <IconButton
-        backgroundColor="#7f8cff"
-        icon="kink-white"
-        scale="var(--spacing)">
-        kink
-      </IconButton>
-    {:else if flag.category === 'gender'}
-      <IconButton
-        backgroundColor="#FFAF2F"
-        icon="gender-white"
-        scale="var(--spacing)">
-        gender
-      </IconButton>
-    {/if}
+  <div class="general__categories">
+    {#each flag.categories as category}
+      <div class="category">
+        <IconButton
+          backgroundColor={getCategoryColor(category)}
+          icon="{category}-white"
+          scale="var(--spacing)">
+          {category}
+        </IconButton>
+      </div>
+    {/each}
   </div>
 
   <h3>🎨Color palette</h3>
