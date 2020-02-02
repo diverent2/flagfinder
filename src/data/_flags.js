@@ -8,7 +8,7 @@ const flags = [
       firstAppearance: 'Gilbert Baker in San Francisco',
       timeframe: '1979'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'gay.png',
     props: {
       colors: [
@@ -90,7 +90,7 @@ const flags = [
       firstAppearance: 'by Craig Byrnes for the International Bear Brotherhood',
       timeframe: '1995'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'gay-bear.png',
     props: {
       colors: [
@@ -181,7 +181,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'gay-twink.png',
     props: {
       colors: [
@@ -251,7 +251,7 @@ const flags = [
       firstAppearance: '',
       timeframe: '2010'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'asexual.png',
     props: {
       colors: [
@@ -320,7 +320,7 @@ const flags = [
       firstAppearance: 'Michael Page',
       timeframe: 'December 5, 1998'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'bisexual.png',
     props: {
       colors: [
@@ -389,7 +389,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'demisexual.png',
     props: {
       colors: [
@@ -464,7 +464,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'heterosexual.png',
     props: {
       colors: [
@@ -513,7 +513,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'lesbian.png',
     props: {
       colors: [
@@ -596,7 +596,7 @@ const flags = [
       firstAppearance: ' Sean Campbell',
       timeframe: '1999'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'lesbian-labry.png',
     props: {
       colors: [
@@ -659,7 +659,7 @@ const flags = [
       firstAppearance: 'Natalie',
       timeframe: 'JULY 28, 2010'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'lesbian-lipstick.png',
     props: {
       colors: [
@@ -756,7 +756,7 @@ const flags = [
       firstAppearance: '',
       timeframe: '2010'
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'pansexual.png',
     props: {
       colors: [
@@ -818,7 +818,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'polysexual.png',
     props: {
       colors: [
@@ -874,7 +874,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'sexuality',
+    categories: ['sexuality'],
     image: 'straight-ally.png',
     props: {
       colors: [
@@ -975,7 +975,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'agender.png',
     props: {
       colors: [
@@ -1038,7 +1038,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'genderfluid.png',
     props: {
       colors: [
@@ -1108,7 +1108,7 @@ const flags = [
       firstAppearance: 'Marilyn Roxie',
       timeframe: '2011'
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'genderqueer.png',
     props: {
       colors: [
@@ -1164,7 +1164,7 @@ const flags = [
       firstAppearance: 'Kye Rowan',
       timeframe: '2014'
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'nonbinary.png',
     props: {
       colors: [
@@ -1227,7 +1227,7 @@ const flags = [
       firstAppearance: 'Monica Helms',
       timeframe: '1999'
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'transgender.png',
     props: {
       colors: [
@@ -1283,7 +1283,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'bigender.png',
     props: {
       colors: [
@@ -1339,7 +1339,7 @@ const flags = [
       firstAppearance: 'the organization Intersex International Australia',
       timeframe: '2013'
     },
-    category: 'gender',
+    categories: ['gender'],
     image: 'intersex.png',
     props: {
       colors: [
@@ -1403,7 +1403,7 @@ const flags = [
       firstAppearance: 'Cameron Whimsey',
       timeframe: '2014'
     },
-    category: 'attraction',
+    categories: ['attraction'],
     image: 'aromantic.png',
     props: {
       colors: [
@@ -1474,7 +1474,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    category: 'attraction',
+    categories: ['attraction'],
     image: 'polyamory.png',
     props: {
       colors: [
