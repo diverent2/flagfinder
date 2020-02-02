@@ -49,7 +49,7 @@
     -webkit-box-orient: vertical;
   }
 
-  .flagCard__category {
+  .flagCard__categories {
     width: max-content;
   }
 
@@ -57,6 +57,19 @@
     position: absolute;
     bottom: var(--spacing-small);
     right: var(--spacing-small);
+  }
+
+  .flagCard__categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .category {
+    padding-right: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+  }
+
+  .category:last-child {
+    padding-right: 0;
   }
 
   /*mobile*/
@@ -125,13 +138,17 @@
 
     <div class="flagCard__details">
       <h3 class="flagCard__header">{flag.name}</h3>
-      <div class="flagCard__category">
-        <IconButton
-          backgroundColor={getCategoryColor(flag.category)}
-          icon="{flag.category}-white"
-          scale="var(--spacing)">
-          {flag.category}
-        </IconButton>
+      <div class="flagCard__categories">
+        {#each flag.categories as category}
+          <div class="category">
+            <IconButton
+              backgroundColor={getCategoryColor(category)}
+              icon="{category}-white"
+              scale="var(--spacing)">
+              {category}
+            </IconButton>
+          </div>
+        {/each}
       </div>
       <img
         class="flagCard__arrow"
