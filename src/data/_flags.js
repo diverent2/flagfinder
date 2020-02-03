@@ -1180,7 +1180,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning: 'for those with multiple genders',
-          value: '#000000'
+          value: '#FFFFFF'
         },
         {
           id: 'medium-orchid',
