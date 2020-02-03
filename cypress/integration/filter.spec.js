@@ -57,4 +57,35 @@ describe('Searchfilter', () => {
       cy.get('.flag-results .flagCard').should('have.length', resultCount);
     });
   });
+
+  it('can filter by categories', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+    cy.get('.filter-categories .button__category:nth-child(2)').click();
+    cy.get('.flag-results .flagCard .flagCard__categories').each(
+      categoriesList => {
+        cy.get(categoriesList)
+          .find('.iconButton__text')
+          .invoke('text')
+          .then(text => {
+            expect(text.trim()).includes('attraction');
+          });
+      }
+    );
+  });
+
+  it('can filter by multiple categories', () => {
+    cy.get('.mainOptions__arrow--icon').click();
+    cy.get('.filter-categories .button__category:nth-child(2)').click();
+    cy.get('.filter-categories .button__category:nth-child(3)').click();
+    cy.get('.flag-results .flagCard .flagCard__categories').each(
+      categoriesList => {
+        cy.get(categoriesList)
+          .find('.iconButton__text')
+          .invoke('text')
+          .then(text => {
+            expect(text.trim()).match(/(attraction|gender)/);
+          });
+      }
+    );
+  });
 });
