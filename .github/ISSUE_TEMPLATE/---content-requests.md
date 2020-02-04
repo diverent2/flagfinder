@@ -1,7 +1,7 @@
 ---
 name: "📚 Content request"
 about: Suggest content additions / changes
-labels: enhancement
+labels: content
 ---
 
 # 📚 Content request
