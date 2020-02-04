@@ -6,28 +6,29 @@ labels: enhancement
 
 # 📚 Content request
 
-## 🖊️ I would like the following to be [added/changed]
-> [a short description of the content you would like to add / change]
+## 🖊️ I would like the following content to be
 
-## 📁 Category
+* [ ] added
+* [ ] changed
 
-❌ sexuality
-❌ attraction
-❌ gender
-✔️ kink
+> a short description of the content you would like to add / change
 
-## 🤔 Reasons why the prideflags.info community would benefit from these changes / additions
+if you want to add a flag, you can do this in this *super-secret* [Add-Flag Form](https://prideflags.info/add) and paste the output here
 
-> **use cases, advantages, necessity**
+Please make sure you understand [how to contribute](https://prideflags.info/about/#contribute)
 
-- [reason]
-- [reason]
+## 🔗Sources 
 
-## 🔗Sources
+> If you've used additional sources
 
-- [http://example.com, "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"]
-- [http://example.com, "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"]
-- [http://example.com, "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"]
+- [Example source](http://example.com)
 
 ## 🏳️‍🌈 Flag
+
+```json
+
+Flagdata goes here
+
+```
+
 > [image]
