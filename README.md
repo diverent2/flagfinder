@@ -84,13 +84,13 @@ yarn export
 
 ## Credits
 
-made with 🌈🦄, ☕ and 💕 by [@diverent2](https://twitter.com/diverent2)
+made with 🌈🦄, ☕ and 💕 by [@diverent2](https://github.com/diverent2)
 
 ### special thanks to
 
 [DanielRuf](https://github.com/DanielRuf)
 
-- Gitlab CI
+- Github CI
 
 [JohpoJohannes](https://github.com/JohpoJohannes)
 
@@ -102,6 +102,7 @@ made with 🌈🦄, ☕ and 💕 by [@diverent2](https://twitter.com/diverent2)
 
 - Feedback
 - Testing
+- Issue Templates #33
 
 ---
 
