@@ -45,6 +45,7 @@
     position: relative;
     padding-top: var(--spacing-xlarge);
     display: grid;
+    align-items: end;
     color: var(--black);
     grid-gap: var(--spacing);
     margin-bottom: var(--spacing-xlarge);
@@ -58,9 +59,6 @@
   @media only screen and (min-width: 360px) {
     .form-color {
       grid-template-columns: 1fr 1fr;
-    }
-    [name="colorHue"] {
-      height: auto;
     }
   }
 
@@ -104,7 +102,19 @@
             Remove
           </button>
           <div>
-            <label for="colorName" class="formField--required">Name</label>
+            <label for="colorName" class="formField--required">
+              <span class="formField--required">Name</span>
+              <br />
+              <small>
+                Using
+                <a
+                  href="https://www.color-blindness.com/color-name-hue/"
+                  target="blank">
+                  this site
+                </a>
+                [desktop only]
+              </small>
+            </label>
             <input
               type="text"
               name="colorName"

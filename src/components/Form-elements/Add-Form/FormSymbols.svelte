@@ -90,10 +90,19 @@
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="symbolIcon">Icon URL</label>
+            <label for="symbolIcon">
+              Icon URL
+              <br />
+              <small>
+                If you have one, please add the icon to the github issue. If
+                not, leave
+                <i>empty</i>
+                .
+              </small>
+            </label>
             <input
               name="symbolIcon"
-              placeholder="./icons/double-mars.svg"
+              placeholder="double-mars.svg"
               rows="2"
               bind:value={symbol.icon} />
           </div>

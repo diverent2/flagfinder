@@ -226,7 +226,9 @@
   <p>
     This form is intended to be used as a help to create new flags.
     <br />
-    <strong>[👩‍💻 for developement only]</strong>
+    <strong>
+      <small>[👩‍💻 For developement only]</small>
+    </strong>
   </p>
 
   <form on:submit|preventDefault={generateCode} id="form--addFlag">
@@ -236,7 +238,7 @@
       <input
         type="text"
         name="name"
-        placeholder="gay pride"
+        placeholder="gay bear pride"
         bind:value={flagData.name}
         required />
     </div>
@@ -282,7 +284,14 @@
     </fieldset>
 
     <div class="grid__column--fullWidth">
-      <label for="image" class="formField--required">Image-URL</label>
+      <label for="image">
+        <span class="formField--required">Image-Origin URL</span>
+        <br />
+        <small>
+          Link to where the image orignates from. Make sure the image is free to
+          use!
+        </small>
+      </label>
       <input
         type="text"
         name="image"
@@ -351,17 +360,29 @@
 
     <div class="form__submit grid__column--fullWidth">
       <p>
-        Click this button to generate the new flag in JSON. You can use this to
-        open a
-        <a href="#https://github.com/diverent2/flagfinder/issues/new/choose">
+        Click this button to generate the new flag in JSON.
+        <br />
+        You can use this to open a
+        <a
+          href="https://github.com/diverent2/flagfinder/issues/new?labels=content&template=---content-requests.md">
           content update request
         </a>
         on
         <a href="https://github.com/diverent2/flagfinder">github.</a>
         <br />
-        Thank you for your help!
+        <small>
+          ☝️ Note: Requesting a change won't guarantee its addition!
+        </small>
         <br />
-        <small>!Note: Requesting a change won't guarantee its addition!</small>
+        <small>
+          Learn more about making
+          <a href="http://localhost:3000/about/#contribute">
+            content contributions.
+          </a>
+        </small>
+        <br />
+        <br />
+        Thank you for your help!
       </p>
       <div class="text--center">
         <button type="submit">Generate Code</button>
