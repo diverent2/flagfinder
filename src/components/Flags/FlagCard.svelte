@@ -1,5 +1,6 @@
 <script>
   import IconButton from "../../components/Elements/IconButton.svelte";
+  import { onMount } from "svelte";
   export let flag;
 
   function getCategoryColor(category) {
@@ -20,6 +21,28 @@
         break;
     }
     return color;
+  }
+
+  let titleVisibility = true;
+
+  onMount(() => {
+    getCategoryVisibility();
+
+    window.addEventListener("resize", e => {
+      getCategoryVisibility();
+    });
+  });
+
+  function getCategoryVisibility() {
+    const categories = document.querySelector(".flagCard__categories");
+    const details = document.querySelector(".flagCard__details");
+    const categories_width = categories.offsetWidth;
+    const details_width = details.offsetWidth;
+    if (categories_width > details_width) {
+      titleVisibility = false;
+    } else {
+      titleVisibility = true;
+    }
   }
 </script>
 
@@ -144,7 +167,8 @@
             <IconButton
               backgroundColor={getCategoryColor(category)}
               icon="{category}-white"
-              scale="var(--spacing)">
+              scale="var(--spacing)"
+              {titleVisibility}>
               {category}
             </IconButton>
           </div>
