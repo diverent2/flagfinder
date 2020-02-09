@@ -21,6 +21,7 @@
     );
   });
 
+  // Check overflow for flag card categories to dynamically hide/show labels.
   function getCategoryVisibility() {
     const flagDetailsContainer = document.querySelectorAll(
       ".flagCard__details"

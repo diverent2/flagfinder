@@ -176,6 +176,10 @@
     justify-content: space-around;
   }
 
+  .categories_infoText {
+    margin-bottom: 0;
+  }
+
   .button__category input {
     position: absolute;
     opacity: 0;
@@ -301,6 +305,9 @@
           </div>
         {/each}
       </div>
+      <p class="categories_infoText">
+        <small>Only select multiple if you really have to!</small>
+      </p>
     </fieldset>
 
     <div class="grid__column--fullWidth">
