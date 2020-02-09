@@ -44,15 +44,17 @@
   function checkIfFlagMatchesColorFilters(flag, colorFilters) {
     const flagColorsIds = flag.matches.colors;
     //check if flag matches any of the colors
-    const areMatching = colorFilters.every(color => {
-      return flagColorsIds.indexOf(color) !== -1;
+    const areMatching = colorFilters.every(colorFilter => {
+      return flagColorsIds.indexOf(colorFilter) !== -1;
     });
     return areMatching; //true or false
   }
 
-  function checkIfFlagMatchesCategories(flag, categories) {
-    const flagCategory = flag.category;
-    return categories.includes(flagCategory);
+  function checkIfFlagMatchesCategories(flag, categoriesFilter) {
+    const flagCategories = flag.categories;
+    return flagCategories.some(flagCategory => {
+      return categoriesFilter.includes(flagCategory);
+    });
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {

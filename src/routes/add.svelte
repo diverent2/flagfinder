@@ -7,6 +7,24 @@
 
   let currentDate = getCurrentDate();
 
+  function updateCategoriesRequired() {
+    const categoryButtons = document.querySelectorAll(
+      'input[name="category[]"]'
+    );
+    const categoryButtonsChecked = document.querySelectorAll(
+      'input[name="category[]"]:checked'
+    );
+    if (categoryButtonsChecked.length) {
+      categoryButtons.forEach(category => {
+        category.removeAttribute("required");
+      });
+    } else {
+      categoryButtons.forEach(category => {
+        category.setAttribute("required", "required");
+      });
+    }
+  }
+
   function getCurrentDate() {
     const date = new Date();
     const dateString = new Date(
@@ -29,7 +47,7 @@
         firstAppearance: "",
         timeframe: ""
       },
-      category: "",
+      categories: [],
       image: "",
       props: {
         colors: [
@@ -158,6 +176,10 @@
     justify-content: space-around;
   }
 
+  .categories_infoText {
+    margin-bottom: 0;
+  }
+
   .button__category input {
     position: absolute;
     opacity: 0;
@@ -255,20 +277,22 @@
     </div>
 
     <fieldset class="grid__column--fullWidth">
-      <legend class="formField--required">Category</legend>
+      <legend class="formField--required">Categories</legend>
       <div class="categoryButtons">
         {#each filterCategories as category}
           <div>
             <label
               class="button__category"
               title={category.id}
-              class:selected={flagData.category === category.id}
+              class:selected={category.checked}
               style="border-color: {category.color}">
               <input
-                type="radio"
-                name="category"
-                bind:group={flagData.category}
+                type="checkbox"
+                name="category[]"
+                bind:checked={category.checked}
+                bind:group={flagData.categories}
                 value={category.id}
+                on:change={updateCategoriesRequired}
                 required />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -281,6 +305,9 @@
           </div>
         {/each}
       </div>
+      <p class="categories_infoText">
+        <small>Only select multiple if you really have to!</small>
+      </p>
     </fieldset>
 
     <div class="grid__column--fullWidth">

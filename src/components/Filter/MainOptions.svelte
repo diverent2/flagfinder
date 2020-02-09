@@ -104,6 +104,7 @@
   .mainOptions__resultInfo {
     text-align: center;
     margin-top: 0;
+    user-select: none;
   }
   .mainOptions__resultInfo--amount {
     text-decoration: underline;

@@ -34,6 +34,7 @@
   }
   .filter {
     display: flex;
+    user-select: none;
   }
 
   .filter-color {

@@ -1,7 +1,44 @@
 <script>
   import FlagCard from "./FlagCard.svelte";
 
+  import _debounce from "lodash/debounce";
+  import { onMount } from "svelte";
+
   export let flags = [];
+
+  onMount(() => {
+    flags.forEach(flag => {
+      flag.titleVisibility = true;
+    });
+
+    getCategoryVisibility();
+
+    window.addEventListener(
+      "resize",
+      _debounce(() => {
+        getCategoryVisibility();
+      }, 250)
+    );
+  });
+
+  // Check overflow for flag card categories to dynamically hide/show labels.
+  function getCategoryVisibility() {
+    const flagDetailsContainer = document.querySelectorAll(
+      ".flagCard__details"
+    );
+    for (let i = 0; i < flags.length; i++) {
+      let details = flagDetailsContainer[i];
+      const categories = details.querySelector(".flagCard__categories");
+      flags[i].titleVisibility = true;
+
+      // make sure the prop titleVisibility is actually updated
+      setTimeout(() => {
+        if (categories.offsetWidth > details.offsetWidth) {
+          flags[i].titleVisibility = false;
+        }
+      }, 1);
+    }
+  }
 </script>
 
 <style>
@@ -27,7 +64,7 @@
 <div class="flag-results">
   {#if flags.length}
     {#each flags as flag}
-      <FlagCard {flag} />
+      <FlagCard {flag} titleVisibility={flag.titleVisibility} />
     {/each}
   {:else}
     <p>No matching flags</p>
