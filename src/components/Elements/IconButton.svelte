@@ -17,6 +17,7 @@
     line-height: 1;
     cursor: pointer;
     text-decoration: none;
+    overflow: hidden;
   }
 
   .iconButton__icon {
@@ -34,7 +35,7 @@
     padding: 0;
     opacity: 0;
     margin: 0 !important;
-    padding: 0;
+    transform: scale(0);
   }
 
   /*button layouts */
@@ -46,6 +47,8 @@
 
   .iconButton--aside .iconButton__text {
     margin-left: var(--spacing-small);
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
   }
 
   .iconButton--below {
