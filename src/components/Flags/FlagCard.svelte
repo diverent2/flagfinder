@@ -1,8 +1,7 @@
 <script>
-  import _debounce from "lodash/debounce";
   import IconButton from "../../components/Elements/IconButton.svelte";
-  import { onMount } from "svelte";
   export let flag;
+  export let titleVisibility = true;
 
   function getCategoryColor(category) {
     let color;
@@ -22,31 +21,6 @@
         break;
     }
     return color;
-  }
-
-  let titleVisibility = true;
-  onMount(() => {
-    getCategoryVisibility();
-
-    window.addEventListener(
-      "resize",
-      _debounce(() => {
-        getCategoryVisibility();
-      }, 250)
-    );
-  });
-
-  function getCategoryVisibility() {
-    const categories = document.querySelector(".flagCard__categories");
-    const details = document.querySelector(".flagCard__details");
-
-    titleVisibility = true;
-    // make sure the prop titleVisibility is actually updated
-    setTimeout(() => {
-      if (categories.offsetWidth > details.offsetWidth) {
-        titleVisibility = false;
-      }
-    }, 1);
   }
 </script>
 
