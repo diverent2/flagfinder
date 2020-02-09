@@ -14,11 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Tests for search results
 - Add dev tool for adding flags
+- Logic to determine if flag category labels should be hidden or not
 
 ### 🔄 Changed
 
 - Deployment pipeline
 - Search results (include color data)
+- Allow multiple categories per flag
 
 ### 🛠️ Fixed
 
