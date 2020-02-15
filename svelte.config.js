@@ -8,8 +8,6 @@ module.exports = {
     scss: {
       includePaths: ['src']
     },
-    postcss: {
-      plugins: [require('postcss-custom-media')]
-    }
+    postcss: true
   })
 };

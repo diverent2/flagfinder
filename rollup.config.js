@@ -19,11 +19,7 @@ const preprocess = sveltePreprocess({
 	scss: {
 		includePaths: ['src']
 	},
-	postcss: {
-		plugins: [
-			require('postcss-custom-media')
-		]
-	}
+	postcss: true // use postcss config
 });
 
 export default {
