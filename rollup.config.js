@@ -17,9 +17,14 @@ const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/
 
 const preprocess = sveltePreprocess({
 	scss: {
-	  includePaths: ['src'],
+		includePaths: ['src']
+	},
+	postcss: {
+		plugins: [
+			require('postcss-custom-media')
+		]
 	}
-  });
+});
 
 export default {
 	client: {
