@@ -10,9 +10,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased - 0.5]
 
+### ➕ Added
+
+- SASS + PostCSS Preprocessor
+
+### 🔄 Changed
+
+- Gobalized and reduced Media Queries
+
+### 🛠️ Fixed
+
+- Flag-details text overflow
+
 ## [0.4] - 2020-02-08
 
-### Added
+### ➕ Added
 
 - Tests for search results
 - Add dev tool for adding flags
@@ -39,7 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.3] - 2019-12-23
 
-### Added
+### ➕ Added
 
 - Changelog
 - ColorField component
