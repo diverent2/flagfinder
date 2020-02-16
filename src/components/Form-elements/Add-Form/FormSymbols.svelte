@@ -20,7 +20,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   ul {
     list-style: none;
     margin: 0;
@@ -36,7 +36,7 @@
     margin-bottom: var(--spacing-xlarge);
   }
 
-  @media only screen and (min-width: 360px) {
+  @media (--small-down) {
     .form-symbol {
       grid-template-columns: 1fr 1fr;
     }

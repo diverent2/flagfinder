@@ -34,7 +34,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   ul {
     list-style: none;
     margin: 0;
@@ -56,7 +56,7 @@
     height: 29px;
   }
 
-  @media only screen and (min-width: 360px) {
+  @media (--small-down) {
     .form-color {
       grid-template-columns: 1fr 1fr;
     }

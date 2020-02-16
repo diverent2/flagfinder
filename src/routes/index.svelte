@@ -4,7 +4,7 @@
   const versionNumber = "ALPHA VERSION 0.4 ©2020";
 </script>
 
-<style>
+<style lang="scss">
   header {
     padding: 1rem;
 
@@ -132,7 +132,7 @@
     display: none;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media (--medium-up) {
     .discaimer_desktop {
       display: block;
     }
