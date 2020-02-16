@@ -25,6 +25,7 @@
     text-transform: capitalize;
     box-shadow: var(--box-shadow);
     background: var(--blue);
+    z-index: 1;
   }
 
   .flagDetails__goBack {
