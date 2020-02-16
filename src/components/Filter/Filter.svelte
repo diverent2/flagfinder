@@ -28,20 +28,26 @@
 </script>
 
 <style lang="scss">
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   fieldset {
     color: var(--white);
     margin: 0;
     border: none;
-  }
+    max-width: 600px;
 
-  .filter-color {
-    flex-grow: 3;
-  }
+    &.filter-color {
+      width: 100%;
+    }
 
-  .colorButtons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--spacing-xlarge));
-    grid-gap: 0.5rem;
+    legend {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
   }
 
   input {
@@ -50,6 +56,12 @@
     cursor: pointer;
     height: 0;
     width: 0;
+  }
+  .colorButtons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--spacing-xlarge));
+    grid-gap: 0.5rem;
+    justify-content: center;
   }
 
   .colorButton {
@@ -94,8 +106,12 @@
 
   .categoryButtons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: var(--spacing-small);
+
+    @media (--small-up) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .categoryButton {
@@ -103,6 +119,9 @@
     max-width: 100px;
     padding: var(--spacing-tiny) var(--spacing-small);
     color: var(--white);
+
+    justify-content: space-between;
+    display: flex;
 
     border: var(--gry-light) 1px solid;
     border-radius: 35px;
@@ -137,28 +156,28 @@
 
 <div class="filter">
 
-  <fieldset class="filter-categories">
+  <fieldset class="filter-category">
     <legend>Categories</legend>
     <div class="categoryButtons">
-      {#each filterCategories as category}
+      {#each filterCategories as filterCategory}
         <label
-          title={category.id}
+          title={filterCategory.id}
           class="categoryButton"
-          style="--color: {category.color};"
-          class:selected={category.selected}>
+          style="--color: {filterCategory.color};"
+          class:selected={filterCategory.selected}>
           <div class="categoryButton_inner">
             <input
               type="checkbox"
-              value={category.id}
-              bind:checked={category.selected}
+              value={filterCategory.id}
+              bind:checked={filterCategory.selected}
               bind:group={activeCategoryFilters} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               class="categoryButton_icon">
-              <use href="icons/{category.id}.svg#{category.id}" />
+              <use href="icons/{filterCategory.id}.svg#{filterCategory.id}" />
             </svg>
-            <span class="categoryButton_text">{category.id}</span>
+            <span class="categoryButton_text">{filterCategory.id}</span>
           </div>
         </label>
       {/each}
@@ -168,22 +187,22 @@
   <fieldset class="filter-color">
     <legend>Colors</legend>
     <div class="colorButtons">
-      {#each filterColors as colorFilter}
+      {#each filterColors as filterColor}
         <label
           class="colorButton"
-          title={colorFilter.id}
-          class:selected={colorFilter.selected}>
+          title={filterColor.id}
+          class:selected={filterColor.selected}>
 
-          {#if (colorFilter.id === 'yellow') | (colorFilter.id === 'white')}
-            <ColorSpot color={colorFilter.color} withBorder="true" />
+          {#if (filterColor.id === 'yellow') | (filterColor.id === 'white')}
+            <ColorSpot color={filterColor.color} withBorder="true" />
           {:else}
-            <ColorSpot color={colorFilter.color} />
+            <ColorSpot color={filterColor.color} />
           {/if}
           <input
             type="checkbox"
-            value={colorFilter.id}
+            value={filterColor.id}
             bind:group={activeColorFilters}
-            bind:checked={colorFilter.selected} />
+            bind:checked={filterColor.selected} />
           <div class="colorButton_checkmark">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
               <use href="icons/checkmark-circle.svg#checkmark-circle" />
