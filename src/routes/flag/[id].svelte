@@ -31,12 +31,12 @@
   let activeTab;
 </script>
 
-<style>
+<style lang="scss">
   main {
     margin-top: 25vh;
   }
 
-  @media only screen and (min-width: 600px) {
+  @media (--medium-up) {
     main {
       display: grid;
       grid-template-columns: 1fr 1fr;

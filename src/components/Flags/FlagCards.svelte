@@ -41,7 +41,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .flag-results {
     padding: var(--spacing);
     display: grid;
@@ -54,7 +54,7 @@
     margin-right: auto;
   }
 
-  @media only screen and (min-width: 420px) {
+  @media (--small-up) {
     .flag-results {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }

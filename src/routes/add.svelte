@@ -136,7 +136,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   p {
     text-align: center;
   }
@@ -159,7 +159,7 @@
     grid-gap: var(--spacing);
   }
 
-  @media only screen and (min-width: 360px) {
+  @media (--small-up) {
     #form--addFlag {
       grid-template-columns: repeat(2, 1fr);
     }

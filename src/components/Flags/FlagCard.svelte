@@ -24,7 +24,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   a {
     text-decoration: none;
   }
@@ -95,8 +95,7 @@
     overflow: hidden;
   }
 
-  @media only screen and (max-width: 250px),
-    only screen and (min-width: 650px) {
+  @media (--xsmall-only), (--medium-up) {
     .flagCard {
       height: 100%;
       display: flex;
@@ -122,7 +121,7 @@
     }
   }
 
-  @media only screen and (max-width: 180px) {
+  @media (--xsmall-only) {
     .flagCard__arrow {
       display: none;
     }
