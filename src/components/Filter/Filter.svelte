@@ -164,7 +164,8 @@
           title={filterCategory.id}
           class="categoryButton"
           style="--color: {filterCategory.color};"
-          class:selected={filterCategory.selected}>
+          class:selected={filterCategory.selected}
+          data-cy-filter-category={filterCategory.id}>
           <div class="categoryButton_inner">
             <input
               type="checkbox"
@@ -191,7 +192,8 @@
         <label
           class="colorButton"
           title={filterColor.id}
-          class:selected={filterColor.selected}>
+          class:selected={filterColor.selected}
+          data-cy-filter-color={filterColor.id}>
 
           {#if (filterColor.id === 'yellow') | (filterColor.id === 'white')}
             <ColorSpot color={filterColor.color} withBorder="true" />

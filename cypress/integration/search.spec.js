@@ -6,7 +6,7 @@ describe('Search', () => {
 
   it('updates result count correctly', () => {
     cy.get('.mainOptions__arrow--icon').click();
-    cy.get('.filter-categories .button__category:nth-child(2)').click();
+    cy.get('[data-cy-filter-category="attraction"]').click();
     cy.get('.mainOptions__resultInfo--amount').then($counter => {
       const amount = $counter.text();
       cy.get('.flag-results .flagCard').should('have.length', amount);
