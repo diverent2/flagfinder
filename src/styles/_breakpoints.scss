@@ -12,8 +12,6 @@ $medium: 600px;
 
 @custom-media --xsmall-only (width <= 250px);
 
-@custom-media --small-down (width <= 360px);
 @custom-media --small-up (width > 360px);
 
-@custom-media --medium-down (width <= 600px);
 @custom-media --medium-up (width > 600px);

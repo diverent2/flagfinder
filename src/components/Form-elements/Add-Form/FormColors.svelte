@@ -56,7 +56,7 @@
     height: 29px;
   }
 
-  @media (--small-down) {
+  @media (--small-up) {
     .form-color {
       grid-template-columns: 1fr 1fr;
     }

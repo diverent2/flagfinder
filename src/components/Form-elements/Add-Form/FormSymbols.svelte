@@ -36,7 +36,7 @@
     margin-bottom: var(--spacing-xlarge);
   }
 
-  @media (--small-down) {
+  @media (--small-up) {
     .form-symbol {
       grid-template-columns: 1fr 1fr;
     }
