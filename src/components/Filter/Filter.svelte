@@ -123,7 +123,7 @@
     justify-content: space-between;
     display: flex;
 
-    border: var(--gry-light) 1px solid;
+    border: var(--gry-light) 2px solid;
     border-radius: 35px;
 
     cursor: pointer;
@@ -147,8 +147,6 @@
     }
 
     &.selected {
-      color: var(--black);
-      border: transparent 1px solid;
       background: var(--color);
     }
   }
