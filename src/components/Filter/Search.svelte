@@ -29,6 +29,9 @@
     font-size: 1rem;
     border: none;
     background: transparent;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .searchbox__inputfield::placeholder {
