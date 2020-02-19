@@ -2,12 +2,12 @@ describe('Searchfilter', () => {
   beforeEach(() => {
     cy.visit('/search');
     cy.wait(100);
+
+    //open search filters
+    cy.get('[data-cy-search-filters-expand]').click();
   });
 
   it('shows/hides remove filter button correctly', () => {
-    //open search filters
-    cy.get('.mainOptions .mainOptions__arrow--icon').click();
-
     // text search
     cy.get('.searchbox__delete').should('not.have.class', 'visible');
     cy.get('#search').type('g');
@@ -32,11 +32,10 @@ describe('Searchfilter', () => {
   });
 
   it('removes all filters through remove filter button', () => {
-    cy.get('.mainOptions__resultInfo--amount')
+    cy.get('[data-cy-searchresults-number]')
       .invoke('text')
       .as('resultCount');
 
-    cy.get('.mainOptions .mainOptions__arrow--icon').click();
     cy.get('#search').type('g');
     cy.get('[data-cy-filter-color="red"]').click();
     cy.get('[data-cy-filter-color="blue"]').click();
@@ -56,7 +55,6 @@ describe('Searchfilter', () => {
   });
 
   it('can filter by categories', () => {
-    cy.get('.mainOptions__arrow--icon').click();
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.get('.flag-results .flagCard .flagCard__categories').each(
       categoriesList => {
@@ -71,7 +69,6 @@ describe('Searchfilter', () => {
   });
 
   it('can filter by multiple categories', () => {
-    cy.get('.mainOptions__arrow--icon').click();
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.get('[data-cy-filter-category="gender"]').click();
     cy.get('.flag-results .flagCard .flagCard__categories').each(
