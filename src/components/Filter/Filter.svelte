@@ -31,22 +31,19 @@
   .filter {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   fieldset {
     color: var(--white);
     margin: 0;
+    padding: 0;
     border: none;
-    max-width: 600px;
-
-    &.filter-color {
-      width: 100%;
-    }
-
+    width: 100%;
     legend {
       font-size: 0.8rem;
       margin-bottom: 0;
+      text-align: center;
+      width: 100%;
     }
   }
 
@@ -58,9 +55,13 @@
     width: 0;
   }
   .colorButtons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--spacing-xlarge));
-    grid-gap: 0.5rem;
+    max-width: 360px;
+    margin-top: var(--spacing-small);
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -72,6 +73,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: var(--spacing-tiny);
+    margin-bottom: var(--spacing-small);
+
+    @media (--small-up) {
+      margin-right: var(--spacing-small);
+    }
 
     //not selected
     border-color: var(--gry-light);
@@ -105,12 +113,15 @@
   }
 
   .categoryButtons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: var(--spacing-small);
+    margin-top: var(--spacing-small);
 
-    @media (--small-up) {
-      grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (--xsmall-only) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -120,8 +131,23 @@
     padding: var(--spacing-tiny) var(--spacing-small);
     color: var(--white);
 
-    justify-content: space-between;
     display: flex;
+    flex-basis: 6rem;
+    justify-content: space-between;
+
+    margin-right: var(--spacing-tiny);
+    margin-bottom: var(--spacing-small);
+
+    @media (--small-up) {
+      margin-right: var(--spacing-small);
+    }
+
+    @media (--xsmall-only) {
+      width: 100%;
+      display: block;
+      flex-basis: 0;
+      margin-right: 0;
+    }
 
     border: var(--gry-light) 2px solid;
     border-radius: 35px;
