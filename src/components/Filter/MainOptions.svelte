@@ -52,8 +52,8 @@
       visibility: hidden;
       opacity: 0;
       height: 0;
-      transform: scale(0);
-      transition: all 0.2s ease-in-out;
+      transform: scale(0) translateY(-100%);
+      transition: all 0.15s ease-in-out;
     }
   }
 
