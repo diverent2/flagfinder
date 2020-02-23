@@ -3,13 +3,14 @@
 
   export let colors = [];
 
-  let hueValue = "transparent";
+  let colorHueValue = [];
 
   function updateHuePreview(color) {
+    let index = colors.indexOf(color);
     const matchingHue = filterColors.find(
       filterColor => filterColor.id === color.hue
     );
-    hueValue = matchingHue.color;
+    colorHueValue[index] = matchingHue.color;
   }
 
   let hexValue = "transparent";
@@ -153,10 +154,11 @@
             <select
               name="colorHue"
               size="1"
-              style="border-left-color: {hueValue}"
-              bind:value={color.hue}
+              style="border-left-color: {colorHueValue[index] || 'transparent'}"
               on:change={() => updateHuePreview(color)}
-              required>
+              bind:value={color.hue}
+              required
+              data-cy-form-color-hue>
               <option value="" disabled selected>Please select</option>
               {#each filterColors as filterColor}
                 <option>{filterColor.id}</option>
@@ -176,7 +178,7 @@
     {/each}
   </ul>
   <div class="text--center">
-    <button data-ql-add-color-button on:click={addColorElement}>
+    <button data-cy-add-color-button on:click={addColorElement}>
       Add color
     </button>
   </div>

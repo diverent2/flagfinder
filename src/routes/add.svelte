@@ -316,7 +316,7 @@
             class="categoryButton"
             style="--color: {filterCategory.color};"
             class:selected={filterCategory.checked}
-            data-cy-form-add-category={filterCategory.id}>
+            data-cy-form-category={filterCategory.id}>
             <div class="categoryButton_inner">
               <input
                 name="category[]"
