@@ -7,8 +7,8 @@ describe('Add Flag form', () => {
   it('can generate flag data by filling out the form', () => {
     cy.get('input[name="name"]').type('gay bear pride');
     cy.get('input[name="id"]').type('gay-bear');
-    cy.get('.button__category[title="sexuality"]').click();
-    cy.get('.button__category[title="gender"]').click();
+    cy.get('[data-cy-form-add-category="sexuality"]').click();
+    cy.get('[data-cy-form-add-category="gender"]').click();
     cy.get('input[name="image"]').type('https://prideflags.info/');
     cy.get('textarea[name="description"]').type(
       'A most awesome group of people!'

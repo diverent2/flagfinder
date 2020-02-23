@@ -172,50 +172,81 @@
   /* categoryButtons */
 
   .categoryButtons {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .categories_infoText {
-    margin-bottom: 0;
-  }
-
-  .button__category input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  .button__category {
-    width: var(--spacing-xlarge);
-    height: var(--spacing-xlarge);
-    position: relative;
-    background: var(--white);
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    cursor: pointer;
-    box-shadow: var(--box-shadow);
+    margin-top: var(--spacing-small);
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    transition: border-color 0.2s ease;
+    flex-wrap: wrap;
+
+    @media (--xsmall-only) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
-  .ico-category {
-    width: 1rem;
-    height: 1rem;
-  }
+  .categoryButton {
+    height: 100%;
+    max-width: 100px;
+    padding: var(--spacing-tiny) var(--spacing-small);
+    color: var(--black);
+    background: var(--white);
 
-  .button__category:not(.selected) {
-    border-color: var(--gry-light) !important;
-  }
+    display: flex;
+    flex-basis: 6rem;
+    justify-content: space-between;
 
-  .button__category:not(.selected) .ico-category {
-    color: var(--gry-light) !important;
+    margin-right: var(--spacing-tiny);
+    margin-bottom: var(--spacing-small);
+
+    @media (--small-up) {
+      margin-right: var(--spacing-small);
+    }
+
+    @media (--xsmall-only) {
+      width: 100%;
+      display: block;
+      flex-basis: 0;
+      margin-right: 0;
+    }
+
+    border: var(--gry-light) 2px solid;
+    border-radius: 35px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease-in-out;
+    transition-property: background-color, color;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .categoryButton_inner {
+      display: flex;
+      align-items: center;
+
+      margin: 0 auto;
+      width: max-content;
+    }
+
+    .categoryButton_icon {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .categoryButton_text {
+      margin-left: var(--spacing-small);
+    }
+
+    &.selected {
+      color: var(--white);
+      background: var(--color);
+      border-color: transparent;
+    }
   }
 
   .form__submit {
@@ -279,30 +310,31 @@
     <fieldset class="grid__column--fullWidth">
       <legend class="formField--required">Categories</legend>
       <div class="categoryButtons">
-        {#each filterCategories as category}
-          <div>
-            <label
-              class="button__category"
-              title={category.id}
-              class:selected={category.checked}
-              style="border-color: {category.color}">
+        {#each filterCategories as filterCategory}
+          <label
+            title={filterCategory.id}
+            class="categoryButton"
+            style="--color: {filterCategory.color};"
+            class:selected={filterCategory.checked}
+            data-cy-form-add-category={filterCategory.id}>
+            <div class="categoryButton_inner">
               <input
-                type="checkbox"
                 name="category[]"
-                bind:checked={category.checked}
+                type="checkbox"
+                bind:checked={filterCategory.checked}
                 bind:group={flagData.categories}
-                value={category.id}
+                value={filterCategory.id}
                 on:change={updateCategoriesRequired}
                 required />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-                class="ico-category"
-                style="color: {category.color}">
-                <use href="icons/{category.id}.svg#{category.id}" />
+                class="categoryButton_icon">
+                <use href="icons/{filterCategory.id}.svg#{filterCategory.id}" />
               </svg>
-            </label>
-          </div>
+              <span class="categoryButton_text">{filterCategory.id}</span>
+            </div>
+          </label>
         {/each}
       </div>
       <p class="categories_infoText">
