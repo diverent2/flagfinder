@@ -129,7 +129,8 @@
     height: 100%;
     max-width: 100px;
     padding: var(--spacing-tiny) var(--spacing-small);
-    color: var(--white);
+    color: var(--black);
+    background: var(--white);
 
     display: flex;
     flex-basis: 6rem;
@@ -154,6 +155,8 @@
 
     cursor: pointer;
     user-select: none;
+    transition: all 0.15s ease-in-out;
+    transition-property: background-color, color;
 
     .categoryButton_inner {
       display: flex;
@@ -173,7 +176,9 @@
     }
 
     &.selected {
+      color: var(--white);
       background: var(--color);
+      border-color: transparent;
     }
   }
 </style>
