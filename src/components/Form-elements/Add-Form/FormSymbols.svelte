@@ -84,6 +84,7 @@
             <input
               type="text"
               name="symbolId"
+              pattern="[a-z0-9-]+"
               placeholder="double-mars"
               bind:value={symbol.id}
               required />

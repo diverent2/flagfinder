@@ -130,7 +130,7 @@
               type="text"
               name="colorId"
               placeholder="violet-blue"
-              pattern="[a-zA-Z0-9-]+"
+              pattern="[a-z0-9-]+"
               bind:value={color.id}
               required />
           </div>

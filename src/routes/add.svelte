@@ -302,7 +302,7 @@
         type="text"
         name="id"
         placeholder="gay-bear"
-        pattern="[a-zA-Z0-9-]+"
+        pattern="[a-z0-9-]+"
         bind:value={flagData.id}
         required />
     </div>
