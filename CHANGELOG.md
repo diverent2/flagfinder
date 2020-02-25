@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
+- Improve and redesign category filter buttons
 - Gobalized and reduced Media Queries
 
 ### 🛠️ Fixed
