@@ -27,6 +27,19 @@ describe('Search', () => {
     cy.get('.searchbox__delete').click();
   });
 
+  it('can find flags by keywords', () => {
+    cy.get('#search').type('rainbow');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+
+    cy.get('[data-cy-search-reset-all]').click();
+    cy.get('#search').type('♠️');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+
+    cy.get('[data-cy-search-reset-all]').click();
+    cy.get('#search').type('umbrella term');
+    cy.get('.flag-results .flagCard').should('not.have.length', 0);
+  });
+
   it('can find flags based on on searchterm with origin', () => {
     cy.get('#search').type('Baker');
     cy.get('.flag-results .flagCard').should('not.have.length', 0);

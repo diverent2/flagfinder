@@ -58,7 +58,7 @@
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
-    const { name, description, origin, category, props } = flag;
+    const { name, keywords, description, origin, category, props } = flag;
     const { firstAppearance, timeframe } = origin;
 
     const colors = [];
@@ -70,6 +70,7 @@
 
     const fieldsToCheck = [
       name,
+      keywords,
       description,
       firstAppearance,
       category,
