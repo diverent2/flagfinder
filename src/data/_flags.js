@@ -61,7 +61,19 @@ const flags = [
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'gay',
+      'queer',
+      'rainbow',
+      'pride',
+      'CSD',
+      '🏳️‍🌈',
+      '🌈',
+      '⚣',
+      'queer',
+      'LGBTQ*+',
+      'Stonewall'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -157,7 +169,7 @@ const flags = [
       colors: ['brown', 'orange', 'yellow', 'white', 'gray', 'black'],
       symbols: ['paw']
     },
-    keywords: [],
+    keywords: ['gay', 'subculture', 'hairy', 'big', 'male*', '⚣', '🐻'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -227,7 +239,7 @@ const flags = [
       colors: ['lightpink', 'white', 'yellow', 'black'],
       symbols: ['mars']
     },
-    keywords: [],
+    keywords: ['slim', 'gay', 'young', 'hairfree', 'no hair', '♂', '20s', '⚣'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -290,7 +302,17 @@ const flags = [
       colors: ['black', 'gray', 'white', 'purple'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'ace',
+      'relationship',
+      'lack of interest in sex',
+      'no or little libido',
+      'uninterested',
+      'umbrella term',
+      '☂️',
+      'spectrum',
+      '♠️'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -353,7 +375,7 @@ const flags = [
       colors: ['pink', 'purple', 'blue'],
       symbols: []
     },
-    keywords: [],
+    keywords: ['bi', 'both', 'two or more', 'attraction', 'love', '⚥'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -435,7 +457,7 @@ const flags = [
       colors: ['black', 'white', 'purple', 'gray'],
       symbols: ['triangle']
     },
-    keywords: [],
+    keywords: ['strong bond', 'relationship', 'emotional', 'takes time'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -459,7 +481,8 @@ const flags = [
   {
     id: 'heterosexual',
     name: 'heterosexual / straight',
-    description: 'People who are sexually attracted to the opposite sex.',
+    description:
+      'People who are sexually attracted to the opposite sex or a person identifying as such.',
     origin: {
       firstAppearance: '',
       timeframe: ''
@@ -496,7 +519,7 @@ const flags = [
       colors: ['lightblue', 'white', 'pink'],
       symbols: []
     },
-    keywords: [],
+    keywords: ['straight', 'hetero', 'love', 'relationship'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -573,7 +596,7 @@ const flags = [
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
       symbols: ['venus']
     },
-    keywords: [],
+    keywords: ['girls*', 'female', 'femme', 'love', 'relationship', '♀', '⚢'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -635,7 +658,17 @@ const flags = [
       colors: ['purple', 'black', 'white'],
       symbols: ['labrys']
     },
-    keywords: [],
+    keywords: [
+      'empowerment',
+      'strong',
+      'female*',
+      'woman*',
+      'fight back',
+      'fighter',
+      '♀',
+      '⚢',
+      'emancipation'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -726,7 +759,18 @@ const flags = [
       colors: ['pink', 'purple', 'white', 'lightpink', 'red'],
       symbols: ['lips']
     },
-    keywords: [],
+    keywords: [
+      'girly',
+      'femme',
+      'pretty',
+      'cute',
+      'girls*',
+      'female*',
+      'woman*',
+      'lady-like',
+      '♀',
+      '⚢'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -788,7 +832,18 @@ const flags = [
       colors: ['pink', 'yellow', 'lightblue'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'pan',
+      'all',
+      'everything',
+      'gender?',
+      'omnisexual',
+      'omni',
+      'love',
+      'whatever',
+      '🍳',
+      'regardless'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -850,7 +905,7 @@ const flags = [
       colors: ['pink', 'lightgreen', 'blue'],
       symbols: []
     },
-    keywords: [],
+    keywords: ['poly', 'multiple', 'love'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -957,7 +1012,15 @@ const flags = [
       ],
       symbols: ['A']
     },
-    keywords: [],
+    keywords: [
+      'hetero',
+      'a decent human being, congrats!',
+      'common sense',
+      'respectful',
+      'supporting',
+      'ally',
+      'potential friend'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1014,7 +1077,14 @@ const flags = [
       colors: ['black', 'gray', 'white', 'lightgreen'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'concept',
+      "what's a gender? Can you eat that?",
+      'rejecting the concept of having a gender',
+      'social construct',
+      'no gender',
+      'genderless'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1084,7 +1154,7 @@ const flags = [
       colors: ['pink', 'white', 'purple', 'black', 'blue'],
       symbols: []
     },
-    keywords: [],
+    keywords: ['switching', 'fluid', 'changing', 'inconsistent'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1140,7 +1210,15 @@ const flags = [
       colors: ['purple', 'white', 'green'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'umbrella term',
+      '☂️',
+      'spectrum',
+      'queer',
+      'identity',
+      'outside the box',
+      'gender non conforming'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1203,7 +1281,18 @@ const flags = [
       colors: ['yellow', 'white', 'purple', 'black'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'nb',
+      'non binary',
+      'enby',
+      'identity',
+      'umbrella term',
+      '☂️',
+      'spectrum',
+      'trans*',
+      'non-binary',
+      'identity'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1260,7 +1349,21 @@ const flags = [
       colors: ['lightblue', 'lightpink', 'white'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'trans*',
+      'transident',
+      'umbrella term',
+      '☂️',
+      'gender euphoria',
+      'not cis',
+      'transsexual',
+      'non cis',
+      '⚧️',
+      '🏳️‍⚧️',
+      'gender dysphoria',
+      '🥚',
+      'EGG'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1321,7 +1424,7 @@ const flags = [
       colors: ['purple', 'white', 'blue', 'lightpink'],
       symbols: []
     },
-    keywords: [],
+    keywords: ['identity'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1373,7 +1476,7 @@ const flags = [
       colors: ['yellow', 'purple'],
       symbols: ['circle']
     },
-    keywords: [],
+    keywords: ['inter', 'nonbinary', 'biological', 'sex'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1450,7 +1553,13 @@ const flags = [
       colors: ['green', 'lightgreen', 'white', 'gray', 'black'],
       symbols: []
     },
-    keywords: [],
+    keywords: [
+      'umbrella term',
+      '☂️',
+      'spectrum',
+      'uninterested',
+      'only platonic relationships'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -1522,7 +1631,15 @@ const flags = [
       colors: ['blue', 'red', 'black', 'yellow'],
       symbols: ['pi']
     },
-    keywords: [],
+    keywords: [
+      'multiple partner',
+      'poly',
+      'love',
+      'relationship',
+      'share',
+      'content',
+      'sharing'
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
