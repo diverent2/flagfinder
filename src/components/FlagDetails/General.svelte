@@ -68,6 +68,35 @@
     height: 2rem;
   }
 
+  .keywords {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .keyword {
+    display: inline-block;
+    margin: var(--spacing-tiny);
+    padding: 3px;
+    color: var(--black);
+    background-image: linear-gradient(
+      40deg,
+      #00c0ff 0%,
+      #ffcf00 49%,
+      #fc4f4f 100%
+    );
+    line-height: 1;
+    text-transform: capitalize;
+    border-radius: 5px;
+  }
+
+  .keyword_inner {
+    display: inline-block;
+    padding: var(--spacing-tiny) var(--spacing-small);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
   .general__categories {
     display: flex;
     flex-wrap: wrap;
@@ -75,7 +104,6 @@
 
   .category {
     padding-right: var(--spacing);
-    padding-bottom: var(--spacing);
   }
 
   .category:last-child {
@@ -126,5 +154,19 @@
       </li>
     {/each}
   </ul>
+
+  <h3>📌Keywords</h3>
+
+  {#if flag.keywords.length}
+    <ul class="keywords">
+      {#each flag.keywords as keyword}
+        <li class="keyword">
+          <span class="keyword_inner">{keyword}</span>
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <p class="field--empty">No keywords found.</p>
+  {/if}
 
 </section>
