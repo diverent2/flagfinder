@@ -129,7 +129,7 @@
 </style>
 
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
-  <div class="flagCard">
+  <div class="flagCard" data-cy-flagcard>
     <img
       width="150"
       class="flagCard__image"
@@ -138,7 +138,7 @@
 
     <div class="flagCard__details">
       <h3 class="flagCard__header">{flag.name}</h3>
-      <div class="flagCard__categories">
+      <div class="flagCard__categories" data-cy-flagcard-categories>
         {#each flag.categories as category}
           <div class="category">
             <IconButton

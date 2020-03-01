@@ -95,7 +95,8 @@
   <span
     class="iconButton__text"
     data-visible={titleVisibility}
-    style="font-size: {fontSize}">
+    style="font-size: {fontSize}"
+    data-cy-iconbutton-text>
     <slot />
   </span>
 </div>
