@@ -1,16 +1,15 @@
 <script>
-  export let tab1;
-  export let tab2;
+  export let tab1, tab2;
 
   export let activeTab = 1;
   $: activeTab;
 
   function switchTab(e, newTab) {
-    const oldActiveTab = document.querySelector(".tabButton--activeTab");
-    oldActiveTab.classList.remove("tabButton--activeTab");
+    const oldActiveTab = document.querySelector("[data-tab-active]");
+    delete oldActiveTab.dataset.tabActive;
 
     const newActiveTab = e.target;
-    newActiveTab.classList.add("tabButton--activeTab");
+    newActiveTab.dataset.tabActive = "";
 
     activeTab = newTab;
   }
@@ -38,16 +37,20 @@
     background: transparent;
   }
 
-  .tabButton--activeTab {
+  .tabButton[data-tab-active] {
     border: 1.5px var(--white) solid;
   }
 </style>
 
-<div class="tabButtons">
+<div class="tabButtons" data-cy-tabs>
   <button
-    class="tabButton tabButton--activeTab"
-    on:click={e => switchTab(e, 1)}>
+    class="tabButton"
+    data-tab-active
+    on:click={e => switchTab(e, 1)}
+    data-cy-tab>
     {tab1}
   </button>
-  <button class="tabButton" on:click={e => switchTab(e, 2)}>{tab2}</button>
+  <button class="tabButton" on:click={e => switchTab(e, 2)} data-cy-tab>
+    {tab2}
+  </button>
 </div>
