@@ -31,7 +31,8 @@
 
   // add valid keyword
   flag.keywords.push("valid");
-  let activeTab;
+
+  let activeTab = 1;
 </script>
 
 <style lang="scss">
