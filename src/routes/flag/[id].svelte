@@ -28,6 +28,9 @@
   import Footer from "./../../components/Footer.svelte";
 
   export let flag;
+
+  // add valid keyword
+  flag.keywords.push("valid");
   let activeTab;
 </script>
 

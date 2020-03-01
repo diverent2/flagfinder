@@ -5,6 +5,11 @@
 
   import flags from "../data/_flags";
 
+  // add valid keyword
+  flags.forEach(flag => {
+    flag.keywords.push("valid");
+  });
+
   let activeColorFilters = [];
   let activeCategoryFilters = [];
   let searchterm = "";
@@ -58,7 +63,7 @@
   }
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
-    const { name, description, origin, category, props } = flag;
+    const { name, keywords, description, origin, category, props } = flag;
     const { firstAppearance, timeframe } = origin;
 
     const colors = [];
@@ -70,6 +75,7 @@
 
     const fieldsToCheck = [
       name,
+      keywords,
       description,
       firstAppearance,
       category,

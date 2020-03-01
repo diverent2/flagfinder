@@ -77,6 +77,7 @@
     class:visible={allowFilterReset}
     title="clear searchterm"
     src="icons/cross.svg"
+    data-cy-search-reset-all
     on:click={() => dispatch('clearFiltersEvent')}
     alt />
 </div>
