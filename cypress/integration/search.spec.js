@@ -52,4 +52,12 @@ describe('Search', () => {
     cy.get('#search').type(' #fFfFff');
     cy.get('.flag-results .flagCard').should('not.have.length', 0);
   });
+
+  it('show everyone is valid', () => {
+    cy.get('[data-cy-searchresults-number]').then($counter => {
+      const amount = $counter.text();
+      cy.get('#search').type('valid');
+      cy.get('.flag-results .flagCard').should('have.length', amount);
+    });
+  });
 });

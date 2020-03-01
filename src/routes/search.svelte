@@ -5,6 +5,11 @@
 
   import flags from "../data/_flags";
 
+  // add valid keyword
+  flags.forEach(flag => {
+    flag.keywords.push("valid");
+  });
+
   let activeColorFilters = [];
   let activeCategoryFilters = [];
   let searchterm = "";

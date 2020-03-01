@@ -156,17 +156,12 @@
   </ul>
 
   <h3>📌Keywords</h3>
-
-  {#if flag.keywords.length}
-    <ul class="keywords">
-      {#each flag.keywords as keyword}
-        <li class="keyword">
-          <span class="keyword_inner">{keyword}</span>
-        </li>
-      {/each}
-    </ul>
-  {:else}
-    <p class="field--empty">No keywords found.</p>
-  {/if}
+  <ul class="keywords">
+    {#each flag.keywords as keyword}
+      <li class="keyword">
+        <span class="keyword_inner">{keyword}</span>
+      </li>
+    {/each}
+  </ul>
 
 </section>
