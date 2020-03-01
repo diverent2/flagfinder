@@ -7,8 +7,8 @@ describe('Add Flag form', () => {
   it('can generate flag data by filling out the form', () => {
     cy.get('input[name="name"]').type('gay bear pride');
     cy.get('input[name="id"]').type('gay-bear');
-    cy.get('.button__category[title="sexuality"]').click();
-    cy.get('.button__category[title="gender"]').click();
+    cy.get('#form--addFlag [data-cy-form-category="sexuality"]').click();
+    cy.get('#form--addFlag [data-cy-form-category="gender"]').click();
     cy.get('input[name="image"]').type('https://prideflags.info/');
     cy.get('textarea[name="description"]').type(
       'A most awesome group of people!'
@@ -72,13 +72,28 @@ describe('Add Flag form', () => {
       .should('contain.value', '2019-01-01');
   });
 
-  it('colors: can preview colors', () => {
+  it.only('colors: can preview colors', () => {
     cy.get('#form--addFlag .colors .color select[name="colorHue"]')
-      .should('have.css', 'border-left-color', 'rgba(0, 0, 0, 0)')
+      .should('not.have.value')
+      .and('have.css', 'border-left-color', 'rgba(0, 0, 0, 0)');
+    cy.get('#form--addFlag [data-cy-form-color-hue]')
       .select('purple')
-      .should('have.css', 'border-left-color', 'rgb(126, 0, 128)')
+      .should('have.value', 'purple')
+      .and('have.css', 'border-left-color', 'rgb(126, 0, 128)')
       .select('green')
-      .should('have.css', 'border-left-color', 'rgb(17, 131, 1)');
+      .should('have.value', 'green')
+      .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
+
+    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
+    cy.get('#form--addFlag [data-cy-form-color-hue]')
+      .eq(1) //second one
+      .select('red')
+      .should('have.value', 'red')
+      .and('have.css', 'border-left-color', 'rgb(252, 0, 6)');
+    cy.get('#form--addFlag [data-cy-form-color-hue]')
+      .first()
+      .should('have.value', 'green')
+      .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
   });
 
   it('colors: can add and remove multiple colors', () => {
@@ -86,12 +101,12 @@ describe('Add Flag form', () => {
     cy.get('#form--addFlag .colors .color input[name="colorName"]')
       .first()
       .type('color_name_A');
-    cy.get('#form--addFlag button[data-ql-add-color-button]').click();
+    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
     cy.get('#form--addFlag .colors .color').should('have.length', 2);
     cy.get('#form--addFlag .colors .color input[name="colorName"]')
       .eq(1)
       .type('color_name_B');
-    cy.get('#form--addFlag button[data-ql-add-color-button]').click();
+    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
     cy.get('#form--addFlag .colors .color').should('have.length', 3);
     cy.get('#form--addFlag .colors .color input[name="colorName"]')
       .eq(2)

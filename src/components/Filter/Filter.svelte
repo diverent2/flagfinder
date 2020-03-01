@@ -17,6 +17,7 @@
 <script>
   /*Data*/
   import { filterColors, filterCategories } from "../../data/_filter";
+  import IconButton from "../Elements/IconButton.svelte";
   import ColorSpot from "../Elements/ColorSpot.svelte";
 
   export let activeColorFilters;
@@ -26,26 +27,24 @@
   $: activeCategoryFilters;
 </script>
 
-<style>
+<style lang="scss">
+  .filter {
+    display: flex;
+    flex-direction: column;
+  }
+
   fieldset {
     color: var(--white);
     margin: 0;
+    padding: 0;
     border: none;
-  }
-  .filter {
-    display: flex;
-    user-select: none;
-  }
-
-  .filter-color {
-    flex-grow: 3;
-  }
-
-  .colorButtons,
-  .categoryButtons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--spacing-xlarge));
-    grid-gap: 0.5rem;
+    width: 100%;
+    legend {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   input {
@@ -55,119 +54,191 @@
     height: 0;
     width: 0;
   }
+  .colorButtons {
+    max-width: 360px;
+    margin-top: var(--spacing-small);
+    margin-left: auto;
+    margin-right: auto;
 
-  .button__color,
-  .button__category {
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .button {
+  .colorButton {
     width: var(--spacing-xlarge);
     height: var(--spacing-xlarge);
-    background: var(--white);
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    cursor: pointer;
-    box-shadow: var(--box-shadow);
-  }
+    position: relative;
 
-  .button__color,
-  .button__category {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: var(--spacing-tiny);
+    margin-bottom: var(--spacing-small);
+
+    @media (--small-up) {
+      margin-right: var(--spacing-small);
+    }
+
+    //not selected
+    border-color: var(--gry-light);
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+
+    cursor: pointer;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
     transition: border-color 0.2s ease;
+
+    .colorButton_checkmark {
+      width: 1rem;
+      height: 1.1rem;
+      position: absolute;
+      right: -4px;
+      bottom: 0px;
+      color: var(--green-light);
+      transition: opacity 0.2s ease;
+      opacity: 0;
+    }
+
+    &.selected {
+      border-color: var(--green-light);
+
+      .colorButton_checkmark {
+        opacity: 1;
+      }
+    }
   }
 
-  .buttonColor__checkmark {
-    width: 1rem;
-    height: 1.1rem;
-    position: absolute;
-    right: -4px;
-    bottom: 0px;
-    color: var(--green-light);
-    transition: opacity 0.2s ease;
-    opacity: 0;
+  .categoryButtons {
+    margin-top: var(--spacing-small);
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (--xsmall-only) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
-  .button__color.selected {
-    border-color: var(--green-light);
-  }
+  .categoryButton {
+    height: 100%;
+    max-width: 100px;
+    padding: var(--spacing-tiny) var(--spacing-small);
+    color: var(--black);
+    background: var(--white);
 
-  .ico-category {
-    width: 1rem;
-    height: 1rem;
-  }
+    display: flex;
+    flex-basis: 6rem;
+    justify-content: space-between;
 
-  .button__color.selected .buttonColor__checkmark {
-    opacity: 1;
-  }
+    margin-right: var(--spacing-tiny);
+    margin-bottom: var(--spacing-small);
 
-  .button:not(.selected) {
-    border-color: var(--gry-light) !important;
-  }
+    @media (--small-up) {
+      margin-right: var(--spacing-small);
+    }
 
-  .button__category:not(.selected) .ico-category {
-    color: var(--gry-light) !important;
+    @media (--xsmall-only) {
+      width: 100%;
+      display: block;
+      flex-basis: 0;
+      margin-right: 0;
+    }
+
+    border: var(--gry-light) 2px solid;
+    border-radius: 35px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s ease-in-out;
+    transition-property: background-color, color;
+
+    .categoryButton_inner {
+      display: flex;
+      align-items: center;
+
+      margin: 0 auto;
+      width: max-content;
+    }
+
+    .categoryButton_icon {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .categoryButton_text {
+      margin-left: var(--spacing-small);
+    }
+
+    &.selected {
+      color: var(--white);
+      background: var(--color);
+      border-color: transparent;
+    }
   }
 </style>
 
 <div class="filter">
 
-  <fieldset class="filter-color">
-    <legend>colors</legend>
-    <div class="colorButtons">
-      {#each filterColors as colorFilter}
+  <fieldset class="filter-category">
+    <legend>Categories</legend>
+    <div class="categoryButtons">
+      {#each filterCategories as filterCategory}
         <label
-          class="button button__color"
-          title={colorFilter.id}
-          class:selected={colorFilter.selected}>
-
-          {#if (colorFilter.id === 'yellow') | (colorFilter.id === 'white')}
-            <ColorSpot color={colorFilter.color} withBorder="true" />
-          {:else}
-            <ColorSpot color={colorFilter.color} />
-          {/if}
-          <input
-            type="checkbox"
-            value={colorFilter.id}
-            bind:group={activeColorFilters}
-            bind:checked={colorFilter.selected} />
-          <div class="buttonColor__checkmark">
+          title={filterCategory.id}
+          class="categoryButton"
+          style="--color: {filterCategory.color};"
+          class:selected={filterCategory.selected}
+          data-cy-filter-category={filterCategory.id}>
+          <div class="categoryButton_inner">
+            <input
+              type="checkbox"
+              value={filterCategory.id}
+              bind:checked={filterCategory.selected}
+              bind:group={activeCategoryFilters} />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
-              class="ico-checkmark">
-              <use href="icons/checkmark-circle.svg#checkmark-circle" />
+              class="categoryButton_icon">
+              <use href="icons/{filterCategory.id}.svg#{filterCategory.id}" />
             </svg>
+            <span class="categoryButton_text">{filterCategory.id}</span>
           </div>
         </label>
       {/each}
     </div>
   </fieldset>
 
-  <fieldset class="filter-categories">
-    <legend>categories</legend>
-    <div class="categoryButtons">
-      {#each filterCategories as category}
+  <fieldset class="filter-color">
+    <legend>Colors</legend>
+    <div class="colorButtons">
+      {#each filterColors as filterColor}
         <label
-          class="button button__category"
-          title={category.id}
-          class:selected={category.selected}
-          style="border-color: {category.color}">
+          class="colorButton"
+          title={filterColor.id}
+          class:selected={filterColor.selected}
+          data-cy-filter-color={filterColor.id}>
+
+          {#if (filterColor.id === 'yellow') | (filterColor.id === 'white')}
+            <ColorSpot color={filterColor.color} withBorder="true" />
+          {:else}
+            <ColorSpot color={filterColor.color} />
+          {/if}
           <input
             type="checkbox"
-            value={category.id}
-            bind:checked={category.selected}
-            bind:group={activeCategoryFilters} />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="ico-category"
-            style="color: {category.color}">
-            <use href="icons/{category.id}.svg#{category.id}" />
-          </svg>
+            value={filterColor.id}
+            bind:group={activeColorFilters}
+            bind:checked={filterColor.selected} />
+          <div class="colorButton_checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <use href="icons/checkmark-circle.svg#checkmark-circle" />
+            </svg>
+          </div>
         </label>
       {/each}
     </div>
