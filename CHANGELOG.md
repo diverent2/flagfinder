@@ -12,16 +12,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ➕ Added
 
-- SASS + PostCSS Preprocessor
+- #37 SASS + PostCSS Preprocessor
+- #49 Keywords for Flags
+- #49 Search by keywords
+- #49 Make every identity valid :)
 
 ### 🔄 Changed
 
-- Improve and redesign category filter buttons
-- Gobalized and reduced Media Queries
+- #32 Improve and redesign category filter buttons
+- Globalize and reduce Media Queries
+- Replace classes with data-cy for Tests
 
 ### 🛠️ Fixed
 
 - Flag-details text overflow
+- Console warnings
 
 ## [0.4] - 2020-02-08
 
