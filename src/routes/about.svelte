@@ -1,12 +1,37 @@
 <script>
   import Footer from "./../components/Footer.svelte";
   import Header from "./../components/Header.svelte";
+
+  function smothscrollTo(el) {
+    document.querySelector(el).scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 </script>
 
 <style>
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   .anchor {
     scroll-margin-top: 120px;
   }
+
+  .anchor:after {
+    content: "#";
+    display: inline-block;
+    margin-left: var(--spacing-tiny);
+    opacity: 0.2;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .anchor:hover:after,
+  .anchor:focus:after {
+    opacity: 0.7;
+  }
+
   h2,
   h3 {
     margin-top: 0.5rem;
@@ -97,7 +122,9 @@
     <p>
       I try to keep everything gender neutral or at least gender inclusive. For
       some descriptions this is pretty hard. So please feel free to
-      <a href="/about/#contribute">improve</a>
+      <span class="link" on:click={() => smothscrollTo('#contribute')}>
+        improve
+      </span>
       the wording and content.
       <br />
       To achieve gender neutral/inclusive language, I've decided to use singluar
@@ -129,11 +156,15 @@
       also trying my hardest to keep the list organised and clean.
       <br />
       You can also
-      <a href="/about/#contribute">contribute</a>
+      <span class="link" on:click={() => smothscrollTo('#contribute')}>
+        contribute
+      </span>
       .
     </p>
 
-    <h3 id="contribute" class="anchor">Can I contribute?</h3>
+    <h3 id="contribute" class="anchor">
+      <a href="/about#contribute">Can I contribute?</a>
+    </h3>
     <p>
       YES! You can provide feedback or content improvements suggestions by
       hitting me up per PN on twitter
@@ -228,7 +259,10 @@
     <h3>Found a mistake?</h3>
     <p>
       Feel free to report and your findings
-      <a href="/about/#contribute">here.</a>
+      <span class="link" on:click={() => smothscrollTo('#contribute')}>
+        here
+      </span>
+      .
     </p>
   </section>
 
