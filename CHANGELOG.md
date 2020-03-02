@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Flag-details text overflow
 - Console warnings
+- #21 Offset for anchor in `/search`
 
 ## [0.4] - 2020-02-08
 
