@@ -4,6 +4,9 @@
 </script>
 
 <style>
+  .anchor {
+    scroll-margin-top: 120px;
+  }
   h2,
   h3 {
     margin-top: 0.5rem;
@@ -130,7 +133,7 @@
       .
     </p>
 
-    <h3 id="contribute">Can I contribute?</h3>
+    <h3 id="contribute" class="anchor">Can I contribute?</h3>
     <p>
       YES! You can provide feedback or content improvements suggestions by
       hitting me up per PN on twitter
