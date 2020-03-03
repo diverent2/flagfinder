@@ -1,3 +1,6 @@
+![Testing](https://github.com/diverent2/flagfinder/workflows/Testing/badge.svg?branch=master)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/diverent2/flagfinder?color=blue&label=Version&sort=semver)
+
 # Prideflags.info 🔎🏳️‍🌈
 
 This is the official repository for the **upcoming** website prideflags.info.  
