@@ -5,30 +5,35 @@
 </script>
 
 <style lang="scss">
+  h1 {
+    color: var(--white);
+    width: min-content;
+    margin-left: 3rem;
+  }
+
   header {
     padding: 1rem;
 
     display: flex;
     justify-content: space-between;
-  }
 
-  header .header-image__background {
-    width: 128px;
-    height: 128px;
-    padding: var(--spacing-small);
+    .header_background {
+      top: 0;
+      transform: rotateX(180deg) rotateY(180deg);
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .header-image_background {
+      width: 128px;
+      height: 128px;
+      padding: var(--spacing-small);
 
-    background: var(--blue);
-    border-radius: 50%;
-  }
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  h1 {
-    color: var(--white);
-    width: min-content;
-    margin-left: 3rem;
+      background: var(--blue);
+      border-radius: 50%;
+    }
   }
 
   nav {
@@ -39,25 +44,39 @@
     flex-direction: column;
   }
 
-  .button__search {
+  .searchButton {
     width: 128px;
     height: 128px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
   }
 
-  .button__search h2 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-
-  .navButtons--special {
+  .secondaryButtons {
     display: flex;
+    .aboutButton {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      h2 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+    }
   }
 
-  .navButtons--special .button__about {
-    width: 100%;
+  .header_background,
+  .footer_background {
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
   }
 
   footer {
@@ -66,54 +85,31 @@
     bottom: 0;
     padding: var(--spacing-large);
     color: var(--white);
+
+    .footer_background-back {
+      transform: scaleX(-1);
+    }
   }
 
-  .header__background,
-  .footer__background {
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    left: 0;
-  }
-
-  .header__background {
-    top: 0;
-    transform: rotateX(180deg) rotateY(180deg);
-  }
-
-  .footer__background--back {
-    transform: scaleX(-1);
-  }
-
-  .footer__links {
+  .footer_links {
     display: flex;
     justify-content: space-between;
   }
 
-  .banner__container {
+  .versionBanner_container {
     font-size: 0.8rem;
     position: absolute;
     left: -3rem;
     top: 2rem;
     opacity: 0.8;
     pointer-events: none;
-  }
 
-  .banner {
-    padding: 0.3rem 3rem;
-    background: var(--white);
-    transform: rotateZ(-45deg);
-    box-shadow: var(--box-shadow);
-  }
-
-  .button__about {
-    display: flex;
-    justify-content: center;
-  }
-  .button__about h2 {
-    font-size: 1.5rem;
-    margin: 0;
+    .versionBanner {
+      padding: 0.3rem 3rem;
+      background: var(--white);
+      transform: rotateZ(-45deg);
+      box-shadow: var(--box-shadow);
+    }
   }
 
   .superSecretLink {
@@ -130,10 +126,7 @@
     text-align: center;
     color: var(--white);
     display: none;
-  }
-
-  @media (--medium-up) {
-    .discaimer_desktop {
+    @media (--medium-up) {
       display: block;
     }
   }
@@ -146,14 +139,14 @@
 <a href="/add" class="superSecretLink">Add Flag</a>
 <header>
   <img
-    class="header__background"
+    class="header_background"
     src="wave--darkblue.svg"
     alt
     aria-hidden="true" />
   <h1>Welcome to Prideflags.info</h1>
   <a href="/">
     <img
-      class="header-image__background"
+      class="header-image_background"
       src="flagfinder-logo.png"
       alt="LOGO"
       aria-hidden
@@ -161,14 +154,14 @@
   </a>
 </header>
 
-<aside class="banner__container">
-  <div class="banner">
+<aside class="versionBanner_container">
+  <div class="versionBanner">
     <span>ALPHA VERSION</span>
   </div>
 </aside>
 
 <nav>
-  <a href="search" class="button button__search">
+  <a href="search" class="searchButton">
     <IconButton
       backgroundColor="var(--blue-dark)"
       icon="search"
@@ -179,8 +172,8 @@
     </IconButton>
   </a>
 
-  <div class="navButtons--special">
-    <a href="/about" class="button__about">
+  <div class="secondaryButtons">
+    <a href="/about" class="aboutButton">
       <IconButton
         backgroundColor="var(--blue-dark)"
         icon="about"
@@ -198,16 +191,16 @@
 
 <footer>
   <img
-    class="footer__background footer__background--front"
+    class="footer_background footer_background-front"
     src="wave--darkblue.svg"
     alt
     aria-hidden="true" />
   <img
-    class="footer__background footer__background--back"
+    class="footer_background footer_background-back"
     src="wave.svg"
     alt
     aria-hidden="true" />
-  <div class="footer__links">
+  <div class="footer_links">
     <span>
       Made with 💖 by
       <a href="https://twitter.com/diverent2">diverent2</a>
