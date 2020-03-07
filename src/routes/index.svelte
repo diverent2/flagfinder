@@ -50,6 +50,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+    text-decoration: none;
 
     h2 {
       margin: 0;
@@ -63,6 +64,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      text-decoration: none;
       h2 {
         font-size: 1.5rem;
         margin: 0;
