@@ -1,8 +1,12 @@
 <script>
-  import FlagCard from "./FlagCard.svelte";
+  import { onMount } from "svelte";
+  import { fade, fly } from "svelte/transition";
+  import { flip } from "svelte/animate";
+  import { quintOut } from "svelte/easing";
 
   import _debounce from "lodash/debounce";
-  import { onMount } from "svelte";
+
+  import FlagCard from "./FlagCard.svelte";
 
   export let flags = [];
 
@@ -63,8 +67,13 @@
 
 <div class="flag-results">
   {#if flags.length}
-    {#each flags as flag}
-      <FlagCard {flag} titleVisibility={flag.titleVisibility} />
+    {#each flags as flag, index (flag)}
+      <div
+        in:fly={{ duration: 200, x: 100 }}
+        animate:flip={{ duration: 200, easing: quintOut }}
+        out:fade={{ duration: 200 }}>
+        <FlagCard {flag} titleVisibility={flag.titleVisibility} />
+      </div>
     {/each}
   {:else}
     <p>No matching flags</p>
