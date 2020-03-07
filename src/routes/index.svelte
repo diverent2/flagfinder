@@ -1,7 +1,8 @@
 <script>
   import IconButton from "../components/Elements/IconButton.svelte";
 
-  const versionNumber = "ALPHA VERSION 0.4 ©2020";
+  const versionNumber = "alpha v. 0.4";
+  const copyright = "©2020";
 </script>
 
 <style lang="scss">
@@ -207,6 +208,12 @@
       Made with 💖 by
       <a href="https://twitter.com/diverent2">diverent2</a>
     </span>
-    <span>{versionNumber}</span>
+    <div>
+      <a
+        href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md">
+        {versionNumber}
+      </a>
+      <span>{copyright}</span>
+    </div>
   </div>
 </footer>
