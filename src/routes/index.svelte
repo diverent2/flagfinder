@@ -164,7 +164,7 @@
 </aside>
 
 <nav>
-  <a href="search" class="searchButton">
+  <a href="search" class="searchButton" data-cy-button-search>
     <IconButton
       backgroundColor="var(--blue-dark)"
       icon="search"
@@ -176,7 +176,7 @@
   </a>
 
   <div class="secondaryButtons">
-    <a href="/about" class="aboutButton">
+    <a href="/about" class="aboutButton" data-cy-button-about>
       <IconButton
         backgroundColor="var(--blue-dark)"
         icon="about"

@@ -8,12 +8,12 @@ describe('Flagfinder', () => {
   });
 
   it('navigates to search', () => {
-    cy.get('a.button__search').click();
+    cy.get('[data-cy-button-search]').click();
     cy.url().should('include', '/search');
   });
 
   it('resolves absolute link correctly', () => {
-    cy.get('a.button__about').click();
+    cy.get('[data-cy-button-about]').click();
     cy.url().should('include', '/about');
     cy.get('a[href*="https://www.twitter.com"]').should('exist');
   });
