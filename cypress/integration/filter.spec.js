@@ -56,6 +56,7 @@ describe('Searchfilter', () => {
 
   it('can filter by categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
+    cy.wait(500); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       categoriesList => {
         cy.get(categoriesList)
@@ -70,7 +71,21 @@ describe('Searchfilter', () => {
 
   it('can filter by multiple categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.get('[data-cy-filter-category="gender"]').click();
+    cy.wait(500); //wait for animation end
+    cy.get('[data-cy-searchresults-number]').then($resultsCount => {
+      const resultsCount_singleCategory = parseFloat($resultsCount.text());
+
+      cy.get('[data-cy-filter-category="gender"]').click();
+      cy.wait(500) //wait for animation end
+        .then(() => {
+          const resultsCount_multiCategories = parseFloat($resultsCount.text());
+
+          cy.expect(resultsCount_multiCategories).to.be.greaterThan(
+            resultsCount_singleCategory
+          );
+        });
+    });
+
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       categoriesList => {
         cy.get(categoriesList)

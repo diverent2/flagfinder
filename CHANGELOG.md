@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ➕ Added
 
+- #41 Add Animations for Flagcards
 - #37 SASS + PostCSS Preprocessor
 - #49 Keywords for Flags
 - #49 Search by keywords
