@@ -56,6 +56,7 @@ describe('Searchfilter', () => {
 
   it('can filter by categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
+    cy.wait(500); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       categoriesList => {
         cy.get(categoriesList)
@@ -70,7 +71,9 @@ describe('Searchfilter', () => {
 
   it('can filter by multiple categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
+    cy.wait(500); //wait for animation end
     cy.get('[data-cy-filter-category="gender"]').click();
+    cy.wait(500); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       categoriesList => {
         cy.get(categoriesList)
