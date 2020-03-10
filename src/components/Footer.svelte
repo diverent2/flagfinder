@@ -1,5 +1,5 @@
 <script>
-  const versionNumber = "ALPHA VERSION 0.4 ©2020";
+  const versionNumber = "alpha v. 0.5 ©2020";
 </script>
 
 <style>

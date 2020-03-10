@@ -1,7 +1,7 @@
 <script>
   import IconButton from "../components/Elements/IconButton.svelte";
 
-  const versionNumber = "alpha v. 0.4";
+  const versionNumber = "alpha v. 0.5";
   const copyright = "©2020";
 </script>
 
