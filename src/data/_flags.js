@@ -275,11 +275,11 @@ const flags = [
           value: '#000000'
         },
         {
-          id: 'maroon',
-          name: 'maroon',
+          id: 'dark-gray',
+          name: 'dark gray',
           hue: 'gray',
           meaning: 'gray-asexuality, demi-sexuality',
-          value: '#603401'
+          value: '#a5a5a5'
         },
         {
           id: 'white',
@@ -1176,31 +1176,44 @@ const flags = [
       'Genderqueer is an umbrella term for non-binary people, who don´t really fit the provided categories, especially the binary.',
     origin: {
       firstAppearance: 'Marilyn Roxie',
-      timeframe: '2011'
+      timeframe: 'June 2011',
+      history: [
+        {
+          image: 'genderqueer/genderqueer_v1',
+          description: 'June 2010, version 1'
+        },
+        {
+          image: 'genderqueer/genderqueer_v2',
+          description: 'September 2010, version 2'
+        }
+      ]
     },
     categories: ['gender'],
-    image: 'genderqueer.png',
+    image: 'genderqueer/genderqueer.png',
     props: {
       colors: [
         {
-          id: 'medium-purple',
-          name: 'medium purple',
+          id: 'lavender',
+          name: 'lavender',
           hue: 'purple',
-          meaning: 'androgynous',
-          value: '#B578DD'
+          meaning:
+            'androgynous; representing the "queer" in genderqueer; It\' a mixture of the blue (men) and pink (women) of the transgender pride flag.',
+          value: '#b57edc'
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'agender',
+          meaning:
+            'agender; simular to the gender neutral part of the transgeder pride flag.',
           value: '#FFFFFF'
         },
         {
-          id: 'limeade',
+          id: 'dark-chartreuse-green ',
           name: 'limeade',
           hue: 'green',
-          meaning: 'non-binary',
+          meaning:
+            'non-binary; the lavender color inversed to indicate the outside a binary.',
           value: '#4B851E'
         }
       ],
@@ -1230,6 +1243,17 @@ const flags = [
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-15',
         name: 'Pride.com - queer pride flags',
         researchDate: '2019.10.09'
+      },
+      {
+        link: 'https://genderqueerid.com/about-flag',
+        name: 'genderqueerid.com - about the flag',
+        researchDate: '2020.03.15'
+      },
+      {
+        link:
+          'https://genderqueerid.com/post/48778828472/on-the-genderqueer-and-non-binary-flag-and',
+        name: 'genderqueerid.com - flag history',
+        researchDate: '2020.03.15'
       }
     ]
   },
@@ -1377,7 +1401,141 @@ const flags = [
         researchDate: '2019.10.10'
       }
     ]
-  } /* 
+  },
+  {
+    id: 'demigirl',
+    name: 'demigirl pride',
+    description:
+      "A demigirl (also known as demiwoman or demifemale person) is someone who partly (demi meaning half), but not completely identifies as a girl*, female* or feminine.\n\nThey may also identify as another gender or even as agender (genderless), but they don't have to.\n\nIf they are afab (assigned female at birth) it is likely that they feel somewhat disconnected from their assigned gender, but its most likely not enough to cause actual discomfort or even dysphoria.\n",
+    origin: {
+      firstAppearance: '',
+      timeframe: '',
+      firstApperance: 'by Transrants (Tumblr)'
+    },
+    categories: ['gender'],
+    image: 'demigirl.png',
+    props: {
+      colors: [
+        {
+          id: 'white',
+          name: 'white',
+          hue: 'white',
+          meaning:
+            'Represents gender neutrality, agender or nonbinary identity.\nIt can be compared to the center of the trans* pride flag. ',
+          value: '#fff'
+        },
+        {
+          id: 'carnation-pink',
+          name: 'carnation pink',
+          hue: 'lightpink',
+          meaning: 'female* / femme* , represents femininity',
+          value: '#ffaec9'
+        },
+        {
+          id: 'silver',
+          name: 'silver',
+          hue: 'gray',
+          meaning:
+            "Describes the identity as demi (half-) meaning it's only partially fitting.",
+          value: '#c4c4c4'
+        },
+        {
+          id: 'gray',
+          name: 'gray',
+          hue: 'gray',
+          meaning: '',
+          value: '#7f7f7f'
+        }
+      ],
+      symbols: []
+    },
+    matches: {
+      colors: ['white', 'lightpink', 'gray', 'gray'],
+      symbols: []
+    },
+    keywords: ['demigirl', 'demiwoman', 'demifemale person'],
+    sources: [
+      {
+        link: 'https://gender.wikia.org/wiki/Demigirl',
+        name: 'Gender Wiki - Demigirl',
+        researchDate: '2020-02-18'
+      },
+      {
+        link: 'https://nonbinary.wiki/wiki/Demigender',
+        name: 'non-binary Wiki - Demigender',
+        researchDate: '2020-02-18'
+      },
+      {
+        link: 'https://deconforming.com/gender-pride-flags/',
+        name: 'Deconforming.com - gender pride flags',
+        researchDate: '2020-02-18'
+      }
+    ]
+  },
+  {
+    id: 'demiboy',
+    name: 'demiboy pride',
+    description:
+      "A demiboy (also known as demiguy or demiman person) is someone who partly (demi meaning half), but not completely identies as a boy* or male*.\n\nThey may also identify as another gender or even as agender/genderless, but they don't have to.\n\nIf they are amab (assigned male at birth) it is likely that they feel somewhat disconnected from their assigned gender, but it most likely is not bad enough to cause actual discomfort or even dysphoria.\n",
+    origin: {
+      firstAppearance: '',
+      timeframe: '',
+      firstApperance: 'by Transrants (Tumblr)'
+    },
+    categories: ['gender'],
+    image: 'demiboy.png',
+    props: {
+      colors: [
+        {
+          id: 'white',
+          name: 'white',
+          hue: 'white',
+          meaning: 'Agender or nonbinary gender identity',
+          value: '#fff'
+        },
+        {
+          id: 'aqua',
+          name: 'aqua',
+          hue: 'lightblue',
+          meaning: 'male* / masc*',
+          value: '#9ad9eb'
+        },
+        {
+          id: 'silver',
+          name: 'Silver',
+          hue: 'gray',
+          meaning:
+            "Describes the identity as demi (half-) meaning it's only partially fitting.",
+          value: '#c4c4c4'
+        },
+        {
+          id: 'gray',
+          name: 'gray',
+          hue: 'gray',
+          meaning: '',
+          value: '#7f7f7f'
+        }
+      ],
+      symbols: []
+    },
+    matches: {
+      colors: ['white', 'lightblue', 'gray', 'gray'],
+      symbols: []
+    },
+    keywords: ['demiguy', 'demiboy', 'demiman', 'demimale person', ''],
+    sources: [
+      {
+        link: 'https://gender.wikia.org/wiki/Demiguy',
+        name: 'Gender Wiki - Demiguy',
+        researchDate: '2020-02-18'
+      },
+      {
+        link: 'https://nonbinary.wiki/wiki/Demigender',
+        name: 'non-binary Wiki - Demigender',
+        researchDate: '2020-02-18'
+      }
+    ]
+  },
   {
     id: 'bigender',
     name: 'bigender pride',
@@ -1386,7 +1544,7 @@ const flags = [
       firstAppearance: '',
       timeframe: ''
     },
-    categories: ['gender'],
+    categories: ['gender'],
     image: 'bigender.png',
     props: {
       colors: [
@@ -1418,7 +1576,8 @@ const flags = [
           meaning: 'femininity',
           value: '#F3B7DF'
         }
-      ],symbols: []
+      ],
+      symbols: []
     },
     matches: {
       colors: ['purple', 'white', 'blue', 'lightpink'],
@@ -1432,7 +1591,58 @@ const flags = [
         researchDate: '2019.10.09'
       }
     ]
-  } */,
+  },
+  {
+    id: 'cis',
+    name: 'cisgender',
+    description:
+      'Someone whose gender identity aligns with their "gender assigned at birth". Info: The flag was originally intended as an alternative version for the heterosexual flag but later turned into the cisgender flag.  It\'s an alteration based on the bisexual flag.',
+    origin: {
+      firstAppearance: '',
+      timeframe: 'June 2014',
+      firstApperance: 'Arianod on Deviantart'
+    },
+    categories: ['gender'],
+    image: 'cisgender.png',
+    props: {
+      colors: [
+        {
+          id: 'razzmatazz',
+          name: 'razzmatazz',
+          hue: 'pink',
+          meaning: 'color representing female sex',
+          value: '#D50071'
+        },
+        {
+          id: 'international-klein-blue',
+          name: 'international klein blue',
+          hue: 'blue',
+          meaning: 'color representing male sex',
+          value: '#002BA9'
+        }
+      ],
+      symbols: []
+    },
+    matches: {
+      colors: ['pink', 'blue'],
+      symbols: []
+    },
+    keywords: ['cis', 'binary', 'assigned gender at birth', 'AGAB'],
+    sources: [
+      {
+        link:
+          'https://www.deviantart.com/arianod/art/Heterosexual-Flag-463893682',
+        name: 'DeviantArt.com/Arianod - Heterosexual Flag',
+        researchDate: '2020-03-19'
+      },
+      {
+        link:
+          'https://www.deviantart.com/flagsforcishets/art/Straight-Cisgender-Gender-Binary-pride-flag-8-3-625974772',
+        name: 'DeviantArt.com/FlagsforCisHets - Cisgender Flag',
+        researchDate: '2020-03-19'
+      }
+    ]
+  },
   {
     id: 'intersex',
     name: 'intersex pride',
@@ -1657,6 +1867,77 @@ const flags = [
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
         researchDate: '2019.10.10'
+      }
+    ]
+  },
+  {
+    id: 'leather',
+    name: 'leather fetish pride',
+    description:
+      'Originally used to represent the gay leather community, it nowadays represents the leather and BDSM subculture in general. ',
+    origin: {
+      firstAppearance: '',
+      timeframe: '1989',
+      firstApperance: 'designed by Tony DeBlase'
+    },
+    categories: ['kink'],
+    image: 'leather.png',
+    props: {
+      colors: [
+        {
+          id: 'black',
+          name: 'black',
+          hue: 'black',
+          meaning: '',
+          value: '#000000'
+        },
+        {
+          id: 'royal-blue',
+          name: 'royal blue',
+          hue: 'blue',
+          meaning: '',
+          value: '#262680'
+        },
+        {
+          id: 'white',
+          name: 'white',
+          hue: 'white',
+          meaning: '',
+          value: '#ffffff'
+        },
+        {
+          id: 'alizarin',
+          name: 'alizarin',
+          hue: 'red',
+          meaning: '',
+          value: '#E72336'
+        }
+      ],
+      symbols: [
+        {
+          id: 'heart',
+          name: 'heart',
+          meaning: '',
+          icon: ''
+        }
+      ]
+    },
+    matches: {
+      colors: ['black', 'blue', 'white', 'red'],
+      symbols: ['heart']
+    },
+    keywords: ['fetish'],
+    sources: [
+      {
+        link: 'https://en.wikipedia.org/wiki/Leather_Pride_flag',
+        name: 'Wikipedia.org - Leather Pride Flag',
+        researchDate: '2020-01-29'
+      },
+      {
+        link:
+          'https://web.archive.org/web/20080915142834/http://www.leatherarchives.org/exhibits/deblase/pride.htm',
+        name: 'Leatherarchives.org - pride [Web Archive]',
+        researchDate: '2020-01-29'
       }
     ]
   }
