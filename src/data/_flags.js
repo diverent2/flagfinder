@@ -531,83 +531,97 @@ const flags = [
   {
     id: 'lesbian',
     name: 'lesbian pride',
-    description: 'Lesbians are homosexually attracted to other females*.',
+    description:
+      'Lesbians are woman* romantically and/or sexually attracted to other woman*. This community flag puts empathsies on the diversity of this idenity.',
     origin: {
-      firstAppearance: '',
-      timeframe: ''
-    },
-    categories: ['sexuality'],
-    image: 'lesbian.png',
-    props: {
-      colors: [
+      timeframe: '2018',
+      firstAppearance: 'taqwomen on tumblr',
+      history:
+        'A while ago many different flags existed for people who identify as lesbians. A user on tumblr (official-lesbian-flag) set out for the quest to settle to community for one flag to represent them. After many suggestions and votes a winner was declared: The lesbian community flag was born.',
+      flagHistory: [
         {
-          id: 'red',
-          name: 'red',
-          hue: 'red',
-          meaning: 'life',
-          value: '#FC0006'
-        },
-        {
-          id: 'orange',
-          name: 'orange',
-          hue: 'orange',
-          meaning: 'healing',
-          value: '#FDA507'
-        },
-        {
-          value: 'yellow',
-          namelue: 'yellow',
-          hue: 'yellow',
-          meaning: 'sunlight',
-          value: '#FFFF0B'
-        },
-        {
-          id: 'green',
-          name: 'green',
-          hue: 'green',
-          meaning: 'nature',
-          value: '#118301'
-        },
-        {
-          id: 'blue',
-          name: 'blue',
-          hue: 'blue',
-          meaning: 'Serenity',
-          value: '#0000FF'
-        },
-        {
-          id: 'indigo',
-          name: 'indigo',
-          hue: 'purple',
-          meaning: 'Spirit',
-          value: '#7E0080'
-        }
-      ],
-      symbols: [
-        {
-          id: 'venus',
-          name: 'venus',
-          meaning: 'symbol for female* sex',
-          icon: ''
+          image: 'lesbian/lesbian_v1',
+          description:
+            'June 2018, original winning flag by lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.'
         }
       ]
     },
-    matches: {
-      colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
-      symbols: ['venus']
+    categories: ['sexuality'],
+    image: 'lesbian/lesbian.png',
+    props: {
+      colors: [
+        {
+          id: 'darkened-red',
+          name: 'darkened red',
+          hue: 'red',
+          meaning: 'Gender non-conformity',
+          value: '#d52d00'
+        },
+        {
+          id: 'atomic-tangerine',
+          name: 'atomic tangerine',
+          hue: 'orange',
+          meaning:
+            'Community; Independence (especially from men*) meaning the ability to take care of oneself and each other.',
+          value: '#ff9a56'
+        },
+        {
+          id: 'white',
+          name: 'white',
+          hue: 'white',
+          meaning:
+            'Unique relationship to womanhood; Describes a connection to womanhood to different degrees for different lesbian groups incl. trans, non binary lesbians, butch and femme persons. The big difference to gender non conforming folx is that lesbians in some way have a relation to womanhood, while GNC do not.',
+          value: '#FFFFFF'
+        },
+        {
+          id: 'pale-violet-red',
+          name: 'pale violet red',
+          hue: 'pink',
+          meaning: 'Serenity and Peace; Love and Sex',
+          value: '#d362a4'
+        },
+        {
+          id: 'dark-purple',
+          name: 'dark purple',
+          hue: 'purple',
+          meaning: 'Femininity',
+          value: '#a31b62'
+        }
+      ],
+      symbols: []
     },
-    keywords: ['girls*', 'female', 'femme', 'love', 'relationship', '♀', '⚢'],
+    matches: {
+      colors: ['red', 'orange', 'white', 'pink', 'purple'],
+      symbols: []
+    },
+    keywords: [
+      'girls*',
+      'female',
+      'femme',
+      'woman',
+      'womanhood',
+      'community',
+      '👭',
+      'love',
+      'relationship',
+      '♀',
+      '⚢',
+      '👩‍❤️‍💋‍👩',
+      'the L word',
+      'the other L word'
+    ],
     sources: [
       {
-        link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
-        name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        link:
+          'https://sadlesbeandisaster.tumblr.com/post/174618152601/can-people-please-acknowledge-this-version-of-the',
+        name:
+          'sadlesbeandisaster.tumblr.com | Color Meaning of the new lesbian flag',
+        researchDate: '2020-04-02'
       },
       {
-        link:
-          'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
-        name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
+        link: 'https://official-lesbian-flag.tumblr.com/',
+        name: 'Official-lesbian-flag Tumblr',
+        researchDate: '2020-04-02'
       }
     ]
   },
@@ -690,7 +704,9 @@ const flags = [
       'A lesbian pride flag that puts emphasis on "femininity / being femme".',
     origin: {
       firstAppearance: 'Natalie',
-      timeframe: 'JULY 28, 2010'
+      timeframe: 'july 28, 2010',
+      history:
+        'Nowadays this flag is getting less and less common due to controversial claims by its author.'
     },
     categories: ['sexuality'],
     image: 'lesbian-lipstick.png',
@@ -1177,7 +1193,7 @@ const flags = [
     origin: {
       firstAppearance: 'Marilyn Roxie',
       timeframe: 'June 2011',
-      history: [
+      flagHistory: [
         {
           image: 'genderqueer/genderqueer_v1',
           description: 'June 2010, version 1'
