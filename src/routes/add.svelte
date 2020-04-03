@@ -376,7 +376,7 @@
           <input
             type="text"
             name="firstAppearance"
-            bind:value={flagData.origin.firstApperance}
+            bind:value={flagData.origin.firstAppearance}
             placeholder="Gilbert Baker in San Francisco" />
         </div>
         <div>
