@@ -72,7 +72,7 @@ describe('Add Flag form', () => {
       .should('contain.value', '2019-01-01');
   });
 
-  it.only('colors: can preview colors', () => {
+  it('colors: can preview colors', () => {
     cy.get('#form--addFlag .colors .color select[name="colorHue"]')
       .should('not.have.value')
       .and('have.css', 'border-left-color', 'rgba(0, 0, 0, 0)');
