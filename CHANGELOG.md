@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### ➕ Added
+
+- Proper Error page (404 and others)
+
 ### 🛠️ Fixed
 
 - "Add flag" generated a wrong field name for "firstAppearance" aka. fix typo
