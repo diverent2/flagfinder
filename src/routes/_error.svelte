@@ -58,7 +58,7 @@
   <div class="button--back" data-cy-error-button-back>
     👉
     <a href="./">
-      <IconButton scale="var(--spacing)" icon="arrow-back">
+      <IconButton scale="var(--spacing)" icon="arrow-back-white">
         back to main page
       </IconButton>
     </a>
