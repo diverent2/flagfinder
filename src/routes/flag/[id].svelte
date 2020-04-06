@@ -22,21 +22,21 @@
 
 <script>
   import _startCase from "lodash/startCase";
-  import { app_name, app_baseUrl } from "../../components/global.js";
 
+  import { app_name, app_baseUrl } from "../../data/global.js";
+
+  import Metainfos from "./../../components/Helpers/Metainfos.svelte";
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-
   import Footer from "./../../components/Footer.svelte";
 
   export let flag;
 
   const flagName = `${flag.name}`;
-
   const meta = {
     title: _startCase(flagName) + ` Flag | ${app_name}`,
-    desc: `Find out the meaning of the colors, the origin and much more about the ${flag.name} flag here on ${app_name}!`,
+    desc: `Find out what the ${flag.name} flag and its colors stands for, who created it and much, much more!`,
     url: `${app_baseUrl}/flag/${flag.id}`,
     image: `${app_baseUrl}/flags/${flag.image}`
   };
@@ -61,22 +61,7 @@
 </style>
 
 <svelte:head>
-  <title>{meta.title}</title>
-  <meta name="description" content={meta.desc} />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={meta.url} />
-  <meta property="og:title" content={meta.title} />
-  <meta property="og:description" content={meta.desc} />
-  <meta property="og:image" content={meta.image} />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={meta.url} />
-  <meta property="twitter:title" content={meta.title} />
-  <meta property="twitter:description" content={meta.desc} />
-  <meta property="twitter:image" content={meta.image} />
+  <Metainfos {...meta} />
 </svelte:head>
 
 <Header {flag} bind:activeTab />
