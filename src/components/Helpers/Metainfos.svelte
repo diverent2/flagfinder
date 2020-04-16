@@ -13,8 +13,7 @@
 
 <title>{title}</title>
 <meta name="description" content={desc} />
-
-{#if showInSearch}
+{#if showInSearch === 'true'}
   <meta name="robots" content="index, follow" />
 {:else}
   <meta name="robots" content="noindex, nofollow" />
