@@ -26,6 +26,10 @@
 
 <svelte:head>
   <title>{status} {error.message} | Prideflags.info</title>
+  <meta
+    name="description"
+    content="Normally you would see fantastic prideflags of queer folx here...
+    But something went wrong. Lets try this again, ok?" />
 </svelte:head>
 
 <Header>

@@ -1,6 +1,16 @@
 <script>
+  import { app_name, app_baseUrl } from "../data/global.js";
+
+  import Metainfos from "./../components/Helpers/Metainfos.svelte";
   import Footer from "./../components/Footer.svelte";
   import Header from "./../components/Header.svelte";
+
+  const meta = {
+    title: `About | ${app_name}`,
+    desc: `Find out what ${app_name} is all about, how it work and everything else you might ask yourself in our FAQ.`,
+    url: `${app_baseUrl}/about`,
+    image: `${app_baseUrl}/socialcards/search.png`
+  };
 </script>
 
 <style>
@@ -40,7 +50,7 @@
 </style>
 
 <svelte:head>
-  <title>About | Prideflags.info</title>
+  <Metainfos {...meta} />
 </svelte:head>
 
 <Header>About</Header>

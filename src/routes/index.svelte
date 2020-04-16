@@ -1,8 +1,18 @@
 <script>
+  import { app_name, app_baseUrl } from "../data/global.js";
+
+  import Metainfos from "../components/Helpers/Metainfos.svelte";
   import IconButton from "../components/Elements/IconButton.svelte";
 
   const versionNumber = "alpha v. 0.5";
   const copyright = "©2020";
+
+  const meta = {
+    title: `Search | ${app_name}`,
+    desc: `Welcome to ${app_name}! Your place of all Things Flags for queer Folx and Identities. 🌈 Get right started with Searching for the wide Varienty of Flags by Colors or Name.`,
+    url: `${app_baseUrl}`,
+    image: `${app_baseUrl}/socialcards/search.png`
+  };
 </script>
 
 <style lang="scss">
@@ -136,7 +146,7 @@
 </style>
 
 <svelte:head>
-  <title>Home | Prideflags.info</title>
+  <Metainfos {...meta} />
 </svelte:head>
 
 <a href="/add" class="superSecretLink">Add Flag</a>
