@@ -9,26 +9,27 @@
 </script>
 
 <!--HEADINFO-->
-<!--- use inside `<svelte:head>`-->
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={desc} />
+  {#if showInSearch === 'true'}
+    <meta name="robots" content="index, follow" />
+  {:else}
+    <meta name="robots" content="noindex, nofollow" />
+  {/if}
 
-<title>{title}</title>
-<meta name="description" content={desc} />
-{#if showInSearch === 'true'}
-  <meta name="robots" content="index, follow" />
-{:else}
-  <meta name="robots" content="noindex, nofollow" />
-{/if}
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={desc} />
+  <meta property="og:image" content={image} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={desc} />
-<meta property="og:image" content={image} />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={desc} />
+  <meta property="twitter:image" content={image} />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={desc} />
-<meta property="twitter:image" content={image} />
+</svelte:head>

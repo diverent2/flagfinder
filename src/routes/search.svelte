@@ -121,9 +121,7 @@
   }
 </style>
 
-<svelte:head>
-  <Metainfos {...meta} />
-</svelte:head>
+<Metainfos {...meta} />
 
 <h1>Search</h1>
 

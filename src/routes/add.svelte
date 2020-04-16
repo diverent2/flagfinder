@@ -279,9 +279,7 @@
   }
 </style>
 
-<svelte:head>
-  <Metainfos {...meta} showInSearch="false" />
-</svelte:head>
+<Metainfos {...meta} showInSearch="false" />
 
 <Header>Add a flag</Header>
 

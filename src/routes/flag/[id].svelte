@@ -60,9 +60,7 @@
   }
 </style>
 
-<svelte:head>
-  <Metainfos {...meta} />
-</svelte:head>
+<Metainfos {...meta} />
 
 <Header {flag} bind:activeTab />
 

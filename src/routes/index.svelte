@@ -145,9 +145,7 @@
   }
 </style>
 
-<svelte:head>
-  <Metainfos {...meta} />
-</svelte:head>
+<Metainfos {...meta} />
 
 <a href="/add" class="superSecretLink">Add Flag</a>
 <header>

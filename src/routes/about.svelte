@@ -49,9 +49,7 @@
   }
 </style>
 
-<svelte:head>
-  <Metainfos {...meta} />
-</svelte:head>
+<Metainfos {...meta} />
 
 <Header>About</Header>
 
