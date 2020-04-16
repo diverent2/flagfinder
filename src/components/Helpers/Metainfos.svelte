@@ -5,6 +5,7 @@
   export let desc = `Learn everything about the diversity of queer identities and their symbols in this large collection here on ${app_name}.`;
   export let url = `${app_baseUrl}`;
   export let image = `${app_baseUrl}/socialcards/search.png`;
+  export let showInSearch = "true";
 </script>
 
 <!--HEADINFO-->
@@ -12,6 +13,12 @@
 
 <title>{title}</title>
 <meta name="description" content={desc} />
+
+{#if showInSearch}
+  <meta name="robots" content="index, follow" />
+{:else}
+  <meta name="robots" content="noindex, nofollow" />
+{/if}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
