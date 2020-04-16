@@ -1,12 +1,153 @@
 const flags = [
   {
+    id: 'progressive',
+    name: 'progressive pride',
+    description:
+      'A redesigned pride flag to be more inclusive and represent all aspects of the LGBTQ*+ community.\nIt also shall remind us that „We still have movement forward to make. There still is work to be done.“ - Daniel Quasar.',
+    origin: {
+      history:
+        'When the prideflag got edited to represent more identities, Daniel Quasar set out to create a more well thoughtout flag design to represent the queer movement as a whole.',
+      timeframe: '2018',
+      firstAppearance: 'Daniel Quasar',
+    },
+    categories: ['sexuality', 'attraction', 'gender', 'kink'],
+    image: 'progressive.png',
+    props: {
+      colors: [
+        {
+          id: 'maya-blue',
+          name: 'maya blue',
+          hue: 'lightblue',
+          meaning:
+            'Reference to the trans* pride (traditionally color for boys)',
+          value: '#60CFFA',
+        },
+        {
+          id: 'cupid',
+          name: 'cupid',
+          hue: 'lightpink',
+          meaning:
+            'Reference to the trans* pride (traditionally color for girls)',
+          value: '#F4A8BA',
+        },
+        {
+          id: 'white',
+          name: 'white',
+          hue: 'white',
+          meaning:
+            'Reference to the trans* pride flag (those who are transitioning; those with a neutral gender, no gender, and those who are intersex.)',
+          value: '#FFFFFF',
+        },
+        {
+          id: 'brown',
+          name: 'brown',
+          hue: 'brown',
+          meaning:
+            'Representing marginalized People of Color (POC) communities',
+          value: '#603813',
+        },
+        {
+          id: 'black',
+          name: 'black',
+          hue: 'black',
+          meaning:
+            'Representing marginalized People of Color (POC) communities; Also representing those who have to fight and live with AIDS, have died and all the stigma surrounding them.',
+          value: '#000000',
+        },
+        {
+          id: 'red',
+          name: 'red',
+          hue: 'red',
+          meaning: 'Reference to the original LGBTQ*+ flag (life)',
+          value: '#d41d06',
+        },
+        {
+          id: 'orange',
+          name: 'orange',
+          hue: 'orange',
+          meaning: 'Reference to the original LGBTQ*+ flag (healing)',
+          value: '#ee9c00',
+        },
+        {
+          id: 'yellow',
+          name: 'yellow',
+          hue: 'yellow',
+          meaning: 'Reference to the original LGBTQ*+ flag (sunlight)',
+          value: '#FFFF0B',
+        },
+        {
+          id: 'green',
+          name: 'green',
+          hue: 'green',
+          meaning: 'Reference to the original LGBTQ*+ flag (nature)',
+          value: '#05bf00',
+        },
+        {
+          id: 'blue',
+          name: 'blue',
+          hue: 'blue',
+          meaning: 'Reference to the original LGBTQ*+ flag (harmony)',
+          value: '#011a98',
+        },
+        {
+          id: 'purple',
+          name: 'purple',
+          hue: 'purple',
+          meaning: 'Reference to the original LGBTQ*+ flag (spirit)',
+          value: '#761c89',
+        },
+      ],
+      symbols: [
+        {
+          id: 'arrow',
+          name: 'arrow',
+          meaning:
+            'The arrow represents the movement progressing, constantly pushing forward.',
+          icon: '',
+        },
+      ],
+    },
+    matches: {
+      colors: [
+        'lightblue',
+        'lightpink',
+        'white',
+        'brown',
+        'black',
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue',
+        'purple',
+      ],
+      symbols: ['arrow'],
+    },
+    keywords: [
+      'progressive',
+      'movement',
+      'reboot',
+      'trans',
+      'poc',
+      'inclusive',
+    ],
+    sources: [
+      {
+        link:
+          'https://www.kickstarter.com/projects/danielquasar/progress-a-pride-flag-reboot',
+        name: 'Kickstarter.com | Progressive Pride Flag Reboot',
+        researchDate: '2020-04-03',
+      },
+    ],
+  },
+  {
     id: 'gay',
     name: 'gay pride',
     description:
       'Traditional symbol of the LGBTQ+ movement. It represents people who identify as homosexual as well as the queer community as a whole.',
     origin: {
       firstAppearance: 'Gilbert Baker in San Francisco',
-      timeframe: '1979'
+      timeframe: '1979',
     },
     categories: ['sexuality'],
     image: 'gay.png',
@@ -17,49 +158,49 @@ const flags = [
           name: 'red',
           hue: 'red',
           meaning: 'life',
-          value: '#FC0006'
+          value: '#FC0006',
         },
         {
           id: 'orange',
           name: 'orange',
           hue: 'orange',
           meaning: 'healing',
-          value: '#FDA507'
+          value: '#FDA507',
         },
         {
           id: 'yellow',
           name: 'yellow',
           hue: 'yellow',
           meaning: 'sunlight',
-          value: '#FFFF0B'
+          value: '#FFFF0B',
         },
         {
           id: 'green',
           name: 'green',
           hue: 'green',
           meaning: 'nature',
-          value: '#118301'
+          value: '#118301',
         },
         {
           id: 'blue',
           name: 'blue',
           hue: 'blue',
           meaning: 'harmony',
-          value: '#0000FF'
+          value: '#0000FF',
         },
         {
           id: 'purple',
           name: 'purple',
           hue: 'purple',
           meaning: 'spirit',
-          value: '#7E0080'
-        }
+          value: '#7E0080',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['red', 'orange', 'yellow', 'green', 'blue', 'purple'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'gay',
@@ -72,26 +213,26 @@ const flags = [
       '⚣',
       'queer',
       'LGBTQ*+',
-      'Stonewall'
+      'Stonewall',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-4',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link: 'https://medium.com/matthews-place/lgbtq-symbols-7d925b396ebe',
         name: 'Matthews place on Medium - lgtbq symbols',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'gay-bear',
@@ -100,7 +241,7 @@ const flags = [
       'A gay subculture formed from the interest of more sturdier and hairy men*, which are also called "bears".',
     origin: {
       firstAppearance: 'by Craig Byrnes for the International Bear Brotherhood',
-      timeframe: '1995'
+      timeframe: '1995',
     },
     categories: ['sexuality'],
     image: 'gay-bear.png',
@@ -111,78 +252,78 @@ const flags = [
           name: 'maroon',
           hue: 'brown',
           meaning: 'the colors represent different bear fur types',
-          value: '#613401'
+          value: '#613401',
         },
         {
           id: 'tenne',
           name: 'tenne',
           hue: 'orange',
           meaning: 'the colors represent different bear fur types',
-          value: '#D46004'
+          value: '#D46004',
         },
         {
           id: 'dandelion',
           name: 'dandelion',
           hue: 'yellow',
           meaning: 'the colors represent different bear fur types',
-          value: '#FEDD63'
+          value: '#FEDD63',
         },
         {
           id: 'moccasin',
           name: 'moccasin',
           hue: 'yellow',
           meaning: 'the colors represent different bear fur types',
-          value: '#FEE8BA'
+          value: '#FEE8BA',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'the colors represent different bear fur types',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'mortar',
           name: 'mortar',
           hue: 'gray',
           meaning: 'the colors represent different bear fur types',
-          value: '#545454'
+          value: '#545454',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: 'the colors represent different bear fur types',
-          value: '#000000'
-        }
+          value: '#000000',
+        },
       ],
       symbols: [
         {
           id: 'paw',
           name: 'paw',
           meaning: '🐻🐾',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['brown', 'orange', 'yellow', 'white', 'gray', 'black'],
-      symbols: ['paw']
+      symbols: ['paw'],
     },
     keywords: ['gay', 'subculture', 'hairy', 'big', 'male*', '⚣', '🐻'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-18',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'gay-twink',
@@ -191,7 +332,7 @@ const flags = [
       'A gay subculture formed by the interest in twinks. A twink is a young man* (teen to early 20s) that looks younger then they are, appears more feminine, has little to no body and facial hair and is rather slim.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['sexuality'],
     image: 'gay-twink.png',
@@ -202,57 +343,57 @@ const flags = [
           name: 'mauve',
           hue: 'lightpink',
           meaning: 'feminine nature',
-          value: '#FDACFF'
+          value: '#FDACFF',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: '',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'canary',
           name: 'canary',
           hue: 'yellow',
           meaning: '',
-          value: '#FFFF82'
+          value: '#FFFF82',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: '',
-          value: '#000000'
-        }
+          value: '#000000',
+        },
       ],
       symbols: [
         {
           id: 'double-mars',
           name: 'double mars',
           meaning: 'male* sexuality',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['lightpink', 'white', 'yellow', 'black'],
-      symbols: ['mars']
+      symbols: ['mars'],
     },
     keywords: ['slim', 'gay', 'young', 'hairfree', 'no hair', '♂', '20s', '⚣'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'asexual',
@@ -261,7 +402,7 @@ const flags = [
       'An asexual person is someone, who has little or no interest in sexual activity. Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheter or not they enjoy sexual activity or completly avoid it. It can also be used as an umbrella term.',
     origin: {
       firstAppearance: '',
-      timeframe: '2010'
+      timeframe: '2010',
     },
     categories: ['sexuality'],
     image: 'asexual.png',
@@ -272,35 +413,35 @@ const flags = [
           name: 'black',
           hue: 'black',
           meaning: 'asexuality',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'dark-gray',
           name: 'dark gray',
           hue: 'gray',
           meaning: 'gray-asexuality, demi-sexuality',
-          value: '#a5a5a5'
+          value: '#a5a5a5',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'sexuality',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'indigo',
           name: 'indigo',
           hue: 'purple',
           meaning: 'community',
-          value: '#7F0081'
-        }
+          value: '#7F0081',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['black', 'gray', 'white', 'purple'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'ace',
@@ -311,27 +452,27 @@ const flags = [
       'umbrella term',
       '☂️',
       'spectrum',
-      '♠️'
+      '♠️',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-17',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'bisexual',
@@ -340,7 +481,7 @@ const flags = [
       'Sexual attraction to the own as well as to one (or more) other sexes/genders.',
     origin: {
       firstAppearance: 'Michael Page',
-      timeframe: 'December 5, 1998'
+      timeframe: 'December 5, 1998',
     },
     categories: ['sexuality'],
     image: 'bisexual.png',
@@ -351,7 +492,7 @@ const flags = [
           name: 'razzmatazz',
           hue: 'pink',
           meaning: 'same sex/gender attraction / sterotypical for girl*',
-          value: '#D50071'
+          value: '#D50071',
         },
         {
           id: 'violet-blue',
@@ -359,48 +500,48 @@ const flags = [
           hue: 'purple',
           meaning:
             'possible attraction to anywhere on the gender spectrum / blending in between both straight and gay communitites',
-          value: '#9B4797'
+          value: '#9B4797',
         },
         {
           id: 'international-klein-blue',
           name: 'international klein blue',
           hue: 'blue',
           meaning: 'different sex/gender attraction  / sterotypical for boy*',
-          value: '#002BA9'
-        }
+          value: '#002BA9',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['pink', 'purple', 'blue'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['bi', 'both', 'two or more', 'attraction', 'love', '⚥'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/bisexual/2015/5/15/6-facts-you-never-knew-about-bisexual-flag-yes-there-one',
         name: 'Pride.com - facts about the bisexual flag',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-17',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'demisexual',
@@ -409,7 +550,7 @@ const flags = [
       'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['sexuality'],
     image: 'demisexual.png',
@@ -420,63 +561,63 @@ const flags = [
           name: 'black',
           hue: 'black',
           meaning: 'asexuality',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'sexuality',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'indigo',
           name: 'indigo',
           hue: 'purple',
           meaning: 'community',
-          value: '#7F0081'
+          value: '#7F0081',
         },
         {
           id: 'light-gray',
           name: 'light gray',
           hue: 'gray',
           meaning: 'gray-ace and demisexuality',
-          value: '#D3D3D3'
-        }
+          value: '#D3D3D3',
+        },
       ],
       symbols: [
         {
           id: 'triangle',
           name: 'triangle',
           meaning: '',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['black', 'white', 'purple', 'gray'],
-      symbols: ['triangle']
+      symbols: ['triangle'],
     },
     keywords: ['strong bond', 'relationship', 'emotional', 'takes time'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-17',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'heterosexual',
@@ -485,7 +626,7 @@ const flags = [
       'People who are sexually attracted to the opposite sex or a person identifying as such.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['sexuality'],
     image: 'heterosexual.png',
@@ -496,37 +637,37 @@ const flags = [
           name: 'royal blue',
           hue: 'lightblue',
           meaning: 'male sex',
-          value: '#4687e6'
+          value: '#4687e6',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'sexuality',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'dark-pink',
           name: 'dark pink',
           hue: 'pink',
           meaning: 'female sex',
-          value: '#ED5B9E'
-        }
+          value: '#ED5B9E',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['lightblue', 'white', 'pink'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['straight', 'hetero', 'love', 'relationship'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'lesbian',
@@ -542,9 +683,9 @@ const flags = [
         {
           image: 'lesbian/lesbian_v1',
           description:
-            'June 2018, original winning flag by lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.'
-        }
-      ]
+            'June 2018, original winning flag by lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.',
+        },
+      ],
     },
     categories: ['sexuality'],
     image: 'lesbian/lesbian.png',
@@ -555,7 +696,7 @@ const flags = [
           name: 'darkened red',
           hue: 'red',
           meaning: 'Gender non-conformity',
-          value: '#d52d00'
+          value: '#d52d00',
         },
         {
           id: 'atomic-tangerine',
@@ -563,7 +704,7 @@ const flags = [
           hue: 'orange',
           meaning:
             'Community; Independence (especially from men*) meaning the ability to take care of oneself and each other.',
-          value: '#ff9a56'
+          value: '#ff9a56',
         },
         {
           id: 'white',
@@ -571,28 +712,28 @@ const flags = [
           hue: 'white',
           meaning:
             'Unique relationship to womanhood; Describes a connection to womanhood to different degrees for different lesbian groups incl. trans, non binary lesbians, butch and femme persons. The big difference to gender non conforming folx is that lesbians in some way have a relation to womanhood, while GNC do not.',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'pale-violet-red',
           name: 'pale violet red',
           hue: 'pink',
           meaning: 'Serenity and Peace; Love and Sex',
-          value: '#d362a4'
+          value: '#d362a4',
         },
         {
           id: 'dark-purple',
           name: 'dark purple',
           hue: 'purple',
           meaning: 'Femininity',
-          value: '#a31b62'
-        }
+          value: '#a31b62',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['red', 'orange', 'white', 'pink', 'purple'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'girls*',
@@ -608,7 +749,7 @@ const flags = [
       '⚢',
       '👩‍❤️‍💋‍👩',
       'the L word',
-      'the other L word'
+      'the other L word',
     ],
     sources: [
       {
@@ -616,14 +757,14 @@ const flags = [
           'https://sadlesbeandisaster.tumblr.com/post/174618152601/can-people-please-acknowledge-this-version-of-the',
         name:
           'sadlesbeandisaster.tumblr.com | Color Meaning of the new lesbian flag',
-        researchDate: '2020-04-02'
+        researchDate: '2020-04-02',
       },
       {
         link: 'https://official-lesbian-flag.tumblr.com/',
         name: 'Official-lesbian-flag Tumblr',
-        researchDate: '2020-04-02'
-      }
-    ]
+        researchDate: '2020-04-02',
+      },
+    ],
   },
   {
     id: 'lesbian-labry',
@@ -631,7 +772,7 @@ const flags = [
     description: 'A lesbian flag that puts emphasis on "female* empowerment".',
     origin: {
       firstAppearance: ' Sean Campbell',
-      timeframe: '1999'
+      timeframe: '1999',
     },
     categories: ['sexuality'],
     image: 'lesbian-labry.png',
@@ -642,35 +783,35 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning: '',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: '',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'indigo',
           name: 'indigo',
           hue: 'purple',
           meaning: '',
-          value: '#7E0080'
-        }
+          value: '#7E0080',
+        },
       ],
       symbols: [
         {
           id: 'labrys',
           name: 'labrys',
           meaning: '',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['purple', 'black', 'white'],
-      symbols: ['labrys']
+      symbols: ['labrys'],
     },
     keywords: [
       'empowerment',
@@ -681,21 +822,21 @@ const flags = [
       'fighter',
       '♀',
       '⚢',
-      'emancipation'
+      'emancipation',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-10',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'lesbian-lipstick',
@@ -706,7 +847,7 @@ const flags = [
       firstAppearance: 'Natalie',
       timeframe: 'july 28, 2010',
       history:
-        'Nowadays this flag is getting less and less common due to controversial claims by its author.'
+        'Nowadays this flag is getting less and less common due to controversial claims by its author.',
     },
     categories: ['sexuality'],
     image: 'lesbian-lipstick.png',
@@ -717,63 +858,63 @@ const flags = [
           name: 'eggplant',
           hue: 'purple',
           meaning: '',
-          value: '#A60061'
+          value: '#A60061',
         },
         {
           id: 'mulberry',
           name: 'mulberry',
           hue: 'purple',
           meaning: '',
-          value: '#B94A94'
+          value: '#B94A94',
         },
         {
           id: 'mulberry',
           name: 'mulberry',
           hue: 'pink',
           meaning: '',
-          value: '#D157A8'
+          value: '#D157A8',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: '',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'plum',
           name: 'plum',
           hue: 'lightpink',
           meaning: '',
-          value: '#E4AAD1'
+          value: '#E4AAD1',
         },
         {
           id: 'sunset',
           name: 'sunset',
           hue: 'red',
           meaning: '',
-          value: '#C64651'
+          value: '#C64651',
         },
         {
           id: 'dark-red',
           name: 'dark red',
           hue: 'red',
           meaning: '',
-          value: '#8C0B02'
-        }
+          value: '#8C0B02',
+        },
       ],
       symbols: [
         {
           id: 'lips',
           name: 'lips',
           meaning: 'extremely feminine character',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['pink', 'purple', 'white', 'lightpink', 'red'],
-      symbols: ['lips']
+      symbols: ['lips'],
     },
     keywords: [
       'girly',
@@ -785,27 +926,27 @@ const flags = [
       'woman*',
       'lady-like',
       '♀',
-      '⚢'
+      '⚢',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://thislesbianlife.wordpress.com/2010/07/28/lipstick-lesbian-pride/',
         name: 'this lesbian life - lipstick lesbian pride',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'pansexual',
@@ -814,7 +955,7 @@ const flags = [
       'Pansexuality describes sexual attraction towards all gender (identities) and regardless of sex characteristics.',
     origin: {
       firstAppearance: '',
-      timeframe: '2010'
+      timeframe: '2010',
     },
     categories: ['sexuality'],
     image: 'pansexual.png',
@@ -825,28 +966,28 @@ const flags = [
           name: 'hollywood cerise',
           hue: 'pink',
           meaning: 'female* gendered persons (regardless of biological sex)',
-          value: '#FC008D'
+          value: '#FC008D',
         },
         {
           id: 'school-bus-yellow',
           name: 'school bus yellow',
           hue: 'yellow',
           meaning: 'mixed gendered, genderless, thirdgendered people',
-          value: '#FEDB09'
+          value: '#FEDB09',
         },
         {
           id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'lightblue',
           meaning: 'male* gendered persons (regardless of biological sex)',
-          value: '#27B1FF'
-        }
+          value: '#27B1FF',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['pink', 'yellow', 'lightblue'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'pan',
@@ -858,27 +999,27 @@ const flags = [
       'love',
       'whatever',
       '🍳',
-      'regardless'
+      'regardless',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-10',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.deviantart.com/savvyred/journal/Pride-Flags-Colors-explained-379547414',
         name: 'deviantart savvyred - pride flag colors explained',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'polysexual',
@@ -887,7 +1028,7 @@ const flags = [
       'Similar to pansexuality, with an important difference: A polysexual person is attracted to multiple, yet not all genders.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['sexuality'],
     image: 'polysexual.png',
@@ -898,43 +1039,43 @@ const flags = [
           name: 'hot magenta',
           hue: 'pink',
           meaning: 'attraction to females*',
-          value: '#F300BA'
+          value: '#F300BA',
         },
         {
           id: 'mountain-meadow',
           name: 'mountain meadow',
           hue: 'lightgreen',
           meaning: 'attraction to people of other genders',
-          value: '#25DA69'
+          value: '#25DA69',
         },
         {
           id: 'dodger-blue',
           name: 'dodger blue',
           hue: 'blue',
           meaning: 'attraction to males*',
-          value: '#1E90F6'
-        }
+          value: '#1E90F6',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['pink', 'lightgreen', 'blue'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['poly', 'multiple', 'love'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-20',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'straight-ally',
@@ -943,7 +1084,7 @@ const flags = [
       'People who identify as straight but support LGBTQ+ people in their identities.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['sexuality'],
     image: 'straight-ally.png',
@@ -954,66 +1095,66 @@ const flags = [
           name: 'black',
           hue: 'black',
           meaning: 'part of the old heterosexual flag',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'part of the old heterosexual flag',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'red',
           name: 'red',
           hue: 'red',
           meaning: 'life',
-          value: '#FC0006'
+          value: '#FC0006',
         },
         {
           id: 'orange',
           name: 'orange',
           hue: 'orange',
           meaning: 'healing',
-          value: '#FDA507'
+          value: '#FDA507',
         },
         {
           value: 'yellow',
           namelue: 'yellow',
           hue: 'yellow',
           meaning: 'sunlight',
-          value: '#FFFF0B'
+          value: '#FFFF0B',
         },
         {
           id: 'green',
           name: 'green',
           hue: 'green',
           meaning: 'nature',
-          value: '#118301'
+          value: '#118301',
         },
         {
           id: 'blue',
           name: 'blue',
           hue: 'blue',
           meaning: 'Serenity',
-          value: '#0000FF'
+          value: '#0000FF',
         },
         {
           id: 'indigo',
           name: 'indigo',
           hue: 'purple',
           meaning: 'Spirit',
-          value: '#7E0080'
-        }
+          value: '#7E0080',
+        },
       ],
       symbols: [
         {
           id: 'A',
           name: 'A',
           meaning: '"A" as in "ally"',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: [
@@ -1024,9 +1165,9 @@ const flags = [
         'yellow',
         'green',
         'blue',
-        'purple'
+        'purple',
       ],
-      symbols: ['A']
+      symbols: ['A'],
     },
     keywords: [
       'hetero',
@@ -1035,15 +1176,15 @@ const flags = [
       'respectful',
       'supporting',
       'ally',
-      'potential friend'
+      'potential friend',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'agender',
@@ -1052,7 +1193,7 @@ const flags = [
       'A person who is without a gender and/or rejects the idea of heaving a gender completely.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['gender'],
     image: 'agender.png',
@@ -1063,35 +1204,35 @@ const flags = [
           name: 'black',
           hue: 'black',
           meaning: 'absence of gender',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'silver',
           name: 'silver',
           hue: 'gray',
           meaning: '',
-          value: '#B6B6B6'
+          value: '#B6B6B6',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'absence of gender',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'pale-green',
           name: 'pale green',
           hue: 'lightgreen',
           meaning: 'nonbinary; as the opposite of the highly gendered purple',
-          value: '#BBF884'
-        }
+          value: '#BBF884',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['black', 'gray', 'white', 'lightgreen'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'concept',
@@ -1099,21 +1240,21 @@ const flags = [
       'rejecting the concept of having a gender',
       'social construct',
       'no gender',
-      'genderless'
+      'genderless',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-21',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'genderfluid',
@@ -1122,7 +1263,7 @@ const flags = [
       'As the name suggests, genderfluid/genderflex aren´t locked in one gender identity. Their identity can shift and vary over time.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['gender'],
     image: 'genderfluid.png',
@@ -1133,57 +1274,57 @@ const flags = [
           name: 'hot pink',
           hue: 'pink',
           meaning: 'femininity',
-          value: '#FD6EA4'
+          value: '#FD6EA4',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'a lack of gender',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'dark-violet',
           name: 'dark violet',
           hue: 'purple',
           meaning: 'masculinity; femininity',
-          value: '#BD00D7'
+          value: '#BD00D7',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: 'all genders',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'cerulean-blue',
           name: 'cerulean blue',
           hue: 'blue',
           meaning: 'masculinity',
-          value: '#2F2FBE'
-        }
+          value: '#2F2FBE',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['pink', 'white', 'purple', 'black', 'blue'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['switching', 'fluid', 'changing', 'inconsistent'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-14',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'genderqueer',
@@ -1196,13 +1337,13 @@ const flags = [
       flagHistory: [
         {
           image: 'genderqueer/genderqueer_v1',
-          description: 'June 2010, version 1'
+          description: 'June 2010, version 1',
         },
         {
           image: 'genderqueer/genderqueer_v2',
-          description: 'September 2010, version 2'
-        }
-      ]
+          description: 'September 2010, version 2',
+        },
+      ],
     },
     categories: ['gender'],
     image: 'genderqueer/genderqueer.png',
@@ -1214,7 +1355,7 @@ const flags = [
           hue: 'purple',
           meaning:
             'androgynous; representing the "queer" in genderqueer; It\' a mixture of the blue (men) and pink (women) of the transgender pride flag.',
-          value: '#b57edc'
+          value: '#b57edc',
         },
         {
           id: 'white',
@@ -1222,7 +1363,7 @@ const flags = [
           hue: 'white',
           meaning:
             'agender; simular to the gender neutral part of the transgeder pride flag.',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'dark-chartreuse-green ',
@@ -1230,14 +1371,14 @@ const flags = [
           hue: 'green',
           meaning:
             'non-binary; the lavender color inversed to indicate the outside a binary.',
-          value: '#4B851E'
-        }
+          value: '#4B851E',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['purple', 'white', 'green'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'umbrella term',
@@ -1246,32 +1387,32 @@ const flags = [
       'queer',
       'identity',
       'outside the box',
-      'gender non conforming'
+      'gender non conforming',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-15',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link: 'https://genderqueerid.com/about-flag',
         name: 'genderqueerid.com - about the flag',
-        researchDate: '2020.03.15'
+        researchDate: '2020.03.15',
       },
       {
         link:
           'https://genderqueerid.com/post/48778828472/on-the-genderqueer-and-non-binary-flag-and',
         name: 'genderqueerid.com - flag history',
-        researchDate: '2020.03.15'
-      }
-    ]
+        researchDate: '2020.03.15',
+      },
+    ],
   },
   {
     id: 'nonbinary',
@@ -1280,7 +1421,7 @@ const flags = [
       'Often used as an umbrella term, nonbinary (also called enby, NB) don´t fit into male* and female* categories.',
     origin: {
       firstAppearance: 'Kye Rowan',
-      timeframe: '2014'
+      timeframe: '2014',
     },
     categories: ['gender'],
     image: 'nonbinary.png',
@@ -1291,35 +1432,35 @@ const flags = [
           name: 'gorse',
           hue: 'yellow',
           meaning: 'gender seperate from the binary',
-          value: '#FFF82F'
+          value: '#FFF82F',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: 'for those with multiple genders',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'medium-orchid',
           name: 'medium orchid',
           hue: 'purple',
           meaning: 'mix of male* and female*',
-          value: '#9C4DD2'
+          value: '#9C4DD2',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: 'people without a gender',
-          value: '#000000'
-        }
+          value: '#000000',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['yellow', 'white', 'purple', 'black'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'nb',
@@ -1331,21 +1472,21 @@ const flags = [
       'spectrum',
       'trans*',
       'non-binary',
-      'identity'
+      'identity',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.10'
+        researchDate: '2019.10.10',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-15',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.10'
-      }
-    ]
+        researchDate: '2019.10.10',
+      },
+    ],
   },
   {
     id: 'transgender',
@@ -1354,7 +1495,7 @@ const flags = [
       'Transgender people are people who´s gender identity doesn´t match their sex assigned at birth.',
     origin: {
       firstAppearance: 'Monica Helms',
-      timeframe: '1999'
+      timeframe: '1999',
     },
     categories: ['gender'],
     image: 'transgender.png',
@@ -1364,15 +1505,15 @@ const flags = [
           id: 'maya-blue',
           name: 'maya blue',
           hue: 'lightblue',
-          meaning: 'traditionally value for boy',
-          value: '#60CFFA'
+          meaning: 'traditionally color for boys',
+          value: '#60CFFA',
         },
         {
           id: 'cupid',
           name: 'cupid',
           hue: 'lightpink',
-          meaning: 'traditionally value for girls',
-          value: '#F4A8BA'
+          meaning: 'traditionally color for girls',
+          value: '#F4A8BA',
         },
         {
           id: 'white',
@@ -1380,14 +1521,14 @@ const flags = [
           hue: 'white',
           meaning:
             'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
-          value: '#FFFFFF'
-        }
+          value: '#FFFFFF',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['lightblue', 'lightpink', 'white'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'trans*',
@@ -1402,21 +1543,21 @@ const flags = [
       '🏳️‍⚧️',
       'gender dysphoria',
       '🥚',
-      'EGG'
+      'EGG',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.10'
+        researchDate: '2019.10.10',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-13',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.10'
-      }
-    ]
+        researchDate: '2019.10.10',
+      },
+    ],
   },
   {
     id: 'demigirl',
@@ -1424,9 +1565,8 @@ const flags = [
     description:
       "A demigirl (also known as demiwoman or demifemale person) is someone who partly (demi meaning half), but not completely identifies as a girl*, female* or feminine.\n\nThey may also identify as another gender or even as agender (genderless), but they don't have to.\n\nIf they are afab (assigned female at birth) it is likely that they feel somewhat disconnected from their assigned gender, but its most likely not enough to cause actual discomfort or even dysphoria.\n",
     origin: {
-      firstAppearance: '',
+      firstAppearance: 'by Transrants (Tumblr)',
       timeframe: '',
-      firstApperance: 'by Transrants (Tumblr)'
     },
     categories: ['gender'],
     image: 'demigirl.png',
@@ -1438,14 +1578,14 @@ const flags = [
           hue: 'white',
           meaning:
             'Represents gender neutrality, agender or nonbinary identity.\nIt can be compared to the center of the trans* pride flag. ',
-          value: '#fff'
+          value: '#fff',
         },
         {
           id: 'carnation-pink',
           name: 'carnation pink',
           hue: 'lightpink',
           meaning: 'female* / femme* , represents femininity',
-          value: '#ffaec9'
+          value: '#ffaec9',
         },
         {
           id: 'silver',
@@ -1453,40 +1593,40 @@ const flags = [
           hue: 'gray',
           meaning:
             "Describes the identity as demi (half-) meaning it's only partially fitting.",
-          value: '#c4c4c4'
+          value: '#c4c4c4',
         },
         {
           id: 'gray',
           name: 'gray',
           hue: 'gray',
           meaning: '',
-          value: '#7f7f7f'
-        }
+          value: '#7f7f7f',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['white', 'lightpink', 'gray', 'gray'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['demigirl', 'demiwoman', 'demifemale person'],
     sources: [
       {
         link: 'https://gender.wikia.org/wiki/Demigirl',
         name: 'Gender Wiki - Demigirl',
-        researchDate: '2020-02-18'
+        researchDate: '2020-02-18',
       },
       {
         link: 'https://nonbinary.wiki/wiki/Demigender',
         name: 'non-binary Wiki - Demigender',
-        researchDate: '2020-02-18'
+        researchDate: '2020-02-18',
       },
       {
         link: 'https://deconforming.com/gender-pride-flags/',
         name: 'Deconforming.com - gender pride flags',
-        researchDate: '2020-02-18'
-      }
-    ]
+        researchDate: '2020-02-18',
+      },
+    ],
   },
   {
     id: 'demiboy',
@@ -1494,9 +1634,8 @@ const flags = [
     description:
       "A demiboy (also known as demiguy or demiman person) is someone who partly (demi meaning half), but not completely identies as a boy* or male*.\n\nThey may also identify as another gender or even as agender/genderless, but they don't have to.\n\nIf they are amab (assigned male at birth) it is likely that they feel somewhat disconnected from their assigned gender, but it most likely is not bad enough to cause actual discomfort or even dysphoria.\n",
     origin: {
-      firstAppearance: '',
+      firstAppearance: 'by Transrants (Tumblr)',
       timeframe: '',
-      firstApperance: 'by Transrants (Tumblr)'
     },
     categories: ['gender'],
     image: 'demiboy.png',
@@ -1507,14 +1646,14 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning: 'Agender or nonbinary gender identity',
-          value: '#fff'
+          value: '#fff',
         },
         {
           id: 'aqua',
           name: 'aqua',
           hue: 'lightblue',
           meaning: 'male* / masc*',
-          value: '#9ad9eb'
+          value: '#9ad9eb',
         },
         {
           id: 'silver',
@@ -1522,91 +1661,141 @@ const flags = [
           hue: 'gray',
           meaning:
             "Describes the identity as demi (half-) meaning it's only partially fitting.",
-          value: '#c4c4c4'
+          value: '#c4c4c4',
         },
         {
           id: 'gray',
           name: 'gray',
           hue: 'gray',
           meaning: '',
-          value: '#7f7f7f'
-        }
+          value: '#7f7f7f',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['white', 'lightblue', 'gray', 'gray'],
-      symbols: []
+      symbols: [],
     },
-    keywords: ['demiguy', 'demiboy', 'demiman', 'demimale person', ''],
+    keywords: ['demiguy', 'demiboy', 'demiman', 'demimale person'],
     sources: [
       {
         link: 'https://gender.wikia.org/wiki/Demiguy',
         name: 'Gender Wiki - Demiguy',
-        researchDate: '2020-02-18'
+        researchDate: '2020-02-18',
       },
       {
         link: 'https://nonbinary.wiki/wiki/Demigender',
         name: 'non-binary Wiki - Demigender',
-        researchDate: '2020-02-18'
-      }
-    ]
+        researchDate: '2020-02-18',
+      },
+    ],
   },
   {
     id: 'bigender',
     name: 'bigender pride',
-    description: '',
+    description:
+      'A person who has not one, but two genders. These can be binary male and female but could also include other gender indentitites (eg. nonbinary, agender, etc). Their current gender identities can and may vary over time or be simultaneous.',
     origin: {
-      firstAppearance: '',
-      timeframe: ''
+      history:
+        'The flag originally often been used as both bigender and intersex flag. Nowadays most of the community settled for it as the bigender flag. 📝 Note: However the original author claimed that it was meant to refer to sex instead of gender.',
+      firstAppearance: 'Natalie Phox (NittrusFox)',
+      timeframe: '2009 (adjusted)',
+      flagHistory: [
+        {
+          image: 'bigender/bigender_v1',
+          description: '',
+        },
+      ],
     },
     categories: ['gender'],
-    image: 'bigender.png',
+    image: 'bigender/bigender.png',
     props: {
       colors: [
         {
-          id: 'mauve',
-          name: 'mauve',
+          id: 'puce',
+          name: 'puce',
+          hue: 'pink',
+          meaning: 'femininity',
+          value: '#c478a2',
+        },
+        {
+          id: 'shocking-violet',
+          name: 'shocking-violet',
+          hue: 'lightpink',
+          meaning: 'femininity',
+          value: '#eda5cd',
+        },
+        {
+          id: 'lavender',
+          name: 'lavender',
           hue: 'purple',
           meaning: 'no gender',
-          value: '#F0A3FE'
+          value: '#d5c7e8',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'trans identity',
-          value: '#FFFFFF'
+          meaning: 'trans* identity',
+          value: '#FFFFFF',
         },
         {
-          id: 'pale-cornflower-blue',
-          name: 'pale cornflower blue',
+          id: 'cornflower',
+          name: 'cornflower',
+          hue: 'lightblue',
+          meaning: 'masculinity',
+          value: '#99c7e8',
+        },
+        {
+          id: 'havelock-blue',
+          name: 'havelock blue',
           hue: 'blue',
           meaning: 'masculinity',
-          value: '#A3CFEF'
+          value: '#6d82d1',
         },
-        {
-          id: 'classic-rose',
-          name: 'classic rose',
-          hue: 'lightpink',
-          meaning: 'femininity',
-          value: '#F3B7DF'
-        }
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
-      colors: ['purple', 'white', 'blue', 'lightpink'],
-      symbols: []
+      colors: ['purple', 'white', 'lightblue', 'blue', 'lightpink', 'pink'],
+      symbols: [],
     },
-    keywords: ['identity'],
+    keywords: ['identity', 'multiple genders', 'two', 'double the trouble'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+      {
+        link:
+          'https://majesticmess.com/encyclopedia/intersex-flag-natalie-phox/',
+        name: 'majesticmess.com | intersex flag',
+        researchDate: '2020.04.16',
+      },
+      {
+        link:
+          'https://www.reddit.com/r/lgbt/comments/e16txd/this_is_the_intersexbigender_flag_created_by/',
+        name: 'reddit.com/r/rlgbt | intersex/bigender flag',
+        researchDate: '2020.04.16',
+      },
+      {
+        link: 'https://transpride.tumblr.com/post/1531378118',
+        name: 'transpride.tumblr.com | source of intersex flag',
+        researchDate: '2020.04.16',
+      },
+      {
+        link: 'https://www.dictionary.com/e/gender-sexuality/bigender',
+        name: 'dictionary.com | bigender',
+        researchDate: '2020.04.16',
+      },
+      {
+        link: 'https://www.deviantart.com/pride-flags/art/Bigender-1-543925382',
+        name: 'deviantart.com/pride-flags | bigender(1)',
+        researchDate: '2020.04.16',
+      },
+    ],
   },
   {
     id: 'cis',
@@ -1614,9 +1803,8 @@ const flags = [
     description:
       'Someone whose gender identity aligns with their "gender assigned at birth". Info: The flag was originally intended as an alternative version for the heterosexual flag but later turned into the cisgender flag.  It\'s an alteration based on the bisexual flag.',
     origin: {
-      firstAppearance: '',
+      firstAppearance: 'Arianod on Deviantart',
       timeframe: 'June 2014',
-      firstApperance: 'Arianod on Deviantart'
     },
     categories: ['gender'],
     image: 'cisgender.png',
@@ -1627,21 +1815,21 @@ const flags = [
           name: 'razzmatazz',
           hue: 'pink',
           meaning: 'color representing female sex',
-          value: '#D50071'
+          value: '#D50071',
         },
         {
           id: 'international-klein-blue',
           name: 'international klein blue',
           hue: 'blue',
           meaning: 'color representing male sex',
-          value: '#002BA9'
-        }
+          value: '#002BA9',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['pink', 'blue'],
-      symbols: []
+      symbols: [],
     },
     keywords: ['cis', 'binary', 'assigned gender at birth', 'AGAB'],
     sources: [
@@ -1649,15 +1837,15 @@ const flags = [
         link:
           'https://www.deviantart.com/arianod/art/Heterosexual-Flag-463893682',
         name: 'DeviantArt.com/Arianod - Heterosexual Flag',
-        researchDate: '2020-03-19'
+        researchDate: '2020-03-19',
       },
       {
         link:
           'https://www.deviantart.com/flagsforcishets/art/Straight-Cisgender-Gender-Binary-pride-flag-8-3-625974772',
         name: 'DeviantArt.com/FlagsforCisHets - Cisgender Flag',
-        researchDate: '2020-03-19'
-      }
-    ]
+        researchDate: '2020-03-19',
+      },
+    ],
   },
   {
     id: 'intersex',
@@ -1666,7 +1854,7 @@ const flags = [
       'Intersex people are often seen as the third sex. Their body features don´t fit typical "male*" or "female*" definitions.',
     origin: {
       firstAppearance: 'the organization Intersex International Australia',
-      timeframe: '2013'
+      timeframe: '2013',
     },
     categories: ['gender'],
     image: 'intersex.png',
@@ -1678,15 +1866,15 @@ const flags = [
           hue: 'yellow',
           meaning:
             'neutrality in gender; stays away from typically gendered colors like blue and pink.',
-          value: '#FEDB09'
+          value: '#FEDB09',
         },
         {
           id: 'dark violet',
           name: 'dark violet',
           hue: 'purple',
           meaning: '',
-          value: '#7800AB'
-        }
+          value: '#7800AB',
+        },
       ],
       symbols: [
         {
@@ -1694,34 +1882,34 @@ const flags = [
           name: 'circle',
           meaning:
             'unbroken; symobolising wholeness and completeness as well as their	potentialities',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['yellow', 'purple'],
-      symbols: ['circle']
+      symbols: ['circle'],
     },
     keywords: ['inter', 'nonbinary', 'biological', 'sex'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.10'
+        researchDate: '2019.10.10',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-12',
         name: 'Pride.com - queer pride flags',
-        researchDate: '2019.10.10'
+        researchDate: '2019.10.10',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.10'
-      }
-    ]
+        researchDate: '2019.10.10',
+      },
+    ],
   },
   {
     id: 'aromantic',
@@ -1730,7 +1918,7 @@ const flags = [
       'An aromantic person is someone, who has little to no interest in a romantic relationship. They often can´t develop romantic feelings and usually don´t "fall in love", however they often experience stronger platonic feelings. Aromantic can also be used as an umbrella term for the aro spectrum.',
     origin: {
       firstAppearance: 'Cameron Whimsey',
-      timeframe: '2014'
+      timeframe: '2014',
     },
     categories: ['attraction'],
     image: 'aromantic.png',
@@ -1741,14 +1929,14 @@ const flags = [
           name: 'japanese laurel',
           hue: 'green',
           meaning: 'aromanticism',
-          value: '#338733'
+          value: '#338733',
         },
         {
           id: 'feijoa',
           name: 'feijoa',
           hue: 'lightgreen',
           meaning: 'aromantic spectrum',
-          value: '#AAD77A'
+          value: '#AAD77A',
         },
         {
           id: 'white',
@@ -1756,49 +1944,49 @@ const flags = [
           hue: 'white',
           meaning:
             'platonic and aesthetic attraction; queerplatonic relationships',
-          value: '#FFFFFF'
+          value: '#FFFFFF',
         },
         {
           id: 'dark gray',
           name: 'dark gray',
           hue: 'gray',
           meaning: 'gray-aromantic and demiromantic people',
-          value: '#AAAAAA'
+          value: '#AAAAAA',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
           meaning: 'sexuality spectrum',
-          value: '#000000'
-        }
+          value: '#000000',
+        },
       ],
-      symbols: []
+      symbols: [],
     },
     matches: {
       colors: ['green', 'lightgreen', 'white', 'gray', 'black'],
-      symbols: []
+      symbols: [],
     },
     keywords: [
       'umbrella term',
       '☂️',
       'spectrum',
       'uninterested',
-      'only platonic relationships'
+      'only platonic relationships',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://cameronwhimsy.tumblr.com/post/75868343112/ive-been-reading-up-on-a-lot-of-the-discussion',
         name: 'cameronwhimsy tumblr - new aromantic flag',
-        researchDate: '2019.10.09'
-      }
-    ]
+        researchDate: '2019.10.09',
+      },
+    ],
   },
   {
     id: 'polyamory',
@@ -1807,7 +1995,7 @@ const flags = [
       'Polyamory describes the love/relationships to multiple partner at the same time. All involved parties are consenting to this sort of relationship.',
     origin: {
       firstAppearance: '',
-      timeframe: ''
+      timeframe: '',
     },
     categories: ['attraction'],
     image: 'polyamory.png',
@@ -1818,21 +2006,21 @@ const flags = [
           name: 'gold',
           hue: 'yellow',
           meaning: 'value of emotional attachment to others',
-          value: '#FFFF0B'
+          value: '#FFFF0B',
         },
         {
           id: 'blue',
           name: 'blue',
           hue: 'blue',
           meaning: 'openness and honesty among all partners',
-          value: '#0000FF'
+          value: '#0000FF',
         },
         {
           id: 'red',
           name: 'red',
           hue: 'red',
           meaning: 'love and passion',
-          value: '#FC0006'
+          value: '#FC0006',
         },
         {
           id: 'black',
@@ -1840,8 +2028,8 @@ const flags = [
           hue: 'black',
           meaning:
             'solidarity with those who have to hide their polyamorous identity',
-          value: '#000000'
-        }
+          value: '#000000',
+        },
       ],
       symbols: [
         {
@@ -1849,13 +2037,13 @@ const flags = [
           name: 'pi',
           meaning:
             'greek letter for "pi" (first letter of the word "polyamory") ',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['blue', 'red', 'black', 'yellow'],
-      symbols: ['pi']
+      symbols: ['pi'],
     },
     keywords: [
       'multiple partner',
@@ -1864,27 +2052,27 @@ const flags = [
       'relationship',
       'share',
       'content',
-      'sharing'
+      'sharing',
     ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09'
+        researchDate: '2019.10.09',
       },
       {
         link:
           'https://adorablepolycouples.tumblr.com/post/9224234337/polyamory-pride-flag-the-meaning-of-the',
         name: 'adorablepolycouples tumblr - polyamory flag',
-        researchDate: '2019.10.10'
+        researchDate: '2019.10.10',
       },
       {
         link:
           'https://www.pinknews.co.uk/2018/06/26/all-of-the-flags-you-might-see-at-pride-and-what-they-mean/',
         name: 'Pinknews.co.uk - pride flags',
-        researchDate: '2019.10.10'
-      }
-    ]
+        researchDate: '2019.10.10',
+      },
+    ],
   },
   {
     id: 'leather',
@@ -1892,9 +2080,8 @@ const flags = [
     description:
       'Originally used to represent the gay leather community, it nowadays represents the leather and BDSM subculture in general. ',
     origin: {
-      firstAppearance: '',
+      firstAppearance: 'designed by Tony DeBlase',
       timeframe: '1989',
-      firstApperance: 'designed by Tony DeBlase'
     },
     categories: ['kink'],
     image: 'leather.png',
@@ -1905,58 +2092,58 @@ const flags = [
           name: 'black',
           hue: 'black',
           meaning: '',
-          value: '#000000'
+          value: '#000000',
         },
         {
           id: 'royal-blue',
           name: 'royal blue',
           hue: 'blue',
           meaning: '',
-          value: '#262680'
+          value: '#262680',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
           meaning: '',
-          value: '#ffffff'
+          value: '#ffffff',
         },
         {
           id: 'alizarin',
           name: 'alizarin',
           hue: 'red',
           meaning: '',
-          value: '#E72336'
-        }
+          value: '#E72336',
+        },
       ],
       symbols: [
         {
           id: 'heart',
           name: 'heart',
           meaning: '',
-          icon: ''
-        }
-      ]
+          icon: '',
+        },
+      ],
     },
     matches: {
       colors: ['black', 'blue', 'white', 'red'],
-      symbols: ['heart']
+      symbols: ['heart'],
     },
     keywords: ['fetish'],
     sources: [
       {
         link: 'https://en.wikipedia.org/wiki/Leather_Pride_flag',
         name: 'Wikipedia.org - Leather Pride Flag',
-        researchDate: '2020-01-29'
+        researchDate: '2020-01-29',
       },
       {
         link:
           'https://web.archive.org/web/20080915142834/http://www.leatherarchives.org/exhibits/deblase/pride.htm',
         name: 'Leatherarchives.org - pride [Web Archive]',
-        researchDate: '2020-01-29'
-      }
-    ]
-  }
+        researchDate: '2020-01-29',
+      },
+    ],
+  },
 ];
 
 export default flags;
