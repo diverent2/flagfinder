@@ -1,9 +1,20 @@
 <script>
+  import { app_name, app_baseUrl } from "../data/global.js";
+
+  import Metainfos from "../components/Helpers/Metainfos.svelte";
   import MainOptions from "../components/Filter/MainOptions.svelte";
   import FlagCards from "../components/Flags/FlagCards.svelte";
   import Footer from "../components/Footer.svelte";
 
   import flags from "../data/_flags";
+
+  const meta = {
+    title: `Search | ${app_name}`,
+    desc:
+      "Search for a variety of LGBTQ*+ Prideflags 🌈 using its Colors, Categories or a Searchterm.",
+    url: `${app_baseUrl}/search`,
+    image: `${app_baseUrl}/socialcards/search.png`
+  };
 
   // add valid keyword
   flags.forEach(flag => {
@@ -110,9 +121,7 @@
   }
 </style>
 
-<svelte:head>
-  <title>Search | Prideflags.info</title>
-</svelte:head>
+<Metainfos {...meta} />
 
 <h1>Search</h1>
 

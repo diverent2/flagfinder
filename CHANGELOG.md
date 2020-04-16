@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### ➕ Added
 
 - Proper Error page (404 and others)
+- #54 Metainfos Component
+- #54 Social Media Card Previews
+
+### 🔄 Changed
+
+- #54 Updated Metatags for all Sites
 
 ### 🛠️ Fixed
 

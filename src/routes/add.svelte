@@ -1,9 +1,19 @@
 <script>
+  import { app_name, app_baseUrl } from "../data/global.js";
+
+  import Metainfos from "./../components/Helpers/Metainfos.svelte";
   import Header from "./../components/Header.svelte";
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
   import { filterCategories } from "./../data/_filter";
+
+  const meta = {
+    title: `Add a flag [👩‍💻 DEV] | ${app_name}`,
+    desc: `he easiest Way to add Data to a new Flag to ${app_name}`,
+    url: `${app_baseUrl}/add`,
+    image: `${app_baseUrl}/socialcards/search.png`
+  };
 
   let currentDate = getCurrentDate();
 
@@ -269,9 +279,7 @@
   }
 </style>
 
-<svelte:head>
-  <title>[👩‍💻 DEV] Add a flag | Prideflags.info</title>
-</svelte:head>
+<Metainfos {...meta} showInSearch="false" />
 
 <Header>Add a flag</Header>
 

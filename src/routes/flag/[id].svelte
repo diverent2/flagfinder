@@ -21,13 +21,25 @@
 </script>
 
 <script>
+  import _startCase from "lodash/startCase";
+
+  import { app_name, app_baseUrl } from "../../data/global.js";
+
+  import Metainfos from "./../../components/Helpers/Metainfos.svelte";
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-
   import Footer from "./../../components/Footer.svelte";
 
   export let flag;
+
+  const flagName = `${flag.name}`;
+  const meta = {
+    title: _startCase(flagName) + ` Flag | ${app_name}`,
+    desc: `Find out what the ${flag.name} flag and its colors stands for, who created it and much, much more!`,
+    url: `${app_baseUrl}/flag/${flag.id}`,
+    image: `${app_baseUrl}/flags/${flag.image}`
+  };
 
   // add valid keyword
   flag.keywords.push("valid");
@@ -48,9 +60,7 @@
   }
 </style>
 
-<svelte:head>
-  <title>{flag.name} flag • details | Prideflags.info</title>
-</svelte:head>
+<Metainfos {...meta} />
 
 <Header {flag} bind:activeTab />
 
