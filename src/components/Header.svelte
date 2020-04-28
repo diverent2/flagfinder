@@ -19,7 +19,7 @@
       / 1fr 1fr;
   }
 
-  @media only screen and (min-width: 650px) and (min-height: 450px) {
+  @media (--medium-up) and (--min-height) {
     header {
       right: 0;
       width: calc(100vw - 150px);
