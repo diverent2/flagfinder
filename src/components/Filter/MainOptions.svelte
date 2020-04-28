@@ -44,8 +44,13 @@
     position: sticky;
     top: 0;
     color: var(--white);
-
+    text-transform: capitalize;
     z-index: 1;
+
+    .main {
+      padding: var(--spacing);
+      background: var(--blue-dark-500);
+    }
 
     .filter {
       margin-top: 0.5rem;
@@ -57,20 +62,14 @@
     }
   }
 
-  .options_main {
-    background: var(--blue);
-    padding-top: var(--spacing);
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
-  }
-
-  .options_expandToggle {
+  .expandToggle {
     padding-bottom: var(--spacing);
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background: var(--blue);
     cursor: pointer;
+    background: var(--blue-dark-500);
     transition: transform 0.2s ease;
+    box-shadow: var(--box-shadow);
 
     .ico-arrow {
       display: block;
@@ -86,16 +85,12 @@
   }
 
   .options.expanded {
-    .options_expandToggle {
-      box-shadow: var(--box-shadow);
+    .expandToggle .ico-arrow {
+      transform: scaleY(-1) translateY(-0.5rem);
+    }
 
-      .ico-arrow {
-        transform: scaleY(-1) translateY(-0.5rem);
-      }
-
-      &:hover .ico-arrow {
-        transform: scaleY(-1);
-      }
+    .expandToggle:hover .ico-arrow {
+      transform: scaleY(-1);
     }
 
     .filter {
@@ -106,10 +101,32 @@
     }
   }
 
+  @media (--medium-up) and (--min-height) {
+    .options {
+      width: calc(100vw - 180px);
+      margin-left: 180px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 60%;
+        top: 0;
+        left: 0;
+        background: var(--blue-dark-500);
+        transform: translateX(-200px);
+      }
+    }
+
+    .main {
+      padding: var(--spacing-large) var(--spacing-xlarge);
+    }
+  }
+
   .resultInfo {
     text-align: center;
     user-select: none;
-    margin: 0;
 
     .resultInfo_amount {
       text-decoration: underline;
@@ -121,7 +138,7 @@
 
 <div class="options" class:expanded>
 
-  <div class="options_main">
+  <div class="main">
     <Search
       bind:searchterm
       {allowFilterReset}
@@ -133,16 +150,18 @@
   </div>
 
   <div
-    class="options_expandToggle"
+    class="expandToggle"
     data-cy-search-filters-expand
     on:click={toggleExpand}>
-    <p class="resultInfo">
-      Your search has returned
-      <span class="resultInfo_amount" data-cy-searchresults-number>
-        {searchresults_amount}
+    <div class="resultInfo">
+      <span>
+        Your search has returned
+        <span class="resultInfo_amount" data-cy-searchresults-number>
+          {searchresults_amount}
+        </span>
+        results
       </span>
-      results
-    </p>
+    </div>
     <img
       class="ico-arrow"
       title="toggle more options"
