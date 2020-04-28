@@ -1,4 +1,6 @@
 <script>
+  import { app_name } from "../data/global.js";
+
   import Header from "./../components/Header.svelte";
   import Navigation from "./../components/Navigation/Navigation.svelte";
 
@@ -25,7 +27,7 @@
 </style>
 
 <svelte:head>
-  <title>{status} {error.message} | Prideflags.info</title>
+  <title>{status} {error.message} | {app_name}</title>
   <meta
     name="description"
     content="Normally you would see fantastic prideflags of queer folx here...
