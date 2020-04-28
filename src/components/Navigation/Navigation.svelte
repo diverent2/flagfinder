@@ -1,8 +1,9 @@
 <script>
+  import { app_version } from "../../data/global.js";
+
   import Sidenav from "./Sidenav.svelte";
   import Footernav from "./Footernav.svelte";
 
-  const version = "ALPHA VERSION 0.2";
   const currentYear = new Date().getFullYear();
   const year = `2019 - ${currentYear}`;
 </script>
@@ -12,25 +13,26 @@
     position: relative;
   }
 
-  .navigation__sidenav {
+  .sidenav {
     display: none;
   }
 
-  @media only screen and (min-width: 650px) and (min-height: 450px) {
-    .navigation__sidenav {
+  /* @media only screen and (min-width: 650px) and (min-height: 450px) { */
+  @media (--medium-up) and (--min-height) {
+    .sidenav {
       display: block;
     }
-    .navigation__footernav {
+    .footernav {
       display: none;
     }
   }
 </style>
 
 <div class="navigation">
-  <div class="navigation__sidenav">
-    <Sidenav {version} {year} />
+  <div class="sidenav">
+    <Sidenav version={app_version} {year} />
   </div>
-  <div class="navigation__footernav">
-    <Footernav {version} {year} />
+  <div class="footernav">
+    <Footernav version={app_version} {year} />
   </div>
 </div>

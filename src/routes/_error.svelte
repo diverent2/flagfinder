@@ -1,6 +1,6 @@
 <script>
-  import Footer from "./../components/Footer.svelte";
   import Header from "./../components/Header.svelte";
+  import Navigation from "./../components/Navigation/Navigation.svelte";
 
   import IconButton from "../components/Elements/IconButton.svelte";
 
@@ -11,6 +11,12 @@
 </script>
 
 <style>
+  .container {
+    padding: 2rem;
+    margin-bottom: 8rem;
+    padding-top: 120px;
+  }
+
   .button--back {
     width: 100%;
     display: inline-flex;
@@ -32,11 +38,8 @@
     But something went wrong. Lets try this again, ok?" />
 </svelte:head>
 
-<Header>
-  Error {status}
-  <hr />
-  {error.message}
-</Header>
+<Header backLink="/">{status} | {error.message}</Header>
+<Navigation />
 
 <div class="container">
 
@@ -74,5 +77,3 @@
   {/if}
 
 </div>
-
-<Footer />

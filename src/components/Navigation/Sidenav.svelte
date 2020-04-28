@@ -1,43 +1,43 @@
 <script>
   import IconButton from "../Elements/IconButton.svelte";
 
-  export let version = "";
-  export let year = "";
+  export let version;
+  export let year;
 </script>
 
-<style>
+<style lang="scss">
   .sidenav {
     top: 0;
     position: fixed;
     width: 200px;
     height: 100vh;
     z-index: 1;
+
+    .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
   }
 
-  .sidenav__background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .sidenav__primary {
+  .primary {
     height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .primary-home {
+      position: absolute;
+      right: 40px;
+      top: 210px;
+    }
   }
 
-  .sidenav__primary-home {
-    position: absolute;
-    right: 40px;
-    top: 210px;
-  }
-
-  .sidenav__secondary {
+  .secondary {
     margin: var(--spacing-small);
     width: 60%;
     display: grid;
@@ -45,7 +45,7 @@
     grid-gap: var(--spacing);
   }
 
-  .sidenav__info {
+  .info {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -63,7 +63,7 @@
     text-decoration: underline;
   }
 
-  a.sidenav__main {
+  a.main {
     display: inline-block;
     margin-top: 10%;
     height: 13rem;
@@ -73,13 +73,9 @@
 </style>
 
 <nav class="sidenav">
-  <img
-    class="sidenav__background"
-    src="wave--right.svg"
-    alt
-    aria-hidden="true" />
-  <div class="sidenav__primary">
-    <a class="sidenav__main" href="/search">
+  <img class="background" src="wave--right.svg" alt aria-hidden="true" />
+  <div class="primary">
+    <a class="main" href="/search">
       <IconButton
         icon="search"
         scale="5rem"
@@ -92,7 +88,7 @@
         search
       </IconButton>
     </a>
-    <a href="/" class="sidenav__primary-home">
+    <a href="/" class="primary-home">
       <IconButton
         icon="home"
         scale="2rem"
@@ -106,7 +102,7 @@
       </IconButton>
     </a>
   </div>
-  <div class="sidenav__secondary">
+  <div class="secondary">
     <a href="/about">
       <IconButton
         icon="about"
@@ -133,14 +129,17 @@
     </a>
   </div>
 
-  <footer class="sidenav__info">
+  <footer class="info">
     <div>
-      <span class="sidenav__info--extended">Made with 💖</span>
+      <span>Made with 💖</span>
       by
       <a href="https://twitter.com/diverent2">diverent2</a>
     </div>
     <small>
-      <span class="sidenav__info--extended">{version}</span>
+      <a
+        href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md">
+        {version}
+      </a>
       ©{year}
     </small>
   </footer>

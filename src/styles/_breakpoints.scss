@@ -12,7 +12,7 @@ $medium: 600px;
 
 @custom-media --xsmall-only (width <= 250px);
 @custom-media --xsmall-up (width > 250px);
-
 @custom-media --small-up (width > 360px);
-
 @custom-media --medium-up (width > 600px);
+
+@custom-media --min-height (height > 450px);

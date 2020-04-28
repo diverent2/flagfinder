@@ -5,7 +5,7 @@
   export let activeTab;
 </script>
 
-<style>
+<style lang="scss">
   header {
     display: grid;
     grid-template:
@@ -27,7 +27,7 @@
     z-index: 1;
   }
 
-  .flagDetails__goBack {
+  .goBack {
     grid-area: back;
     width: max-content;
   }
@@ -36,9 +36,13 @@
     width: 1.5rem;
     height: 1.5rem;
     transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--green-light);
+    }
   }
 
-  .flagDetails__title {
+  .title {
     grid-area: title;
 
     text-overflow: ellipsis;
@@ -49,11 +53,7 @@
     -webkit-box-orient: vertical;
   }
 
-  .ico-arrowBack:hover {
-    color: var(--green-light);
-  }
-
-  .flagDetails__headerImage {
+  .headerImage {
     grid-area: flag;
     width: auto;
     height: 80px;
@@ -62,14 +62,14 @@
     border: var(--white) 2px solid;
   }
 
-  .flagDetails__tabButtons {
+  .tabButtons {
     position: absolute;
     bottom: -1rem;
     width: 60vw;
     justify-self: center;
   }
 
-  @media only screen and (min-width: 650px) and (min-height: 450px) {
+  @media (--medium-up) and (--min-height) {
     header {
       width: calc(100vw - 200px);
       margin-left: 200px;
@@ -77,21 +77,21 @@
       padding-bottom: var(--spacing-xlarge);
       padding-left: 2rem;
       padding-right: 2rem;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 60%;
+        top: 0;
+        left: 0;
+        background: var(--blue-dark-500);
+        transform: translateX(-200px);
+      }
     }
 
-    header:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 200px;
-      height: 60%;
-      top: 0;
-      left: 0;
-      background: var(--blue-dark-500);
-      transform: translateX(-200px);
-    }
-
-    .flagDetails__headerImage {
+    .headerImage {
       height: 20vh;
       max-height: 300px;
     }
@@ -99,7 +99,7 @@
 </style>
 
 <header>
-  <a href="./search" class="flagDetails__goBack">
+  <a href="./search" class="goBack">
     <svg
       class="ico-arrowBack"
       aria-label="Go back to search"
@@ -108,12 +108,9 @@
       <use href="icons/arrow-back.svg#arrow-back" />
     </svg>
   </a>
-  <h1 class="flagDetails__title">{flag.name} flag</h1>
-  <img
-    class="flagDetails__headerImage"
-    src="flags/{flag.image}"
-    alt="{flag.name} flag" />
-  <div class="flagDetails__tabButtons">
+  <h1 class="title">{flag.name} flag</h1>
+  <img class="headerImage" src="flags/{flag.image}" alt="{flag.name} flag" />
+  <div class="tabButtons">
     <Tabs tab1="General" tab2="Details" bind:activeTab />
   </div>
 </header>
