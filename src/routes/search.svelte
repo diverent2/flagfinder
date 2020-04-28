@@ -119,17 +119,6 @@
   h1 {
     display: none;
   }
-
-  .container {
-    margin-bottom: 8rem;
-  }
-
-  @media only screen and (min-width: 650px) and (min-height: 450px) {
-    .container {
-      margin-left: 200px;
-      margin-bottom: 0;
-    }
-  }
 </style>
 
 <Metainfos {...meta} />

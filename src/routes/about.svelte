@@ -18,19 +18,6 @@
     scroll-margin-top: 120px;
   }
 
-  .container {
-    padding: 2rem;
-    margin-bottom: 8rem;
-    padding-top: 120px;
-  }
-
-  @media only screen and (min-width: 650px) and (min-height: 450px) {
-    .container {
-      margin-left: 200px;
-      margin-bottom: 0;
-    }
-  }
-
   h2,
   h3 {
     margin-top: 0.5rem;
@@ -68,7 +55,7 @@
 <Header backLink="/">About</Header>
 <Navigation />
 
-<div class="container">
+<div class="container container-padding-top">
 
   <p>
     Hello there 👋

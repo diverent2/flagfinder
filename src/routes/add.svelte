@@ -283,7 +283,7 @@
 
 <Header>Add a flag</Header>
 
-<div class="container">
+<div class="container container-padding-top">
   <p>
     This form is intended to be used as a help to create new flags.
     <br />

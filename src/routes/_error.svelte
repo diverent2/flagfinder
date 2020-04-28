@@ -11,12 +11,6 @@
 </script>
 
 <style>
-  .container {
-    padding: 2rem;
-    margin-bottom: 8rem;
-    padding-top: 120px;
-  }
-
   .button--back {
     width: 100%;
     display: inline-flex;
@@ -41,7 +35,7 @@
 <Header backLink="/">{status} | {error.message}</Header>
 <Navigation />
 
-<div class="container">
+<div class="container container-padding-top">
 
   {#if status === 404}
     <p>
