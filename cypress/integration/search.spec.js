@@ -7,7 +7,7 @@ describe('Search', () => {
 
   it('updates result count correctly', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.get('[data-cy-searchresults-number]').then($counter => {
+    cy.get('[data-cy-searchresults-number]').then(($counter) => {
       const amount = $counter.text();
       cy.get('[data-cy-flagcard]').should('have.length', amount);
     });
@@ -16,15 +16,15 @@ describe('Search', () => {
   it('can find flags independent of case or spacing', () => {
     cy.get('#search').type('gay');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
-    cy.get('.searchbox__delete').click();
+    cy.get('[data-cy-search-reset-all]').click();
 
     cy.get('#search').type('Gay');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
-    cy.get('.searchbox__delete').click();
+    cy.get('[data-cy-search-reset-all]').click();
 
     cy.get('#search').type('Gay Pride ');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
-    cy.get('.searchbox__delete').click();
+    cy.get('[data-cy-search-reset-all]').click();
   });
 
   it('can find flags by keywords', () => {
@@ -43,7 +43,7 @@ describe('Search', () => {
   it('can find flags based on on searchterm with origin', () => {
     cy.get('#search').type('Baker');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
-    cy.get('.searchbox__delete').click();
+    cy.get('[data-cy-search-reset-all]').click();
     cy.get('#search').type('2010');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
   });
@@ -54,7 +54,7 @@ describe('Search', () => {
   });
 
   it('show everyone is valid', () => {
-    cy.get('[data-cy-searchresults-number]').then($counter => {
+    cy.get('[data-cy-searchresults-number]').then(($counter) => {
       const amount = $counter.text();
       cy.get('#search').type('valid');
       cy.get('[data-cy-flagcard]').should('have.length', amount);

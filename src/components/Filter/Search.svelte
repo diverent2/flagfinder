@@ -6,7 +6,7 @@
   export let allowFilterReset = false;
 </script>
 
-<style>
+<style lang="scss">
   .searchbox {
     width: 100%;
     height: var(--spacing-xlarge);
@@ -21,7 +21,8 @@
     border-bottom-width: medium;
     border-bottom: 1px var(--white) solid;
   }
-  .searchbox__inputfield {
+
+  .inputfield {
     color: var(--white);
     padding: 0 8px;
     flex-grow: 1;
@@ -32,15 +33,15 @@
 
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &::placeholder {
+      font-family: Saira, Helvetica Neue, sans-serif;
+      color: var(--white);
+      opacity: 0.7;
+    }
   }
 
-  .searchbox__inputfield::placeholder {
-    font-family: Saira, Helvetica Neue, sans-serif;
-    color: var(--white);
-    opacity: 0.7;
-  }
-
-  .searchbox__delete {
+  .clearButton {
     transform: scale(0);
     width: var(--spacing);
     height: var(--spacing);
@@ -49,31 +50,32 @@
     cursor: pointer;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
-  }
-  .searchbox__delete.visible {
-    opacity: 0.8;
-    border-radius: 50%;
-    visibility: visible;
-    transform: scale(1);
+
+    &.visible {
+      opacity: 0.8;
+      border-radius: 50%;
+      visibility: visible;
+      transform: scale(1);
+    }
   }
 </style>
 
 <div class="searchbox">
   <img
-    class="searchbox__icon"
+    class="search-icon"
     src="icons/search.svg"
     alt
     aria-hidden="true"
     height="24" />
   <input
-    class="searchbox__inputfield"
+    class="inputfield"
     bind:value={searchterm}
     id="search"
     name="search"
     autocomplete="off"
     placeholder="Searchterm goes here" />
   <img
-    class="searchbox__delete"
+    class="clearButton"
     class:visible={allowFilterReset}
     title="clear searchterm"
     src="icons/cross.svg"
