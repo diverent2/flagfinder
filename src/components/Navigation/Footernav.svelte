@@ -2,6 +2,10 @@
   import IconButton from "../Elements/IconButton.svelte";
   export let version;
   export let year;
+
+  export let has_secondary_options;
+  export let allow_share = true;
+  export let allow_bookmarks = true;
 </script>
 
 <style lang="scss">
@@ -43,6 +47,24 @@
     }
   }
 
+  .secondary {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: var(--spacing-small);
+    grid-gap: var(--spacing);
+
+    .button {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
   .info {
     position: absolute;
     right: 0;
@@ -53,14 +75,14 @@
     .info-extended {
       display: none;
 
-      @media (min-width: 400px) {
+      @media (min-width: 380px) {
         display: inline;
       }
     }
   }
 </style>
 
-<div class="footernav">
+<nav class="footernav">
   <img class="background" src="wave--darkblue.svg" alt aria-hidden="true" />
   <div class="main">
     <a class="main-search" href="/search">
@@ -90,19 +112,53 @@
       </IconButton>
     </a>
   </div>
-  <footer class="info">
-    <div>
-      <span class="info-extended">Made with 💖</span>
-      by
-      <a href="https://twitter.com/diverent2">diverent2</a>
+  {#if has_secondary_options}
+    <div class="secondary">
+      <div
+        class="button button-share {allow_bookmarks ? 'active' : ''}"
+        data-cy-footernav-bookmark>
+        <IconButton
+          icon="bookmarks"
+          scale="1.8rem"
+          backgroundColor="var(--blue-dark-500)"
+          backgroundColorHover="var(--blue-dark)"
+          layout="below-with-space"
+          titleVisibility="false"
+          borderStyle="rounded">
+          bookmark
+        </IconButton>
+      </div>
+      <div
+        class="button button-share {allow_share ? 'active' : ''}"
+        data-cy-footernav-share>
+        <IconButton
+          icon="share"
+          scale="1.8rem"
+          backgroundColor="var(--blue-dark-500)"
+          backgroundColorHover="var(--blue-dark)"
+          layout="below-with-space"
+          titleVisibility="false"
+          borderStyle="rounded">
+          share
+        </IconButton>
+      </div>
+
     </div>
-    <small>
-      <a
-        class="info-extended"
-        href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md">
-        {version}
-      </a>
-      ©{year}
-    </small>
-  </footer>
-</div>
+  {:else}
+    <footer class="info">
+      <small>
+        <a
+          class="info-extended"
+          href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md">
+          {version}
+        </a>
+        ©{year}
+      </small>
+      <div>
+        <span class="info-extended">Made with 💖</span>
+        by
+        <a href="https://twitter.com/diverent2">diverent2</a>
+      </div>
+    </footer>
+  {/if}
+</nav>

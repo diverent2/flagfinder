@@ -6,6 +6,8 @@
 
   const currentYear = new Date().getFullYear();
   const year = `2019 - ${currentYear}`;
+
+  export let has_secondary_options = false;
 </script>
 
 <style>
@@ -17,7 +19,6 @@
     display: none;
   }
 
-  /* @media only screen and (min-width: 650px) and (min-height: 450px) { */
   @media (--medium-up) and (--min-height) {
     .sidenav {
       display: block;
@@ -33,6 +34,6 @@
     <Sidenav version={app_version} {year} />
   </div>
   <div class="footernav">
-    <Footernav version={app_version} {year} />
+    <Footernav version={app_version} {year} {has_secondary_options} />
   </div>
 </div>

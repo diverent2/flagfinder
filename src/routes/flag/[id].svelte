@@ -63,7 +63,7 @@
 <Metainfos {...meta} />
 
 <Header {flag} bind:activeTab />
-<Navigation />
+<Navigation has_secondary_options="true" />
 
 <main class="container">
   {#if activeTab === 1}
