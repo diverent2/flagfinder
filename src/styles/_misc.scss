@@ -1,5 +1,5 @@
 .container {
-  padding: var(--spacing-large);
+  padding: var(--spacing);
   margin-bottom: 8rem;
 
   &.container-padding-top {
@@ -9,5 +9,6 @@
   @media (--medium-up) and (--min-height) {
     margin-left: 200px;
     margin-bottom: 0;
+    padding: var(--spacing-large);
   }
 }

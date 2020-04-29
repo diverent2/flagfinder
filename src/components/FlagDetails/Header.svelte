@@ -13,7 +13,7 @@
       "title flag" 1fr
       / 1fr 1fr;
     width: 100vw;
-    padding: var(--spacing-large) var(--spacing-xlarge);
+    padding: var(--spacing);
 
     position: fixed;
     top: 0;
@@ -73,10 +73,7 @@
     header {
       width: calc(100vw - 200px);
       margin-left: 200px;
-      padding-top: var(--spacing-large);
-      padding-bottom: var(--spacing-xlarge);
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding: var(--spacing-large) var(--spacing-xlarge);
 
       &::before {
         content: "";

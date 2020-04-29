@@ -6,10 +6,6 @@
 </script>
 
 <style>
-  section {
-    padding: 1rem;
-  }
-
   h2 {
     visibility: hidden;
     height: 0;

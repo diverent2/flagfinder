@@ -26,8 +26,6 @@
 
 <style>
   section {
-    padding: 1rem;
-
     margin-bottom: 4rem;
   }
 
