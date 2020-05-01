@@ -1,11 +1,11 @@
 <script>
-  import IconButton from "../Elements/IconButton.svelte";
+  import IconButton from "./../Elements/IconButton.svelte";
+  import Mainnav from "./Navcontext/Mainnav.svelte";
+
   export let version;
   export let year;
 
-  export let has_secondary_options;
-  export let allow_share = true;
-  export let allow_bookmarks = true;
+  export let segment;
 </script>
 
 <style lang="scss">
@@ -47,24 +47,6 @@
     }
   }
 
-  .secondary {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: var(--spacing-small);
-    grid-gap: var(--spacing);
-
-    .button {
-      display: none;
-
-      &.active {
-        display: block;
-      }
-    }
-  }
-
   .info {
     position: absolute;
     right: 0;
@@ -82,7 +64,7 @@
   }
 </style>
 
-<nav class="footernav">
+<nav class="footernav" data-cy-navigation-footer>
   <img class="background" src="wave--darkblue.svg" alt aria-hidden="true" />
   <div class="main">
     <a class="main-search" href="/search">
@@ -112,40 +94,12 @@
       </IconButton>
     </a>
   </div>
-  {#if has_secondary_options}
-    <div class="secondary">
-      <div
-        class="button button-share {allow_bookmarks ? 'active' : ''}"
-        data-cy-footernav-bookmark>
-        <IconButton
-          icon="bookmarks"
-          scale="1.8rem"
-          backgroundColor="var(--blue-dark-500)"
-          backgroundColorHover="var(--blue-dark)"
-          layout="below-with-space"
-          titleVisibility="false"
-          borderStyle="rounded">
-          bookmark
-        </IconButton>
-      </div>
-      <div
-        class="button button-share {allow_share ? 'active' : ''}"
-        data-cy-footernav-share>
-        <IconButton
-          icon="share"
-          scale="1.8rem"
-          backgroundColor="var(--blue-dark-500)"
-          backgroundColorHover="var(--blue-dark)"
-          layout="below-with-space"
-          titleVisibility="false"
-          borderStyle="rounded">
-          share
-        </IconButton>
-      </div>
-
-    </div>
+  {#if segment == 'search'}
+    <Mainnav />
+  {:else if segment == 'flag'}
+    <!--keep empty-->
   {:else}
-    <footer class="info">
+    <footer class="info" data-cy-footernav-option="footer">
       <small>
         <a
           class="info-extended"

@@ -3,11 +3,12 @@
 
   import Sidenav from "./Sidenav.svelte";
   import Footernav from "./Footernav.svelte";
+  import Flagmenu from "./Navcontext/Flagmenu.svelte";
 
   const currentYear = new Date().getFullYear();
   const year = `2019 - ${currentYear}`;
 
-  export let has_secondary_options = false;
+  export let segment;
 </script>
 
 <style>
@@ -17,6 +18,13 @@
 
   .sidenav {
     display: none;
+  }
+
+  .flagmenu {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
   }
 
   @media (--medium-up) and (--min-height) {
@@ -29,11 +37,16 @@
   }
 </style>
 
-<div class="navigation">
+<div class="navigation" data-cy-navigation>
   <div class="sidenav">
     <Sidenav version={app_version} {year} />
   </div>
   <div class="footernav">
-    <Footernav version={app_version} {year} {has_secondary_options} />
+    <Footernav version={app_version} {year} {segment} />
   </div>
+  {#if segment == 'flag'}
+    <div class="flagmenu">
+      <Flagmenu />
+    </div>
+  {/if}
 </div>

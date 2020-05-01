@@ -72,7 +72,7 @@
   }
 </style>
 
-<nav class="sidenav">
+<nav class="sidenav" data-cy-navigation-side>
   <img class="background" src="wave--right.svg" alt aria-hidden="true" />
   <div class="primary">
     <a class="main" href="/search">
@@ -128,8 +128,7 @@
       </IconButton>
     </a>
   </div>
-
-  <footer class="info">
+  <footer class="info" data-cy-navigation-footer>
     <div>
       <span>Made with 💖</span>
       by
