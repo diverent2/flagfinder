@@ -3,7 +3,6 @@
 
   import Metainfos from "./../components/Helpers/Metainfos.svelte";
   import Header from "./../components/Header.svelte";
-  import Navigation from "./../components/Navigation/Navigation.svelte";
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
@@ -284,7 +283,6 @@
 <Metainfos {...meta} showInSearch="false" />
 
 <Header>Add a flag</Header>
-<Navigation />
 
 <div class="container container-padding-top">
   <p>

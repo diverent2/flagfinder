@@ -2,7 +2,6 @@
   import { app_name } from "../data/global.js";
 
   import Header from "./../components/Header.svelte";
-  import Navigation from "./../components/Navigation/Navigation.svelte";
 
   import IconButton from "../components/Elements/IconButton.svelte";
 
@@ -35,7 +34,6 @@
 </svelte:head>
 
 <Header backLink="/">{status} | {error.message}</Header>
-<Navigation />
 
 <div class="container container-padding-top">
 

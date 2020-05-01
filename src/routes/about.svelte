@@ -3,7 +3,6 @@
 
   import Metainfos from "./../components/Helpers/Metainfos.svelte";
   import Header from "./../components/Header.svelte";
-  import Navigation from "./../components/Navigation/Navigation.svelte";
 
   const meta = {
     title: `About | ${app_name}`,
@@ -53,7 +52,6 @@
 <Metainfos {...meta} />
 
 <Header backLink="/">About</Header>
-<Navigation />
 
 <div class="container container-padding-top">
 

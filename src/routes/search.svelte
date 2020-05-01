@@ -4,7 +4,6 @@
   import Metainfos from "../components/Helpers/Metainfos.svelte";
   import MainOptions from "../components/Filter/MainOptions.svelte";
   import FlagCards from "../components/Flags/FlagCards.svelte";
-  import Navigation from "../components/Navigation/Navigation.svelte";
 
   import flags from "../data/_flags";
 
@@ -124,8 +123,6 @@
 <Metainfos {...meta} />
 
 <h1>Search</h1>
-
-<Navigation />
 
 <MainOptions
   bind:activeColorFilters

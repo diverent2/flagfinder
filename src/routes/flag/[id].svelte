@@ -29,7 +29,6 @@
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-  import Navigation from "./../../components/Navigation/Navigation.svelte";
 
   export let flag;
 
@@ -63,7 +62,6 @@
 <Metainfos {...meta} />
 
 <Header {flag} bind:activeTab />
-<Navigation has_secondary_options="true" />
 
 <main class="container">
   {#if activeTab === 1}
