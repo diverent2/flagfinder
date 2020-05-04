@@ -152,7 +152,7 @@
 <header>
   <img
     class="header_background"
-    src="wave--darkblue.svg"
+    src="waves/wave-darkblue.svg"
     alt
     aria-hidden="true" />
   <h1>Welcome to Prideflags.info</h1>

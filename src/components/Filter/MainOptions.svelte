@@ -1,5 +1,6 @@
 <script>
   import Search from "./Search.svelte";
+  import Icon from "./../Elements/Icon.svelte";
   import Filter, { clearFilter } from "./Filter.svelte";
 
   export let allowFilterReset = false;
@@ -72,10 +73,9 @@
     box-shadow: var(--box-shadow);
 
     .ico-arrow {
-      display: block;
+      display: flex;
+      justify-content: center;
       height: var(--spacing);
-      width: auto;
-      margin: 0 auto;
       transition: transform 0.25s ease;
     }
 
@@ -162,10 +162,8 @@
         results
       </span>
     </div>
-    <img
-      class="ico-arrow"
-      title="toggle more options"
-      src="icons/arrow-down.svg"
-      alt />
+    <div class="ico-arrow">
+      <Icon icon="arrow-down" scale="var(--spacing)" aria="toggle filters" />
+    </div>
   </div>
 </div>

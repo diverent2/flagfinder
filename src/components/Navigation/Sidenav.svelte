@@ -73,7 +73,9 @@
 </style>
 
 <nav class="sidenav" data-cy-navigation-side>
-  <img class="background" src="wave--right.svg" alt aria-hidden="true" />
+  <svg class="background" aria-hidden="true">
+    <use href="waves/wave-right.svg#wave-right" />
+  </svg>
   <div class="primary">
     <a class="main" href="/search">
       <RoundButton

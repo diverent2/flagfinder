@@ -1,5 +1,6 @@
 <script>
-  import Tabs from "./../../components/Elements/Tabs.svelte";
+  import Icon from "./../Elements/Icon.svelte";
+  import Tabs from "./../Elements/Tabs.svelte";
 
   export let flag;
   export let activeTab;
@@ -30,16 +31,6 @@
   .goBack {
     grid-area: back;
     width: max-content;
-  }
-
-  .ico-arrowBack {
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: var(--green-light);
-    }
   }
 
   .title {
@@ -97,13 +88,11 @@
 
 <header>
   <a href="./search" class="goBack">
-    <svg
-      class="ico-arrowBack"
-      aria-label="Go back to search"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg">
-      <use href="icons/arrow-back.svg#arrow-back" />
-    </svg>
+    <Icon
+      icon="arrow-back"
+      scale="var(--spacing-large)"
+      aria="Go back to search"
+      colorHover="var(--blue-light)" />
   </a>
   <h1 class="title">{flag.name} flag</h1>
   <img class="headerImage" src="flags/{flag.image}" alt="{flag.name} flag" />

@@ -1,5 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import Icon from "./../Elements/Icon.svelte";
+
   const dispatch = createEventDispatcher();
 
   export let searchterm;
@@ -43,17 +45,14 @@
 
   .clearButton {
     transform: scale(0);
-    width: var(--spacing);
-    height: var(--spacing);
-    opacity: 0;
-    border-radius: 50%;
     cursor: pointer;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    line-height: 1;
 
     &.visible {
       opacity: 0.8;
-      border-radius: 50%;
       visibility: visible;
       transform: scale(1);
     }
@@ -61,12 +60,7 @@
 </style>
 
 <div class="searchbox">
-  <img
-    class="search-icon"
-    src="icons/search.svg"
-    alt
-    aria-hidden="true"
-    height="24" />
+  <Icon icon="search" scale="var(--spacing-large)" />
   <input
     class="inputfield"
     bind:value={searchterm}
@@ -74,12 +68,11 @@
     name="search"
     autocomplete="off"
     placeholder="Searchterm goes here" />
-  <img
+  <div
     class="clearButton"
     class:visible={allowFilterReset}
     title="clear searchterm"
-    src="icons/cross.svg"
-    data-cy-search-reset-all
-    on:click={() => dispatch('clearFiltersEvent')}
-    alt />
+    on:click={() => dispatch('clearFiltersEvent')}>
+    <Icon icon="cross" scale="1.3rem" />
+  </div>
 </div>

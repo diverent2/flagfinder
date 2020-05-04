@@ -15,14 +15,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Proper Error page (404 and others)
 - #54 Metainfos Component
 - #54 Social Media Card Previews
+- Icon Component
+- RoundButton and LabelButton (formally IconButton)
 
 ### 🔄 Changed
 
 - #54 Updated Metatags for all Sites
+- New Buttons now use inline SVG instead of Images
+- Replace (almost) all svg-images with actual SVGs
 
 ### 🛠️ Fixed
 
 - "Add flag" generated a wrong field name for "firstAppearance" aka. fix typo
+
+### 🗑️ Removed
+
+- Remove IconButton Component
 
 ## [0.5] - 2020-03-10
 

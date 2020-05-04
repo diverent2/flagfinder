@@ -1,4 +1,6 @@
 <script>
+  import Icon from "./Elements/Icon.svelte";
+
   export let backLink = "/";
 </script>
 
@@ -24,12 +26,12 @@
       right: 0;
       width: calc(100vw - 150px);
     }
-    .header__goBack {
+    .goBack {
       transform: translateX(40px);
     }
   }
 
-  .header__background {
+  .background {
     position: absolute;
     left: 0;
     top: 0;
@@ -39,19 +41,9 @@
     z-index: -1;
   }
 
-  .header__goBack {
+  .goBack {
     grid-area: back;
     width: max-content;
-  }
-
-  .ico-arrowBack {
-    width: 1.5rem;
-    height: 1.5rem;
-    transition: color 0.2s ease;
-  }
-
-  .ico-arrowBack:hover {
-    color: var(--blue-light);
   }
 
   h1 {
@@ -63,15 +55,15 @@
 </style>
 
 <header>
-  <img class="header__background" src="wave--top.svg" alt aria-hidden="true" />
-  <a href={backLink} class="header__goBack">
-    <svg
-      class="ico-arrowBack"
-      aria-label="Go back to search"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg">
-      <use href="icons/arrow-back.svg#arrow-back" />
-    </svg>
+  <svg class="background" aria-hidden="true">
+    <use href="waves/wave-top.svg#wave-top" />
+  </svg>
+  <a href={backLink} class="goBack">
+    <Icon
+      icon="arrow-back"
+      scale="var(--spacing-large)"
+      aria="Go back to search"
+      colorHover="var(--blue-light)" />
   </a>
   <h1>
     <slot />

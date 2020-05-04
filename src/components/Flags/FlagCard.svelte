@@ -1,5 +1,6 @@
 <script>
   import LabelButton from "../Elements/Buttons/LabelButton.svelte";
+  import Icon from "../Elements/Icon.svelte";
 
   export let flag;
   export let titleVisibility = true;
@@ -151,12 +152,13 @@
           </div>
         {/each}
       </div>
-      <img
-        class="flagCard__arrow"
-        height="24"
-        area-hidden="true"
-        src="icons/arrow-right.svg"
-        alt="go to flag" />
+      <div class="flagCard__arrow">
+        <Icon
+          icon="arrow-right"
+          color="var(--blue)"
+          scale="var(--spacing)"
+          aria="Go back to search" />
+      </div>
     </div>
   </div>
 </a>

@@ -65,7 +65,9 @@
 </style>
 
 <nav class="footernav" data-cy-navigation-footer>
-  <img class="background" src="wave--darkblue.svg" alt aria-hidden="true" />
+  <svg class="background" aria-hidden="true">
+    <use href="waves/wave-darkblue.svg#wave-darkblue" />
+  </svg>
   <div class="main">
     <a class="main-search" href="/search">
       <RoundButton
