@@ -72,7 +72,8 @@
     class="clearButton"
     class:visible={allowFilterReset}
     title="clear searchterm"
-    on:click={() => dispatch('clearFiltersEvent')}>
+    on:click={() => dispatch('clearFiltersEvent')}
+    data-cy-search-reset-all>
     <Icon icon="cross" scale="1.3rem" />
   </div>
 </div>

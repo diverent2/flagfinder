@@ -60,7 +60,7 @@
     viewBox="0 0 512 512">
     <use href="icons/{icon}.svg#{icon}" />
   </svg>
-  <span class="text" data-display={showLabel} data-cy-button-label-text>
+  <span class="text" data-display={showLabel} data-cy-button-text>
     <slot />
   </span>
 </div>

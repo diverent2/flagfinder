@@ -1,7 +1,7 @@
 describe('Add Flag form', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.get('a[href="/add"]').click();
+    cy.visit('/add');
+    cy.wait(100);
   });
 
   it('can generate flag data by filling out the form', () => {
@@ -36,9 +36,7 @@ describe('Add Flag form', () => {
     cy.get('input[name="sourceLink"]')
       .eq(1)
       .type('https://www.another-source.org');
-    cy.get('input[name="sourceResearchDate"]')
-      .eq(1)
-      .type('2019-01-01');
+    cy.get('input[name="sourceResearchDate"]').eq(1).type('2019-01-01');
     cy.get('#form--addFlag button[type="submit"]').click();
 
     cy.get('#output')
@@ -112,9 +110,7 @@ describe('Add Flag form', () => {
       .eq(2)
       .type('color_name_C');
     cy.log('Remove second color element');
-    cy.get('#form--addFlag .color .removeButton')
-      .eq(1)
-      .click();
+    cy.get('#form--addFlag .color .removeButton').eq(1).click();
     cy.get('#form--addFlag .colors .color').should('have.length', 2);
     cy.get('#form--addFlag .colors .color input[name="colorName"]')
       .first()
@@ -142,9 +138,7 @@ describe('Add Flag form', () => {
       .eq(2)
       .type('symbol_name_C');
     cy.log('Remove second symbol element');
-    cy.get('#form--addFlag .symbol .removeButton')
-      .eq(1)
-      .click();
+    cy.get('#form--addFlag .symbol .removeButton').eq(1).click();
     cy.get('#form--addFlag .symbols .symbol').should('have.length', 2);
     cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
       .first()
@@ -172,9 +166,7 @@ describe('Add Flag form', () => {
       .eq(2)
       .type('name_C');
     cy.log('Remove second source element');
-    cy.get('#form--addFlag .source .removeButton')
-      .eq(1)
-      .click();
+    cy.get('#form--addFlag .source .removeButton').eq(1).click();
     cy.get('#form--addFlag .sources .source').should('have.length', 2);
     cy.get('#form--addFlag .sources .source input[name="sourceName"]')
       .first()

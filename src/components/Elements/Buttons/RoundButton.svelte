@@ -67,7 +67,7 @@
       <use href="icons/{icon}.svg#{icon}" />
     </svg>
   </div>
-  <span class="text" data-display={showLabel} data-cy-button-round-text>
+  <span class="text" data-display={showLabel} data-cy-button-text>
     <slot />
   </span>
 </div>

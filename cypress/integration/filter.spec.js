@@ -16,25 +16,19 @@ describe('Searchfilter', () => {
 
     // color search
     cy.get('[data-cy-search-reset-all]').should('not.have.class', 'visible');
-    cy.get('[data-cy-filter-color]')
-      .first()
-      .click();
+    cy.get('[data-cy-filter-color]').first().click();
     cy.get('[data-cy-search-reset-all]').should('have.class', 'visible');
     cy.get('[data-cy-search-reset-all]').click();
 
     // color search
     cy.get('[data-cy-search-reset-all]').should('not.have.class', 'visible');
-    cy.get('[data-cy-filter-category]')
-      .first()
-      .click();
+    cy.get('[data-cy-filter-category]').first().click();
     cy.get('[data-cy-search-reset-all]').should('have.class', 'visible');
     cy.get('[data-cy-search-reset-all]').click();
   });
 
   it('removes all filters through remove filter button', () => {
-    cy.get('[data-cy-searchresults-number]')
-      .invoke('text')
-      .as('resultCount');
+    cy.get('[data-cy-searchresults-number]').invoke('text').as('resultCount');
 
     cy.get('#search').type('g');
     cy.get('[data-cy-filter-color="red"]').click();
@@ -49,7 +43,7 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-color].selected').should('have.length', 0);
     cy.get('[data-cy-filter-category].selected').should('have.length', 0);
 
-    cy.get('@resultCount').then(resultCount => {
+    cy.get('@resultCount').then((resultCount) => {
       cy.get('[data-cy-flagcard]').should('have.length', resultCount);
     });
   });
@@ -58,11 +52,11 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.wait(500); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-      categoriesList => {
+      (categoriesList) => {
         cy.get(categoriesList)
-          .find('[data-cy-iconbutton-text]')
+          .find('[data-cy-button-text]')
           .invoke('text')
-          .then(text => {
+          .then((text) => {
             expect(text.trim()).includes('attraction');
           });
       }
@@ -72,7 +66,7 @@ describe('Searchfilter', () => {
   it('can filter by multiple categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.wait(500); //wait for animation end
-    cy.get('[data-cy-searchresults-number]').then($resultsCount => {
+    cy.get('[data-cy-searchresults-number]').then(($resultsCount) => {
       const resultsCount_singleCategory = parseFloat($resultsCount.text());
 
       cy.get('[data-cy-filter-category="gender"]').click();
@@ -87,11 +81,11 @@ describe('Searchfilter', () => {
     });
 
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-      categoriesList => {
+      (categoriesList) => {
         cy.get(categoriesList)
-          .find('[data-cy-iconbutton-text]')
+          .find('[data-cy-button-text]')
           .invoke('text')
-          .then(text => {
+          .then((text) => {
             expect(text.trim()).match(/(attraction|gender)/);
           });
       }
