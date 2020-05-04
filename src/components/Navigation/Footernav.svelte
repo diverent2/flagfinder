@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "./../Elements/IconButton.svelte";
+  import RoundButton from "./../Elements/Buttons/RoundButton.svelte";
   import Mainnav from "./Navcontext/Mainnav.svelte";
 
   export let version;
@@ -68,30 +68,23 @@
   <img class="background" src="wave--darkblue.svg" alt aria-hidden="true" />
   <div class="main">
     <a class="main-search" href="/search">
-      <IconButton
+      <RoundButton
         icon="search"
         scale="4rem"
-        backgroundColor="var(--blue-dark)"
-        backgroundColorHover="var(--blue)"
-        titleVisibility="false"
-        layout="below"
-        border="true"
-        borderStyle="round">
+        colorBackground="var(--blue-dark)"
+        colorBackgroundHover="var(--blue)"
+        showBorder="true">
         search
-      </IconButton>
+      </RoundButton>
     </a>
     <a href="/" class="main-home">
-      <IconButton
+      <RoundButton
         icon="home"
         scale="1.7rem"
-        backgroundColor="var(--blue-dark)"
-        backgroundColorHover="var(--blue)"
-        fontSize="0.8rem"
-        layout="below-with-space"
-        titleVisibility="false"
-        borderStyle="round">
+        colorBackground="var(--blue-dark)"
+        colorBackgroundHover="var(--blue)">
         home
-      </IconButton>
+      </RoundButton>
     </a>
   </div>
   {#if segment == 'search'}

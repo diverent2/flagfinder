@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "../Elements/IconButton.svelte";
+  import RoundButton from "./../Elements/Buttons/RoundButton.svelte";
 
   export let version;
   export let year;
@@ -76,56 +76,45 @@
   <img class="background" src="wave--right.svg" alt aria-hidden="true" />
   <div class="primary">
     <a class="main" href="/search">
-      <IconButton
+      <RoundButton
         icon="search"
         scale="5rem"
-        backgroundColor="var(--blue-dark)"
-        backgroundColorHover="var(--blue-dark-500)"
-        titleVisibility="false"
-        layout="below"
-        border="true"
-        borderStyle="round">
+        colorBackground="var(--blue-dark)"
+        colorBackgroundHover="var(--blue-dark-500)"
+        showBorder="true">
         search
-      </IconButton>
+      </RoundButton>
     </a>
     <a href="/" class="primary-home">
-      <IconButton
+      <RoundButton
         icon="home"
         scale="2rem"
-        fontSize="0.8rem"
-        backgroundColor="var(--blue)"
-        backgroundColorHover="var(--blue-dark)"
-        layout="below-with-space"
-        borderStyle="round"
-        titleVisibility="false">
+        colorBackground="var(--blue)"
+        colorBackgroundHover="var(--blue-dark)">
         home
-      </IconButton>
+      </RoundButton>
     </a>
   </div>
   <div class="secondary">
     <a href="/about">
-      <IconButton
+      <RoundButton
         icon="about"
         scale="1.4rem"
-        fontSize="0.8rem"
-        backgroundColor="var(--blue)"
-        backgroundColorHover="var(--blue-dark)"
-        layout="below-with-space"
-        borderStyle="rounded">
+        colorBackground="var(--blue)"
+        colorBackgroundHover="var(--blue-dark)"
+        showLabel="true">
         about
-      </IconButton>
+      </RoundButton>
     </a>
     <a href="/settings">
-      <IconButton
+      <RoundButton
         icon="settings"
         scale="1.4rem"
-        fontSize="0.8rem"
-        backgroundColor="var(--blue)"
-        backgroundColorHover="var(--blue-dark)"
-        layout="below-with-space"
-        borderStyle="rounded">
+        colorBackground="var(--blue)"
+        colorBackgroundHover="var(--blue-dark)"
+        showLabel="true">
         settings
-      </IconButton>
+      </RoundButton>
     </a>
   </div>
   <footer class="info" data-cy-navigation-footer>

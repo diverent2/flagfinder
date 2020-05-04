@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "../../Elements/IconButton.svelte";
+  import RoundButton from "../../Elements/Buttons/RoundButton.svelte";
 </script>
 
 <style lang="scss">
@@ -21,27 +21,21 @@
 
 <div class="options-flag">
   <div class="button active" data-cy-footernav-option="bookmark">
-    <IconButton
-      icon="bookmarks"
+    <RoundButton
+      icon="bookmark"
       scale="1.8rem"
-      backgroundColor="var(--blue-dark-500)"
-      backgroundColorHover="var(--blue-dark)"
-      layout="below-with-space"
-      titleVisibility="false"
-      borderStyle="rounded">
+      colorBackground="var(--blue-dark-500)"
+      colorBackgroundHover="var(--blue-dark)">
       bookmark
-    </IconButton>
+    </RoundButton>
   </div>
   <div class="button active" data-cy-footernav-option="share">
-    <IconButton
+    <RoundButton
       icon="share"
       scale="1.8rem"
-      backgroundColor="var(--blue-dark-500)"
-      backgroundColorHover="var(--blue-dark)"
-      layout="below-with-space"
-      titleVisibility="false"
-      borderStyle="rounded">
+      colorBackground="var(--blue-dark-500)"
+      colorBackgroundHover="var(--blue-dark)">
       share
-    </IconButton>
+    </RoundButton>
   </div>
 </div>

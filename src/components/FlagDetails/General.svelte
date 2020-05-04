@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "../Elements/IconButton.svelte";
+  import LabelButton from "../Elements/Buttons/LabelButton.svelte";
 
   export let flag;
 
@@ -102,6 +102,7 @@
 
   .category {
     padding-right: var(--spacing);
+    padding-bottom: var(--spacing);
   }
 
   .category:last-child {
@@ -130,12 +131,12 @@
   <div class="general__categories">
     {#each flag.categories as category}
       <div class="category">
-        <IconButton
-          backgroundColor={getCategoryColor(category)}
-          icon="{category}-white"
+        <LabelButton
+          icon={category}
+          colorBackground={getCategoryColor(category)}
           scale="var(--spacing)">
           {category}
-        </IconButton>
+        </LabelButton>
       </div>
     {/each}
   </div>

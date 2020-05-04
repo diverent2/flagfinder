@@ -3,7 +3,7 @@
 
   import Header from "./../components/Header.svelte";
 
-  import IconButton from "../components/Elements/IconButton.svelte";
+  import LabelButton from "../components/Elements/Buttons/LabelButton.svelte";
 
   export let status;
   export let error;
@@ -59,9 +59,9 @@
   <div class="button--back" data-cy-error-button-back>
     👉
     <a href="./">
-      <IconButton scale="var(--spacing)" icon="arrow-back-white">
+      <LabelButton scale="var(--spacing)" icon="arrow-back">
         back to main page
-      </IconButton>
+      </LabelButton>
     </a>
     👈
   </div>

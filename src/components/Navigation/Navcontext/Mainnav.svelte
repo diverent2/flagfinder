@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "./../../Elements/IconButton.svelte";
+  import RoundButton from "./../../Elements/Buttons/RoundButton.svelte";
 </script>
 
 <style>
@@ -17,30 +17,24 @@
 <div class="options-main">
   <div class="button active" data-cy-footernav-option="about">
     <a href="/about">
-      <IconButton
+      <RoundButton
         icon="about"
         scale="1.8rem"
-        backgroundColor="var(--blue-dark-500)"
-        backgroundColorHover="var(--blue-dark)"
-        layout="below-with-space"
-        titleVisibility="false"
-        borderStyle="rounded">
+        colorBackground="var(--blue-dark-500)"
+        colorBackgroundHover="var(--blue-dark)">
         about
-      </IconButton>
+      </RoundButton>
     </a>
   </div>
   <div class="button active" data-cy-footernav-option="settings">
     <a href="/settings">
-      <IconButton
+      <RoundButton
         icon="settings"
         scale="1.8rem"
-        backgroundColor="var(--blue-dark-500)"
-        backgroundColorHover="var(--blue-dark)"
-        layout="below-with-space"
-        titleVisibility="false"
-        borderStyle="rounded">
+        colorBackground="var(--blue-dark-500)"
+        colorBackgroundHover="var(--blue-dark)">
         settings
-      </IconButton>
+      </RoundButton>
     </a>
   </div>
 </div>

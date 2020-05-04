@@ -1,1 +1,8 @@
-<svg height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m20 40v-12h8v12h10v-16h6l-20-18-20 18h6v16z"/></svg>
+<svg
+  id="home"
+  viewBox="0 0 48 48"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="currentColor"
+>
+  <path d="m20 40v-12h8v12h10v-16h6l-20-18-20 18h6v16z" />
+</svg>

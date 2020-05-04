@@ -2,7 +2,8 @@
   import { app_name, app_baseUrl } from "../data/global.js";
 
   import Metainfos from "../components/Helpers/Metainfos.svelte";
-  import IconButton from "../components/Elements/IconButton.svelte";
+  import LabelButton from "../components/Elements/Buttons/LabelButton.svelte";
+  import RoundButton from "../components/Elements/Buttons/RoundButton.svelte";
 
   const versionNumber = "alpha v. 0.5";
   const copyright = "©2020";
@@ -173,24 +174,19 @@
 
 <nav>
   <a href="search" class="searchButton" data-cy-button-search>
-    <IconButton
-      backgroundColor="var(--blue-dark)"
-      icon="search"
-      scale="64px"
-      layout="below"
-      borderStyle="round">
+    <RoundButton colorBackground="var(--blue-dark)" icon="search" scale="64px">
       <h2>Search</h2>
-    </IconButton>
+    </RoundButton>
   </a>
 
   <div class="secondaryButtons">
     <a href="/about" class="aboutButton" data-cy-button-about>
-      <IconButton
-        backgroundColor="var(--blue-dark)"
+      <LabelButton
+        colorBackground="var(--blue-dark)"
         icon="about"
         scale="var(--spacing-large)">
         <h2>About</h2>
-      </IconButton>
+      </LabelButton>
     </a>
 
   </div>
@@ -201,11 +197,6 @@
 </aside>
 
 <footer>
-  <img
-    class="footer_background footer_background-front"
-    src="wave--darkblue.svg"
-    alt
-    aria-hidden="true" />
   <img
     class="footer_background footer_background-back"
     src="wave.svg"

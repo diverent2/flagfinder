@@ -1,5 +1,6 @@
 <script>
-  import IconButton from "../../components/Elements/IconButton.svelte";
+  import LabelButton from "../Elements/Buttons/LabelButton.svelte";
+
   export let flag;
   export let titleVisibility = true;
 
@@ -135,19 +136,18 @@
       class="flagCard__image"
       src="flags/{flag.image}"
       alt="{flag.name} flag" />
-
     <div class="flagCard__details">
       <h3 class="flagCard__header">{flag.name}</h3>
       <div class="flagCard__categories" data-cy-flagcard-categories>
         {#each flag.categories as category}
           <div class="category">
-            <IconButton
-              backgroundColor={getCategoryColor(category)}
-              icon="{category}-white"
+            <LabelButton
+              colorBackground={getCategoryColor(category)}
+              icon={category}
               scale="var(--spacing)"
-              {titleVisibility}>
+              showLabel={titleVisibility}>
               {category}
-            </IconButton>
+            </LabelButton>
           </div>
         {/each}
       </div>

@@ -17,7 +17,6 @@
 <script>
   /*Data*/
   import { filterColors, filterCategories } from "../../data/_filter";
-  import IconButton from "../Elements/IconButton.svelte";
   import ColorSpot from "../Elements/ColorSpot.svelte";
 
   export let activeColorFilters;
