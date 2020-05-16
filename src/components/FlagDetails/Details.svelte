@@ -6,12 +6,6 @@
 </script>
 
 <style>
-  h2 {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-  }
-
   h3 {
     font-size: 1.2rem;
     line-height: 1;

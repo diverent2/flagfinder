@@ -29,12 +29,6 @@
     margin-bottom: 4rem;
   }
 
-  h2 {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-  }
-
   h3 {
     font-size: 0.8rem;
     line-height: 1;
@@ -44,6 +38,10 @@
 
   p {
     margin-top: 0;
+  }
+
+  .name {
+    text-transform: capitalize;
   }
 
   .general__origin {
@@ -112,6 +110,10 @@
 
 <section title="general">
   <h2>General</h2>
+
+  <h3>📛Flag name</h3>
+  <p class="name">{flag.name} flag</p>
+
   <h3>📝Description</h3>
   <p>{flag.description || 'unknown'}</p>
 
