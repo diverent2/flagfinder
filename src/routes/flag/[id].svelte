@@ -46,16 +46,20 @@
   let activeTab = 1;
 </script>
 
-<style lang="scss">
-  main {
-    margin-top: 25vh;
+<style>
+  main.container {
+    margin-top: 250px;
   }
 
   @media (--medium-up) {
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    main.container {
+      width: calc(100% - 200px);
     }
+  }
+
+  .subcontainer {
+    margin: 0 auto;
+    max-width: 800px;
   }
 </style>
 
@@ -64,9 +68,11 @@
 <Header {flag} bind:activeTab />
 
 <main class="container">
-  {#if activeTab === 1}
-    <General {flag} />
-  {:else}
-    <Details {flag} />
-  {/if}
+  <div class="subcontainer">
+    {#if activeTab === 1}
+      <General {flag} />
+    {:else}
+      <Details {flag} />
+    {/if}
+  </div>
 </main>

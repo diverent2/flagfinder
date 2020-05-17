@@ -4,21 +4,50 @@
 
   export let flag;
   export let activeTab;
+
+  let scrollY = 0;
+  let isCollapsed = false;
+
+  $: if (scrollY) {
+    toggleState(scrollY);
+  }
+
+  const threshold = 35;
+
+  function toggleState(scrollY) {
+    const scrollBelowFold = scrollY > threshold;
+
+    if (scrollBelowFold) {
+      isCollapsed = true;
+    } else {
+      isCollapsed = false;
+    }
+  }
 </script>
 
 <style lang="scss">
+  header.collapsed {
+    .flagImage {
+      width: 100px;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+
   header {
     display: grid;
     grid-template:
-      "back flag" max-content
-      "title flag" 1fr
-      / 1fr 1fr;
-    width: 100vw;
-    padding: var(--spacing);
+      "back title" max-content
+      "flag flag" 1fr
+      / max-content 1fr;
+    grid-gap: var(--spacing);
 
     position: fixed;
     top: 0;
+    will-change: height;
 
+    width: 100vw;
+    padding: var(--spacing);
+    padding-bottom: var(--spacing-large);
     color: var(--white);
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
@@ -31,26 +60,40 @@
   .goBack {
     grid-area: back;
     width: max-content;
+    align-self: center;
   }
 
   .title {
     grid-area: title;
+    margin: 0;
+
+    justify-self: center;
+    margin-right: var(--spacing-xlarge);
 
     text-overflow: ellipsis;
     overflow: hidden;
 
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
   }
 
-  .headerImage {
+  .img_container {
     grid-area: flag;
-    width: auto;
-    height: 80px;
-    justify-self: end;
+    margin: 0 var(--spacing-xlarge);
 
-    border: var(--white) 2px solid;
+    display: flex;
+    justify-content: center;
+
+    .flagImage {
+      transition: width 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+      width: 100%;
+      max-width: 250px;
+      border: var(--white) 2px solid;
+      // offset-x | offset-y | blur-radius | spread-radius | color
+      box-shadow: 8px 8px 16px 4px rgba($color: #000000, $alpha: 0.2);
+      will-change: width;
+    }
   }
 
   .tabButtons {
@@ -62,8 +105,8 @@
 
   @media (--medium-up) and (--min-height) {
     header {
-      width: calc(100vw - 200px);
-      margin-left: 200px;
+      width: calc(100vw - 190px);
+      margin-left: 190px;
       padding: var(--spacing-large) var(--spacing-xlarge);
 
       &::before {
@@ -79,14 +122,17 @@
       }
     }
 
-    .headerImage {
-      height: 20vh;
-      max-height: 300px;
+    header.collapsed {
+      .flagImage {
+        width: 200px;
+      }
     }
   }
 </style>
 
-<header>
+<svelte:window bind:scrollY />
+
+<header class:collapsed={isCollapsed}>
   <a href="./search" class="goBack">
     <Icon
       icon="arrow-back"
@@ -95,7 +141,13 @@
       colorHover="var(--blue-light)" />
   </a>
   <h1 class="title">{flag.name} flag</h1>
-  <img class="headerImage" src="flags/{flag.image}" alt="{flag.name} flag" />
+  <div class="img_container">
+    <img
+      class="flagImage"
+      src="flags/{flag.image}"
+      alt="{flag.name} flag"
+      data-cy-flag-header-image />
+  </div>
   <div class="tabButtons">
     <Tabs tab1="General" tab2="Details" bind:activeTab />
   </div>
