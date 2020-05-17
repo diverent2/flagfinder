@@ -1,32 +1,37 @@
 <script>
+  import { onMount } from "svelte";
+
   import Icon from "./../Elements/Icon.svelte";
   import Tabs from "./../Elements/Tabs.svelte";
 
   export let flag;
   export let activeTab;
 
-  let scrollY = 0;
-  let isCollapsed = false;
+  let scrollY;
+
+  onMount(() => {
+    scrollY = 0;
+  });
+
+  let state = "full";
+  const threshold = 50;
 
   $: if (scrollY) {
     toggleState(scrollY);
   }
 
-  const threshold = 35;
-
   function toggleState(scrollY) {
-    const scrollBelowFold = scrollY > threshold;
-
+    const scrollBelowFold = scrollY >= threshold;
     if (scrollBelowFold) {
-      isCollapsed = true;
+      state = "collapsed";
     } else {
-      isCollapsed = false;
+      state = "full";
     }
   }
 </script>
 
 <style lang="scss">
-  header.collapsed {
+  header[data-state="collapsed"] {
     .flagImage {
       width: 100px;
       transition: width 0.3s ease-in-out;
@@ -121,18 +126,12 @@
         transform: translateX(-200px);
       }
     }
-
-    header.collapsed {
-      .flagImage {
-        width: 200px;
-      }
-    }
   }
 </style>
 
 <svelte:window bind:scrollY />
 
-<header class:collapsed={isCollapsed}>
+<header data-cy-flag-header data-state={state}>
   <a href="./search" class="goBack">
     <Icon
       icon="arrow-back"
