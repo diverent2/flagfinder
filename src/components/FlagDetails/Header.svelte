@@ -39,12 +39,8 @@
   }
 
   header {
-    display: grid;
-    grid-template:
-      "back title" max-content
-      "flag flag" 1fr
-      / max-content 1fr;
-    grid-gap: var(--spacing);
+    display: flex;
+    justify-content: center;
 
     position: fixed;
     top: 0;
@@ -60,6 +56,16 @@
     box-shadow: var(--box-shadow);
     background: var(--blue-dark-500);
     z-index: 1;
+
+    .header_inner {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "back title" max-content
+        "flag flag" 1fr
+        / max-content 1fr;
+      grid-gap: var(--spacing);
+    }
   }
 
   .goBack {
@@ -114,17 +120,38 @@
       margin-left: 190px;
       padding: var(--spacing-large) var(--spacing-xlarge);
 
+      .header_inner {
+      grid-template:
+        "back title flag flag" 1fr
+        / min-content 2fr minmax(150px, 2fr);
+      }
+
       &::before {
         content: "";
         display: block;
         position: absolute;
         width: 200px;
-        height: 60%;
+        height: 100%;
         top: 0;
         left: 0;
         background: var(--blue-dark-500);
         transform: translateX(-200px);
       }
+    }
+
+    .title {
+      -webkit-line-clamp: 3;
+      margin-right: 0;
+    }
+
+    .goBack {
+      margin-top: var(--spacing-tiny);
+      align-self: flex-start;
+    }
+
+    .img_container {
+      margin: 0;
+      margin-right: var(--spacing);
     }
   }
 </style>
@@ -132,20 +159,22 @@
 <svelte:window bind:scrollY />
 
 <header data-cy-flag-header data-state={state}>
-  <a href="./search" class="goBack">
-    <Icon
-      icon="arrow-back"
-      scale="var(--spacing-large)"
-      aria="Go back to search"
-      colorHover="var(--blue-light)" />
-  </a>
-  <h1 class="title">{flag.name} flag</h1>
-  <div class="img_container">
-    <img
-      class="flagImage"
-      src="flags/{flag.image}"
-      alt="{flag.name} flag"
-      data-cy-flag-header-image />
+  <div class="header_inner">
+    <a href="./search" class="goBack">
+      <Icon
+        icon="arrow-back"
+        scale="var(--spacing-large)"
+        aria="Go back to search"
+        colorHover="var(--blue-light)" />
+    </a>
+    <h1 class="title">{flag.name} flag</h1>
+    <div class="img_container">
+      <img
+        class="flagImage"
+        src="flags/{flag.image}"
+        alt="{flag.name} flag"
+        data-cy-flag-header-image />
+    </div>
   </div>
   <div class="tabButtons">
     <Tabs tab1="General" tab2="Details" bind:activeTab />
