@@ -2,7 +2,9 @@
   import RoundButton from "./../../Elements/Buttons/RoundButton.svelte";
 </script>
 
-<style>
+<style lang="scss">
+  @import "../../styles/footer.scss";
+
   .options-main {
     position: absolute;
     right: 0;

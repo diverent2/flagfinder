@@ -3,24 +3,23 @@
 </script>
 
 <style lang="scss">
+  @import "./styles/footer.scss";
+
   .options-flag {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: var(--spacing-small);
     grid-gap: var(--spacing);
+    */
+    margin: var(--spacing-small);
 
-    .button {
-      display: none;
-
-      &.active {
-        display: block;
-      }
+    @media(--medium-up) {
+      margin: var(--spacing);
     }
   }
 </style>
 
 <div class="options-flag">
-  <div class="button active" data-cy-footernav-option="bookmark">
+  <div class="button" data-cy-footernav-option="bookmark">
     <RoundButton
       icon="bookmark"
       scale="1.8rem"

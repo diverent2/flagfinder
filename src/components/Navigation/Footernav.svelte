@@ -54,6 +54,12 @@
     padding: var(--spacing-small);
     text-align: right;
 
+    animation: {
+      name: reveal-footer-info;
+      duration: 0.3s;
+      fill-mode: forwards;
+    }
+
     .info-extended {
       display: none;
 
@@ -62,6 +68,15 @@
       }
     }
   }
+
+  @keyframes reveal-footer-info {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
 
 <nav class="footernav" data-cy-navigation-footer>
