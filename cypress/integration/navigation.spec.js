@@ -4,7 +4,7 @@ describe('the navigation menu shows the right context', () => {
   });
 
   it('shows/hides main nav on search for mobile/desktop', () => {
-    cy.visit('/search');
+    cy.visit('/');
     cy.get('[data-cy-footernav-option="footer"]').should('not.exist');
     cy.get('[data-cy-footernav-option="bookmark"]').should('not.exist');
     cy.get('[data-cy-footernav-option="share"]').should('not.exist');

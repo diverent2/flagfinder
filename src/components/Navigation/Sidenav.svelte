@@ -30,10 +30,10 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .primary-home {
+    .primary-bookmark {
       position: absolute;
-      right: 40px;
-      top: 210px;
+      right: 50px;
+      top: 160px;
     }
   }
 
@@ -77,7 +77,7 @@
     <use href="waves/wave-right.svg#wave-right" />
   </svg>
   <div class="primary">
-    <a class="main" href="/search">
+    <a class="main" href="/" data-cy-sidenav-button="search">
       <RoundButton
         icon="search"
         scale="5rem"
@@ -87,18 +87,21 @@
         search
       </RoundButton>
     </a>
-    <a href="/" class="primary-home">
+    <a
+      href="/bookmarks"
+      class="primary-bookmark"
+      data-cy-sidenav-button="bookmarks">
       <RoundButton
-        icon="home"
+        icon="bookmark"
         scale="2rem"
-        colorBackground="var(--blue)"
-        colorBackgroundHover="var(--blue-dark)">
-        home
+        colorBackground="var(--blue-dark)"
+        colorBackgroundHover="var(--blue-dark-500)">
+        bookmarks
       </RoundButton>
     </a>
   </div>
   <div class="secondary">
-    <a href="/about">
+    <a href="/about" data-cy-sidenav-button="about">
       <RoundButton
         icon="about"
         scale="1.4rem"
@@ -108,7 +111,7 @@
         about
       </RoundButton>
     </a>
-    <a href="/settings">
+    <a href="/settings" data-cy-sidenav-button="settings">
       <RoundButton
         icon="settings"
         scale="1.4rem"

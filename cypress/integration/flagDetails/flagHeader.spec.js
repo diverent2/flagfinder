@@ -6,7 +6,7 @@ describe('Header for flag info', () => {
 
   it('updates headerstate on scroll', () => {
     cy.wrap([0, 4, 10, 21]).each((positionOfCard, index) => {
-      cy.visit('/search');
+      cy.visit('/');
       cy.get('[data-cy-flagcard]').eq(positionOfCard).scrollIntoView().click();
       cy.get('[data-cy-flag-header]').as('header');
       cy.get('@header').should('have.attr', 'data-state', 'full');

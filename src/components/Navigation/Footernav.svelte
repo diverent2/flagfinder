@@ -39,7 +39,7 @@
       display: inline-block;
     }
 
-    .main-home {
+    .main-bookmark {
       position: absolute;
       right: 5px;
       transform: translateX(50px);
@@ -70,13 +70,13 @@
   }
 
   @keyframes reveal-footer-info {
-  0% {
-    opacity: 0;
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  100% {
-    opacity: 1;
-  }
-}
 </style>
 
 <nav class="footernav" data-cy-navigation-footer>
@@ -84,7 +84,7 @@
     <use href="waves/wave-darkblue.svg#wave-darkblue" />
   </svg>
   <div class="main">
-    <a class="main-search" href="/search">
+    <a class="main-search" href="/" data-cy-footernav-button="search">
       <RoundButton
         icon="search"
         scale="4rem"
@@ -94,19 +94,23 @@
         search
       </RoundButton>
     </a>
-    <a href="/" class="main-home">
+    <a
+      href="/bookmarks"
+      class="main-bookmark"
+      data-cy-footernav-button="bookmarks">
       <RoundButton
-        icon="home"
+        icon="bookmark"
         scale="1.7rem"
         colorBackground="var(--blue-dark)"
         colorBackgroundHover="var(--blue)">
-        home
+        bookmarks
       </RoundButton>
     </a>
   </div>
-  {#if segment == 'search'}
+  {#if segment === undefined}
+    <!--search = "/"-->
     <Mainnav />
-  {:else if segment == 'flag'}
+  {:else if segment === 'flag'}
     <!--keep empty-->
   {:else}
     <footer class="info" data-cy-footernav-option="footer">

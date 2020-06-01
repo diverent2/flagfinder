@@ -1,6 +1,6 @@
 describe('Search', () => {
   beforeEach(() => {
-    cy.visit('/search');
+    cy.visit('/');
     cy.wait(100);
     cy.get('[data-cy-search-filters-expand]').click();
   });

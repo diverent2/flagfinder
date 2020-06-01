@@ -1,6 +1,6 @@
 describe('Searchfilter', () => {
   beforeEach(() => {
-    cy.visit('/search');
+    cy.visit('/');
     cy.wait(100);
 
     //open search filters
