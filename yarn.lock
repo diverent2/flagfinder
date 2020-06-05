@@ -3374,6 +3374,11 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
+svelte-media-query@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/svelte-media-query/-/svelte-media-query-0.0.4.tgz#3f3c6b858b280d007be814fe2ea6baaa7e317efb"
+  integrity sha512-vRooDe/2dSSA3HCwzELtOpAv/OPw35SA/pPxkKCuYToIBi5/Hg1Zq6T3vjL6GyjfPxZIazWTXThBbR59H5yY3w==
+
 svelte-preprocess@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-3.4.0.tgz#bd21f2a26113b53a7d1ef5f1939a2d5b2e74a4af"

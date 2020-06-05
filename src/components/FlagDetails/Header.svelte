@@ -1,6 +1,10 @@
 <script>
   import { onMount } from "svelte";
 
+  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
+
+  import { matchMedia } from "./../../data/global.js";
+
   import Icon from "./../Elements/Icon.svelte";
   import Tabs from "./../Elements/Tabs.svelte";
 
@@ -121,9 +125,9 @@
       padding: var(--spacing-large) var(--spacing-xlarge);
 
       .header_inner {
-      grid-template:
-        "back title flag flag" 1fr
-        / min-content 2fr minmax(150px, 2fr);
+        grid-template:
+          "back title flag flag" 1fr
+          / min-content 2fr minmax(150px, 2fr);
       }
 
       &::before {
@@ -176,7 +180,11 @@
         data-cy-flag-header-image />
     </div>
   </div>
-  <div class="tabButtons">
-    <Tabs tab1="General" tab2="Details" bind:activeTab />
-  </div>
+  <MediaQuery query={matchMedia.medium_down} let:matches>
+    {#if matches}
+      <div class="tabButtons">
+        <Tabs tab1="General" tab2="Details" bind:activeTab />
+      </div>
+    {/if}
+  </MediaQuery>
 </header>

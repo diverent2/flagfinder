@@ -22,8 +22,9 @@
 
 <script>
   import _startCase from "lodash/startCase";
+  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
-  import { app_name, app_baseUrl } from "../../data/global.js";
+  import { app_name, app_baseUrl, matchMedia } from "../../data/global.js";
 
   import Metainfos from "./../../components/Helpers/Metainfos.svelte";
   import Header from "./../../components/FlagDetails/Header.svelte";
@@ -43,7 +44,7 @@
   // add valid keyword
   flag.keywords.push("valid");
 
-  let activeTab = 1;
+  let activeTab;
 </script>
 
 <style>
@@ -69,10 +70,17 @@
 
 <main class="container">
   <div class="subcontainer">
-    {#if activeTab === 1}
-      <General {flag} />
-    {:else}
-      <Details {flag} />
-    {/if}
+    <MediaQuery query={matchMedia.medium_down} let:matches>
+      {#if matches}
+        {#if activeTab === 1}
+          <General {flag} />
+        {:else}
+          <Details {flag} />
+        {/if}
+      {:else}
+        <General {flag} />
+        <Details {flag} />
+      {/if}
+    </MediaQuery>
   </div>
 </main>
