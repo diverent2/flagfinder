@@ -9,10 +9,12 @@ These are the current breakpoint-boundaries:
 $xsmall: 250px;
 $small: 360px;
 $medium: 600px;
+$large: 900px;
 
 @custom-media --xsmall-only (width <= 250px);
 @custom-media --xsmall-up (width > 250px);
 @custom-media --small-up (width > 360px);
 @custom-media --medium-up (width > 600px);
+@custom-media --large-up (width > 800px);
 
 @custom-media --min-height (height > 450px);
