@@ -4,7 +4,7 @@
   export let backLink = "/";
 </script>
 
-<style>
+<style lang="scss">
   header {
     position: fixed;
     width: 100vw;
@@ -14,20 +14,14 @@
     text-align: center;
     z-index: 1;
 
-    display: grid;
-    grid-template:
-      "back ." max-content
-      "title title" 1fr
-      / 1fr 1fr;
-  }
-
-  @media (--medium-up) and (--min-height) {
-    header {
-      right: 0;
-      width: calc(100vw - 150px);
-    }
-    .goBack {
-      transform: translateX(40px);
+    .header_inner {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "back title" 1fr
+        / max-content 1fr;
+      grid-gap: var(--spacing);
+      align-items: center;
     }
   }
 
@@ -48,24 +42,40 @@
 
   h1 {
     grid-area: title;
-    display: block;
-    position: relative;
-    top: -10px;
+    margin: 0;
+    margin-right: 2rem;
+  }
+
+  @media (--medium-up) and (--min-height) {
+    header {
+      right: 0;
+      width: calc(100vw - 150px);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .goBack {
+      transform: translateX(40px);
+    }
   }
 </style>
 
 <header>
-  <svg class="background" aria-hidden="true">
-    <use href="waves/wave-top.svg#wave-top" />
-  </svg>
-  <a href={backLink} class="goBack">
-    <Icon
-      icon="arrow-back"
-      scale="var(--spacing-large)"
-      aria="Go back to search"
-      colorHover="var(--blue-light)" />
-  </a>
-  <h1>
-    <slot />
-  </h1>
+  <div class="header_inner">
+    <svg class="background" aria-hidden="true">
+      <use href="waves/wave-top.svg#wave-top" />
+    </svg>
+    <a href={backLink} class="goBack">
+      <Icon
+        icon="arrow-back"
+        scale="var(--spacing-large)"
+        aria="Go back to search"
+        colorHover="var(--blue-light)" />
+    </a>
+    <h1>
+      <slot />
+    </h1>
+  </div>
 </header>

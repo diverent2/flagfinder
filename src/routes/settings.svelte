@@ -13,38 +13,27 @@
 </script>
 
 <style>
-  .anchor {
-    scroll-margin-top: 120px;
-  }
-
-  h2,
-  h3 {
-    margin-top: 0.5rem;
-    text-decoration-line: underline;
-    text-transform: capitalize;
-  }
-
   h2 {
-    text-decoration-thickness: 3px;
-  }
-
-  h3 {
-    text-decoration-thickness: 1px;
-  }
-
-  section {
-    margin-bottom: 3rem;
-  }
-
-  section:last-of-type {
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
   }
 </style>
 
-<Metainfos {...meta} />
+<Metainfos {...meta} showInSearch="false" />
 
 <Header backLink="/">Settings</Header>
 
 <div class="container container-padding-top">
-  <h2 class="text--center">Coming soon</h2>
+  <section>
+    <h2 class="text--center">Coming soon</h2>
+    <p>
+      Soon you will find settings to control your cookie consent, saved flags
+      and much more here.
+    </p>
+    <p>
+      But for now, you'll have to wait a little longer, or, if you are feeling
+      adventurous, consider
+      <a href="/about/#contribute">contributing here</a>
+    </p>
+  </section>
 </div>

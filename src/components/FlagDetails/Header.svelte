@@ -78,19 +78,28 @@
     align-self: center;
   }
 
-  .title {
+  .title_container {
     grid-area: title;
-    margin: 0;
+    text-align: center;
 
-    justify-self: center;
-    margin-right: var(--spacing-xlarge);
+    .title {
+      margin: 0;
 
-    text-overflow: ellipsis;
-    overflow: hidden;
+      //fix centering;
+      margin-right: var(--spacing-xlarge);
 
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      @media (--large-up) and (--min-height) {
+        margin: 0;
+        -webkit-line-clamp: 2;
+      }
+    }
   }
 
   .img_container {
@@ -143,11 +152,6 @@
       }
     }
 
-    .title {
-      -webkit-line-clamp: 3;
-      margin-right: 0;
-    }
-
     .goBack {
       margin-top: var(--spacing-tiny);
       align-self: flex-start;
@@ -171,7 +175,9 @@
         aria="Go back to search"
         colorHover="var(--blue-light)" />
     </a>
-    <h1 class="title">{flag.name} flag</h1>
+    <div class="title_container">
+      <h1 class="title">{flag.name}</h1>
+    </div>
     <div class="img_container">
       <img
         class="flagImage"

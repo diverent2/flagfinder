@@ -13,38 +13,29 @@
 </script>
 
 <style>
-  .anchor {
-    scroll-margin-top: 120px;
-  }
-
-  h2,
-  h3 {
-    margin-top: 0.5rem;
-    text-decoration-line: underline;
-    text-transform: capitalize;
-  }
-
   h2 {
-    text-decoration-thickness: 3px;
-  }
-
-  h3 {
-    text-decoration-thickness: 1px;
-  }
-
-  section {
-    margin-bottom: 3rem;
-  }
-
-  section:last-of-type {
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
   }
 </style>
 
-<Metainfos {...meta} />
+<Metainfos {...meta} showInSearch="false" />
 
 <Header backLink="/">Bookmarks</Header>
 
 <div class="container container-padding-top">
-  <h2 class="text--center">Coming soon</h2>
+  <section>
+    <h2 class="text--center">Coming soon</h2>
+    <p>
+      You've found your favortite flag and don't want to forget what it was
+      called again? Soon you'll have to look no further than this very page
+      where all your beloved (or the ones you just keep forgetting the name of)
+      flags can be found.
+    </p>
+    <p>
+      But sadly for now, you'll have to wait a little longer, or, if you are
+      feeling adventurous, you can speed up this process by
+      <a href="/about/#contribute">contributing</a>
+    </p>
+  </section>
 </div>
