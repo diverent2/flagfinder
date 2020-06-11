@@ -38,4 +38,11 @@ describe('Detail Tabs', () => {
         cy.get('section').should('have.attr', 'title', tabText);
       });
   });
+  it('only shows tabs on mobile', () => {
+    cy.get('@tab').should('be.visible');
+    cy.viewport('macbook-11');
+    cy.get('@tab').should('not.be.visible');
+    cy.viewport('iphone-6');
+    cy.get('@tab').should('be.visible');
+  });
 });

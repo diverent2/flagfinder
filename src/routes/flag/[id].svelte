@@ -58,6 +58,15 @@
     }
   }
 
+  @media (--large-up) {
+    main.container {
+      width: calc(100% - 200px);
+    }
+    main.container {
+      margin-top: 150px;
+    }
+  }
+
   .subcontainer {
     margin: 0 auto;
     max-width: 800px;

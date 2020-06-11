@@ -35,13 +35,6 @@
 </script>
 
 <style lang="scss">
-  header[data-state="collapsed"] {
-    .flagImage {
-      width: 100px;
-      transition: width 0.3s ease-in-out;
-    }
-  }
-
   header {
     display: flex;
     justify-content: center;
@@ -61,7 +54,7 @@
     background: var(--blue-dark-500);
     z-index: 1;
 
-    .header_inner {
+    > .header_inner {
       width: 100%;
       display: grid;
       grid-template:
@@ -82,7 +75,7 @@
     grid-area: title;
     text-align: center;
 
-    .title {
+    > .title {
       margin: 0;
 
       //fix centering;
@@ -109,7 +102,7 @@
     display: flex;
     justify-content: center;
 
-    .flagImage {
+    > .flagImage {
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
       width: 100%;
       max-width: 250px;
@@ -127,39 +120,47 @@
     justify-self: center;
   }
 
+  header[data-state="collapsed"] {
+    .flagImage {
+      width: 100px;
+    }
+  }
+
   @media (--medium-up) and (--min-height) {
     header {
-      width: calc(100vw - 190px);
-      margin-left: 190px;
+      min-height: 130px;
+      .header_inner {
+        max-width: 800px;
+        margin-left: 190px;
+      }
+    }
+  }
+
+  @media (--large-up) and (--min-height) {
+    header {
       padding: var(--spacing-large) var(--spacing-xlarge);
 
-      .header_inner {
+      > .header_inner {
         grid-template:
           "back title flag flag" 1fr
-          / min-content 2fr minmax(150px, 2fr);
+          / min-content 1fr 1fr;
       }
+    }
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 200px;
+    header .img_container {
+      margin: 0;
+      margin-right: var(--spacing);
+
+      > .flagImage {
+        width: auto;
         height: 100%;
-        top: 0;
-        left: 0;
-        background: var(--blue-dark-500);
-        transform: translateX(-200px);
+        position: absolute;
       }
     }
 
     .goBack {
       margin-top: var(--spacing-tiny);
       align-self: flex-start;
-    }
-
-    .img_container {
-      margin: 0;
-      margin-right: var(--spacing);
     }
   }
 </style>
