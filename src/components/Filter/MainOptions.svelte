@@ -63,6 +63,17 @@
     }
   }
 
+  .main_container {
+    display: flex;
+    justify-content: center;
+    background: var(--blue-dark-500);
+
+    > .main {
+      width: 100%;
+      max-width: 800px;
+    }
+  }
+
   .expandToggle {
     padding-bottom: var(--spacing);
     border-bottom-left-radius: 50%;
@@ -101,51 +112,42 @@
     }
   }
 
-  @media (--medium-up) and (--min-height) {
-    .options {
-      width: calc(100vw - 180px);
-      margin-left: 180px;
-
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 200px;
-        height: 60%;
-        top: 0;
-        left: 0;
-        background: var(--blue-dark-500);
-        transform: translateX(-200px);
-      }
-    }
-
-    .main {
-      padding: var(--spacing-large) var(--spacing-xlarge);
-    }
-  }
-
   .resultInfo {
     text-align: center;
     user-select: none;
 
     .resultInfo_amount {
       text-decoration: underline;
-      text-decoration-thickness: 3px;
+      text-decoration-thickness: 2px;
       text-underline-offset: 4px;
+    }
+  }
+
+  @media (--medium-up) and (--min-height) {
+    .options {
+      width: calc(100vw - 140px);
+      margin-left: 140px;
+    }
+
+    .main {
+      padding: var(--spacing-large) var(--spacing-xlarge);
+      margin-left: 3rem;
     }
   }
 </style>
 
 <div class="options" class:expanded>
 
-  <div class="main">
-    <Search
-      bind:searchterm
-      {allowFilterReset}
-      on:clearFiltersEvent={clearFilters} />
+  <div class="main_container">
+    <div class="main">
+      <Search
+        bind:searchterm
+        {allowFilterReset}
+        on:clearFiltersEvent={clearFilters} />
 
-    <div class="filter">
-      <Filter bind:activeColorFilters bind:activeCategoryFilters />
+      <div class="filter">
+        <Filter bind:activeColorFilters bind:activeCategoryFilters />
+      </div>
     </div>
   </div>
 
