@@ -18,7 +18,7 @@
   });
 
   let state = "full";
-  const threshold = 50;
+  const threshold = 20;
 
   $: if (scrollY) {
     toggleState(scrollY);
@@ -103,7 +103,7 @@
     justify-content: center;
 
     > .flagImage {
-      transition: width 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+      transition: width 0.2s ease-in-out;
       width: 100%;
       max-width: 250px;
       border: var(--white) 2px solid;
