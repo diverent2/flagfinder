@@ -105,6 +105,7 @@
     > .flagImage {
       transition: width 0.2s ease-in-out;
       width: 100%;
+      height: 100%;
       max-width: 250px;
       border: var(--white) 2px solid;
       // offset-x | offset-y | blur-radius | spread-radius | color

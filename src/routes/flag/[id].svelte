@@ -49,7 +49,7 @@
 
 <style>
   main.container {
-    margin-top: 250px;
+    margin-top: 300px;
   }
 
   @media (--medium-up) {
