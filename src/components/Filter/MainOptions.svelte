@@ -153,6 +153,7 @@
 
   <div
     class="expandToggle"
+    aria-expanded={expanded}
     data-cy-search-filters-expand
     on:click={toggleExpand}>
     <div class="resultInfo">

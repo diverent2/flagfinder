@@ -64,7 +64,7 @@
   }
 </style>
 
-<div class="flag-results">
+<div class="flag-results" aria-live="polite" aria-relevant="additions removals">
   {#if flags.length}
     {#each flags as flag, index (flag)}
       <div

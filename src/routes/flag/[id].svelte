@@ -78,7 +78,7 @@
 <Header {flag} bind:activeTab />
 
 <main class="container">
-  <div class="subcontainer">
+  <div class="subcontainer" aria-live="polite">
     <MediaQuery query={matchMedia.medium_down} let:matches>
       {#if matches}
         {#if activeTab === 1}
