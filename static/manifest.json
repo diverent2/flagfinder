@@ -1,6 +1,8 @@
 {
   "name": "Prideflags.info",
+  "display": "standalone",
   "short_name": "Prideflags",
+  "theme_color": "#3e3e7c",
   "icons": [
     {
       "src": "/android-icon-36x36.png",

@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
+- Manifest config
 - #23 Only use tab navigation on mobile
 - #23 Finally(!) add the new navigation
 - #54 Update Metatags for all Sites
