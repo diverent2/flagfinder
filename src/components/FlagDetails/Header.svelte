@@ -1,93 +1,198 @@
 <script>
-  import Tabs from "./../../components/Elements/Tabs.svelte";
+  import { onMount } from "svelte";
+
+  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
+
+  import { matchMedia } from "./../../data/global.js";
+
+  import Icon from "./../Elements/Icon.svelte";
+  import Tabs from "./../Elements/Tabs.svelte";
 
   export let flag;
   export let activeTab;
+
+  let scrollY;
+
+  onMount(() => {
+    scrollY = 0;
+  });
+
+  let state = "full";
+  const threshold = 20;
+
+  $: if (scrollY) {
+    toggleState(scrollY);
+  }
+
+  function toggleState(scrollY) {
+    const scrollBelowFold = scrollY >= threshold;
+    if (scrollBelowFold) {
+      state = "collapsed";
+    } else {
+      state = "full";
+    }
+  }
 </script>
 
-<style>
+<style lang="scss">
   header {
-    display: grid;
-    grid-template:
-      "back ." max-content
-      "title flag" 1fr
-      "tabs tabs" auto
-      / 1fr 1fr;
-    width: 100vw;
-    padding: var(--spacing);
+    display: flex;
+    justify-content: center;
 
     position: fixed;
     top: 0;
+    will-change: height;
 
+    width: 100vw;
+    padding: var(--spacing);
+    padding-bottom: var(--spacing-large);
     color: var(--white);
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
     text-transform: capitalize;
     box-shadow: var(--box-shadow);
-    background: var(--blue);
+    background: var(--blue-dark-500);
     z-index: 1;
+
+    > .header_inner {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "back title" max-content
+        "flag flag" 1fr
+        / max-content 1fr;
+      grid-gap: var(--spacing);
+    }
   }
 
-  .flagDetails__goBack {
+  .goBack {
     grid-area: back;
-
     width: max-content;
+    align-self: center;
   }
 
-  .flagDetails__title {
+  .title_container {
     grid-area: title;
+    text-align: center;
 
-    text-overflow: ellipsis;
-    overflow: hidden;
+    > .title {
+      margin: 0;
 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+      //fix centering;
+      margin-right: var(--spacing-xlarge);
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      @media (--large-up) and (--min-height) {
+        margin: 0;
+        -webkit-line-clamp: 2;
+      }
+    }
   }
 
-  .ico-arrowBack {
-    width: 1rem;
-    height: 1rem;
-    transition: color 0.2s ease;
-  }
-
-  .ico-arrowBack:hover {
-    color: var(--green-light);
-  }
-
-  .flagDetails__headerImage {
+  .img_container {
     grid-area: flag;
-    width: auto;
-    height: 60px;
-    justify-self: end;
+    margin: 0 var(--spacing-xlarge);
 
-    border: var(--white) 2px solid;
+    display: flex;
+    justify-content: center;
+
+    > .flagImage {
+      transition: width 0.2s ease-in-out;
+      width: 100%;
+      height: 100%;
+      max-width: 250px;
+      border: var(--white) 2px solid;
+      // offset-x | offset-y | blur-radius | spread-radius | color
+      box-shadow: 8px 8px 16px 4px rgba($color: #000000, $alpha: 0.2);
+      will-change: width;
+    }
   }
 
-  .flagDetails__tabButtons {
-    grid-area: tabs;
-    width: 60vw;
+  .tabButtons {
     position: absolute;
+    bottom: -1rem;
+    width: 60vw;
     justify-self: center;
+  }
+
+  header[data-state="collapsed"] {
+    .flagImage {
+      width: 100px;
+    }
+  }
+
+  @media (--medium-up) and (--min-height) {
+    header {
+      min-height: 130px;
+      .header_inner {
+        max-width: 800px;
+        margin-left: 190px;
+      }
+    }
+  }
+
+  @media (--large-up) and (--min-height) {
+    header {
+      padding: var(--spacing-large) var(--spacing-xlarge);
+
+      > .header_inner {
+        grid-template:
+          "back title flag flag" 1fr
+          / min-content 1fr 1fr;
+      }
+    }
+
+    header .img_container {
+      margin: 0;
+      margin-right: var(--spacing);
+
+      > .flagImage {
+        width: auto;
+        height: 100%;
+        position: absolute;
+      }
+    }
+
+    .goBack {
+      margin-top: var(--spacing-tiny);
+      align-self: flex-start;
+    }
   }
 </style>
 
-<header>
-  <a href="./search" class="flagDetails__goBack">
-    <svg
-      class="ico-arrowBack"
-      aria-label="Go back to search"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg">
-      <use href="icons/arrow-back.svg#arrow-back" />
-    </svg>
-  </a>
-  <h1 class="flagDetails__title">{flag.name} flag</h1>
-  <img
-    class="flagDetails__headerImage"
-    src="flags/{flag.image}"
-    alt="{flag.name} flag" />
-  <div class="flagDetails__tabButtons">
-    <Tabs tab1="General" tab2="Details" bind:activeTab />
+<svelte:window bind:scrollY />
+
+<header data-cy-flag-header data-state={state}>
+  <div class="header_inner">
+    <a href="/" class="goBack">
+      <Icon
+        icon="arrow-back"
+        scale="var(--spacing-large)"
+        aria="Go back to search"
+        colorHover="var(--blue-light)" />
+    </a>
+    <div class="title_container">
+      <h1 class="title">{flag.name}</h1>
+    </div>
+    <div class="img_container">
+      <img
+        class="flagImage"
+        src="flags/{flag.image}"
+        alt="{flag.name} flag"
+        data-cy-flag-header-image />
+    </div>
   </div>
+  <MediaQuery query={matchMedia.medium_down} let:matches>
+    {#if matches}
+      <div class="tabButtons">
+        <Tabs tab1="General" tab2="Details" bind:activeTab />
+      </div>
+    {/if}
+  </MediaQuery>
 </header>

@@ -6,6 +6,7 @@
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
+
   import { filterCategories } from "./../data/_filter";
 
   const meta = {
@@ -283,7 +284,7 @@
 
 <Header>Add a flag</Header>
 
-<div class="container">
+<div class="container container-padding-top">
   <p>
     This form is intended to be used as a help to create new flags.
     <br />

@@ -1,5 +1,6 @@
 <script>
   import Search from "./Search.svelte";
+  import Icon from "./../Elements/Icon.svelte";
   import Filter, { clearFilter } from "./Filter.svelte";
 
   export let allowFilterReset = false;
@@ -44,8 +45,13 @@
     position: sticky;
     top: 0;
     color: var(--white);
-
+    text-transform: capitalize;
     z-index: 1;
+
+    .main {
+      padding: var(--spacing);
+      background: var(--blue-dark-500);
+    }
 
     .filter {
       margin-top: 0.5rem;
@@ -57,26 +63,30 @@
     }
   }
 
-  .options_main {
-    background: var(--blue);
-    padding-top: var(--spacing);
-    padding-left: var(--spacing);
-    padding-right: var(--spacing);
+  .main_container {
+    display: flex;
+    justify-content: center;
+    background: var(--blue-dark-500);
+
+    > .main {
+      width: 100%;
+      max-width: 800px;
+    }
   }
 
-  .options_expandToggle {
+  .expandToggle {
     padding-bottom: var(--spacing);
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background: var(--blue);
     cursor: pointer;
+    background: var(--blue-dark-500);
     transition: transform 0.2s ease;
+    box-shadow: var(--box-shadow);
 
     .ico-arrow {
-      display: block;
+      display: flex;
+      justify-content: center;
       height: var(--spacing);
-      width: auto;
-      margin: 0 auto;
       transition: transform 0.25s ease;
     }
 
@@ -86,16 +96,12 @@
   }
 
   .options.expanded {
-    .options_expandToggle {
-      box-shadow: var(--box-shadow);
+    .expandToggle .ico-arrow {
+      transform: scaleY(-1) translateY(-0.5rem);
+    }
 
-      .ico-arrow {
-        transform: scaleY(-1) translateY(-0.5rem);
-      }
-
-      &:hover .ico-arrow {
-        transform: scaleY(-1);
-      }
+    .expandToggle:hover .ico-arrow {
+      transform: scaleY(-1);
     }
 
     .filter {
@@ -109,44 +115,57 @@
   .resultInfo {
     text-align: center;
     user-select: none;
-    margin: 0;
 
     .resultInfo_amount {
       text-decoration: underline;
-      text-decoration-thickness: 3px;
+      text-decoration-thickness: 2px;
       text-underline-offset: 4px;
+    }
+  }
+
+  @media (--medium-up) and (--min-height) {
+    .options {
+      width: calc(100vw - 140px);
+      margin-left: 140px;
+    }
+
+    .main {
+      padding: var(--spacing-large) var(--spacing-xlarge);
+      margin-left: 3rem;
     }
   }
 </style>
 
 <div class="options" class:expanded>
 
-  <div class="options_main">
-    <Search
-      bind:searchterm
-      {allowFilterReset}
-      on:clearFiltersEvent={clearFilters} />
+  <div class="main_container">
+    <div class="main">
+      <Search
+        bind:searchterm
+        {allowFilterReset}
+        on:clearFiltersEvent={clearFilters} />
 
-    <div class="filter">
-      <Filter bind:activeColorFilters bind:activeCategoryFilters />
+      <div class="filter">
+        <Filter bind:activeColorFilters bind:activeCategoryFilters />
+      </div>
     </div>
   </div>
 
   <div
-    class="options_expandToggle"
+    class="expandToggle"
     data-cy-search-filters-expand
     on:click={toggleExpand}>
-    <p class="resultInfo">
-      Your search has returned
-      <span class="resultInfo_amount" data-cy-searchresults-number>
-        {searchresults_amount}
+    <div class="resultInfo">
+      <span>
+        Your search has returned
+        <span class="resultInfo_amount" data-cy-searchresults-number>
+          {searchresults_amount}
+        </span>
+        results
       </span>
-      results
-    </p>
-    <img
-      class="ico-arrow"
-      title="toggle more options"
-      src="icons/arrow-down.svg"
-      alt />
+    </div>
+    <div class="ico-arrow">
+      <Icon icon="arrow-down" scale="var(--spacing)" aria="toggle filters" />
+    </div>
   </div>
 </div>

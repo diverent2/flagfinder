@@ -1,0 +1,14 @@
+.container {
+  padding: var(--spacing);
+  margin-bottom: 8rem;
+
+  &.container-padding-top {
+    padding-top: 120px;
+  }
+
+  @media (--medium-up) and (--min-height) {
+    margin-left: 200px;
+    margin-bottom: 0;
+    padding: var(--spacing-large);
+  }
+}

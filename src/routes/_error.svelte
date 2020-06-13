@@ -1,8 +1,9 @@
 <script>
-  import Footer from "./../components/Footer.svelte";
+  import { app_name } from "../data/global.js";
+
   import Header from "./../components/Header.svelte";
 
-  import IconButton from "../components/Elements/IconButton.svelte";
+  import LabelButton from "../components/Elements/Buttons/LabelButton.svelte";
 
   export let status;
   export let error;
@@ -25,20 +26,16 @@
 </style>
 
 <svelte:head>
-  <title>{status} {error.message} | Prideflags.info</title>
+  <title>{status} {error.message} | {app_name}</title>
   <meta
     name="description"
     content="Normally you would see fantastic prideflags of queer folx here...
     But something went wrong. Lets try this again, ok?" />
 </svelte:head>
 
-<Header>
-  Error {status}
-  <hr />
-  {error.message}
-</Header>
+<Header backLink="/">{status} | {error.message}</Header>
 
-<div class="container">
+<div class="container container-padding-top">
 
   {#if status === 404}
     <p>
@@ -62,9 +59,9 @@
   <div class="button--back" data-cy-error-button-back>
     👉
     <a href="./">
-      <IconButton scale="var(--spacing)" icon="arrow-back-white">
+      <LabelButton scale="var(--spacing)" icon="arrow-back">
         back to main page
-      </IconButton>
+      </LabelButton>
     </a>
     👈
   </div>
@@ -74,5 +71,3 @@
   {/if}
 
 </div>
-
-<Footer />

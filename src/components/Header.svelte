@@ -1,58 +1,81 @@
 <script>
+  import Icon from "./Elements/Icon.svelte";
+
   export let backLink = "/";
 </script>
 
-<style>
+<style lang="scss">
   header {
-    position: sticky;
-    top: 0;
+    position: fixed;
     width: 100vw;
+    height: 120px;
     padding: 1rem;
     color: var(--white);
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background: var(--blue);
     text-align: center;
     z-index: 1;
 
-    display: grid;
-    grid-template:
-      "back ." max-content
-      "title title" 1fr
-      / 1fr 1fr;
+    .header_inner {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "back title" 1fr
+        / max-content 1fr;
+      grid-gap: var(--spacing);
+      align-items: center;
+    }
   }
 
-  h1 {
-    grid-area: title;
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
   }
 
-  .header__goBack {
+  .goBack {
     grid-area: back;
     width: max-content;
   }
 
-  .ico-arrowBack {
-    width: 1rem;
-    height: 1rem;
-    transition: color 0.2s ease;
+  h1 {
+    grid-area: title;
+    margin: 0;
+    margin-right: 2rem;
   }
 
-  .ico-arrowBack:hover {
-    color: var(--green-light);
+  @media (--medium-up) and (--min-height) {
+    header {
+      right: 0;
+      width: calc(100vw - 150px);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .goBack {
+      transform: translateX(40px);
+    }
   }
 </style>
 
 <header>
-  <a href={backLink} class="header__goBack">
-    <svg
-      class="ico-arrowBack"
-      aria-label="Go back to search"
-      viewBox="0 0 32 32"
-      xmlns="http://www.w3.org/2000/svg">
-      <use href="icons/arrow-back.svg#arrow-back" />
+  <div class="header_inner">
+    <svg class="background" aria-hidden="true">
+      <use href="waves/wave-top.svg#wave-top" />
     </svg>
-  </a>
-  <h1>
-    <slot />
-  </h1>
+    <a href={backLink} class="goBack">
+      <Icon
+        icon="arrow-back"
+        scale="var(--spacing-large)"
+        aria="Go back to search"
+        colorHover="var(--blue-light)" />
+    </a>
+    <h1>
+      <slot />
+    </h1>
+  </div>
 </header>

@@ -1,7 +1,15 @@
+<script>
+  import Navigation from "./../components/Navigation/Navigation.svelte";
+
+  //standard way for layouts to export their page context
+  export let segment;
+</script>
+
 <style lang="scss" global>
   /*⚠️ Imported files aren't watched and require a reload select
   * see https://github.com/kaisermann/svelte-preprocess/issues/8#issuecomment-423644816
   */
+  @import "./styles/misc.scss";
   @import "./styles/breakpoints.scss";
 
   main {
@@ -14,5 +22,6 @@
 </style>
 
 <main>
+  <Navigation {segment} />
   <slot />
 </main>

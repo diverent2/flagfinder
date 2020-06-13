@@ -1,5 +1,5 @@
 <script>
-  import IconButton from "../Elements/IconButton.svelte";
+  import LabelButton from "../Elements/Buttons/LabelButton.svelte";
 
   export let flag;
 
@@ -26,15 +26,7 @@
 
 <style>
   section {
-    padding: 1rem;
-
     margin-bottom: 4rem;
-  }
-
-  h2 {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
   }
 
   h3 {
@@ -46,6 +38,10 @@
 
   p {
     margin-top: 0;
+  }
+
+  .name {
+    text-transform: capitalize;
   }
 
   .general__origin {
@@ -104,6 +100,7 @@
 
   .category {
     padding-right: var(--spacing);
+    padding-bottom: var(--spacing);
   }
 
   .category:last-child {
@@ -113,6 +110,10 @@
 
 <section title="general">
   <h2>General</h2>
+
+  <h3>📛Flag name</h3>
+  <p class="name">{flag.name} flag</p>
+
   <h3>📝Description</h3>
   <p>{flag.description || 'unknown'}</p>
 
@@ -132,12 +133,12 @@
   <div class="general__categories">
     {#each flag.categories as category}
       <div class="category">
-        <IconButton
-          backgroundColor={getCategoryColor(category)}
-          icon="{category}-white"
+        <LabelButton
+          icon={category}
+          colorBackground={getCategoryColor(category)}
           scale="var(--spacing)">
           {category}
-        </IconButton>
+        </LabelButton>
       </div>
     {/each}
   </div>

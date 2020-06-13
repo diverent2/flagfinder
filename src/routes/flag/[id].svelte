@@ -22,14 +22,14 @@
 
 <script>
   import _startCase from "lodash/startCase";
+  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
-  import { app_name, app_baseUrl } from "../../data/global.js";
+  import { app_name, app_baseUrl, matchMedia } from "../../data/global.js";
 
   import Metainfos from "./../../components/Helpers/Metainfos.svelte";
   import Header from "./../../components/FlagDetails/Header.svelte";
   import General from "./../../components/FlagDetails/General.svelte";
   import Details from "./../../components/FlagDetails/Details.svelte";
-  import Footer from "./../../components/Footer.svelte";
 
   export let flag;
 
@@ -44,19 +44,32 @@
   // add valid keyword
   flag.keywords.push("valid");
 
-  let activeTab = 1;
+  let activeTab;
 </script>
 
-<style lang="scss">
-  main {
-    margin-top: 25vh;
+<style>
+  main.container {
+    margin-top: 300px;
   }
 
   @media (--medium-up) {
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    main.container {
+      width: calc(100% - 200px);
     }
+  }
+
+  @media (--large-up) {
+    main.container {
+      width: calc(100% - 200px);
+    }
+    main.container {
+      margin-top: 150px;
+    }
+  }
+
+  .subcontainer {
+    margin: 0 auto;
+    max-width: 800px;
   }
 </style>
 
@@ -64,12 +77,19 @@
 
 <Header {flag} bind:activeTab />
 
-<main>
-  {#if activeTab === 1}
-    <General {flag} />
-  {:else}
-    <Details {flag} />
-  {/if}
+<main class="container">
+  <div class="subcontainer">
+    <MediaQuery query={matchMedia.medium_down} let:matches>
+      {#if matches}
+        {#if activeTab === 1}
+          <General {flag} />
+        {:else}
+          <Details {flag} />
+        {/if}
+      {:else}
+        <General {flag} />
+        <Details {flag} />
+      {/if}
+    </MediaQuery>
+  </div>
 </main>
-
-<Footer />
