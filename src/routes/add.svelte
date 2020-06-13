@@ -209,6 +209,10 @@
     margin-right: var(--spacing-tiny);
     margin-bottom: var(--spacing-small);
 
+    &:focus-within {
+      outline: var(--outline-dark);
+    }
+
     @media (--small-up) {
       margin-right: var(--spacing-small);
     }

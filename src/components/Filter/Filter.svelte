@@ -138,6 +138,10 @@
     margin-right: var(--spacing-tiny);
     margin-bottom: var(--spacing-small);
 
+    &:focus-within {
+      outline: var(--outline);
+    }
+
     @media (--small-up) {
       margin-right: var(--spacing-small);
     }
