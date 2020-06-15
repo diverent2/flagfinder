@@ -69,6 +69,10 @@
     height: var(--spacing-xlarge);
     position: relative;
 
+    &:focus-within {
+      outline: var(--outline);
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +198,8 @@
       {#each filterCategories as filterCategory}
         <label
           title={filterCategory.id}
+          aria-label="{filterCategory.selected ? 'Remove' : 'Add'} filter for
+          category '{filterCategory.id}"
           class="categoryButton"
           style="--color: {filterCategory.color};"
           class:selected={filterCategory.selected}
@@ -202,6 +208,7 @@
             <input
               type="checkbox"
               value={filterCategory.id}
+              aria-label="Filter flags by the color '{filterCategory.selected}'"
               bind:checked={filterCategory.selected}
               bind:group={activeCategoryFilters} />
             <svg

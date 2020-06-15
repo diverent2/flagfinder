@@ -37,6 +37,14 @@
     activeColorFilters = [];
     clearFilter();
   }
+
+  function exendPerKeyDown(event) {
+    if (event.code === "Space" || event.key === "Enter") {
+      event.preventDefault();
+      toggleExpand();
+      document.querySelector("#search").focus();
+    }
+  }
 </script>
 
 <style lang="scss">
@@ -155,7 +163,9 @@
     class="expandToggle"
     aria-expanded={expanded}
     data-cy-search-filters-expand
-    on:click={toggleExpand}>
+    on:click={toggleExpand}
+    on:keydown={exendPerKeyDown}
+    tabindex="0">
     <div class="resultInfo">
       <span>
         Your search has returned
