@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" fill="currentColor" id="checkmark-circle">
+	 viewBox="0 0 512 512" fill="currentColor" id="checkmark-circle">
 <g>
 	<path fill="#FFFFFF" d="M256,496c-64.1,0-124.4-25-169.7-70.3C41,380.4,16,320.1,16,256S41,131.6,86.3,86.3S191.9,16,256,16
 		s124.4,25,169.7,70.3C471,131.6,496,191.9,496,256s-25,124.4-70.3,169.7C380.4,471,320.1,496,256,496z"/>
