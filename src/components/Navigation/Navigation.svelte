@@ -11,7 +11,9 @@
   export let segment;
 </script>
 
-<style>
+<style lang="scss">
+  @import "../../../styles/z-index";
+
   .navigation {
     position: relative;
   }
@@ -24,7 +26,7 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 1001;
+    z-index: $z-index-navigation-flagmenu;
   }
 
   @media (--medium-up) and (--min-height) {

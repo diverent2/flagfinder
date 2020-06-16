@@ -48,13 +48,15 @@
 </script>
 
 <style lang="scss">
+  @import "../../../styles/z-index";
+  
   .options {
     width: 100vw;
     position: sticky;
     top: 0;
     color: var(--white);
     text-transform: capitalize;
-    z-index: 1;
+    z-index: $z-index-search-options;
 
     .main {
       padding: var(--spacing);

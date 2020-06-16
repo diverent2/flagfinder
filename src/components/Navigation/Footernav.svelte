@@ -9,6 +9,8 @@
 </script>
 
 <style lang="scss">
+  @import "../../../styles/z-index";
+
   .footernav {
     width: 100%;
     height: 8rem;
@@ -16,7 +18,7 @@
     bottom: 0;
     padding: 1rem;
     color: var(--white);
-    z-index: 1000;
+    z-index: $z-index-footernav;
 
     .background {
       position: absolute;
