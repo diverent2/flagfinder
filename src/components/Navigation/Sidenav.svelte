@@ -6,12 +6,13 @@
 </script>
 
 <style lang="scss">
+  @import "../../../styles/z-index";
   .sidenav {
     top: 0;
     position: fixed;
     width: 200px;
     height: 100vh;
-    z-index: 10;
+    z-index: $z-index-sidenav;
 
     .background {
       position: absolute;
