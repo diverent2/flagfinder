@@ -78,6 +78,7 @@
 
     > .main {
       width: 100%;
+      height: 100%;
       max-width: 800px;
     }
   }
@@ -141,6 +142,10 @@
       padding: var(--spacing-large) var(--spacing-xlarge);
       margin-left: 3rem;
     }
+
+    .expandToggle_inner {
+      margin-left: 3rem;
+    }
   }
 </style>
 
@@ -166,17 +171,19 @@
     on:click={toggleExpand}
     on:keydown={exendPerKeyDown}
     tabindex="0">
-    <div class="resultInfo">
-      <span>
-        Your search has returned
-        <span class="resultInfo_amount" data-cy-searchresults-number>
-          {searchresults_amount}
+    <div class="expandToggle_inner">
+      <div class="resultInfo">
+        <span>
+          Your search has returned
+          <span class="resultInfo_amount" data-cy-searchresults-number>
+            {searchresults_amount}
+          </span>
+          results
         </span>
-        results
-      </span>
-    </div>
-    <div class="ico-arrow">
-      <Icon icon="arrow-down" scale="var(--spacing)" aria="toggle filters" />
+      </div>
+      <div class="ico-arrow">
+        <Icon icon="arrow-down" scale="var(--spacing)" aria="toggle filters" />
+      </div>
     </div>
   </div>
 </div>

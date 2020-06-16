@@ -33,6 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Center search-expand for all viewports
+- Solve overflow for search filters
 - Some accessibility (A11y) issues
 - "Add flag" generated a wrong field name for "firstAppearance" aka. fix typo
 
