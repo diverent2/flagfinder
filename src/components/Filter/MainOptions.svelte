@@ -97,6 +97,28 @@
       justify-content: center;
       height: var(--spacing);
       transition: transform 0.25s ease;
+      animation: {
+        name: call2action;
+        duration: 5s;
+        iteration-count: infinite;
+        timing-function: ease-in-out;
+        fill-mode: both;
+      }
+    }
+
+    @keyframes call2action {
+      0%,
+      80% {
+        transform: translateY(0);
+      }
+      85%,
+      95% {
+        transform: translateY(0.5rem);
+      }
+      90%,
+      100% {
+        transform: translateY(0rem);
+      }
     }
 
     &:hover .ico-arrow {
@@ -107,6 +129,7 @@
   .options.expanded {
     .expandToggle .ico-arrow {
       transform: scaleY(-1) translateY(-0.5rem);
+      animation-play-state: paused;
     }
 
     .expandToggle:hover .ico-arrow {
