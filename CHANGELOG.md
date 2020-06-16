@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6 - The Navigation Update] - 2020-06-16
+
 ### ➕ Added
 
 - Add Call-to-Action animation for search filters
@@ -23,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - #54 Social Media Card Previews
 - Icon Component
 - RoundButton and LabelButton (formally IconButton)
+- z-index.scss
 
 ### 🔄 Changed
 
@@ -35,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- #8 Fix  inaccessibility of search filters on small screens
 - Center search-expand for all viewports
 - Solve overflow for search filters
 - Some accessibility (A11y) issues
