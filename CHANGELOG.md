@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🔄 Changed
+
+- Update font styles
+
 ## [0.6 - The Navigation Update] - 2020-06-16
 
 ### ➕ Added
@@ -38,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
-- #8 Fix  inaccessibility of search filters on small screens
+- #8 Fix inaccessibility of search filters on small screens
 - Center search-expand for all viewports
 - Solve overflow for search filters
 - Some accessibility (A11y) issues

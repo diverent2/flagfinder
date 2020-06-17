@@ -15,7 +15,6 @@
 <style>
   h2 {
     margin-top: 0.5rem;
-    text-transform: capitalize;
   }
 </style>
 

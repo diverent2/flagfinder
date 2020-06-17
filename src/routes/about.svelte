@@ -21,7 +21,6 @@
   h3 {
     margin-top: 0.5rem;
     text-decoration-line: underline;
-    text-transform: capitalize;
   }
 
   h2 {
