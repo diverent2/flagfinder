@@ -5,12 +5,15 @@
   export let flag;
 </script>
 
-<style>
+<style lang="scss">
   h3 {
-    font-size: 1.2rem;
-    line-height: 1;
-    margin-top: 1.5rem;
-    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    font-size: 1.5em;
+    margin-bottom: var(--spacing);
+  }
+
+  .icon {
+    margin-right: var(--spacing-tiny);
   }
 
   ul.colorExplanations {
@@ -18,30 +21,30 @@
     padding: 0;
 
     list-style: none;
-  }
 
-  .colorExplanations hr:last-of-type {
-    display: none;
+    hr:last-of-type {
+      display: none;
+    }
   }
 
   .colorExplanation {
     display: grid;
     grid-template-columns: minmax(4rem, 8rem) 2fr;
+
+    .colorExplanation_field {
+      margin-right: 1rem;
+    }
+
+    .colorExplanation_meaning > p {
+      margin-top: 0;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
   }
 
-  .colorExplanation__field {
-    margin-right: 1rem;
-  }
-
-  .colorExplanation__meaning > p {
-    margin-top: 0;
-  }
-
-  .colorExplanation__meaning > p:first-letter {
-    text-transform: uppercase;
-  }
-
-  hr {
+  hr.list {
     border: 0;
     height: 1px;
     background-image: linear-gradient(
@@ -53,24 +56,32 @@
   }
 
   ul.sources {
-    padding-left: 1rem;
-    margin-top: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .source {
+      margin-bottom: var(--spacing-small);
+    }
   }
 </style>
 
-<section title="details">
+<section>
   <h2>Details</h2>
 
-  <h3>🎨 Color meanings</h3>
+  <h3>
+    <span class="icon">🎨</span>
+    Color meanings
+  </h3>
 
   {#if flag.props.colors.length}
     <ul class="colorExplanations">
       {#each flag.props.colors as color, i}
         <li class="colorExplanation">
-          <div class="colorExplanation__field">
+          <div class="colorExplanation_field">
             <ColorField name={color.name} hue={color.hue} color={color.value} />
           </div>
-          <div class="colorExplanation__meaning">
+          <div class="colorExplanation_meaning">
             {#if color.meaning}
               <p>{color.meaning}</p>
             {:else}
@@ -79,20 +90,27 @@
             <p />
           </div>
         </li>
-        <hr />
+        <hr class="list" />
       {/each}
     </ul>
   {:else}
     <p class="field--empty">No descriptions found</p>
   {/if}
+  <hr class="rainbow" />
 
-  <h3>🔎Sources</h3>
+  <h3>
+    <span class="icon">🔎</span>
+    Sources
+  </h3>
 
   {#if flag.sources.length}
     <ul class="sources">
       {#each flag.sources as source}
         <li class="source">
-          <span>📅 {source.researchDate || 'YYYY.MM.DD'} |</span>
+          <span>
+            <span class="icon">📅</span>
+            {source.researchDate || 'YYYY.MM.DD'} |
+          </span>
           <a href={source.link} target="blank">{source.name}</a>
         </li>
       {/each}

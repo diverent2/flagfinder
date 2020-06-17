@@ -10,9 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### ➕ Added
+
+- Rainbow Seperators for flag details
+
 ### 🔄 Changed
 
 - Update font styles
+- Rearrange flag data
+
+### 🛠️ Fixed
+
+- Add space between icon and text in flag details headings
 
 ## [0.6 - The Navigation Update] - 2020-06-16
 

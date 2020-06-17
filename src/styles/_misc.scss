@@ -12,3 +12,19 @@
     padding: var(--spacing-large);
   }
 }
+
+hr.rainbow {
+  border: 0;
+  height: 2px;
+  width: 70%;
+  background-image: linear-gradient(
+    to right,
+    #00c0ff10 0%,
+    #00c0ff 20%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #fc4f4f10 100%
+  );
+  margin: var(--spacing-large) auto;
+  margin-bottom: var(--spacing-xlarge);
+}

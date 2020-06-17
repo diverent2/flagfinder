@@ -29,15 +29,28 @@
     margin-bottom: 4rem;
   }
 
-  h3 {
-    font-size: 0.8rem;
+  h3,
+  h4 {
+    font-size: 0.9rem;
     line-height: 1;
     margin-top: 1.5rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--spacing-small);
+  }
+
+  .icon {
+    margin-right: var(--spacing-tiny);
+  }
+
+  .origin h3 {
+    margin-bottom: var(--spacing);
+    line-height: 1.2;
+    font-size: 1.5em;
   }
 
   p {
     margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing);
   }
 
   .name {
@@ -108,28 +121,60 @@
   }
 </style>
 
-<section title="general">
+<section>
   <h2>General</h2>
 
-  <h3>📛Flag name</h3>
+  <h3>
+    <span class="icon">📛</span>
+    Flag name
+  </h3>
   <p class="name">{flag.name} flag</p>
 
-  <h3>📝Description</h3>
+  <h3>
+    <span class="icon">📝</span>
+    Description
+  </h3>
   <p>{flag.description || 'unknown'}</p>
+  <hr class="rainbow" />
 
   <div class="general__origin">
     <div>
-      <h3>🖌️First known appearance</h3>
+      <h4>
+        <span class="icon">🖌️</span>
+        First known appearance
+      </h4>
       <span>{flag.origin.firstAppearance || 'unknown'}</span>
     </div>
     <div>
-      <h3>📅Timeframe</h3>
+      <h4>
+        <span class="icon">📅</span>
+        Timeframe
+      </h4>
       <span>{flag.origin.timeframe || 'unknown'}</span>
     </div>
   </div>
+  <hr class="rainbow" />
 
-  <h3>🏷️Categories</h3>
+  <h3>
+    <span class="icon">🎨</span>
+    Color palette
+  </h3>
 
+  <ul class="colors">
+    {#each flag.props.colors as color}
+      <li class="color">
+        <div
+          class="color__field"
+          title={color.name}
+          style="background: {color.value}" />
+      </li>
+    {/each}
+  </ul>
+
+  <h3>
+    <span class="icon">🏷️</span>
+    Categories
+  </h3>
   <div class="general__categories">
     {#each flag.categories as category}
       <div class="category">
@@ -143,20 +188,10 @@
     {/each}
   </div>
 
-  <h3>🎨Color palette</h3>
-
-  <ul class="colors">
-    {#each flag.props.colors as color}
-      <li class="color">
-        <div
-          class="color__field"
-          title={color.name}
-          style="background: {color.value}" />
-      </li>
-    {/each}
-  </ul>
-
-  <h3>📌Keywords</h3>
+  <h3>
+    <span class="icon">📌</span>
+    Keywords
+  </h3>
   <ul class="keywords">
     {#each flag.keywords as keyword}
       <li class="keyword">
