@@ -1,5 +1,6 @@
 <script>
   import LabelButton from "../Elements/Buttons/LabelButton.svelte";
+  import FlagAlterations from "./FlagAlterations/FlagAlterations.svelte";
 
   export let flag;
 
@@ -55,11 +56,6 @@
 
   .name {
     text-transform: capitalize;
-  }
-
-  .general__origin {
-    display: flex;
-    justify-content: space-between;
   }
 
   ul.colors {
@@ -132,23 +128,41 @@
 
   <h3>
     <span class="icon">📝</span>
-    Description
+    Identity Description
   </h3>
   <p>{flag.description || 'unknown'}</p>
   <hr class="rainbow" />
 
-  <div class="general__origin">
+  <div class="origin">
+    <h3>
+      <span class="icon">🔙</span>
+      Origin
+    </h3>
+    <h4>
+      <span class="icon">📜</span>
+      Flag History
+    </h4>
+    <p>{flag.origin.history || 'unknown'}</p>
+    <h4>
+      <span class="icon">🎨</span>
+      Flag History and Alterations
+    </h4>
+    {#if flag.origin.flagAlterations.length}
+      <FlagAlterations flags={flag.origin.flagAlterations} />
+    {:else}
+      <span class="field--empty">No alterations found.</span>
+    {/if}
     <div>
       <h4>
         <span class="icon">🖌️</span>
-        First known appearance
+        Creator
       </h4>
       <span>{flag.origin.firstAppearance || 'unknown'}</span>
     </div>
     <div>
       <h4>
         <span class="icon">📅</span>
-        Timeframe
+        Creation date
       </h4>
       <span>{flag.origin.timeframe || 'unknown'}</span>
     </div>

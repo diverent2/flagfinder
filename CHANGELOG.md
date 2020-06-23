@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### ➕ Added
 
 - Rainbow Seperators for flag details
+- #44 Flag Alteration Component
+- #44 Flag History Data
 
 ### 🔄 Changed
 
