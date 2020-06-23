@@ -6,7 +6,7 @@
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
-
+  import FormFlagAlterations from "./../components/Form-elements/Add-Form/FormFlagAlterations.svelte";
   import { filterCategories } from "./../data/_filter";
 
   const meta = {
@@ -55,8 +55,17 @@
       name: "",
       description: "",
       origin: {
-        firstAppearance: "",
-        timeframe: ""
+        history: "",
+        publicationDate: "",
+        author: "",
+        flagAlterations: [
+          {
+            title: "",
+            imageAlt: "",
+            imageUrl: "",
+            description: ""
+          }
+        ]
       },
       categories: [],
       image: "",
@@ -160,11 +169,6 @@
     grid-gap: var(--spacing);
   }
 
-  .origin {
-    padding: 0;
-    border: 0;
-  }
-
   .origin__container {
     display: grid;
     grid-gap: var(--spacing);
@@ -264,11 +268,12 @@
     }
   }
 
-  .form__submit {
+  .form_submit {
     margin-bottom: var(--spacing-xlarge);
-  }
-  .form__submit button {
-    background: var(--green-light);
+
+    button {
+      background: var(--green-light);
+    }
   }
 
   .outputContainer {
@@ -320,7 +325,7 @@
         required />
     </div>
 
-    <fieldset class="grid__column--fullWidth">
+    <fieldset style="grid-column: 1 / -1">
       <legend class="formField--required">Categories</legend>
       <div class="categoryButtons">
         {#each filterCategories as filterCategory}
@@ -355,13 +360,13 @@
       </p>
     </fieldset>
 
-    <div class="grid__column--fullWidth">
+    <div style="grid-column: 1 / -1">
       <label for="image">
         <span class="formField--required">Image-Origin URL</span>
         <br />
         <small>
-          Link to where the image orignates from. Make sure the image is free to
-          use!
+          Link to the URL where the image orignates from. Make sure the image is
+          free to use!
         </small>
       </label>
       <input
@@ -372,38 +377,51 @@
         required />
     </div>
 
-    <div class="grid__column--fullWidth">
-      <label for="description">Description</label>
+    <div style="grid-column: 1 / -1">
+      <label for="description">Identity Description</label>
       <textarea
         name="description"
-        placeholder="Traditional symbol of the LGBTQ+ movement…"
+        placeholder="A genderqueer person is someone who is…"
         bind:value={flagData.description}
         rows="3" />
     </div>
 
-    <fieldset class="origin grid__column--fullWidth">
+    <fieldset class="origin" style="grid-column: 1 / -1">
       <legend>Origin</legend>
       <div class="origin__container">
         <div>
-          <label for="firstAppearance">First Appearance</label>
+          <label for="author">Author</label>
           <input
             type="text"
-            name="firstAppearance"
-            bind:value={flagData.origin.firstAppearance}
+            name="author"
+            bind:value={flagData.origin.author}
             placeholder="Gilbert Baker in San Francisco" />
         </div>
         <div>
-          <label for="timeframe">Timeframe</label>
+          <label for="publicationDate">Publication Date</label>
           <input
             type="text"
-            name="timeframe"
-            bind:value={flagData.origin.timeframe}
+            name="publicationDate"
+            bind:value={flagData.origin.publicationDate}
             placeholder="1979" />
         </div>
+        <div style="grid-column: 1 / -1">
+          <label for="history">Current Flag History</label>
+          <textarea
+            name="history"
+            placeholder="This flag was originally designed to represent…"
+            bind:value={flagData.origin.history}
+            rows="3" />
+        </div>
+      </div>
+      <div style="grid-column: 1 / -1">
+        <FormFlagAlterations
+          flagAlterations={flagData.origin.flagAlterations}
+          bind:flagAlterations={flagData.origin.flagAlterations} />
       </div>
     </fieldset>
 
-    <div class="grid__column--fullWidth">
+    <div style="grid-column: 1 / -1">
       <label for="keywords">Keywords (comma-separated)</label>
       <input
         type="text"
@@ -411,26 +429,26 @@
         placeholder="gay, masc, ..."
         bind:value={keywords__string} />
     </div>
-    <div class="grid__column--fullWidth">
+    <div style="grid-column: 1 / -1">
       <FormColors
         colors={flagData.props.colors}
         bind:colors={flagData.props.colors} />
     </div>
 
-    <div class="grid__column--fullWidth">
+    <div style="grid-column: 1 / -1">
       <FormSymbols
         symbols={flagData.props.symbols}
         bind:symbols={flagData.props.symbols} />
     </div>
 
-    <div class="grid__column--fullWidth">
+    <div style="grid-column: 1 / -1">
       <FormSources
         sources={flagData.sources}
         bind:sources={flagData.sources}
         {currentDate} />
     </div>
 
-    <div class="form__submit grid__column--fullWidth">
+    <div class="form_submit" style="grid-column: 1 / -1">
       <p>
         Click this button to generate the new flag in JSON.
         <br />
