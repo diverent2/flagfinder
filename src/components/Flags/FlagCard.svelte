@@ -36,8 +36,6 @@
   }
 
   .flagCard__image {
-    width: 150px;
-    height: auto;
     border-radius: inherit;
   }
 
@@ -134,7 +132,7 @@
   <div class="flagCard" data-cy-flagcard>
     <img
       width="150"
-      height="60"
+      height="90"
       class="flagCard__image"
       src="flags/{flag.image}"
       alt="{flag.name} flag"
