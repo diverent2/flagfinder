@@ -25,8 +25,9 @@ describe('Detail Tabs', () => {
     cy.get('@tab')
       .first()
       .then(($button) => {
-        const tabText = $button.text().trim().toLowerCase();
-        cy.get('section').should('have.attr', 'title', tabText);
+        const tabText = $button.text();
+        cy.get('section [data-section-title]').should('contain', tabText);
+        cy.contains(tabText);
       });
 
     cy.get('@tab')
@@ -34,8 +35,9 @@ describe('Detail Tabs', () => {
       .wait(100) // @TODO: figure out why this is required
       .click()
       .then(($button) => {
-        const tabText = $button.text().trim().toLowerCase();
-        cy.get('section').should('have.attr', 'title', tabText);
+        const tabText = $button.text();
+        cy.get('section [data-section-title]').should('contain', tabText);
+        cy.contains(tabText);
       });
   });
   it('only shows tabs on mobile', () => {

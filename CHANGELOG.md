@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🛠️ Fixed
+
+- Tab Title Test Selector
+
 ### ➕ Added
 
 - Rainbow Seperators for flag details

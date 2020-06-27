@@ -122,7 +122,7 @@
 </style>
 
 <section>
-  <h2>General</h2>
+  <h2 data-section-title>General</h2>
 
   <h3>
     <span class="icon">📛</span>

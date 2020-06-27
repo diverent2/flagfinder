@@ -67,7 +67,7 @@
 </style>
 
 <section>
-  <h2>Details</h2>
+  <h2 data-section-title>Details</h2>
 
   <h3>
     <span class="icon">🎨</span>
