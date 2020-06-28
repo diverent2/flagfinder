@@ -19,6 +19,7 @@
     background: var(--blue-dark-500);
     color: var(--white);
     box-shadow: var(--box-shadow);
+    border: var(--white) solid 2px;
   }
 
   @media (--small-up) {
@@ -32,6 +33,9 @@
     font-size: 1.2rem;
     grid-column: 1 / -1;
 
+    border-bottom: var(--white) solid 1px;
+    width: 100%;
+
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
@@ -44,12 +48,19 @@
   }
 
   img {
-    max-height: 100px;
+    box-sizing: content-box;
+    border: var(--white) 2px solid;
   }
 </style>
 
 <div class="flagAlteration">
-  <h5>{flag.title}</h5>
-  <img src="flags/{flag.imageUrl}" alt={flag.imageAlt} />
-  <p>{flag.description}</p>
+  <h5 title={flag.title}>{flag.title}</h5>
+  <img src="flags/{flag.imageUrl}" alt={flag.imageAlt} height="90" />
+  {#if flag.description}
+    <p>
+      {@html flag.description}
+    </p>
+  {:else}
+    <span class="field--empty">No definition found.</span>
+  {/if}
 </div>
