@@ -13,8 +13,21 @@ describe('Add Flag form', () => {
     cy.get('textarea[name="description"]').type(
       'A most awesome group of people!'
     );
-    cy.get('input[name="firstAppearance"]').type('Gilbert Backer');
-    cy.get('input[name="timeframe"]').type('1979');
+    cy.get('textarea[name="history"]').type(
+      'This flag was originally designed to represent.'
+    );
+    cy.get('input[name="author"]').type('Gilbert Backer');
+    cy.get('input[name="publicationDate"]').type('1979');
+    cy.get('input[name="flagAlteration-title"]').type('First Version');
+    cy.get('input[name="flagAlteration-imageUrl"]').type(
+      'genderqueer/genderqueer_v1.png'
+    );
+    cy.get('input[name="flagAlteration-imageAlt"]').type(
+      'Original Flag with stripes'
+    );
+    cy.get('textarea[name="flagAlteration-description"]').type(
+      'The first version was created in 2010.'
+    );
     cy.get('input[name="keywords"]').type('gay, masc ');
     cy.get('input[name="colorName"]').type('violet blue');
     cy.get('input[name="colorId"]').type('violet-blue');
@@ -48,6 +61,11 @@ describe('Add Flag form', () => {
       .should('contain.value', 'A most awesome group of people!')
       .should('contain.value', 'Gilbert Backer')
       .should('contain.value', '1979')
+      .should('contain.value', 'This flag was originally designed to represent')
+      .should('contain.value', 'First Version')
+      .should('contain.value', 'genderqueer/genderqueer_v1.png')
+      .should('contain.value', 'Original Flag with stripes')
+      .should('contain.value', 'The first version was created in 2010')
       .should('contain.value', '"gay",\n    "masc"')
       // matches
       .should('contain.value', '"colors": [\n      "purple"\n    ]')
@@ -94,6 +112,57 @@ describe('Add Flag form', () => {
       .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
   });
 
+  it('flagAlterations: can add and remove multiple alterations', () => {
+    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
+      'have.length',
+      1
+    );
+    cy.get(
+      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
+    )
+      .first()
+      .type('title_A');
+    cy.get('#form--addFlag button[data-ql-add-flag-alteration-button]').click();
+    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
+      'have.length',
+      2
+    );
+    cy.get(
+      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
+    )
+      .eq(1)
+      .type('title_B');
+    cy.get('#form--addFlag button[data-ql-add-flag-alteration-button]').click();
+    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
+      'have.length',
+      3
+    );
+    cy.get(
+      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
+    )
+      .eq(2)
+      .type('title_C');
+
+    cy.log('Remove second source element');
+    cy.get('#form--addFlag .flagAlteration .removeButton').eq(1).click();
+    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
+      'have.length',
+      2
+    );
+    cy.get(
+      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
+    )
+      .first()
+      .invoke('val')
+      .should('eq', 'title_A');
+    cy.get(
+      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
+    )
+      .last()
+      .invoke('val')
+      .should('eq', 'title_C');
+  });
+
   it('colors: can add and remove multiple colors', () => {
     cy.get('#form--addFlag .colors .color').should('have.length', 1);
     cy.get('#form--addFlag .colors .color input[name="colorName"]')
@@ -122,7 +191,7 @@ describe('Add Flag form', () => {
       .should('eq', 'color_name_C');
   });
 
-  it('sources: can add and remove multiple symbols', () => {
+  it('symbols: can add and remove multiple symbols', () => {
     cy.get('#form--addFlag .symbols .symbol').should('have.length', 1);
     cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
       .first()

@@ -90,7 +90,7 @@
   }
 </style>
 
-<fieldset class="grid__column--fullWidth">
+<fieldset style="grid-column: 1 / -1">
   <legend>Colors</legend>
   <ul class="colors">
     {#each colors as color, index}
@@ -165,7 +165,7 @@
               {/each}
             </select>
           </div>
-          <div class="grid__column--fullWidth">
+          <div style="grid-column: 1 / -1">
             <label for="colorMeaning">Meaning of the color</label>
             <textarea
               name="colorMeaning"

@@ -84,7 +84,3 @@ label {
   font-size: 0.5rem;
   color: red;
 }
-
-.grid__column--fullWidth {
-  grid-column: 1 / -1;
-}

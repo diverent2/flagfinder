@@ -7,8 +7,9 @@ const flags = [
     origin: {
       history:
         'When the prideflag got edited to represent more identities, Daniel Quasar set out to create a more well thoughtout flag design to represent the queer movement as a whole.',
-      timeframe: '2018',
-      firstAppearance: 'Daniel Quasar',
+      publicationDate: '2018',
+      author: 'Daniel Quasar',
+      flagAlterations: [],
     },
     categories: ['sexuality', 'attraction', 'gender', 'kink'],
     image: 'progressive.png',
@@ -146,8 +147,10 @@ const flags = [
     description:
       'Traditional symbol of the LGBTQ+ movement. It represents people who identify as homosexual as well as the queer community as a whole.',
     origin: {
-      firstAppearance: 'Gilbert Baker in San Francisco',
-      timeframe: '1979',
+      history: '',
+      author: 'Gilbert Baker in San Francisco',
+      publicationDate: '1979',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'gay.png',
@@ -240,8 +243,10 @@ const flags = [
     description:
       'A gay subculture formed from the interest of more sturdier and hairy men*, which are also called "bears".',
     origin: {
-      firstAppearance: 'by Craig Byrnes for the International Bear Brotherhood',
-      timeframe: '1995',
+      history: '',
+      author: 'by Craig Byrnes for the International Bear Brotherhood',
+      publicationDate: '1995',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'gay-bear.png',
@@ -331,8 +336,10 @@ const flags = [
     description:
       'A gay subculture formed by the interest in twinks. A twink is a young man* (teen to early 20s) that looks younger then they are, appears more feminine, has little to no body and facial hair and is rather slim.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'gay-twink.png',
@@ -401,8 +408,10 @@ const flags = [
     description:
       'An asexual person is someone, who has little or no interest in sexual activity. Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheter or not they enjoy sexual activity or completly avoid it. It can also be used as an umbrella term.',
     origin: {
-      firstAppearance: '',
-      timeframe: '2010',
+      history: '',
+      author: '',
+      publicationDate: '2010',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'asexual.png',
@@ -480,8 +489,10 @@ const flags = [
     description:
       'Sexual attraction to the own as well as to one (or more) other sexes/genders.',
     origin: {
-      firstAppearance: 'Michael Page',
-      timeframe: 'December 5, 1998',
+      history: '',
+      author: 'Michael Page',
+      publicationDate: 'December 5, 1998',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'bisexual.png',
@@ -549,8 +560,10 @@ const flags = [
     description:
       'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'demisexual.png',
@@ -622,11 +635,12 @@ const flags = [
   {
     id: 'heterosexual',
     name: 'heterosexual / straight',
-    description:
-      'People who are sexually attracted to the opposite sex or a person identifying as such.',
+    description: 'People who are sexually attracted to the opposite gender,',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'heterosexual.png',
@@ -675,13 +689,16 @@ const flags = [
     description:
       'Lesbians are woman* romantically and/or sexually attracted to other woman*. This community flag puts empathsies on the diversity of this idenity.',
     origin: {
-      timeframe: '2018',
-      firstAppearance: 'taqwomen on tumblr',
       history:
         'A while ago many different flags existed for people who identify as lesbians. A user on tumblr (official-lesbian-flag) set out for the quest to settle to community for one flag to represent them. After many suggestions and votes a winner was declared: The lesbian community flag was born.',
-      flagHistory: [
+      publicationDate: '2018',
+      author: 'taqwomen on tumblr',
+      flagAlterations: [
         {
-          image: 'lesbian/lesbian_v1',
+          title: 'Original winning lebian flag (June 2018)',
+          imageUrl: 'lesbian/lesbian_v1.png',
+          imageAlt:
+            'The same as the current flag, but with 7 stripes instead of 5',
           description:
             'June 2018, original winning flag by lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.',
         },
@@ -768,11 +785,13 @@ const flags = [
   },
   {
     id: 'lesbian-labry',
-    name: 'lesbian pride labrys',
+    name: 'lesbian labrys pride',
     description: 'A lesbian flag that puts emphasis on "female* empowerment".',
     origin: {
-      firstAppearance: ' Sean Campbell',
-      timeframe: '1999',
+      history: '',
+      author: ' Sean Campbell',
+      publicationDate: '1999',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'lesbian-labry.png',
@@ -844,10 +863,11 @@ const flags = [
     description:
       'A lesbian pride flag that puts emphasis on "femininity / being femme".',
     origin: {
-      firstAppearance: 'Natalie',
-      timeframe: 'july 28, 2010',
       history:
         'Nowadays this flag is getting less and less common due to controversial claims by its author.',
+      author: 'Natalie',
+      publicationDate: 'july 28, 2010',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'lesbian-lipstick.png',
@@ -954,8 +974,10 @@ const flags = [
     description:
       'Pansexuality describes sexual attraction towards all gender (identities) and regardless of sex characteristics.',
     origin: {
-      firstAppearance: '',
-      timeframe: '2010',
+      history: '',
+      author: '',
+      publicationDate: '2010',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'pansexual.png',
@@ -1027,8 +1049,10 @@ const flags = [
     description:
       'Similar to pansexuality, with an important difference: A polysexual person is attracted to multiple, yet not all genders.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'polysexual.png',
@@ -1083,8 +1107,10 @@ const flags = [
     description:
       'People who identify as straight but support LGBTQ+ people in their identities.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['sexuality'],
     image: 'straight-ally.png',
@@ -1192,8 +1218,10 @@ const flags = [
     description:
       'A person who is without a gender and/or rejects the idea of heaving a gender completely.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'agender.png',
@@ -1262,8 +1290,10 @@ const flags = [
     description:
       'As the name suggests, genderfluid/genderflex aren´t locked in one gender identity. Their identity can shift and vary over time.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'genderfluid.png',
@@ -1332,16 +1362,25 @@ const flags = [
     description:
       'Genderqueer is an umbrella term for non-binary people, who don´t really fit the provided categories, especially the binary.',
     origin: {
-      firstAppearance: 'Marilyn Roxie',
-      timeframe: 'June 2011',
-      flagHistory: [
+      history:
+        'After some iterations the now commonly known color palette was created in 2011.',
+      author: 'Marilyn Roxie',
+      publicationDate: 'June 2011',
+      flagAlterations: [
         {
-          image: 'genderqueer/genderqueer_v1',
-          description: 'June 2010, version 1',
+          title: 'Original Design (June 2010)',
+          imageUrl: 'genderqueer/genderqueer_v1.png',
+          imageAlt:
+            'The original version of the flag featuring the letters "GQ" as well as a cross-like design',
+          description:
+            'Original Design from June 2010 including the shorthand "GQ"',
         },
         {
-          image: 'genderqueer/genderqueer_v2',
-          description: 'September 2010, version 2',
+          title: 'Second Version (September 2010)',
+          imageUrl: 'genderqueer/genderqueer_v2.png',
+          imageAlt: 'The colors green and purple are swaped.',
+          description:
+            'In the second version from september 2010, the order of the stripes was different to the now common one.',
         },
       ],
     },
@@ -1420,8 +1459,10 @@ const flags = [
     description:
       'Often used as an umbrella term, nonbinary (also called enby, NB) don´t fit into male* and female* categories.',
     origin: {
-      firstAppearance: 'Kye Rowan',
-      timeframe: '2014',
+      history: '',
+      author: 'Kye Rowan',
+      publicationDate: '2014',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'nonbinary.png',
@@ -1494,8 +1535,10 @@ const flags = [
     description:
       'Transgender people are people who´s gender identity doesn´t match their sex assigned at birth.',
     origin: {
-      firstAppearance: 'Monica Helms',
-      timeframe: '1999',
+      history: '',
+      author: 'Monica Helms',
+      publicationDate: '1999',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'transgender.png',
@@ -1565,8 +1608,10 @@ const flags = [
     description:
       "A demigirl (also known as demiwoman or demifemale person) is someone who partly (demi meaning half), but not completely identifies as a girl*, female* or feminine.\n\nThey may also identify as another gender or even as agender (genderless), but they don't have to.\n\nIf they are afab (assigned female at birth) it is likely that they feel somewhat disconnected from their assigned gender, but its most likely not enough to cause actual discomfort or even dysphoria.\n",
     origin: {
-      firstAppearance: 'by Transrants (Tumblr)',
-      timeframe: '',
+      history: '',
+      author: 'by Transrants (Tumblr)',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'demigirl.png',
@@ -1634,8 +1679,10 @@ const flags = [
     description:
       "A demiboy (also known as demiguy or demiman person) is someone who partly (demi meaning half), but not completely identies as a boy* or male*.\n\nThey may also identify as another gender or even as agender/genderless, but they don't have to.\n\nIf they are amab (assigned male at birth) it is likely that they feel somewhat disconnected from their assigned gender, but it most likely is not bad enough to cause actual discomfort or even dysphoria.\n",
     origin: {
-      firstAppearance: 'by Transrants (Tumblr)',
-      timeframe: '',
+      history: '',
+      author: 'by Transrants (Tumblr)',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'demiboy.png',
@@ -1699,12 +1746,15 @@ const flags = [
     origin: {
       history:
         'The flag originally often been used as both bigender and intersex flag. Nowadays most of the community settled for it as the bigender flag. 📝 Note: However the original author claimed that it was meant to refer to sex instead of gender.',
-      firstAppearance: 'Natalie Phox (NittrusFox)',
-      timeframe: '2009 (adjusted)',
-      flagHistory: [
+      author: 'Natalie Phox (NittrusFox)',
+      publicationDate: '2009 (adjusted version)',
+      flagAlterations: [
         {
-          image: 'bigender/bigender_v1',
-          description: '',
+          title: 'Bigender original version',
+          imageUrl: 'bigender/bigender_v1.png',
+          imageAlt: '',
+          description:
+            'The original flag featured a color gradient. However this was removed due to printing issues.',
         },
       ],
     },
@@ -1803,8 +1853,10 @@ const flags = [
     description:
       'Someone whose gender identity aligns with their "gender assigned at birth". Info: The flag was originally intended as an alternative version for the heterosexual flag but later turned into the cisgender flag.  It\'s an alteration based on the bisexual flag.',
     origin: {
-      firstAppearance: 'Arianod on Deviantart',
-      timeframe: 'June 2014',
+      history: '',
+      author: 'Arianod on Deviantart',
+      publicationDate: 'June 2014',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'cisgender.png',
@@ -1853,8 +1905,10 @@ const flags = [
     description:
       'Intersex people are often seen as the third sex. Their body features don´t fit typical "male*" or "female*" definitions.',
     origin: {
-      firstAppearance: 'the organization Intersex International Australia',
-      timeframe: '2013',
+      history: '',
+      author: 'the organization Intersex International Australia',
+      publicationDate: '2013',
+      flagAlterations: [],
     },
     categories: ['gender'],
     image: 'intersex.png',
@@ -1917,8 +1971,10 @@ const flags = [
     description:
       'An aromantic person is someone, who has little to no interest in a romantic relationship. They often can´t develop romantic feelings and usually don´t "fall in love", however they often experience stronger platonic feelings. Aromantic can also be used as an umbrella term for the aro spectrum.',
     origin: {
-      firstAppearance: 'Cameron Whimsey',
-      timeframe: '2014',
+      history: '',
+      author: 'Cameron Whimsey',
+      publicationDate: '2014',
+      flagAlterations: [],
     },
     categories: ['attraction'],
     image: 'aromantic.png',
@@ -1994,8 +2050,10 @@ const flags = [
     description:
       'Polyamory describes the love/relationships to multiple partner at the same time. All involved parties are consenting to this sort of relationship.',
     origin: {
-      firstAppearance: '',
-      timeframe: '',
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
     },
     categories: ['attraction'],
     image: 'polyamory.png',
@@ -2080,8 +2138,10 @@ const flags = [
     description:
       'Originally used to represent the gay leather community, it nowadays represents the leather and BDSM subculture in general. ',
     origin: {
-      firstAppearance: 'designed by Tony DeBlase',
-      timeframe: '1989',
+      history: '',
+      author: 'designed by Tony DeBlase',
+      publicationDate: '1989',
+      flagAlterations: [],
     },
     categories: ['kink'],
     image: 'leather.png',

@@ -29,7 +29,7 @@
     copyText.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand("copy");
     copyText.type = "hidden";
-    alert("Text copied to clipboard!");
+    alert("Link copied to clipboard!");
   }
 </script>
 
@@ -43,7 +43,7 @@
     */
     margin: var(--spacing-small);
 
-    @media(--medium-up) {
+    @media (--medium-up) {
       margin: var(--spacing);
     }
   }
@@ -61,7 +61,7 @@
   </div>
   <div
     class="button active"
-    data-cy-footernav-option="share" 
+    data-cy-footernav-option="share"
     title="share this flag"
     on:click={copyCurrentUrl}>
     <input id="hiddenUrlCatcher" type="hidden" data-cy-hidden-url />
