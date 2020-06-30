@@ -130,7 +130,13 @@
     <span class="icon">📝</span>
     Identity Description
   </h3>
-  <p>{flag.description || 'unknown'}</p>
+  <p>
+    {#if flag.description}
+      {@html flag.description}
+    {:else}
+      <span class="field--empty">No flag description found.</span>
+    {/if}
+  </p>
   <hr class="rainbow" />
 
   <div class="origin">
@@ -142,41 +148,49 @@
       <span class="icon">📜</span>
       Flag History
     </h4>
-    {#if flag.origin.history}
-      {@html flag.origin.history}
-    {:else}
-      <span class="field--empty">No flag history found.</span>
-    {/if}
+    <p>
+      {#if flag.origin.history}
+        {@html flag.origin.history}
+      {:else}
+        <span class="field--empty">No flag history found.</span>
+      {/if}
+    </p>
     <h4>
       <span class="icon">🎨</span>
       Flag History and Alterations
     </h4>
-    {#if flag.origin.flagAlterations.length}
-      <FlagAlterations flags={flag.origin.flagAlterations} />
-    {:else}
-      <span class="field--empty">No alterations found.</span>
-    {/if}
+    <p>
+      {#if flag.origin.flagAlterations.length}
+        <FlagAlterations flags={flag.origin.flagAlterations} />
+      {:else}
+        <span class="field--empty">No alterations found.</span>
+      {/if}
+    </p>
     <div>
       <h4>
         <span class="icon">🖌️</span>
         Creator
       </h4>
-      {#if flag.origin.author}
-        {flag.origin.author}
-      {:else}
-        <span class="field--empty">unknown</span>
-      {/if}
+      <p>
+        {#if flag.origin.author}
+          {flag.origin.author}
+        {:else}
+          <span class="field--empty">unknown</span>
+        {/if}
+      </p>
     </div>
     <div>
       <h4>
         <span class="icon">📅</span>
         Creation date
       </h4>
-      {#if flag.origin.publicationDate}
-        {flag.origin.publicationDate}
-      {:else}
-        <span class="field--empty">unknown</span>
-      {/if}
+      <p>
+        {#if flag.origin.publicationDate}
+          {flag.origin.publicationDate}
+        {:else}
+          <span class="field--empty">unknown</span>
+        {/if}
+      </p>
     </div>
   </div>
   <hr class="rainbow" />
@@ -218,12 +232,17 @@
     <span class="icon">📌</span>
     Keywords
   </h3>
-  <ul class="keywords">
-    {#each flag.keywords as keyword}
-      <li class="keyword">
-        <span class="keyword_inner">{keyword}</span>
-      </li>
-    {/each}
-  </ul>
+
+  {#if flag.keywords}
+    <ul class="keywords">
+      {#each flag.keywords as keyword}
+        <li class="keyword">
+          <span class="keyword_inner">{keyword}</span>
+        </li>
+      {/each}
+    </ul>
+  {:else}
+    <span class="field--empty">No keywords found.</span>
+  {/if}
 
 </section>

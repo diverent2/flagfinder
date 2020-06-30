@@ -82,11 +82,13 @@
             <ColorField name={color.name} hue={color.hue} color={color.value} />
           </div>
           <div class="colorExplanation_meaning">
-            {#if color.meaning}
-              <p>{color.meaning}</p>
-            {:else}
-              <p class="field--empty">no explanation provided</p>
-            {/if}
+            <p>
+              {#if color.meaning}
+                {@html color.meaning}
+              {:else}
+                <p class="field--empty">no explanation provided.</p>
+              {/if}
+            </p>
             <p />
           </div>
         </li>
@@ -94,7 +96,7 @@
       {/each}
     </ul>
   {:else}
-    <p class="field--empty">No descriptions found</p>
+    <p class="field--empty">No color descriptions found.</p>
   {/if}
   <hr class="rainbow" />
 
@@ -116,6 +118,6 @@
       {/each}
     </ul>
   {:else}
-    <p>No sources provided</p>
+    <p class="field--empty">No sources provided.</p>
   {/if}
 </section>
