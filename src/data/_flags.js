@@ -3,7 +3,7 @@ const flags = [
     id: 'progressive',
     name: 'progressive pride',
     description:
-      'A redesigned pride flag to be more inclusive and represent all aspects of the LGBTQ*+ community.\nIt also shall remind us that „We still have movement forward to make. There still is work to be done.“ - Daniel Quasar.',
+      'A redesigned pride flag to be more inclusive and represent all aspects of the LGBTQ*+ community.<br><br>It also shall remind us that „We still have movement forward to make. There still is work to be done.“ - Daniel Quasar.',
     origin: {
       history:
         'When the prideflag got edited to represent more identities, Daniel Quasar set out to create a more well thoughtout flag design to represent the queer movement as a whole.',
@@ -20,7 +20,7 @@ const flags = [
           name: 'maya blue',
           hue: 'lightblue',
           meaning:
-            'Reference to the trans* pride (traditionally color for boys)',
+            'Reference to the <a href="/flag/transgender">trans* pride</a> (traditionally color for boys)',
           value: '#60CFFA',
         },
         {
@@ -28,7 +28,7 @@ const flags = [
           name: 'cupid',
           hue: 'lightpink',
           meaning:
-            'Reference to the trans* pride (traditionally color for girls)',
+            'Reference to the <a href="/flag/transgender">trans* pride</a> (traditionally color for girls)',
           value: '#F4A8BA',
         },
         {
@@ -36,7 +36,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning:
-            'Reference to the trans* pride flag (those who are transitioning; those with a neutral gender, no gender, and those who are intersex.)',
+            'Reference to the <a href="/flag/transgender">trans* pride</a> flag (those who are transitioning; those with a neutral gender,  <a href="/flag/agender">no gender</a>, and those who are <a href="/flag/intersex">intersex</a>.)',
           value: '#FFFFFF',
         },
         {
@@ -59,42 +59,48 @@ const flags = [
           id: 'red',
           name: 'red',
           hue: 'red',
-          meaning: 'Reference to the original LGBTQ*+ flag (life)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (life)',
           value: '#d41d06',
         },
         {
           id: 'orange',
           name: 'orange',
           hue: 'orange',
-          meaning: 'Reference to the original LGBTQ*+ flag (healing)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (healing)',
           value: '#ee9c00',
         },
         {
           id: 'yellow',
           name: 'yellow',
           hue: 'yellow',
-          meaning: 'Reference to the original LGBTQ*+ flag (sunlight)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (sunlight)',
           value: '#FFFF0B',
         },
         {
           id: 'green',
           name: 'green',
           hue: 'green',
-          meaning: 'Reference to the original LGBTQ*+ flag (nature)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (nature)',
           value: '#05bf00',
         },
         {
           id: 'blue',
           name: 'blue',
           hue: 'blue',
-          meaning: 'Reference to the original LGBTQ*+ flag (harmony)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (harmony)',
           value: '#011a98',
         },
         {
           id: 'purple',
           name: 'purple',
           hue: 'purple',
-          meaning: 'Reference to the original LGBTQ*+ flag (spirit)',
+          meaning:
+            'Reference to <a href="/flag/gay">the original LGBTQ*+ flag</a> (spirit)',
           value: '#761c89',
         },
       ],
@@ -150,10 +156,25 @@ const flags = [
       history: '',
       author: 'Gilbert Baker in San Francisco',
       publicationDate: '1979',
-      flagAlterations: [],
+      flagAlterations: [
+        {
+          title: 'Original Gay Pride Flag (1978)',
+          imageUrl: 'gay/gay_V1.svg',
+          imageAlt: 'First Pride Flag Design',
+          description:
+            'The original version of the flag included two aditional stripes for <i>sexuality</i> (pink) and <i>magic and art</i> (turqoise).',
+        },
+        {
+          title: 'Philadelphia Pride Flag (2017)',
+          imageUrl: 'gay/gay_philadelphia.svg',
+          imageAlt: 'Philadelphia Pride Flag with two aditional stripes',
+          description:
+            'In 2017 the City of Philadelphia decided to use a varient of the rainbow flag to namingly include BIPOC (Black, Indigenous and People of Color) in an attempt to make the flag more inclusive.',
+        },
+      ],
     },
     categories: ['sexuality'],
-    image: 'gay.png',
+    image: 'gay/gay.png',
     props: {
       colors: [
         {
@@ -235,16 +256,23 @@ const flags = [
         name: 'Matthews place on Medium - lgtbq symbols',
         researchDate: '2019.10.09',
       },
+      {
+        link:
+          'https://www.phillymag.com/news/2017/06/08/philly-pride-flag-black-brown/',
+        name: 'phillymag.com - Philadelphia Pride Flag',
+        researchDate: '2020.06.28',
+      },
     ],
   },
   {
     id: 'gay-bear',
     name: 'gay bear brotherhood',
     description:
-      'A gay subculture formed from the interest of more sturdier and hairy men*, which are also called "bears".',
+      'A <a href="/flag/gay">gay</a> subculture formed from the interest of more sturdier and hairy men*, which are also called "bears".',
     origin: {
-      history: '',
-      author: 'by Craig Byrnes for the International Bear Brotherhood',
+      history:
+        'The flag was created by Craig Byrnes for the International Bear Brotherhood group',
+      author: 'Craig Byrnes',
       publicationDate: '1995',
       flagAlterations: [],
     },
@@ -256,49 +284,49 @@ const flags = [
           id: 'maroon',
           name: 'maroon',
           hue: 'brown',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#613401',
         },
         {
           id: 'tenne',
           name: 'tenne',
           hue: 'orange',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#D46004',
         },
         {
           id: 'dandelion',
           name: 'dandelion',
           hue: 'yellow',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#FEDD63',
         },
         {
           id: 'moccasin',
           name: 'moccasin',
           hue: 'yellow',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#FEE8BA',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#FFFFFF',
         },
         {
           id: 'mortar',
           name: 'mortar',
           hue: 'gray',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#545454',
         },
         {
           id: 'black',
           name: 'black',
           hue: 'black',
-          meaning: 'the colors represent different bear fur types',
+          meaning: 'the colors represent different fur types of bears',
           value: '#000000',
         },
       ],
@@ -334,7 +362,7 @@ const flags = [
     id: 'gay-twink',
     name: 'twink pride',
     description:
-      'A gay subculture formed by the interest in twinks. A twink is a young man* (teen to early 20s) that looks younger then they are, appears more feminine, has little to no body and facial hair and is rather slim.',
+      'A <a href="/flag/gay">gay</a> subculture formed by the interest in twinks. A twink is a young man* (teen to early 20s) who likely looks younger then they are, they appear more feminine, have little to no body and facial hair and are most often rather slim.',
     origin: {
       history: '',
       author: '',
@@ -406,7 +434,7 @@ const flags = [
     id: 'asexual',
     name: 'asexual pride',
     description:
-      'An asexual person is someone, who has little or no interest in sexual activity. Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheter or not they enjoy sexual activity or completly avoid it. It can also be used as an umbrella term.',
+      'An asexual person is someone, who has little or no interest in sexual activity.<br><br>Put simply: They lack what´s commonly refered to as sex drive. That being said, this term does not tell you anything on wheater or not they enjoy sexual activity or completely avoid it. It can also be used as an umbrella term.',
     origin: {
       history: '',
       author: '',
@@ -428,7 +456,8 @@ const flags = [
           id: 'dark-gray',
           name: 'dark gray',
           hue: 'gray',
-          meaning: 'gray-asexuality, demi-sexuality',
+          meaning:
+            'gray-asexuality, <a href="/flag/demisexual">demi-sexuality</a>',
           value: '#a5a5a5',
         },
         {
@@ -487,7 +516,7 @@ const flags = [
     id: 'bisexual',
     name: 'bisexual pride',
     description:
-      'Sexual attraction to the own as well as to one (or more) other sexes/genders.',
+      'Sexual attraction to the own as well as to one (or more) other genders.',
     origin: {
       history: '',
       author: 'Michael Page',
@@ -510,7 +539,7 @@ const flags = [
           name: 'violet blue',
           hue: 'purple',
           meaning:
-            'possible attraction to anywhere on the gender spectrum / blending in between both straight and gay communitites',
+            'possible attraction to anywhere on the gender spectrum / blending in between both <a href="/flag/heterosexual">straight</a> and <a href="/flag/gay">gay</a> communitites',
           value: '#9B4797',
         },
         {
@@ -527,7 +556,7 @@ const flags = [
       colors: ['pink', 'purple', 'blue'],
       symbols: [],
     },
-    keywords: ['bi', 'both', 'two or more', 'attraction', 'love', '⚥'],
+    keywords: ['bi', 'both', 'two or more', 'attraction', 'love'],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -558,7 +587,7 @@ const flags = [
     id: 'demisexual',
     name: 'demisexual / graysexual pride',
     description:
-      'A person who doesn´t experience sexual attraction unless they have a deep emotional connection to someone.',
+      'A person who <a href="flag/asexual">doesn´t experience sexual attraction</a> unless they have a deep emotional connection to someone.',
     origin: {
       history: '',
       author: '',
@@ -573,7 +602,7 @@ const flags = [
           id: 'black',
           name: 'black',
           hue: 'black',
-          meaning: 'asexuality',
+          meaning: '<a href="flag/asexual">asexuality</a>',
           value: '#000000',
         },
         {
@@ -611,7 +640,14 @@ const flags = [
       colors: ['black', 'white', 'purple', 'gray'],
       symbols: ['triangle'],
     },
-    keywords: ['strong bond', 'relationship', 'emotional', 'takes time'],
+    keywords: [
+      'strong bond',
+      'relationship',
+      'emotional',
+      'takes time',
+      'grey',
+      'greysexual',
+    ],
     sources: [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
@@ -635,15 +671,25 @@ const flags = [
   {
     id: 'heterosexual',
     name: 'heterosexual / straight',
-    description: 'People who are sexually attracted to the opposite gender,',
+    description:
+      'People who are sexually attracted to the opposite binary gender.',
     origin: {
-      history: '',
+      history:
+        'Note: There is no offical heterosexual flag. <br> However the three colored stripes version is becoming more and more popular.',
       author: '',
       publicationDate: '',
-      flagAlterations: [],
+      flagAlterations: [
+        {
+          title: 'Older design',
+          imageUrl: 'heterosexual/heterosexual_v1.svg',
+          imageAlt: 'Black and white heterosexual flag',
+          description:
+            'The original heterosexual flag consists of black and white stripes. <br> However the amount of stripes seems to be inconsistent and is not defined.',
+        },
+      ],
     },
     categories: ['sexuality'],
-    image: 'heterosexual.png',
+    image: 'heterosexual/heterosexual.png',
     props: {
       colors: [
         {
@@ -687,12 +733,12 @@ const flags = [
     id: 'lesbian',
     name: 'lesbian pride',
     description:
-      'Lesbians are woman* romantically and/or sexually attracted to other woman*. This community flag puts empathsies on the diversity of this idenity.',
+      'Lesbians are woman* romantically and/or sexually attracted to other woman*.<br><br>This community flag puts empathsies on the diversity of this idenity.',
     origin: {
       history:
-        'A while ago many different flags existed for people who identify as lesbians. A user on tumblr (official-lesbian-flag) set out for the quest to settle to community for one flag to represent them. After many suggestions and votes a winner was declared: The lesbian community flag was born.',
+        'A while ago many different flags existed for people who identify as lesbians. <br>A user on tumblr by the name <a href="https://official-lesbian-flag.tumblr.com/" target="_blank">@official-lesbian-flag</a> set out for the quest to settle the community for one flag to represent them. After many suggestions and votes a winner was declared: The lesbian community flag was born.',
       publicationDate: '2018',
-      author: 'taqwomen on tumblr',
+      author: 'by taqwomen (Tumblr)',
       flagAlterations: [
         {
           title: 'Original winning lebian flag (June 2018)',
@@ -700,7 +746,7 @@ const flags = [
           imageAlt:
             'The same as the current flag, but with 7 stripes instead of 5',
           description:
-            'June 2018, original winning flag by lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.',
+            'June 2018, original winning flag by @lesbianherstorian with 7 instead of the know 5 stripes. This change was done to simplify the reuse of the flag.',
         },
       ],
     },
@@ -728,7 +774,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning:
-            'Unique relationship to womanhood; Describes a connection to womanhood to different degrees for different lesbian groups incl. trans, non binary lesbians, butch and femme persons. The big difference to gender non conforming folx is that lesbians in some way have a relation to womanhood, while GNC do not.',
+            'Unique relationship to womanhood; Describes a connection to womanhood to different degrees for different lesbian groups incl. <a href="flag/transgender">trans<a/>, <a href="flag/non binary">non binary</a> lesbians, butch and femme persons. The big difference to gender non conforming folx is that lesbians in some way have a relation to womanhood, while GNC do not.',
           value: '#FFFFFF',
         },
         {
@@ -786,7 +832,8 @@ const flags = [
   {
     id: 'lesbian-labry',
     name: 'lesbian labrys pride',
-    description: 'A lesbian flag that puts emphasis on "female* empowerment".',
+    description:
+      'A <a href="/flag/lesbian">lesbian pride flag</a> that puts emphasis on "female* empowerment".',
     origin: {
       history: '',
       author: ' Sean Campbell',
@@ -861,7 +908,7 @@ const flags = [
     id: 'lesbian-lipstick',
     name: 'lipstick lesbian pride',
     description:
-      'A lesbian pride flag that puts emphasis on "femininity / being femme".',
+      'A <a href="/flag/lesbian">lesbian pride flag</a> that puts emphasis on "femininity / being femme".',
     origin: {
       history:
         'Nowadays this flag is getting less and less common due to controversial claims by its author.',
@@ -972,7 +1019,7 @@ const flags = [
     id: 'pansexual',
     name: 'pansexual pride',
     description:
-      'Pansexuality describes sexual attraction towards all gender (identities) and regardless of sex characteristics.',
+      'Pansexuality describes sexual attraction towards all gender (identities) and regardless of gender and sex characteristics.',
     origin: {
       history: '',
       author: '',
@@ -994,7 +1041,8 @@ const flags = [
           id: 'school-bus-yellow',
           name: 'school bus yellow',
           hue: 'yellow',
-          meaning: 'mixed gendered, genderless, thirdgendered people',
+          meaning:
+            'mixed gendered, <a href="flag/agender">genderless</a>, third-gendered people',
           value: '#FEDB09',
         },
         {
@@ -1047,7 +1095,7 @@ const flags = [
     id: 'polysexual',
     name: 'polysexual pride',
     description:
-      'Similar to pansexuality, with an important difference: A polysexual person is attracted to multiple, yet not all genders.',
+      'Similar to <a href="/flag/pan">pansexuality</a>, with an important difference: <br>A polysexual person is attracted to multiple, yet not all genders.',
     origin: {
       history: '',
       author: '',
@@ -1105,7 +1153,7 @@ const flags = [
     id: 'straight-ally',
     name: 'straight ally',
     description:
-      'People who identify as straight but support LGBTQ+ people in their identities.',
+      'People who identify as <a href="/flag/heterosexual">straight</a> but support LGBTQ*+ people in their identities.',
     origin: {
       history: '',
       author: '',
@@ -1120,14 +1168,16 @@ const flags = [
           id: 'black',
           name: 'black',
           hue: 'black',
-          meaning: 'part of the old heterosexual flag',
+          meaning:
+            'part of the old <a href="/flag/heterosexual">heterosexual</a> flag',
           value: '#000000',
         },
         {
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'part of the old heterosexual flag',
+          meaning:
+            'part of the old <a href="/flag/heterosexual">heterosexual</a> flag',
           value: '#FFFFFF',
         },
         {
@@ -1216,7 +1266,7 @@ const flags = [
     id: 'agender',
     name: 'agender pride',
     description:
-      'A person who is without a gender and/or rejects the idea of heaving a gender completely.',
+      'A person who is without a gender and/or rejects the idea of having a gender completely.',
     origin: {
       history: '',
       author: '',
@@ -1252,7 +1302,8 @@ const flags = [
           id: 'pale-green',
           name: 'pale green',
           hue: 'lightgreen',
-          meaning: 'nonbinary; as the opposite of the highly gendered purple',
+          meaning:
+            '<a href="flag/nonbinary">non-binary</a>; as the opposite of the highly gendered purple',
           value: '#BBF884',
         },
       ],
@@ -1288,7 +1339,7 @@ const flags = [
     id: 'genderfluid',
     name: 'genderfluid / genderflex pride',
     description:
-      'As the name suggests, genderfluid/genderflex aren´t locked in one gender identity. Their identity can shift and vary over time.',
+      'As the name suggests, genderfluid/genderflex aren´t locked in one gender identity.<br> Their identity can shift and vary over time.',
     origin: {
       history: '',
       author: '',
@@ -1360,7 +1411,7 @@ const flags = [
     id: 'genderqueer',
     name: 'genderqueer pride',
     description:
-      'Genderqueer is an umbrella term for non-binary people, who don´t really fit the provided categories, especially the binary.',
+      'Genderqueer is an umbrella term for <a href="flag/nonbinary">non-binary</a> people, who don´t really fit the provided categories, especially the binary.',
     origin: {
       history:
         'After some iterations the now commonly known color palette was created in 2011.',
@@ -1380,7 +1431,7 @@ const flags = [
           imageUrl: 'genderqueer/genderqueer_v2.png',
           imageAlt: 'The colors green and purple are swaped.',
           description:
-            'In the second version from september 2010, the order of the stripes was different to the now common one.',
+            'In the second version from September 2010, the order of the stripes was different to the now common one.',
         },
       ],
     },
@@ -1393,7 +1444,7 @@ const flags = [
           name: 'lavender',
           hue: 'purple',
           meaning:
-            'androgynous; representing the "queer" in genderqueer; It\' a mixture of the blue (men) and pink (women) of the transgender pride flag.',
+            'androgynous; representing the "queer" in genderqueer; It\'s a mixture of the blue (men) and pink (women) of the <a href="flag/transgender">transgender pride flag</a>.',
           value: '#b57edc',
         },
         {
@@ -1401,7 +1452,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning:
-            'agender; simular to the gender neutral part of the transgeder pride flag.',
+            'agender; simular to the gender neutral part of the <a href="flag/transgender">transgender pride flag</a>.',
           value: '#FFFFFF',
         },
         {
@@ -1409,7 +1460,7 @@ const flags = [
           name: 'limeade',
           hue: 'green',
           meaning:
-            'non-binary; the lavender color inversed to indicate the outside a binary.',
+            '<a href="flag/nonbinary">non-binary</a>; the lavender color inversed to indicate the outside a binary.',
           value: '#4B851E',
         },
       ],
@@ -1493,7 +1544,8 @@ const flags = [
           id: 'black',
           name: 'black',
           hue: 'black',
-          meaning: 'people without a gender',
+          meaning:
+            'people without a gender (<a href="flag/agender">agender</a>)',
           value: '#000000',
         },
       ],
@@ -1533,7 +1585,7 @@ const flags = [
     id: 'transgender',
     name: 'transgender pride',
     description:
-      'Transgender people are people who´s gender identity doesn´t match their sex assigned at birth.',
+      'Transgender people are people who´s gender identity doesn´t match their gender assigned at birth.',
     origin: {
       history: '',
       author: 'Monica Helms',
@@ -1563,7 +1615,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning:
-            'those who are transitioning; those with a neutral gender, no gender, and those who are intersex.',
+            'those who are transitioning; those with a neutral gender, <a href="flag/agender">no gender</a>, and those who are <a href="flag/intersex">intersex</a>.',
           value: '#FFFFFF',
         },
       ],
@@ -1606,7 +1658,7 @@ const flags = [
     id: 'demigirl',
     name: 'demigirl pride',
     description:
-      "A demigirl (also known as demiwoman or demifemale person) is someone who partly (demi meaning half), but not completely identifies as a girl*, female* or feminine.\n\nThey may also identify as another gender or even as agender (genderless), but they don't have to.\n\nIf they are afab (assigned female at birth) it is likely that they feel somewhat disconnected from their assigned gender, but its most likely not enough to cause actual discomfort or even dysphoria.\n",
+      'A demigirl (also known as demiwoman or demifemale person) is someone who partly (<a href="flag/demigender">demi</a> meaning half), but not completely identifies as a girl*, female* or feminine. <br><br>They may also identify as another gender or even as <a href="flag/agender">agender</a> (genderless), but they don\'t have to.<br>If they are afab (assigned female at birth) it is likely that they feel somewhat disconnected from their assigned gender, but its most likely not enough to cause actual discomfort or even dysphoria.',
     origin: {
       history: '',
       author: 'by Transrants (Tumblr)',
@@ -1622,7 +1674,7 @@ const flags = [
           name: 'white',
           hue: 'white',
           meaning:
-            'Represents gender neutrality, agender or nonbinary identity.\nIt can be compared to the center of the trans* pride flag. ',
+            'Represents gender neutrality, <a href="flag/agender">agender</a> or nonbinary identity.<br> It can be compared to the center of the <a href="flag/transgender">trans* pride flag</a>. ',
           value: '#fff',
         },
         {
@@ -1637,7 +1689,7 @@ const flags = [
           name: 'silver',
           hue: 'gray',
           meaning:
-            "Describes the identity as demi (half-) meaning it's only partially fitting.",
+            'Describes the identity as <a href="flag/demigender">demi</a> (half-) meaning it\'s only partially fitting.',
           value: '#c4c4c4',
         },
         {
@@ -1677,7 +1729,7 @@ const flags = [
     id: 'demiboy',
     name: 'demiboy pride',
     description:
-      "A demiboy (also known as demiguy or demiman person) is someone who partly (demi meaning half), but not completely identies as a boy* or male*.\n\nThey may also identify as another gender or even as agender/genderless, but they don't have to.\n\nIf they are amab (assigned male at birth) it is likely that they feel somewhat disconnected from their assigned gender, but it most likely is not bad enough to cause actual discomfort or even dysphoria.\n",
+      'A demiboy (also known as demiguy or demiman person) is someone who partly (<a href="flag/demigender">demi</a> meaning half), but not completely identies as a boy* or male*.<br><br>They may also identify as another gender or even as <a href="flag/ agender">agender</a> (genderless), but they don\'t have to.<br>If they are amab (assigned male at birth) it is likely that they feel somewhat disconnected from their assigned gender, but it most likely is not bad enough to cause actual discomfort or even dysphoria.',
     origin: {
       history: '',
       author: 'by Transrants (Tumblr)',
@@ -1692,7 +1744,8 @@ const flags = [
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'Agender or nonbinary gender identity',
+          meaning:
+            '<a href="flag/agender">Agender</a> or <a href="flag/nonbinary">nonbinary</a> gender identity',
           value: '#fff',
         },
         {
@@ -1707,7 +1760,7 @@ const flags = [
           name: 'Silver',
           hue: 'gray',
           meaning:
-            "Describes the identity as demi (half-) meaning it's only partially fitting.",
+            'Describes the identity as <a href="flag/demigender">demi</a> (half-) meaning it\'s only partially fitting.',
           value: '#c4c4c4',
         },
         {
@@ -1742,11 +1795,11 @@ const flags = [
     id: 'bigender',
     name: 'bigender pride',
     description:
-      'A person who has not one, but two genders. These can be binary male and female but could also include other gender indentitites (eg. nonbinary, agender, etc). Their current gender identities can and may vary over time or be simultaneous.',
+      'A person who has not one, but two genders. These can be binary male and female but could also include other gender indentitites (eg. <a href="nonnbinary">nonbinary</a>, <a href="agender">agender</a>, etc). <br>Their current gender identities can and may vary over time or be simultaneous.',
     origin: {
       history:
-        'The flag originally often been used as both bigender and intersex flag. Nowadays most of the community settled for it as the bigender flag. 📝 Note: However the original author claimed that it was meant to refer to sex instead of gender.',
-      author: 'Natalie Phox (NittrusFox)',
+        'The flag originally often been used as both bigender and <a href="flag/intersex">intersex flag</a>. Nowadays most of the community settled for it as the bigender flag. <br><br>📝 Note: However the original author claimed that it was meant to refer to sex instead of gender.',
+      author: 'Natalie Phox (@NittrusFox)',
       publicationDate: '2009 (adjusted version)',
       flagAlterations: [
         {
@@ -1787,7 +1840,7 @@ const flags = [
           id: 'white',
           name: 'white',
           hue: 'white',
-          meaning: 'trans* identity',
+          meaning: '<a href="flag/transgender">trans*</a> identity',
           value: '#FFFFFF',
         },
         {
@@ -1851,7 +1904,7 @@ const flags = [
     id: 'cis',
     name: 'cisgender',
     description:
-      'Someone whose gender identity aligns with their "gender assigned at birth". Info: The flag was originally intended as an alternative version for the heterosexual flag but later turned into the cisgender flag.  It\'s an alteration based on the bisexual flag.',
+      'Someone whose gender identity aligns with their "gender assigned at birth". <br>Info: The flag was originally intended as an alternative version for the <a href="/flag/heterosexual">heterosexual flag</a> but later turned into the cisgender flag.  It\'s an alteration based on the <a href="/flag/bi">bisexual flag</>.',
     origin: {
       history: '',
       author: 'Arianod on Deviantart',
@@ -1903,7 +1956,7 @@ const flags = [
     id: 'intersex',
     name: 'intersex pride',
     description:
-      'Intersex people are often seen as the third sex. Their body features don´t fit typical "male*" or "female*" definitions.',
+      'Intersex people are often seen as the third sex. Their bodys often don´t fit what is seen as typical "male*" or "female*" definitions.',
     origin: {
       history: '',
       author: 'the organization Intersex International Australia',
@@ -1969,7 +2022,7 @@ const flags = [
     id: 'aromantic',
     name: 'aromantic pride',
     description:
-      'An aromantic person is someone, who has little to no interest in a romantic relationship. They often can´t develop romantic feelings and usually don´t "fall in love", however they often experience stronger platonic feelings. Aromantic can also be used as an umbrella term for the aro spectrum.',
+      'An aromantic person is someone, who has little to no interest in a romantic relationship. <br>They often can´t develop romantic feelings and usually don´t "fall in love", however they tend to experience stronger platonic feelings. <br><br>Aromantic can also be used as an umbrella term for the aro spectrum.',
     origin: {
       history: '',
       author: 'Cameron Whimsey',
@@ -2135,11 +2188,11 @@ const flags = [
   {
     id: 'leather',
     name: 'leather fetish pride',
-    description:
-      'Originally used to represent the gay leather community, it nowadays represents the leather and BDSM subculture in general. ',
+    description: 'A representation of the BDSM leather fetish community.',
     origin: {
-      history: '',
-      author: 'designed by Tony DeBlase',
+      history:
+        'Originally used to represent the <a href="flag/gay">gay</a> leather community, it nowadays represents the leather and BDSM subculture in general.',
+      author: 'Tony DeBlase',
       publicationDate: '1989',
       flagAlterations: [],
     },
