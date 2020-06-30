@@ -79,6 +79,7 @@
   <p>
     As
     <a
+      rel="external"
       href="https://www.twitter.com/diverent2"
       target="_blank"
       title="@diverent2 on twitter">
@@ -127,7 +128,7 @@
       "they". If this sounds strange to you, that's ok. However please be
       respectful and accept my choice. If you want to find out more about
       singluar "they" here's
-      <a href="https://iheartsingularthey.com/" target="blank">
+      <a rel="external" href="https://iheartsingularthey.com/" target="blank">
         a good and entertaining resource
       </a>
       for that.
@@ -143,6 +144,7 @@
     <p>
       For now, that's
       <a
+        rel="external"
         href="https://www.twitter.com/diverent2"
         target="blank"
         title="@diverent2 on twitter">
@@ -160,10 +162,15 @@
     <p>
       YES! You can provide feedback or content improvements suggestions by
       hitting me up per PN on twitter
-      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
+      <a rel="external" href="https://www.twitter.com/diverent2" target="blank">
+        @diverent2
+      </a>
       <br />
       or directly contribute to the project on github at
-      <a href="https://github.com/diverent2/flagfinder" target="blank">
+      <a
+        rel="external"
+        href="https://github.com/diverent2/flagfinder"
+        target="blank">
         github/diverent2/flagfinder
       </a>
       <br />
@@ -176,16 +183,21 @@
       <br />
       The best place to contribute is by opening a an
       <a
+        rel="external"
         href="https://github.com/diverent2/flagfinder/issues/new/choose"
         target="blank">
         Issue
       </a>
       or even better a Pull Request in the
-      <a href="https://github.com/diverent2/flagfinder" target="blank">
+      <a
+        rel="external"
+        href="https://github.com/diverent2/flagfinder"
+        target="blank">
         github repo
       </a>
       of this open source project.
       <a
+        rel="external"
         href="https://github.com/diverent2/flagfinder/issues/new?labels=enhancement&template=---content-requests.md"
         target="blank">
         Here you can also
@@ -200,9 +212,11 @@
       can copy paste in one of the contribution locations.
       <br />
       If you don't have github, you may also contact me on twitter
-      <a href="https://www.twitter.com/diverent2" target="blank">@diverent2</a>
+      <a rel="external" href="https://www.twitter.com/diverent2" target="blank">
+        @diverent2
+      </a>
       or via
-      <a href="mailto:diverent2@gmail.com">mail</a>
+      <a rel="external" href="mailto:diverent2@gmail.com">mail</a>
       <br />
       I currently work on this project all by myself in my freetime besides
       having a fulltime job. So please understand if I don't answer emidiatly.
@@ -231,7 +245,10 @@
     <h3>🎨 Color names</h3>
     <p>
       The names of the colors originate from
-      <a href="https://www.color-blindness.com/color-name-hue/" target="blank">
+      <a
+        rel="external"
+        href="https://www.color-blindness.com/color-name-hue/"
+        target="blank">
         color-blindness.com/color-name-hue
       </a>
     </p>
@@ -239,11 +256,16 @@
     <h3>👁️‍🗨️ Icons</h3>
     <p>
       Icons are all made by
-      <a href="https://www.flaticon.com/authors/freepik" target="blank">
+      <a
+        rel="external"
+        href="https://www.flaticon.com/authors/freepik"
+        target="blank">
         Freepik
       </a>
       from
-      <a href="https://www.flaticon.com" target="blank">flaticon</a>
+      <a rel="external" href="https://www.flaticon.com" target="blank">
+        flaticon
+      </a>
     </p>
     <h3>📚 Literature sources</h3>
     <p>Indiviual sources are named at the corresponding detail page.</p>
@@ -275,7 +297,7 @@
     <address>
       Maxi Becher
       <br />
-      <a href="https://www.twitter.com/diverent2" target="blank">
+      <a rel="external" href="https://www.twitter.com/diverent2" target="blank">
         twitter/@diverent2
       </a>
     </address>

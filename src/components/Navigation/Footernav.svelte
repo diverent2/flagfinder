@@ -127,7 +127,9 @@
       <div>
         <span class="info-extended">Made with 💖</span>
         by
-        <a href="https://twitter.com/diverent2">diverent2</a>
+        <a rel="external" href="https://twitter.com/diverent2" target="_blank">
+          diverent2
+        </a>
       </div>
     </footer>
   {/if}

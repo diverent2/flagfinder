@@ -127,11 +127,15 @@
     <div>
       <span>Made with 💖</span>
       by
-      <a href="https://twitter.com/diverent2">diverent2</a>
+      <a rel="external" href="https://twitter.com/diverent2" target="_blank">
+        diverent2
+      </a>
     </div>
     <small>
       <a
-        href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md">
+        rel="external"
+        href="https://github.com/diverent2/flagfinder/blob/master/CHANGELOG.md"
+        target="_blank">
         {version}
       </a>
       ©{year}
