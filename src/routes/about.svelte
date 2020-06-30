@@ -10,6 +10,24 @@
     url: `${app_baseUrl}/about`,
     image: `${app_baseUrl}/socialcards/search.png`
   };
+
+  const specialThanksFolx = [
+    {
+      name: "DanielRuf",
+      link: "https://github.com/DanielRuf",
+      role: "CI, Support"
+    },
+    {
+      name: "JohpoJohannes",
+      link: "https://github.com/JohpoJohannes",
+      role: "Testing, Content Review"
+    },
+    {
+      name: "chomchom02",
+      link: "https://github.com/chomchom02",
+      role: "Testing, Advicer"
+    }
+  ];
 </script>
 
 <style>
@@ -43,8 +61,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
   }
 </style>
 
@@ -239,7 +255,7 @@
     </p>
   </section>
 
-  <section>
+  <section class="text--center">
     <h2>Imprint 🦉</h2>
     <h3>Legal notice</h3>
     <p>
@@ -265,25 +281,23 @@
     </address>
   </section>
 
-  <section>
-    <h2>Credits</h2>
-    made with 🌈🦄, ☕ and 💕 by
-    <a href="https://github.com/diverent2" target="blank">diverent2</a>
+  <section id="credits" class="text--center">
+    <h2>Credits 🤝</h2>
+    made with 🌈, 🦄, ☕ and 💕 by
+    <a rel="external" href="https://github.com/diverent2" target="blank">
+      diverent2
+    </a>
     <br />
     <br />
     <h3>Special thanks to</h3>
     <ul class="credits">
-      <li>
-        <a href="https://github.com/DanielRuf" target="blank">DanielRuf</a>
-      </li>
-      <li>
-        <a href="https://github.com/JohpoJohannes" target="blank">
-          JohpoJohannes
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/chomchom02" target="blank">chomchom02</a>
-      </li>
+      {#each specialThanksFolx as specialThanksFolk}
+        <li>
+          <a rel="external" href={specialThanksFolk.link} target="blank">
+            {specialThanksFolk.name} - {specialThanksFolk.role}
+          </a>
+        </li>
+      {/each}
     </ul>
     <p>
       Thank you all for being

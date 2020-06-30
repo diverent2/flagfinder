@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ➕ Added
 
+- Make footer credits dynamic
 - #60 Rich html support for some flag information fields
 - Visible fallbacks for empty fields
 - Rainbow Seperators for flag details
