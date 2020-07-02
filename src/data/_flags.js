@@ -159,7 +159,7 @@ const flags = [
       flagAlterations: [
         {
           title: 'Original Gay Pride Flag (1978)',
-          imageUrl: 'gay/gay_V1.svg',
+          imageUrl: 'gay/gay_v1.svg',
           imageAlt: 'First Pride Flag Design',
           description:
             'The original version of the flag included two aditional stripes for <i>sexuality</i> (pink) and <i>magic and art</i> (turqoise).',
