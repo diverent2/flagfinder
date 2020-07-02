@@ -21,10 +21,16 @@
 </script>
 
 <script>
+  import { onDestroy } from "svelte";
+
   import _startCase from "lodash/startCase";
   import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
+  import { stores } from "@sapper/app";
+  const { page } = stores();
+
   import { app_name, app_baseUrl, matchMedia } from "../../data/global.js";
+  import { flagViewHistory } from "../../data/stores/flagViewHistory.js";
 
   import Metainfos from "./../../components/Helpers/Metainfos.svelte";
   import Header from "./../../components/FlagDetails/Header.svelte";
@@ -45,6 +51,18 @@
   flag.keywords.push("valid");
 
   let activeTab;
+
+  $: if ($page.path) {
+    const previousFlag = $flagViewHistory[$flagViewHistory.length - 1];
+    if (previousFlag != $page.path) {
+      $flagViewHistory.push($page.path);
+    }
+    console.log($flagViewHistory);
+  }
+
+  onDestroy(() => {
+    $flagViewHistory = [];
+  });
 </script>
 
 <style>
