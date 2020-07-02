@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { afterUpdate } from "svelte";
 
   import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
@@ -13,16 +13,12 @@
 
   let scrollY;
 
-  onMount(() => {
-    scrollY = 0;
+  afterUpdate(() => {
+    toggleState(scrollY);
   });
 
   let state = "full";
   const threshold = 20;
-
-  $: if (scrollY) {
-    toggleState(scrollY);
-  }
 
   function toggleState(scrollY) {
     const scrollBelowFold = scrollY >= threshold;
