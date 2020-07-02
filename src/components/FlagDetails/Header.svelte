@@ -9,7 +9,7 @@
   import Tabs from "./../Elements/Tabs.svelte";
 
   export let flag;
-  export let activeTab;
+  export let activeTab = 1;
 
   let scrollY;
 

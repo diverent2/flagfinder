@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🛠️ Fixed
 
 - Fix wrong flag page state if scroll speed is too fast
+- Resolve warning about empty initial "activeTab" value
 - Tab Title Test Selector
 - Fix overscaled Flags in FlagCard for small [Safari]
 
