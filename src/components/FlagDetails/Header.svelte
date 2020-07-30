@@ -1,9 +1,10 @@
 <script>
-  import { onMount } from "svelte";
+  import { goto } from "@sapper/app";
 
   import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
   import { matchMedia } from "./../../data/global.js";
+  import { flagViewHistory } from "./../../data/stores/flagViewHistory.js";
 
   import Icon from "./../Elements/Icon.svelte";
   import Tabs from "./../Elements/Tabs.svelte";
@@ -30,6 +31,17 @@
       state = "collapsed";
     } else {
       state = "full";
+    }
+  }
+
+  function goBack(event) {
+    $flagViewHistory.pop();
+    if ($flagViewHistory.length) {
+      const previousFlag = $flagViewHistory[$flagViewHistory.length - 1];
+      goto(previousFlag);
+      window.scrollTo(0, 0);
+    } else {
+      goto("/");
     }
   }
 </script>
@@ -69,6 +81,8 @@
     grid-area: back;
     width: max-content;
     align-self: center;
+    background: transparent;
+    padding: 0;
   }
 
   .title_container {
@@ -170,13 +184,17 @@
 
 <header data-cy-flag-header data-state={state}>
   <div class="header_inner">
-    <a href="/" class="goBack">
+    <button
+      class="goBack"
+      on:click={goBack}
+      aria-label="Go back to previous page"
+      data-cy-flag-goback>
       <Icon
         icon="arrow-back"
         scale="var(--spacing-large)"
         aria="Go back to search"
         colorHover="var(--blue-light)" />
-    </a>
+    </button>
     <div class="title_container">
       <h1 class="title">{flag.name}</h1>
     </div>
