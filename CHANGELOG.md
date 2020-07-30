@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Fix too small FlagCard images scaling
 - Fix wrong flag page state if scroll speed is too fast
 - Resolve warning about empty initial "activeTab" value
 - Tab Title Test Selector

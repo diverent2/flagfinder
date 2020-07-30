@@ -107,6 +107,7 @@
       width: 100%;
       height: auto;
       flex-grow: 1;
+      object-fit: cover;
     }
 
     .flagCard__details {
