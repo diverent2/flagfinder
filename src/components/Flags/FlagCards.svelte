@@ -57,6 +57,11 @@
     margin-right: auto;
   }
 
+  a.flagCard-link {
+    display: block;
+    text-decoration: none;
+  }
+
   @media (--small-up) {
     .flag-results {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -71,7 +76,14 @@
         in:fly={{ duration: 200, x: 100 }}
         animate:flip={{ duration: 200, easing: quintOut }}
         out:fade={{ duration: 200 }}>
-        <FlagCard {flag} titleVisibility={flag.titleVisibility} />
+        <a
+          class="flagCard-link"
+          rel="prefetch"
+          href="/flag/{flag.id}"
+          title="{flag.name} flag"
+          data-cy-flagcard-id={flag.id}>
+          <FlagCard {flag} titleVisibility={flag.titleVisibility} />
+        </a>
       </div>
     {/each}
   {:else}

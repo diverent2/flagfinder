@@ -27,10 +27,6 @@
 </script>
 
 <style lang="scss">
-  a {
-    text-decoration: none;
-  }
-
   .flagCard:hover {
     transform: scale(1.05);
   }
@@ -128,37 +124,35 @@
   }
 </style>
 
-<a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
-  <div class="flagCard" data-cy-flagcard>
-    <img
-      width="150"
-      height="90"
-      class="flagCard__image"
-      src="flags/{flag.image}"
-      alt="{flag.name} flag"
-      loading="lazy" />
-    <div class="flagCard__details">
-      <h3 class="flagCard__header">{flag.name}</h3>
-      <div class="flagCard__categories" data-cy-flagcard-categories>
-        {#each flag.categories as category}
-          <div class="category">
-            <LabelButton
-              colorBackground={getCategoryColor(category)}
-              icon={category}
-              scale="var(--spacing)"
-              showLabel={titleVisibility}>
-              {category}
-            </LabelButton>
-          </div>
-        {/each}
-      </div>
-      <div class="flagCard__arrow">
-        <Icon
-          icon="arrow-right"
-          color="var(--blue)"
-          scale="var(--spacing)"
-          aria="Go back to search" />
-      </div>
+<div class="flagCard" data-cy-flagcard>
+  <img
+    width="150"
+    height="90"
+    class="flagCard__image"
+    src="flags/{flag.image}"
+    alt="{flag.name} flag"
+    loading="lazy" />
+  <div class="flagCard__details">
+    <h3 class="flagCard__header">{flag.name}</h3>
+    <div class="flagCard__categories" data-cy-flagcard-categories>
+      {#each flag.categories as category}
+        <div class="category">
+          <LabelButton
+            colorBackground={getCategoryColor(category)}
+            icon={category}
+            scale="var(--spacing)"
+            showLabel={titleVisibility}>
+            {category}
+          </LabelButton>
+        </div>
+      {/each}
+    </div>
+    <div class="flagCard__arrow">
+      <Icon
+        icon="arrow-right"
+        color="var(--blue)"
+        scale="var(--spacing)"
+        aria="Go back to search" />
     </div>
   </div>
-</a>
+</div>
