@@ -1092,10 +1092,93 @@ const flags = [
     ],
   },
   {
+    id: 'omnisexual',
+    name: 'omnisexual',
+    description:
+      'A omnisexual person (<i>omni</i> from lat. "all") is attracted to people of all genders as well as genderless identities.<br><br>It often gets confused or used as a synonym to <a href="flags/pansexual">pansexuality</a>, however there is one very important difference between the two:<br>Someone who\'s pansexual is thought of as <i>"gender-blind"</i>, pretty much seeing through the gender towards the heart inside, thous meaning they are attracted to anyone regardless of their gender.<br>An omnisexual persons attraction is gender-inclusive, so they like people of every gender and people who are <a href="flag/agender>genderless.</a>',
+    origin: {
+      history: '',
+      author: '',
+      publicationDate: '',
+      flagAlterations: [],
+    },
+    categories: ['sexuality'],
+    image: 'omnisexual.svg',
+    props: {
+      colors: [
+        {
+          id: 'carnation-pink',
+          name: 'carnation pink',
+          hue: 'pink',
+          meaning: 'Representing attraction to <i>feminine*</i> people.',
+          value: '#ff9bcd',
+        },
+        {
+          id: 'brilliant-rose',
+          name: 'nrilliant rose',
+          hue: 'pink',
+          meaning: 'Representing attraction to <i>feminine*</i> people.',
+          value: '#ff53be',
+        },
+        {
+          id: 'persian-indigo',
+          name: 'persian indigo',
+          hue: 'purple',
+          meaning: 'other genders, <a href="flag/agender">lack of gender</a',
+          value: '#270846',
+        },
+        {
+          id: 'neon-blue',
+          name: 'neon blue',
+          hue: 'blue',
+          meaning: 'Representing attraction to <i>masculine*</i> people.',
+          value: '#665eff',
+        },
+        {
+          id: 'maya-blue',
+          name: 'maya blue',
+          hue: 'lightblue',
+          meaning: 'Representing attraction to <i>masculine*</i> people.',
+          value: '#8ca6ff',
+        },
+      ],
+      symbols: [],
+    },
+    matches: {
+      colors: ['pink', 'purple', 'blue', 'lightblue'],
+      symbols: [],
+    },
+    keywords: ['all', 'gender-inclusive', 'everyone'],
+    sources: [
+      {
+        link: 'https://www.dictionary.com/e/gender-sexuality/omnisexual/',
+        name: 'Dictionary.com - omnisexual',
+        researchDate: '2020-06-15',
+      },
+      {
+        link: 'https://www.merriam-webster.com/dictionary/omnisexual',
+        name: 'Merriam-Webster.com - Omnisexual',
+        researchDate: '2020-06-15',
+      },
+      {
+        link:
+          'https://www.gaystarnews.com/article/pride-flags-the-biggest-guide-to-lgbt-rainbow-flags-and-what-they-all-mean/#:~:text=Omnisexual%20Pride%20Flag',
+        name: 'gaystarnews.com - prideflags Omnisexual',
+        researchDate: '2020-06-15',
+      },
+      {
+        link:
+          'https://commons.wikimedia.org/wiki/File:Omnisexual_Pride-Flag.svg',
+        name: 'Wiki Commons - omnisexual flag',
+        researchDate: '2020-07-22',
+      },
+    ],
+  },
+  {
     id: 'polysexual',
     name: 'polysexual pride',
     description:
-      'Similar to <a href="/flag/pan">pansexuality</a>, with an important difference: <br>A polysexual person is attracted to multiple, yet not all genders.',
+      'Similar to <a href="/flag/pansexual">pansexuality</a>, with an important difference: <br>A polysexual person is attracted to multiple, yet not all genders.',
     origin: {
       history: '',
       author: '',
@@ -1332,6 +1415,83 @@ const flags = [
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-21',
         name: 'Pride.com - queer pride flags',
         researchDate: '2019.10.09',
+      },
+    ],
+  },
+  {
+    id: 'androgyne',
+    name: 'androgyne pride',
+    description:
+      'A person whos gender identity is androgyne (greek. <i>andrós</i>: male/masculinity; <i>gynḗ</i>: female/femininity) is someone whos gender falls between <i>male*</i> and <i>female*</i>.<br><br>It can also be a combination of both. <br>Not everyone who commonly gets refered to as <i>"androgyous looking"</i> has a androgyne gender identity and vise versa. <br><br>It\'s part of the <a href="flag/nonbinary">non-binary</a> spectrum, however it is <strong>not the same as being non-binary.</strong>',
+    origin: {
+      history: '',
+      author: 'saveferris on tumblr (not confirmed)',
+      publicationDate: '',
+      publicationDate: '',
+      flagAlterations: [],
+    },
+    categories: ['gender'],
+    image: 'androgyne.png',
+    props: {
+      colors: [
+        {
+          id: 'wild-strawberry',
+          name: 'wild strawberry',
+          hue: 'pink',
+          meaning: 'femininity (translated from Greek: <i>gynḗ</i>)',
+          value: '#fe2d7f',
+        },
+        {
+          id: 'light-slate-blue',
+          name: 'light slate blue',
+          hue: 'purple',
+          meaning: 'masculinity (translated from Greek: <i>andrós</i>)',
+          value: '#9837ff',
+        },
+        {
+          id: 'deep-sky-blue',
+          name: 'deep sky blue',
+          hue: 'lightblue',
+          meaning:
+            'represents the combining of <i>femininity</i> and <i>masculinity</i>',
+          value: '#00b7e8',
+        },
+      ],
+      symbols: [],
+    },
+    matches: {
+      colors: ['pink', 'purple', 'lightblue'],
+      symbols: [],
+    },
+    keywords: ['androgyne', 'androgyn', 'between', 'male*', 'female*'],
+    sources: [
+      {
+        link: 'https://deconforming.com/gender-pride-flags/#androgyne',
+        name: 'Deconforming.com | gender pride flags - androgyne',
+        researchDate: '2020-05-27',
+      },
+      {
+        link: 'https://gender.wikia.org/wiki/Androgyne',
+        name: 'Gender Wiki - Androgyne',
+        researchDate: '2020-05-27',
+      },
+      {
+        link:
+          'https://pridearchive.tumblr.com/post/92744874921/androgyne-pride',
+        name: 'pridearchive tumblr | androgyne pride',
+        researchDate: '2020-05-27',
+      },
+      {
+        link:
+          'https://www.deviantart.com/pride-flags/art/Androgyne-3-556657262',
+        name: 'DeviantArt.com/pride-flags - Androgyne Flag',
+        researchDate: '2020-05-27',
+      },
+      {
+        link:
+          'https://commons.wikimedia.org/wiki/File:Androgyne_3_by_pride_flags-d97f3hq.png',
+        name: 'Wiki Commons - Androgyne Flag',
+        researchDate: '2020-07-22',
       },
     ],
   },
@@ -2254,6 +2414,88 @@ const flags = [
           'https://web.archive.org/web/20080915142834/http://www.leatherarchives.org/exhibits/deblase/pride.htm',
         name: 'Leatherarchives.org - pride [Web Archive]',
         researchDate: '2020-01-29',
+      },
+    ],
+  },
+  {
+    id: 'rubber',
+    name: 'rubber pride',
+    description:
+      'This flag represents the rubber and latex fetish communities.<br><br>It is intended to <i>"identify like minded [people] and reflect  the sensory, sensual, and mental passion [they] have for rubber."</i><br><br>It also is known as the latex pride flag.',
+    origin: {
+      history: '',
+      author: 'Peter Tolos and Scott Moats',
+      publicationDate: '1994',
+      flagAlterations: [],
+    },
+    categories: ['kink'],
+    image: 'rubber.svg',
+    props: {
+      colors: [
+        {
+          id: 'black',
+          name: 'black',
+          hue: 'black',
+          meaning:
+            '<i>"Our lust for the look and feel for shiny black rubber.”</i>  - original artists',
+          value: '#000000',
+        },
+        {
+          id: 'venetian-red',
+          name: 'venetian red',
+          hue: 'red',
+          meaning:
+            '<i>“Our blood passion for rubber and rubbermen.”</i>  - original artists',
+          value: '#d41e09',
+        },
+        {
+          id: 'tangerine-yellow',
+          name: 'tangerine yellow',
+          hue: 'yellow',
+          meaning:
+            '<i>“Our drive for intense rubber play and fantasies.”</i> - original artists',
+          value: '#fcc901',
+        },
+      ],
+      symbols: [
+        {
+          id: 'chevron',
+          name: 'chevron',
+          meaning: 'literally a kink in the line; representing kinkness',
+          icon: '',
+        },
+      ],
+    },
+    matches: {
+      colors: ['black', 'red', 'yellow'],
+      symbols: ['chevron'],
+    },
+    keywords: [
+      'rubber',
+      'latex',
+      'fetish',
+      'kink',
+      'passion',
+      'fantasy',
+      'play',
+    ],
+    sources: [
+      {
+        link: 'http://www.leatherpedia.org/rubber-pride-flag/',
+        name: 'Leatherpedia.org | rubber pride flag',
+        researchDate: '2020-05-26',
+      },
+      {
+        link:
+          'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-19',
+        name: 'Pride.com | complete guide to queer pride flags - Flag #19',
+        researchDate: '2020-05-26',
+      },
+      {
+        link:
+          'https://commons.wikimedia.org/wiki/File:Rubber_Fetish_Pride_Flag.svg',
+        name: 'Wiki Commons | Rubber Fetish Pride Flag',
+        researchDate: '2020-05-26',
       },
     ],
   },
