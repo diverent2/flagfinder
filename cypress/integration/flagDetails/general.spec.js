@@ -17,12 +17,12 @@ describe('flag details have the correct meta data', () => {
     cy.get('[data-cy-flag-header-image]').should(
       'have.attr',
       'src',
-      'flags/omnisexual.svg'
+      'flags/omnisexual/omnisexual.svg'
     );
     cy.get('head meta[property="og:image"]').should(
       'have.attr',
       'content',
-      'https://prideflags.info/flags/omnisexual.png'
+      'https://prideflags.info/flags/omnisexual/omnisexual.png'
     );
   });
 });
