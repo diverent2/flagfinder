@@ -38,8 +38,18 @@
     title: _startCase(flagName) + ` Flag | ${app_name}`,
     desc: `Find out what the ${flag.name} flag and its colors stands for, who created it and much, much more!`,
     url: `${app_baseUrl}/flag/${flag.id}`,
-    image: `${app_baseUrl}/flags/${flag.image}`
+    image: generateOGImagePath()
   };
+
+  function generateOGImagePath() {
+    let imageSrc = flag.image;
+    const isSVG = /.svg$/;
+    if(imageSrc.match(isSVG)) {
+      imageSrc = imageSrc.replace(".svg",".png");
+    } else {
+    }
+    return `${app_baseUrl}/flags/${imageSrc}`
+  }
 
   // add valid keyword
   flag.keywords.push("valid");

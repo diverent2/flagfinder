@@ -1103,7 +1103,7 @@ const flags = [
       flagAlterations: [],
     },
     categories: ['sexuality'],
-    image: 'omnisexual.svg',
+    image: 'omnisexual/omnisexual.svg',
     props: {
       colors: [
         {
@@ -2429,7 +2429,7 @@ const flags = [
       flagAlterations: [],
     },
     categories: ['kink'],
-    image: 'rubber.svg',
+    image: 'rubber/rubber.svg',
     props: {
       colors: [
         {
