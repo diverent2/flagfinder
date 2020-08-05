@@ -32,8 +32,8 @@ describe('Add Flag form', () => {
     cy.get('input[name="colorValue"]').type('#9B4797');
     cy.get('select[name="colorHue"]').select('purple');
     cy.log('Id + Name gets autofilled');
-    cy.get('input[name="colorName"]').type('violet blue');
-    cy.get('input[name="colorId"]').type('violet-blue');
+    cy.get('input[name="colorName"]').clear().type('violet blue');
+    cy.get('input[name="colorId"]').clear().type('violet-blue');
     cy.log('Id + Name got overwritten');
     cy.get('input[name="symbolName"]').type('double mars');
     cy.get('input[name="symbolId"]').type('double-mars');

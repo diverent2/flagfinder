@@ -33,7 +33,6 @@
         const colorName = name.toLowerCase();
         colors[indexOfElement].id = colorId;
         colors[indexOfElement].name = colorName;
-        console.log(colors[indexOfElement])
       })
       .catch(error => {
         console.error(
