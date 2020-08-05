@@ -67,11 +67,12 @@
           </button>
 
           <div>
-            <label for="sourceName" class="formField--required">
+            <label for="sourceName-{index}" class="formField--required">
               Name [Website - Description]
             </label>
             <input
               type="text"
+              id="sourceName-{index}"
               name="sourceName"
               placeholder="Wiki Commons - sexual identity symbols"
               bind:value={source.name}
@@ -79,9 +80,12 @@
           </div>
 
           <div>
-            <label for="sourceLink" class="formField--required">Link</label>
+            <label for="sourceLink-{index}" class="formField--required">
+              Link
+            </label>
             <input
               type="text"
+              id="sourceLink-{index}"
               name="sourceLink"
               placeholder="https://commons.wikimedia.org/wiki/Sexual_identity_symbols"
               bind:value={source.link}
@@ -89,13 +93,14 @@
           </div>
 
           <div>
-            <label for="sourceResearchDate" class="formField--required">
+            <label for="sourceResearchDate-{index}" class="formField--required">
               Research Date [YYYY-MM-DD]
             </label>
             <input
               type="date"
-              placeholder="2020-01-01"
+              id="sourceResearchDate-{index}"
               name="sourceResearchDate"
+              placeholder="2020-01-01"
               title="Date using the format Year-Month-Day [YYYY-MM-DD]"
               bind:value={source.researchDate}
               required />

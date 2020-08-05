@@ -70,9 +70,12 @@
             Remove
           </button>
           <div>
-            <label for="symbolName" class="formField--required">Name</label>
+            <label for="symbolName-{index}" class="formField--required">
+              Name
+            </label>
             <input
               type="text"
+              id="symbolName-{index}"
               name="symbolName"
               placeholder="double mars"
               bind:value={symbol.name}
@@ -80,9 +83,10 @@
           </div>
 
           <div>
-            <label for="symbolId" class="formField--required">ID</label>
+            <label for="symbolId-{index}" class="formField--required">ID</label>
             <input
               type="text"
+              id="symbolId-{index}"
               name="symbolId"
               pattern="[a-z0-9-]+"
               placeholder="double-mars"
@@ -91,7 +95,7 @@
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="symbolIcon">
+            <label for="symbolIcon-{index}">
               Icon URL
               <br />
               <small>
@@ -102,6 +106,7 @@
               </small>
             </label>
             <input
+              id="symbolIcon-{index}"
               name="symbolIcon"
               placeholder="double-mars.svg"
               rows="2"
@@ -109,8 +114,9 @@
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="symbolMeaning">Meaning of the symbol</label>
+            <label for="symbolMeaning-{index}">Meaning of the symbol</label>
             <textarea
+              id="symbolMeaning-{index}"
               name="symbolMeaning"
               placeholder="male* sexuality"
               rows="2"

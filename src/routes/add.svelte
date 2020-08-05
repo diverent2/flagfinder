@@ -308,6 +308,7 @@
       <label class="formField--required" for="name">Name</label>
       <input
         type="text"
+        id="name"
         name="name"
         placeholder="gay bear pride"
         bind:value={flagData.name}
@@ -318,6 +319,7 @@
       <label for="id" class="formField--required">ID</label>
       <input
         type="text"
+        id="id"
         name="id"
         placeholder="gay-bear"
         pattern="[a-z0-9-]+"
@@ -371,6 +373,7 @@
       </label>
       <input
         type="text"
+        id="image"
         name="image"
         placeholder="url to flag image"
         bind:value={flagData.image}
@@ -380,6 +383,7 @@
     <div style="grid-column: 1 / -1">
       <label for="description">Identity Description</label>
       <textarea
+        id="description"
         name="description"
         placeholder="A genderqueer person is someone who is…"
         bind:value={flagData.description}
@@ -393,6 +397,7 @@
           <label for="author">Author</label>
           <input
             type="text"
+            id="author"
             name="author"
             bind:value={flagData.origin.author}
             placeholder="Gilbert Baker in San Francisco" />
@@ -401,6 +406,7 @@
           <label for="publicationDate">Publication Date</label>
           <input
             type="text"
+            id="publicationDate"
             name="publicationDate"
             bind:value={flagData.origin.publicationDate}
             placeholder="1979" />
@@ -408,6 +414,7 @@
         <div style="grid-column: 1 / -1">
           <label for="history">Current Flag History</label>
           <textarea
+            id="history"
             name="history"
             placeholder="This flag was originally designed to represent…"
             bind:value={flagData.origin.history}
@@ -425,6 +432,7 @@
       <label for="keywords">Keywords (comma-separated)</label>
       <input
         type="text"
+        id="keywords"
         name="keywords"
         placeholder="gay, masc, ..."
         bind:value={keywords__string} />

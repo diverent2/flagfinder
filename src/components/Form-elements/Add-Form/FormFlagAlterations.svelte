@@ -77,11 +77,14 @@
           </button>
 
           <div style="grid-column: 1 / -1">
-            <label for="flagAlteration-title" class="formField--required">
+            <label
+              for="flagAlteration-title-{index}"
+              class="formField--required">
               Image Title
             </label>
             <input
               type="text"
+              id="flagAlteration-title-{index}"
               name="flagAlteration-title"
               placeholder="First Version from 2008"
               bind:value={flagAlteration.title}
@@ -89,7 +92,7 @@
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="flagAlteration-imageUrl">
+            <label for="flagAlteration-imageUrl-{index}">
               <span class="formField--required">Image Source Path</span>
               <br />
               <small>
@@ -100,13 +103,14 @@
             <input
               type="text"
               name="flagAlteration-imageUrl"
+              id="flagAlteration-imageUrl-{index}"
               placeholder="path/to/image.png"
               bind:value={flagAlteration.imageUrl}
               required />
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="flagAlteration-imageAlt">
+            <label for="flagAlteration-imageAlt-{index}">
               <span class="formField--required">Image alt text</span>
               <br />
               <small>
@@ -115,6 +119,7 @@
             </label>
             <input
               type="text"
+              id="flagAlteration-imageAlt-{index}"
               name="flagAlteration-imageAlt"
               placeholder="The stripes originally had brighter colors"
               bind:value={flagAlteration.imageAlt}
@@ -122,9 +127,12 @@
           </div>
 
           <div style="grid-column: 1 / -1">
-            <label for="flagAlteration-description">flag description</label>
+            <label for="flagAlteration-description-{index}">
+              flag description
+            </label>
             <textarea
               type="text"
+              id="flagAlteration-description-{index}"
               name="flagAlteration-description"
               placeholder="The original Flag was meant to be seen as…"
               bind:value={flagAlteration.description}

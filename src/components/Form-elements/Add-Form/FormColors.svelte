@@ -103,7 +103,7 @@
             Remove
           </button>
           <div>
-            <label for="colorName" class="formField--required">
+            <label for="colorName-{index}" class="formField--required">
               <span class="formField--required">Name</span>
               <br />
               <small>
@@ -118,6 +118,7 @@
             </label>
             <input
               type="text"
+              id="colorName-{index}"
               name="colorName"
               placeholder="violet blue"
               bind:value={color.name}
@@ -125,9 +126,10 @@
           </div>
 
           <div>
-            <label for="colorId" class="formField--required">ID</label>
+            <label for="colorId-{index}" class="formField--required">ID</label>
             <input
               type="text"
+              id="colorId-{index}"
               name="colorId"
               placeholder="violet-blue"
               pattern="[a-z0-9-]+"
@@ -136,11 +138,12 @@
           </div>
 
           <div>
-            <label for="colorValue" class="formField--required">
+            <label for="colorValue-{index}" class="formField--required">
               Value (Hex)
             </label>
             <input
               type="text"
+              id="colorValue-{index}"
               name="colorValue"
               placeholder="#9B4797"
               pattern="#[a-fA-F0-9]+"
@@ -150,8 +153,11 @@
           </div>
 
           <div class="colorSelector">
-            <label for="colorHue" class="formField--required">Hue</label>
+            <label for="colorHue-{index}" class="formField--required">
+              Hue
+            </label>
             <select
+              id="colorHue-{index}"
               name="colorHue"
               size="1"
               style="border-left-color: {colorHueValue[index] || 'transparent'}"
@@ -166,8 +172,9 @@
             </select>
           </div>
           <div style="grid-column: 1 / -1">
-            <label for="colorMeaning">Meaning of the color</label>
+            <label for="colorMeaning-{index}">Meaning of the color</label>
             <textarea
+              id="colorMeaning-{index}"
               name="colorMeaning"
               placeholder="Possible attraction to …"
               rows="2"
