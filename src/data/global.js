@@ -2,6 +2,8 @@ export const app_version = 'alpha v. 0.6';
 export const app_name = 'Prideflags.info';
 export const app_baseUrl = 'https://prideflags.info';
 
+export const colorAPI = 'https://api.color.pizza/v1/';
+
 const brekpoints = {
   xsmall: '250',
   small: '360',

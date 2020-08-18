@@ -5,7 +5,8 @@ describe('Add Flag form', () => {
   });
 
   it('can generate flag data by filling out the form', () => {
-    cy.get('input[name="name"]').type('gay bear pride');
+    cy.wait(100);
+    cy.get('input#name').type('gay bear pride');
     cy.get('input[name="id"]').type('gay-bear');
     cy.get('#form--addFlag [data-cy-form-category="sexuality"]').click();
     cy.get('#form--addFlag [data-cy-form-category="gender"]').click();
@@ -29,10 +30,15 @@ describe('Add Flag form', () => {
       'The first version was created in 2010.'
     );
     cy.get('input[name="keywords"]').type('gay, masc ');
-    cy.get('input[name="colorName"]').type('violet blue');
-    cy.get('input[name="colorId"]').type('violet-blue');
     cy.get('input[name="colorValue"]').type('#9B4797');
     cy.get('select[name="colorHue"]').select('purple');
+    cy.log('Id + Name gets autofilled');
+    cy.wait(200);
+    cy.get('input[name="colorName"]').clear();
+    cy.get('input[name="colorName"]').type('violet blue');
+    cy.get('input[name="colorId"]').clear();
+    cy.get('input[name="colorId"]').type('violet-blue');
+    cy.log('Id + Name got overwritten');
     cy.get('input[name="symbolName"]').type('double mars');
     cy.get('input[name="symbolId"]').type('double-mars');
     cy.get('input[name="symbolIcon"]').type('./icons/double-mars.svg');
@@ -110,6 +116,20 @@ describe('Add Flag form', () => {
       .first()
       .should('have.value', 'green')
       .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
+  });
+
+  it('colors: hexcode generates id and name', () => {
+    cy.get('[data-cy-add-color-button]').click();
+    cy.get('input[name="colorValue"]').first().type('#9B4797');
+    cy.get('input[name="colorValue"]').last().type('#FFFFFF');
+    cy.get('input[name="colorName"]')
+      .first()
+      .should('have.value', 'medium purple');
+    cy.get('input[name="colorId"]')
+      .first()
+      .should('have.value', 'medium-purple');
+    cy.get('input[name="colorName"]').last().should('have.value', 'white');
+    cy.get('input[name="colorId"]').last().should('have.value', 'white');
   });
 
   it('flagAlterations: can add and remove multiple alterations', () => {

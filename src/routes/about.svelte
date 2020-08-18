@@ -244,7 +244,14 @@
 
     <h3>🎨 Color names</h3>
     <p>
-      The names of the colors originate from
+      The names of the colors come from 
+      <a
+        rel="external"
+        href="https://github.com/meodai/color-names"
+        target="blank">
+        api.color.pizza 🍕
+      </a><br>
+      and <i>originally</i> from 
       <a
         rel="external"
         href="https://www.color-blindness.com/color-name-hue/"
