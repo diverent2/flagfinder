@@ -333,12 +333,14 @@
         {#each filterCategories as filterCategory}
           <label
             title={filterCategory.id}
+            for="category-{filterCategory.id}"
             class="categoryButton"
             style="--color: {filterCategory.color};"
             class:selected={filterCategory.checked}
             data-cy-form-category={filterCategory.id}>
             <div class="categoryButton_inner">
               <input
+                id="category-{filterCategory.id}"
                 name="category[]"
                 type="checkbox"
                 bind:checked={filterCategory.checked}

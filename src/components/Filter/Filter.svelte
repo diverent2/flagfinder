@@ -198,6 +198,7 @@
       {#each filterCategories as filterCategory}
         <label
           title={filterCategory.id}
+          for="category-{filterCategory.id}"
           aria-label="{filterCategory.selected ? 'Remove' : 'Add'} filter for
           category '{filterCategory.id}"
           class="categoryButton"
@@ -207,6 +208,7 @@
           <div class="categoryButton_inner">
             <input
               type="checkbox"
+              id="category-{filterCategory.id}"
               value={filterCategory.id}
               aria-label="Filter flags by the color '{filterCategory.selected}'"
               bind:checked={filterCategory.selected}
