@@ -148,7 +148,7 @@
       margin: 0;
       margin-right: var(--spacing);
 
-      > .flagImage {
+      .flagImage {
         width: auto;
         height: 100%;
         position: absolute;
