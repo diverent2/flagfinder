@@ -425,7 +425,6 @@
       </div>
       <div style="grid-column: 1 / -1">
         <FormFlagAlterations
-          flagAlterations={flagData.origin.flagAlterations}
           bind:flagAlterations={flagData.origin.flagAlterations} />
       </div>
     </fieldset>
@@ -440,22 +439,15 @@
         bind:value={keywords__string} />
     </div>
     <div style="grid-column: 1 / -1">
-      <FormColors
-        colors={flagData.props.colors}
-        bind:colors={flagData.props.colors} />
+      <FormColors bind:colors={flagData.props.colors} />
     </div>
 
     <div style="grid-column: 1 / -1">
-      <FormSymbols
-        symbols={flagData.props.symbols}
-        bind:symbols={flagData.props.symbols} />
+      <FormSymbols bind:symbols={flagData.props.symbols} />
     </div>
 
     <div style="grid-column: 1 / -1">
-      <FormSources
-        sources={flagData.sources}
-        bind:sources={flagData.sources}
-        {currentDate} />
+      <FormSources bind:sources={flagData.sources} {currentDate} />
     </div>
 
     <div class="form_submit" style="grid-column: 1 / -1">
