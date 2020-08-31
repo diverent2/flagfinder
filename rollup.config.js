@@ -12,10 +12,19 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) =>
-	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
-	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
-	onwarn(warning);
+const onwarn = (warning, onwarn) => {
+
+	const isCircularWarning = warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message);
+	const isMissingExportForPreload = (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message));
+	const isOnBlurInsteadOfOnChangeWarning = warning.code === 'PLUGIN_WARNING' && warning.pluginCode && warning.pluginCode === 'a11y-no-onchange';
+	const isMissingExplicitExportMode = warning.code === 'PREFER_NAMED_EXPORTS';
+
+	return isCircularWarning // @sapper update 0.28 [related to TypeScript support]
+		|| isMissingExportForPreload  // @sapper update 0.28 [related to TypeScript support]
+		|| isOnBlurInsteadOfOnChangeWarning // https://github.com/sveltejs/svelte/issues/4946
+		|| isMissingExplicitExportMode // https://github.com/sveltejs/sapper/issues/1332
+		|| onwarn(warning);
+}
 	
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
