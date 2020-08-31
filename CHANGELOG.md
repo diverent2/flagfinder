@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Issues after dependencies update
 - Add space between icon and text in flag details headings
 
 ## [0.6 - The Navigation Update] - 2020-06-16
