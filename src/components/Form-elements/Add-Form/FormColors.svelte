@@ -82,7 +82,6 @@
 
   [name="colorHue"] {
     flex-grow: 1;
-    height: 29px;
   }
 
   @media (--small-up) {
@@ -171,9 +170,7 @@
               <br />
               <small>
                 Autofilled using
-                <a
-                  href="https://github.com/meodai/color-names"
-                  target="blank">
+                <a href="https://github.com/meodai/color-names" target="blank">
                   api.color.pizza 🍕
                 </a>
               </small>
