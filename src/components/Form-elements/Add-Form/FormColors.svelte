@@ -4,14 +4,12 @@
 
   export let colors = [];
 
-  let colorHueValue = [];
-
-  function updateHuePreview(color) {
-    let index = colors.indexOf(color);
+  function updateHuePreview(e, index) {
+    const selectedHue = e.target.value;
     const matchingHue = filterColors.find(
-      filterColor => filterColor.id === color.hue
+      filterColor => filterColor.id === selectedHue
     );
-    colorHueValue[index] = matchingHue.color;
+    e.target.style.setProperty("--colorHuePreview", matchingHue.color);
   }
 
   function getColorName(colorHexValue, indexOfElement) {
@@ -82,6 +80,7 @@
 
   [name="colorHue"] {
     flex-grow: 1;
+    --colorHuePreview: transparent;
   }
 
   @media (--small-up) {
@@ -152,8 +151,8 @@
               id="colorHue-{index}"
               name="colorHue"
               size="1"
-              style="border-left-color: {colorHueValue[index] || 'transparent'}"
-              on:change={() => updateHuePreview(color)}
+              style="border-left-color: var(--colorHuePreview)"
+              on:change={e => updateHuePreview(e)}
               bind:value={color.hue}
               required
               data-cy-form-color-hue>
