@@ -57,12 +57,13 @@
   <legend>Sources</legend>
   <ul class="sources">
     {#each sources as source, index}
-      <li class="source">
+      <li class="source" data-ql-source>
         <div class="form-source">
 
           <button
             class="removeButton"
-            on:click={() => removeSourceElement(index)}>
+            on:click={() => removeSourceElement(index)}
+            data-ql-remove-source>
             Remove
           </button>
 
@@ -111,6 +112,6 @@
     {/each}
   </ul>
   <div class="text--center">
-    <button data-ql-add-source-button on:click={addSource}>Add source</button>
+    <button data-ql-add-source on:click={addSource}>Add source</button>
   </div>
 </fieldset>

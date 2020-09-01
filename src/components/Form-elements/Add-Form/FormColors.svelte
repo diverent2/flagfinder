@@ -120,12 +120,13 @@
   <legend>Colors</legend>
   <ul class="colors">
     {#each colors as color, index}
-      <li class="color">
+      <li class="color" data-ql-color>
         <div class="form-color">
 
           <button
             class="removeButton"
-            on:click={() => removeColorElement(index)}>
+            on:click={() => removeColorElement(index)}
+            data-ql-remove-color>
             Remove
           </button>
           <div>
@@ -209,8 +210,6 @@
     {/each}
   </ul>
   <div class="text--center">
-    <button data-cy-add-color-button on:click={addColorElement}>
-      Add color
-    </button>
+    <button data-cy-add-color on:click={addColorElement}>Add color</button>
   </div>
 </fieldset>

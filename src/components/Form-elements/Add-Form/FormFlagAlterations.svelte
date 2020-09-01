@@ -69,10 +69,13 @@
   </p>
   <ul class="flagAlterations">
     {#each flagAlterations as flagAlteration, index}
-      <li class="flagAlteration">
+      <li class="flagAlteration" data-ql-flag-alteration>
         <div class="form-flagAlteration">
 
-          <button class="removeButton" on:click={() => removeElement(index)}>
+          <button
+            class="removeButton"
+            on:click={() => removeElement(index)}
+            data-ql-remove-flag-alteration>
             Remove
           </button>
 
@@ -145,7 +148,7 @@
   </ul>
   <div class="text--center">
     <button
-      data-ql-add-flag-alteration-button
+      data-ql-add-flag-alteration
       on:click={() => {
         addElement(flagAlterations);
       }}>

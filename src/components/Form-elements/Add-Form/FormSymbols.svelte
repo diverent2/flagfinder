@@ -61,12 +61,13 @@
   <legend>Symbols</legend>
   <ul class="symbols">
     {#each symbols as symbol, index}
-      <li class="symbol">
+      <li class="symbol" data-ql-symbol>
         <div class="form-symbol">
 
           <button
             class="removeButton"
-            on:click={() => removeSymbolElement(index)}>
+            on:click={() => removeSymbolElement(index)}
+            data-ql-remove-symbol>
             Remove
           </button>
           <div>
@@ -128,8 +129,6 @@
     {/each}
   </ul>
   <div class="text--center">
-    <button data-ql-add-symbol-button on:click={addSymbolElement}>
-      Add symbol
-    </button>
+    <button data-ql-add-symbol on:click={addSymbolElement}>Add symbol</button>
   </div>
 </fieldset>
