@@ -6,57 +6,75 @@ describe('Add Flag form', () => {
 
   it('can generate flag data by filling out the form', () => {
     cy.wait(100);
-    cy.get('input#name').type('gay bear pride');
-    cy.get('input[name="id"]').type('gay-bear');
-    cy.get('#form--addFlag [data-cy-form-category="sexuality"]').click();
-    cy.get('#form--addFlag [data-cy-form-category="gender"]').click();
-    cy.get('input[name="image"]').type('https://prideflags.info/');
-    cy.get('textarea[name="description"]').type(
+    cy.filloutFormElement('input#name', 'gay bear pride');
+    cy.filloutFormElement('input#id', 'gay-bear');
+    cy.get('[data-cy-form-category="sexuality"]').click();
+    cy.get('[data-cy-form-category="gender"]').click();
+    cy.filloutFormElement('input#image', 'https://prideflags.info/');
+    cy.filloutFormElement(
+      'textarea#description',
       'A most awesome group of people!'
     );
-    cy.get('textarea[name="history"]').type(
+    cy.filloutFormElement(
+      '#history',
       'This flag was originally designed to represent.'
     );
-    cy.get('input[name="author"]').type('Gilbert Backer');
-    cy.get('input[name="publicationDate"]').type('1979');
-    cy.get('input[name="flagAlteration-title"]').type('First Version');
-    cy.get('input[name="flagAlteration-imageUrl"]').type(
+    cy.filloutFormElement('input#author', 'Gilbert Backer');
+    cy.filloutFormElement('input#publicationDate', '1979');
+    cy.filloutFormElement(
+      'input[name="flagAlteration-title"]',
+      'First Version'
+    );
+    cy.filloutFormElement(
+      '[name="flagAlteration-imageUrl"]',
       'genderqueer/genderqueer_v1.png'
     );
-    cy.get('input[name="flagAlteration-imageAlt"]').type(
+    cy.filloutFormElement(
+      '[name="flagAlteration-imageAlt"]',
       'Original Flag with stripes'
     );
-    cy.get('textarea[name="flagAlteration-description"]').type(
+    cy.filloutFormElement(
+      '[name="flagAlteration-description"]',
       'The first version was created in 2010.'
     );
-    cy.get('input[name="keywords"]').type('gay, masc ');
-    cy.get('input[name="colorValue"]').type('#9B4797');
+    cy.filloutFormElement('input#keywords', 'gay, masc ');
+    cy.filloutFormElement('input[name="colorValue"]', '#9B4797');
     cy.get('select[name="colorHue"]').select('purple');
     cy.log('Id + Name gets autofilled');
-    cy.wait(200);
-    cy.get('input[name="colorName"]').clear();
-    cy.get('input[name="colorName"]').type('violet blue');
+    cy.get('input[name="colorName"]')
+      .should('contain.value', 'medium purple')
+      .clear();
+    cy.filloutFormElement('input[name="colorName"]', 'violet blue');
     cy.get('input[name="colorId"]').clear();
-    cy.get('input[name="colorId"]').type('violet-blue');
+    cy.filloutFormElement('input[name="colorId"]', 'violet-blue');
     cy.log('Id + Name got overwritten');
-    cy.get('input[name="symbolName"]').type('double mars');
-    cy.get('input[name="symbolId"]').type('double-mars');
-    cy.get('input[name="symbolIcon"]').type('./icons/double-mars.svg');
-    cy.get('textarea[name="symbolMeaning"]').type('male* sexuality');
-    cy.get('textarea[name="colorMeaning"]').type('Possible attraction to ...');
-    cy.get('input[name="sourceName"]').type('Awesome Website');
-    cy.get('input[name="sourceLink"]').type('https://www.awesome-website.com');
-    cy.get('input[name="sourceResearchDate"]').type('2020-01-01');
+    cy.filloutFormElement('input[name="symbolName"]', 'double mars');
+    cy.filloutFormElement('input[name="symbolId"]', 'double-mars');
+    cy.filloutFormElement(
+      'input[name="symbolIcon"]',
+      './icons/double-mars.svg'
+    );
+    cy.filloutFormElement('textarea[name="symbolMeaning"]', 'male* sexuality');
+    cy.filloutFormElement(
+      'textarea[name="colorMeaning"]',
+      'Possible attraction to ...'
+    );
+    cy.filloutFormElement('input[name="sourceName"]', 'Awesome Website');
+    cy.filloutFormElement(
+      '[name="sourceLink"]',
+      'https://www.awesome-website.com'
+    );
+    cy.filloutFormElement('[name="sourceResearchDate"]', '2020-01-01');
     cy.log('Add second source');
-    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
-      .eq(1)
-      .type('Another Source Site');
-    cy.get('input[name="sourceLink"]')
-      .eq(1)
-      .type('https://www.another-source.org');
-    cy.get('input[name="sourceResearchDate"]').eq(1).type('2019-01-01');
-    cy.get('#form--addFlag button[type="submit"]').click();
+    cy.get('button[data-ql-add-source]').click();
+    cy.filloutFormElement('[name="sourceName"]', 'Another Source Site', 1);
+    cy.filloutFormElement(
+      '[name="sourceLink"]',
+      'https://www.another-source.org',
+      1
+    );
+    cy.filloutFormElement('[name="sourceResearchDate"]', '2019-01-01', 1);
+    cy.get('button[type="submit"]').click();
 
     cy.get('#output')
       .should('contain.value', 'gay bear pride')
@@ -73,7 +91,6 @@ describe('Add Flag form', () => {
       .should('contain.value', 'Original Flag with stripes')
       .should('contain.value', 'The first version was created in 2010')
       .should('contain.value', '"gay",\n    "masc"')
-      // matches
       .should('contain.value', '"colors": [\n      "purple"\n    ]')
       .should('contain.value', '"symbols": [\n      "double-mars"\n    ]')
       .and('not.contain.value', 'masc ')
@@ -95,10 +112,10 @@ describe('Add Flag form', () => {
   });
 
   it('colors: can preview colors', () => {
-    cy.get('#form--addFlag .colors .color select[name="colorHue"]')
+    cy.get('select[data-cy-form-color-hue]')
       .should('not.have.value')
       .and('have.css', 'border-left-color', 'rgba(0, 0, 0, 0)');
-    cy.get('#form--addFlag [data-cy-form-color-hue]')
+    cy.get('select[data-cy-form-color-hue]')
       .select('purple')
       .should('have.value', 'purple')
       .and('have.css', 'border-left-color', 'rgb(126, 0, 128)')
@@ -106,22 +123,22 @@ describe('Add Flag form', () => {
       .should('have.value', 'green')
       .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
 
-    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
-    cy.get('#form--addFlag [data-cy-form-color-hue]')
+    cy.get('button[data-cy-add-color]').click();
+    cy.get('select[data-cy-form-color-hue]')
       .eq(1) //second one
       .select('red')
       .should('have.value', 'red')
       .and('have.css', 'border-left-color', 'rgb(252, 0, 6)');
-    cy.get('#form--addFlag [data-cy-form-color-hue]')
+    cy.get('select[data-cy-form-color-hue]')
       .first()
       .should('have.value', 'green')
       .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
   });
 
   it('colors: hexcode generates id and name', () => {
-    cy.get('[data-cy-add-color-button]').click();
-    cy.get('input[name="colorValue"]').first().type('#9B4797');
-    cy.get('input[name="colorValue"]').last().type('#FFFFFF');
+    cy.get('button[data-cy-add-color]').click();
+    cy.filloutFormElement('input[name="colorValue"]', '#9B4797', 'first');
+    cy.filloutFormElement('input[name="colorValue"]', '#FFFFFF', 'last');
     cy.get('input[name="colorName"]')
       .first()
       .should('have.value', 'medium purple');
@@ -133,135 +150,93 @@ describe('Add Flag form', () => {
   });
 
   it('flagAlterations: can add and remove multiple alterations', () => {
-    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
-      'have.length',
-      1
+    cy.get('.flagAlteration').should('have.length', 1);
+    cy.filloutFormElement(
+      'input[name="flagAlteration-title"]',
+      'title_A',
+      'first'
     );
-    cy.get(
-      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
-    )
-      .first()
-      .type('title_A');
-    cy.get('#form--addFlag button[data-ql-add-flag-alteration-button]').click();
-    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
-      'have.length',
-      2
-    );
-    cy.get(
-      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
-    )
-      .eq(1)
-      .type('title_B');
-    cy.get('#form--addFlag button[data-ql-add-flag-alteration-button]').click();
-    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
-      'have.length',
-      3
-    );
-    cy.get(
-      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
-    )
-      .eq(2)
-      .type('title_C');
+    cy.get('button[data-ql-add-flag-alteration]').click();
+    cy.get('[data-ql-flag-alteration]').should('have.length', 2);
+    cy.filloutFormElement('input[name="flagAlteration-title"]', 'title_B', 1);
+    cy.get('button[data-ql-add-flag-alteration]').click();
+    cy.get('[data-ql-flag-alteration]').should('have.length', 3);
+    cy.filloutFormElement('input[name="flagAlteration-title"]', 'title_C', 2);
 
     cy.log('Remove second source element');
-    cy.get('#form--addFlag .flagAlteration .removeButton').eq(1).click();
-    cy.get('#form--addFlag .flagAlterations .flagAlteration').should(
-      'have.length',
-      2
-    );
-    cy.get(
-      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
-    )
+    cy.get('button[data-ql-remove-flag-alteration]').eq(1).click();
+    cy.get('[data-ql-flag-alteration]').should('have.length', 2);
+    cy.get('input[name="flagAlteration-title"]')
       .first()
       .invoke('val')
       .should('eq', 'title_A');
-    cy.get(
-      '#form--addFlag .flagAlterations .flagAlteration input[name="flagAlteration-title"]'
-    )
+    cy.get('input[name="flagAlteration-title"]')
       .last()
       .invoke('val')
       .should('eq', 'title_C');
   });
 
   it('colors: can add and remove multiple colors', () => {
-    cy.get('#form--addFlag .colors .color').should('have.length', 1);
-    cy.get('#form--addFlag .colors .color input[name="colorName"]')
-      .first()
-      .type('color_name_A');
-    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
-    cy.get('#form--addFlag .colors .color').should('have.length', 2);
-    cy.get('#form--addFlag .colors .color input[name="colorName"]')
-      .eq(1)
-      .type('color_name_B');
-    cy.get('#form--addFlag button[data-cy-add-color-button]').click();
-    cy.get('#form--addFlag .colors .color').should('have.length', 3);
-    cy.get('#form--addFlag .colors .color input[name="colorName"]')
-      .eq(2)
-      .type('color_name_C');
+    cy.get('[data-ql-color]').should('have.length', 1);
+    cy.filloutFormElement('[name="colorName"]', 'color_name_A', 'first');
+    cy.get('button[data-cy-add-color]').click();
+    cy.get('[data-ql-color]').should('have.length', 2);
+    cy.filloutFormElement('[name="colorName"]', 'color_name_B', 1);
+    cy.get('button[data-cy-add-color]').click();
+    cy.get('[data-ql-color]').should('have.length', 3);
+    cy.filloutFormElement('[name="colorName"]', 'color_name_C', 2);
     cy.log('Remove second color element');
-    cy.get('#form--addFlag .color .removeButton').eq(1).click();
-    cy.get('#form--addFlag .colors .color').should('have.length', 2);
-    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+    cy.get('button[data-ql-remove-color]').eq(1).click();
+    cy.get('[data-ql-color]').should('have.length', 2);
+    cy.get('input[name="colorName"]')
       .first()
       .invoke('val')
       .should('eq', 'color_name_A');
-    cy.get('#form--addFlag .colors .color input[name="colorName"]')
+    cy.get('input[name="colorName"]')
       .last()
       .invoke('val')
       .should('eq', 'color_name_C');
   });
 
   it('symbols: can add and remove multiple symbols', () => {
-    cy.get('#form--addFlag .symbols .symbol').should('have.length', 1);
-    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
-      .first()
-      .type('symbol_name_A');
-    cy.get('#form--addFlag button[data-ql-add-symbol-button]').click();
-    cy.get('#form--addFlag .symbols .symbol').should('have.length', 2);
-    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
-      .eq(1)
-      .type('symbol_name_B');
-    cy.get('#form--addFlag button[data-ql-add-symbol-button]').click();
-    cy.get('#form--addFlag .symbols .symbol').should('have.length', 3);
-    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
-      .eq(2)
-      .type('symbol_name_C');
+    cy.get('[data-ql-symbol]').should('have.length', 1);
+    cy.filloutFormElement('input[name="symbolName"]', 'symbol_name_A', 'first');
+    cy.get('button[data-ql-add-symbol]').click();
+    cy.get('[data-ql-symbol]').should('have.length', 2);
+    cy.filloutFormElement('input[name="symbolName"]', 'symbol_name_B', 1);
+    cy.get('button[data-ql-add-symbol]').click();
+    cy.get('[data-ql-symbol]').should('have.length', 3);
+    cy.filloutFormElement('input[name="symbolName"]', 'symbol_name_C', 2);
     cy.log('Remove second symbol element');
-    cy.get('#form--addFlag .symbol .removeButton').eq(1).click();
-    cy.get('#form--addFlag .symbols .symbol').should('have.length', 2);
-    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+    cy.get('button[data-ql-remove-symbol]').eq(1).click();
+    cy.get('[data-ql-symbol]').should('have.length', 2);
+    cy.get('input[name="symbolName"]')
       .first()
       .invoke('val')
       .should('eq', 'symbol_name_A');
-    cy.get('#form--addFlag .symbols .symbol input[name="symbolName"]')
+    cy.get('input[name="symbolName"]')
       .last()
       .invoke('val')
       .should('eq', 'symbol_name_C');
   });
 
   it('sources: can add and remove multiple sources', () => {
-    cy.get('#form--addFlag .sources .source').should('have.length', 1);
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
-      .first()
-      .type('name_A');
-    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
-    cy.get('#form--addFlag .sources .source').should('have.length', 2);
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
-      .eq(1)
-      .type('name_B');
-    cy.get('#form--addFlag button[data-ql-add-source-button]').click();
-    cy.get('#form--addFlag .sources .source').should('have.length', 3);
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
-      .eq(2)
-      .type('name_C');
+    cy.get('[data-ql-source]').should('have.length', 1);
+    cy.filloutFormElement('input[name="sourceName"]', 'name_A', 'first');
+    cy.get('button[data-ql-add-source]').click();
+    cy.get('[data-ql-source]').should('have.length', 2);
+    cy.filloutFormElement('input[name="sourceName"]', 'name_B', 1);
+    cy.get('button[data-ql-add-source]').click();
+    cy.get('[data-ql-source]').should('have.length', 3);
+    cy.filloutFormElement('input[name="sourceName"]', 'name_C', 2);
     cy.log('Remove second source element');
-    cy.get('#form--addFlag .source .removeButton').eq(1).click();
-    cy.get('#form--addFlag .sources .source').should('have.length', 2);
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+    cy.get('button[data-ql-remove-source]').eq(1).click();
+    cy.get('.sources .source').should('have.length', 2);
+    cy.get('input[name="sourceName"]')
       .first()
       .invoke('val')
       .should('eq', 'name_A');
-    cy.get('#form--addFlag .sources .source input[name="sourceName"]')
+    cy.get('input[name="sourceName"]')
       .last()
       .invoke('val')
       .should('eq', 'name_C');

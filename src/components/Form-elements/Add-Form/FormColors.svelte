@@ -4,14 +4,12 @@
 
   export let colors = [];
 
-  let colorHueValue = [];
-
-  function updateHuePreview(color) {
-    let index = colors.indexOf(color);
+  function updateHuePreview(e, index) {
+    const selectedHue = e.target.value;
     const matchingHue = filterColors.find(
-      filterColor => filterColor.id === color.hue
+      filterColor => filterColor.id === selectedHue
     );
-    colorHueValue[index] = matchingHue.color;
+    e.target.style.setProperty("--colorHuePreview", matchingHue.color);
   }
 
   function getColorName(colorHexValue, indexOfElement) {
@@ -82,7 +80,7 @@
 
   [name="colorHue"] {
     flex-grow: 1;
-    height: 29px;
+    --colorHuePreview: transparent;
   }
 
   @media (--small-up) {
@@ -122,12 +120,13 @@
   <legend>Colors</legend>
   <ul class="colors">
     {#each colors as color, index}
-      <li class="color">
+      <li class="color" data-ql-color>
         <div class="form-color">
 
           <button
             class="removeButton"
-            on:click={() => removeColorElement(index)}>
+            on:click={() => removeColorElement(index)}
+            data-ql-remove-color>
             Remove
           </button>
           <div>
@@ -153,8 +152,8 @@
               id="colorHue-{index}"
               name="colorHue"
               size="1"
-              style="border-left-color: {colorHueValue[index] || 'transparent'}"
-              on:change={() => updateHuePreview(color)}
+              style="border-left-color: var(--colorHuePreview)"
+              on:change={e => updateHuePreview(e)}
               bind:value={color.hue}
               required
               data-cy-form-color-hue>
@@ -171,9 +170,7 @@
               <br />
               <small>
                 Autofilled using
-                <a
-                  href="https://github.com/meodai/color-names"
-                  target="blank">
+                <a href="https://github.com/meodai/color-names" target="blank">
                   api.color.pizza 🍕
                 </a>
               </small>
@@ -213,8 +210,6 @@
     {/each}
   </ul>
   <div class="text--center">
-    <button data-cy-add-color-button on:click={addColorElement}>
-      Add color
-    </button>
+    <button data-cy-add-color on:click={addColorElement}>Add color</button>
   </div>
 </fieldset>

@@ -1,8 +1,8 @@
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
 import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
@@ -12,7 +12,20 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
+const onwarn = (warning, onwarn) => {
+
+	const isCircularWarning = warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message);
+	const isMissingExportForPreload = (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message));
+	const isOnBlurInsteadOfOnChangeWarning = warning.code === 'PLUGIN_WARNING' && warning.pluginCode && warning.pluginCode === 'a11y-no-onchange';
+	const isMissingExplicitExportMode = warning.code === 'PREFER_NAMED_EXPORTS';
+
+	return isCircularWarning // @sapper update 0.28 [related to TypeScript support]
+		|| isMissingExportForPreload  // @sapper update 0.28 [related to TypeScript support]
+		|| isOnBlurInsteadOfOnChangeWarning // https://github.com/sveltejs/svelte/issues/4946
+		|| isMissingExplicitExportMode // https://github.com/sveltejs/sapper/issues/1332
+		|| onwarn(warning);
+}
+	
 const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/');
 
 const preprocess = sveltePreprocess({
@@ -64,7 +77,7 @@ export default {
 				module: true
 			})
 		],
-
+		preserveEntrySignatures: false,
 		onwarn,
 	},
 
@@ -89,7 +102,7 @@ export default {
 		external: Object.keys(pkg.dependencies).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
-
+		preserveEntrySignatures: 'strict',
 		onwarn,
 	},
 
@@ -106,6 +119,7 @@ export default {
 			!dev && terser()
 		],
 
+		preserveEntrySignatures: false,
 		onwarn,
 	}
 };

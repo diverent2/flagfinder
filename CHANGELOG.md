@@ -33,13 +33,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
-- Update dependencies (cypress)
+- Refactor add-form + test
+- Update dependencies (cypress, rollup, svelte/sapper, ...)
 - Mark external links as such
 - Update font styles
 - Rearrange/Update flag data
 
 ### 🛠️ Fixed
 
+- Issues after dependencies update
 - Add space between icon and text in flag details headings
 
 ## [0.6 - The Navigation Update] - 2020-06-16
