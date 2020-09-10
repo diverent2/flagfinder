@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🔄 Changed
 
 - Refactor add-form + test
+- Better handling for fonts
 - Update dependencies (cypress, rollup, svelte/sapper, ...)
 - Mark external links as such
 - Update font styles

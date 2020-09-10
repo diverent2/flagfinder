@@ -1,13 +1,17 @@
 @font-face {
   font-family: 'Saira';
-  src: url('/fonts/saira/Saira-Regular.ttf');
+  src: local('Saira Regular'), local('Saira-Regular'),
+    url('/fonts/saira/Saira-Regular.ttf');
   font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Saira';
-  src: url('/fonts/saira/Saira-Bold.ttf');
+  src: local('Saira Bold'), local('Saira-Bold'),
+    url('/fonts/saira/Saira-Bold.ttf');
   font-weight: bold;
+  font-display: swap;
 }
 
 $fontHeading: Saira, Helvetica Neue, sans-serif;
