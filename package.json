@@ -9,9 +9,6 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
-    "build:legacy": "sapper build --legacy",
-    "export": "sapper export",
-    "export:legacy": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
