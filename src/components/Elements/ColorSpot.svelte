@@ -10,20 +10,15 @@
   }
 </style>
 
-{#if !withBorder}
+<div class="colorSpot" style="color: {color}" data-cy-colorspot-color={color}>
   <svg
-    style="color: {color}"
-    class="ico-colorSpot"
     viewBox="0 0 12 13"
-    xmlns="http://www.w3.org/2000/svg">
-    <use href="icons/color-spot.svg#color-spot" />
-  </svg>
-{:else}
-  <svg
-    style="color: {color}"
     class="ico-colorSpot"
-    viewBox="0 0 12 13"
     xmlns="http://www.w3.org/2000/svg">
-    <use href="icons/color-spot-with-frame.svg#color-spot" />
+    {#if !withBorder}
+      <use href="icons/color-spot.svg#color-spot" />
+    {:else}
+      <use href="icons/color-spot-with-frame.svg#color-spot" />
+    {/if}
   </svg>
-{/if}
+</div>
