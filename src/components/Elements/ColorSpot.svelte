@@ -4,7 +4,7 @@
 </script>
 
 <style>
-  .ico-colorSpot {
+  .colorSpot {
     width: 1rem;
     height: 1.1rem;
   }
