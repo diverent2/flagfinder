@@ -42,45 +42,44 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-category].selected').should('have.length', 0);
   });
 
-  it('can filter by categories', () => {
-    cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.wait(500); //wait for animation end
+  it('can filter by category', () => {
+    cy.get('[data-cy-flagcard]')
+      .its('length')
+      .then((no_filter_length) => {
+        cy.get('[data-cy-filter-category="attraction"]').click();
+        cy.get('[data-cy-search-filters-expand]').click(); //wait for animation end
+        cy.get('[data-cy-flagcard]')
+          .its('length')
+          .should('be.lessThan', no_filter_length);
+      });
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       (categoriesList) => {
         cy.get(categoriesList)
-          .find('[data-cy-button-text]')
-          .invoke('text')
-          .then((text) => {
-            expect(text.trim()).includes('attraction');
-          });
+          .find('[data-cy-labelbutton-text]')
+          .should('contain', 'attraction');
       }
     );
   });
 
   it('can filter by multiple categories', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.wait(500); //wait for animation end
-    cy.get('[data-cy-searchresults-number]').then(($resultsCount) => {
-      const resultsCount_singleCategory = parseFloat($resultsCount.text());
-
-      cy.get('[data-cy-filter-category="gender"]').click();
-      cy.wait(500) //wait for animation end
-        .then(() => {
-          const resultsCount_multiCategories = parseFloat($resultsCount.text());
-
-          cy.expect(resultsCount_multiCategories).to.be.greaterThan(
-            resultsCount_singleCategory
-          );
-        });
-    });
-
+    cy.wait(300); //wait for animation end
+    cy.get('[data-cy-flagcard]')
+      .its('length')
+      .then((one_filter_length) => {
+        cy.get('[data-cy-filter-category="gender"]').click();
+        cy.get('[data-cy-flagcard]')
+          .its('length')
+          .should('be.greaterThan', one_filter_length);
+      });
+    cy.get('[data-cy-search-filters-expand]').click(); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       (categoriesList) => {
         cy.get(categoriesList)
-          .find('[data-cy-button-text]')
+          .find('[data-cy-labelbutton-text]')
           .invoke('text')
-          .then((text) => {
-            expect(text.trim()).match(/(attraction|gender)/);
+          .then((combined_label_texts) => {
+            expect(combined_label_texts).match(/(attraction|gender)/);
           });
       }
     );
