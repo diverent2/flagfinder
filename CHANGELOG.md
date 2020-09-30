@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ➕ Added
 
+- Activate Cypress Dashboard Usage
 - Automatically add flag color names/ids using [api.color.pizza](https://github.com/meodai/color-names)
 - Google Console Verification
 - Make footer credits dynamic

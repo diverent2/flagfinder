@@ -1,7 +1,5 @@
 name: Testing
-
-on: [push, pull_request]
-
+on: [push]
 jobs:
   cypress:
     name: Run E2E tests
@@ -9,8 +7,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
           build: yarn build
           start: yarn start
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
