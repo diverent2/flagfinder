@@ -28,8 +28,6 @@ describe('Searchfilter', () => {
   });
 
   it('removes all filters through remove filter button', () => {
-    cy.get('[data-cy-searchresults-number]').invoke('text').as('resultCount');
-
     cy.get('#search').type('g');
     cy.get('[data-cy-filter-color="red"]').click();
     cy.get('[data-cy-filter-color="blue"]').click();
@@ -42,10 +40,6 @@ describe('Searchfilter', () => {
     cy.get('#search').should('be.empty');
     cy.get('[data-cy-filter-color].selected').should('have.length', 0);
     cy.get('[data-cy-filter-category].selected').should('have.length', 0);
-
-    cy.get('@resultCount').then((resultCount) => {
-      cy.get('[data-cy-flagcard]').should('have.length', resultCount);
-    });
   });
 
   it('can filter by categories', () => {
