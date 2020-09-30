@@ -1,10 +1,14 @@
-![Testing](https://github.com/diverent2/flagfinder/workflows/Testing/badge.svg?branch=master)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/diverent2/flagfinder?color=blue&label=Version&sort=semver)
+
+![Testing](https://github.com/diverent2/flagfinder/workflows/Testing/badge.svg?branch=master)
+![go to Cypress Dashboard](https://img.shields.io/static/v1?label=&message=Cypress%20Dashboard&color=2e3138&logo=cypress&link=https://dashboard.cypress.io/projects/ywge99)
 
 # Prideflags.info 🔎🏳️‍🌈
 
 This is the official repository for the **upcoming** website prideflags.info.  
 A website for finding different LGBTQ+ prideflags and explanations about queer identities.
+
+[Visit Prideflags.info](https://prideflags.info)
 
 ## ✨ Feature List
 
@@ -18,7 +22,7 @@ This web-app (PWA) is based on [Svelte - Sapper](https://github.com/sveltejs/sap
 > Disclaimer: This project uses the package manager [🧶 Yarn](https://yarnpkg.com/lang/en/).
 > If you are coming from npm you can find some staring help [with this cheat-sheet 👀](https://shift.infinite.red/npm-vs-yarn-cheat-sheet-8755b092e5cc)
 
-To setting up a local copy follow these steps:
+To set up a local copy follow these steps:
 
 1. Clone the repository
 
@@ -53,19 +57,13 @@ Cypress can be run
 yarn cy
 ```
 
-### using the CLI (for CI)
+### using the CLI (using the build)
 
 ```sh
 yarn test
 ```
 
 ## 🚚 Production
-
-> Every Production command can also be used with `--legacy` to provide support for legacy browsers // not in use at the moment  
-> see [package.json](./package.json) for details
-
-There are two different ways this app can get used  
-@TODO:settle for one
 
 ### Runtime
 
@@ -76,14 +74,6 @@ yarn build && yarn start
 ```
 
 This will open a port with the compiled app running
-
-#### Static Export
-
-It is also possible to export the project which works similar to a static site generator
-
-```sh
-yarn export
-```
 
 ## Credits
 
