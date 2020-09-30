@@ -9,11 +9,14 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: yarn build
           start: yarn start
           record: true
+          group: 'Flagfinder E2E'
+          command-prefix: 'percy exec -- npx'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
