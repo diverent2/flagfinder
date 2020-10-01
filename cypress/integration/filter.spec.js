@@ -44,46 +44,59 @@ describe('Searchfilter', () => {
   });
 
   it('can filter by category', () => {
-    cy.get('[data-cy-flagcard]')
-      .its('length')
-      .then((no_filter_length) => {
-        cy.get('[data-cy-filter-category="kink"]').click();
-        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
-        cy.get('[data-cy-flagcard]').its('length').as('one_filter_length');
-        cy.get('@one_filter_length').should('be.lessThan', no_filter_length);
-      });
-    cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-      (categoriesList) => {
-        cy.get(categoriesList)
-          .find('[data-cy-labelbutton-text]')
-          .should('contain', 'kink');
-      }
-    );
+    cy.get('[data-cy-searchresults-number]').then((resultCount) => {
+      const no_filter_length = parseFloat(resultCount.text());
+      cy.get('[data-cy-filter-category="attraction"]')
+        .click()
+        .then(() => {
+          cy.get('[data-cy-searchresults-number]').then((resultCount_one) => {
+            const one_filter_length = parseFloat(resultCount_one.text());
+            expect(one_filter_length).to.be.lessThan(no_filter_length);
+          });
+          cy.checkIfComponentIsUpdated('.flag-results', 'data-changing').then(
+            () => {
+              cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
+                (categoriesList) => {
+                  cy.get(categoriesList)
+                    .find('[data-cy-labelbutton-text]')
+                    .invoke('text')
+                    .then((combined_label_texts) => {
+                      expect(combined_label_texts).to.contain('attraction');
+                    });
+                }
+              );
+            }
+          );
+        });
+    });
   });
 
   it('can filter by multiple categories', () => {
     cy.get('[data-cy-filter-category="gender"]').click();
-    cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
-    cy.get('[data-cy-flagcard]')
-      .its('length')
-      .then((one_filter_length) => {
-        cy.get('[data-cy-filter-category="kink"]').click();
-        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
-        cy.get('[data-cy-flagcard]').its('length').as('two_filter_length');
-        cy.get('@two_filter_length').should(
-          'be.greaterThan',
-          one_filter_length
+    cy.get('[data-cy-searchresults-number]').then((resultCount_one) => {
+      const one_filter_length = parseFloat(resultCount_one.text());
+      cy.get('[data-cy-filter-category="attraction"]')
+        .click()
+        .then(() => {
+          cy.get('[data-cy-searchresults-number]').then((resultCount_two) => {
+            const two_filter_length = parseFloat(resultCount_two.text());
+            expect(two_filter_length).to.be.greaterThan(one_filter_length);
+          });
+        });
+    });
+    cy.get('[data-cy-filter-category="attraction"]')
+      .click()
+      .then(() => {
+        cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
+          (categoriesList) => {
+            cy.get(categoriesList)
+              .find('[data-cy-labelbutton-text]')
+              .invoke('text')
+              .then((combined_label_texts) => {
+                expect(combined_label_texts).match(/(attraction|gender)/);
+              });
+          }
         );
       });
-    cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-      (categoriesList) => {
-        cy.get(categoriesList)
-          .find('[data-cy-labelbutton-text]')
-          .invoke('text')
-          .then((combined_label_texts) => {
-            expect(combined_label_texts).match(/(gender|kink)/);
-          });
-      }
-    );
   });
 });
