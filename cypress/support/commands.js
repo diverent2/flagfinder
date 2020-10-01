@@ -18,3 +18,8 @@ Cypress.Commands.add('filloutFormElement', (selector, content, position) => {
       break;
   }
 });
+
+Cypress.Commands.add('checkIfComponentIsUpdated', (selector, dataAttribute) => {
+  cy.get(`${selector}[${dataAttribute}="true"]`);
+  cy.get(`${selector}[${dataAttribute}="false"]`);
+});

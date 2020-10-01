@@ -1,6 +1,7 @@
 describe('Searchfilter', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.viewport('iphone-6');
     cy.wait(100);
 
     //open search filters
@@ -33,7 +34,6 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-color="blue"]').click();
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.get('[data-cy-filter-category="kink"]').click();
-
     cy.percySnapshot('filter--show-remove-filter-button');
     cy.get('[data-cy-search-reset-all]').click();
 
@@ -47,40 +47,41 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-flagcard]')
       .its('length')
       .then((no_filter_length) => {
-        cy.get('[data-cy-filter-category="attraction"]').click();
-        cy.get('[data-cy-search-filters-expand]').click(); //wait for animation end
-        cy.get('[data-cy-flagcard]')
-          .its('length')
-          .should('be.lessThan', no_filter_length);
+        cy.get('[data-cy-filter-category="kink"]').click();
+        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
+        cy.get('[data-cy-flagcard]').its('length').as('one_filter_length');
+        cy.get('@one_filter_length').should('be.lessThan', no_filter_length);
       });
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       (categoriesList) => {
         cy.get(categoriesList)
           .find('[data-cy-labelbutton-text]')
-          .should('contain', 'attraction');
+          .should('contain', 'kink');
       }
     );
   });
 
   it('can filter by multiple categories', () => {
-    cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.wait(300); //wait for animation end
+    cy.get('[data-cy-filter-category="gender"]').click();
+    cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
     cy.get('[data-cy-flagcard]')
       .its('length')
       .then((one_filter_length) => {
-        cy.get('[data-cy-filter-category="gender"]').click();
-        cy.get('[data-cy-flagcard]')
-          .its('length')
-          .should('be.greaterThan', one_filter_length);
+        cy.get('[data-cy-filter-category="kink"]').click();
+        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing');
+        cy.get('[data-cy-flagcard]').its('length').as('two_filter_length');
+        cy.get('@two_filter_length').should(
+          'be.greaterThan',
+          one_filter_length
+        );
       });
-    cy.get('[data-cy-search-filters-expand]').click(); //wait for animation end
     cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
       (categoriesList) => {
         cy.get(categoriesList)
           .find('[data-cy-labelbutton-text]')
           .invoke('text')
           .then((combined_label_texts) => {
-            expect(combined_label_texts).match(/(attraction|gender)/);
+            expect(combined_label_texts).match(/(gender|kink)/);
           });
       }
     );
