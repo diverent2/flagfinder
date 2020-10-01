@@ -51,7 +51,6 @@
   @import "../../../styles/z-index";
   
   .options {
-    width: 100vw;
     position: sticky;
     top: 0;
     color: var(--white);
@@ -159,7 +158,7 @@
 
   @media (--medium-up) and (--min-height) {
     .options {
-      width: calc(100vw - 140px);
+      width: calc(100% - 140px);
       margin-left: 140px;
     }
 

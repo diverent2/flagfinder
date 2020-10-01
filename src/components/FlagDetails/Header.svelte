@@ -39,7 +39,7 @@
     top: 0;
     will-change: height;
 
-    width: 100vw;
+    width: 100%;
     padding: var(--spacing);
     padding-bottom: var(--spacing-large);
     color: var(--white);

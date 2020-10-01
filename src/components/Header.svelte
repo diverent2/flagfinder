@@ -7,7 +7,7 @@
 <style lang="scss">
   header {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 120px;
     padding: 1rem;
     color: var(--white);
@@ -49,7 +49,7 @@
   @media (--medium-up) and (--min-height) {
     header {
       right: 0;
-      width: calc(100vw - 150px);
+      width: calc(100% - 150px);
     }
 
     h1 {
