@@ -9,6 +9,8 @@
   import FlagCard from "./FlagCard.svelte";
 
   export let flags = [];
+  let isChanging = false;
+  $: isChanging;
 
   onMount(() => {
     flags.forEach(flag => {
@@ -64,13 +66,21 @@
   }
 </style>
 
-<div class="flag-results" aria-live="polite" aria-relevant="additions removals">
+<div
+  class="flag-results"
+  aria-live="polite"
+  aria-relevant="additions removals"
+  data-changing={isChanging}>
   {#if flags.length}
     {#each flags as flag, index (flag)}
       <div
         in:fly={{ duration: 200, x: 100 }}
         animate:flip={{ duration: 200, easing: quintOut }}
-        out:fade={{ duration: 200 }}>
+        out:fade={{ duration: 200 }}
+        on:introstart={() => (isChanging = true)}
+        on:outrostart={() => (isChanging = true)}
+        on:introend={() => (isChanging = false)}
+        on:outroend={() => (isChanging = false)}>
         <FlagCard {flag} titleVisibility={flag.titleVisibility} />
       </div>
     {/each}
