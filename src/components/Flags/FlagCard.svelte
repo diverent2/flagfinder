@@ -129,6 +129,8 @@
   }
 </style>
 
+<svelte:options immutable />
+
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard" data-cy-flagcard>
     <img
