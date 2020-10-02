@@ -131,6 +131,10 @@
         margin-left: 190px;
       }
     }
+
+    .tabButtons {
+      display: none;
+    }
   }
 
   @media (--large-up) and (--min-height) {
@@ -184,11 +188,7 @@
         data-cy-flag-header-image />
     </div>
   </div>
-  <MediaQuery query={matchMedia.medium_down} let:matches>
-    {#if matches}
-      <div class="tabButtons">
-        <Tabs tab1="General" tab2="Details" bind:activeTab />
-      </div>
-    {/if}
-  </MediaQuery>
+  <div class="tabButtons">
+    <Tabs tab1="General" tab2="Details" bind:activeTab />
+  </div>
 </header>
