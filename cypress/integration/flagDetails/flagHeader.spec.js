@@ -4,6 +4,15 @@ describe('Header for flag info', () => {
     cy.viewport('iphone-6');
   });
 
+  it('changes the header consistantly', () => {
+    cy.visit(`/flag/gay`);
+    cy.percySnapshot('flag-header--default');
+    cy.scrollTo(0, 100);
+    cy.percySnapshot('flag-header--scrolled-down');
+    cy.scrollTo(0, 10);
+    cy.percySnapshot('flag-header--scrolled-up-again');
+  });
+
   it('updates headerstate on scroll', () => {
     const headerHeightThreshold = 200;
     cy.wrap(['progressive', 'gay', 'lesbian', 'rubber']).each(
