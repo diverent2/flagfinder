@@ -1,4 +1,11 @@
-describe('Flagfinder', () => {
+describe('landingpage', () => {
+  it('displays the content consistently'),
+    () => {
+      cy.visit('/');
+      cy.percySnapshot('search--overview');
+    };
+});
+
   beforeEach(() => {
     cy.visit('/');
   });
