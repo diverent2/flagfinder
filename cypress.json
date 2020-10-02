@@ -4,6 +4,7 @@
   "projectId": "ywge99",
   "env": {
     "small": 375,
-    "large": 1366
+    "medium": 950,
+    "large": 1980
   }
 }
