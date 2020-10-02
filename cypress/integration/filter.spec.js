@@ -44,8 +44,17 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-color].selected').should('have.length', 0);
     cy.get('[data-cy-filter-category].selected').should('have.length', 0);
   });
+});
 
-  it('can filter by category', () => {
+describe('Category filter', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.wait(100);
+    //open search filters
+    cy.get('[data-cy-search-filters-expand]').click();
+  });
+
+  it('returns less results applying one filter', () => {
     cy.get('[data-cy-searchresults-number]').then((resultCount) => {
       const no_filter_length = parseFloat(resultCount.text());
       cy.get('[data-cy-filter-category="attraction"]')
@@ -55,25 +64,31 @@ describe('Searchfilter', () => {
             const one_filter_length = parseFloat(resultCount_one.text());
             expect(one_filter_length).to.be.lessThan(no_filter_length);
           });
-          cy.checkIfComponentIsUpdated('.flag-results', 'data-changing').then(
-            () => {
-              cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-                (categoriesList) => {
-                  cy.get(categoriesList)
-                    .find('[data-cy-labelbutton-text]')
-                    .invoke('text')
-                    .then((combined_label_texts) => {
-                      expect(combined_label_texts).to.contain('attraction');
-                    });
-                }
-              );
-            }
-          );
         });
     });
   });
 
-  it('can filter by multiple categories', () => {
+  it('all results match one filter', () => {
+    cy.get('[data-cy-filter-category="gender"]')
+      .click()
+      .then(() => {
+        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing').then(
+          () => {
+            cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
+              (categoriesList) => {
+                cy.get(categoriesList)
+                  .find('[data-cy-labelbutton-text]')
+                  .invoke('text')
+                  .then((combined_label_texts) => {
+                    expect(combined_label_texts).match(/gender/);
+                  });
+              }
+            );
+          }
+        );
+      });
+  });
+  it('returns more results applying two filters', () => {
     cy.get('[data-cy-filter-category="gender"]').click();
     cy.get('[data-cy-searchresults-number]').then((resultCount_one) => {
       const one_filter_length = parseFloat(resultCount_one.text());
@@ -86,19 +101,25 @@ describe('Searchfilter', () => {
           });
         });
     });
-    cy.get('[data-cy-filter-category="attraction"]')
+  });
+  it('all results match atleast one of the filters', () => {
+    cy.get('[data-cy-filter-category="gender"]')
       .click()
       .then(() => {
-        cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-          (categoriesList) => {
-            cy.get(categoriesList)
-              .find('[data-cy-labelbutton-text]')
-              .invoke('text')
-              .then((combined_label_texts) => {
-                expect(combined_label_texts).match(/(attraction|gender)/);
-              });
-          }
-        );
+        cy.get('[data-cy-filter-category="attraction"]')
+          .click()
+          .then(() => {
+            cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
+              (categoriesList) => {
+                cy.get(categoriesList)
+                  .find('[data-cy-labelbutton-text]')
+                  .invoke('text')
+                  .then((combined_label_texts) => {
+                    expect(combined_label_texts).match(/(attraction|gender)/);
+                  });
+              }
+            );
+          });
       });
   });
 });
