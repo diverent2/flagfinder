@@ -6,8 +6,15 @@ describe('landingpage', () => {
     };
 });
 
+describe('Flagfinder general', () => {
   beforeEach(() => {
     cy.visit('/');
+  });
+
+  it.only('shows 404 if page is not found', () => {
+    cy.visit('/not-existing', { failOnStatusCode: false });
+    cy.get('h1').should('contain', '404');
+    cy.percySnapshot('404');
   });
 
   it('redirects from /search to index', () => {
