@@ -35,7 +35,7 @@ describe('Searchfilter', () => {
     cy.get('[data-cy-filter-category="attraction"]').click();
     cy.get('[data-cy-filter-category="kink"]').click();
     cy.percySnapshot('filter--show-remove-filter-button', {
-      percyCSS: `.flag-results { display: none; }`,
+      percyCSS: `.flag-results { display: none !important; }`,
     });
     cy.get('[data-cy-search-reset-all]').click();
 
