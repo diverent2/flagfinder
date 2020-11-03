@@ -67,7 +67,7 @@
     <svg class="background" aria-hidden="true">
       <use href="waves/wave-top.svg#wave-top" />
     </svg>
-    <a href={backLink} class="goBack">
+    <a href={backLink} class="goBack" data-cy-back-button>
       <Icon
         icon="arrow-back"
         scale="var(--spacing-large)"

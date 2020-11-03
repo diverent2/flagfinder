@@ -166,7 +166,7 @@
 
 <header data-cy-flag-header data-state={state}>
   <div class="header_inner">
-    <a href="/" class="goBack">
+    <a href="/" class="goBack" data-cy-back-button>
       <Icon
         icon="arrow-back"
         scale="var(--spacing-large)"
