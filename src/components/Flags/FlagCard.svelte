@@ -1,9 +1,20 @@
 <script>
+  import { bookmarkedFlags } from '../../data/stores/bookmarkedFlags.js'
+
   import LabelButton from "../Elements/Buttons/LabelButton.svelte";
   import Icon from "../Elements/Icon.svelte";
 
   export let flag;
   export let titleVisibility = true;
+  export let isBookmarked = false;
+  
+  function setBookmarkedStatus() {
+    if(isBookmarked) {
+      bookmarkedFlags.add((flag.id))
+    } else {
+      bookmarkedFlags.remove((flag.id))
+    }
+  }
 
   function getCategoryColor(category) {
     let color;
@@ -129,6 +140,7 @@
   }
 </style>
 
+<input class="bookmark" type="checkbox" bind:checked={isBookmarked} on:change={setBookmarkedStatus} data-cy-bookmark>
 <a rel="prefetch" href="/flag/{flag.id}" title="{flag.name} flag">
   <div class="flagCard" data-cy-flagcard>
     <img

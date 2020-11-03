@@ -1,8 +1,9 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, beforeUpdate } from "svelte";
   import { fade, fly } from "svelte/transition";
   import { flip } from "svelte/animate";
   import { quintOut } from "svelte/easing";
+  import { bookmarkedFlags } from '../../data/stores/bookmarkedFlags.js'
 
   import _debounce from "lodash/debounce";
 
@@ -13,6 +14,7 @@
   onMount(() => {
     flags.forEach(flag => {
       flag.titleVisibility = true;
+      flag.isBookmarked = $bookmarkedFlags.has(flag.id);
     });
 
     getCategoryVisibility();
@@ -43,6 +45,10 @@
       }, 1);
     }
   }
+
+  function checkIfFavorite(flag) {
+    return false;
+  }
 </script>
 
 <style lang="scss">
@@ -71,7 +77,7 @@
         in:fly={{ duration: 200, x: 100 }}
         animate:flip={{ duration: 200, easing: quintOut }}
         out:fade={{ duration: 200 }}>
-        <FlagCard {flag} titleVisibility={flag.titleVisibility} />
+        <FlagCard {flag} titleVisibility={flag.titleVisibility} isBookmarked={ $bookmarkedFlags.has(flag.id) } />
       </div>
     {/each}
   {:else}

@@ -1,14 +1,47 @@
 <script>
-  import { app_name, app_baseUrl } from "../data/global.js";
+  import { onMount, beforeUpdate } from "svelte";
+  
+  import { app_name, app_baseUrl } from '../data/global.js';
+  import { bookmarkedFlags } from '../data/stores/bookmarkedFlags.js'
+  import flags from "../data/_flags";
+  
+  import FlagCards from '../components/Flags/FlagCards.svelte';
+  import Metainfos from './../components/Helpers/Metainfos.svelte';
+  import Header from './../components/Header.svelte';
+  
+  let bookmarks = [];
+  $: bookmarks;
 
-  import Metainfos from "./../components/Helpers/Metainfos.svelte";
-  import Header from "./../components/Header.svelte";
+  onMount(() => {
+    getBookmarks();
+  });
 
+  beforeUpdate(() => {
+    console.log($bookmarkedFlags);
+    getBookmarks();
+  });
+
+  function getBookmarks() {
+    bookmarks = [];
+    bookmarks = bookmarks;
+    if (!$bookmarkedFlags.size) return;
+
+    for (const flag of flags) {
+      const flagIsBookmarked = $bookmarkedFlags.has(flag.id);
+      const flagIsAlreadyInBookmarks = bookmarks.includes(flag.id);
+      if(flagIsBookmarked && !flagIsAlreadyInBookmarks) {
+        bookmarks.push(flag);
+        bookmarks = bookmarks;
+      }
+    }
+  }
+
+  
   const meta = {
     title: `Bookmarks | ${app_name}`,
     desc: `See all of your favortite prideflags in one place!`,
     url: `${app_baseUrl}/bookmarks`,
-    image: `${app_baseUrl}/socialcards/search.png`
+    image: `${app_baseUrl}/socialcards/search.png`,
   };
 </script>
 
@@ -31,10 +64,7 @@
       where all your beloved (or the ones you just keep forgetting the name of)
       flags can be found.
     </p>
-    <p>
-      But sadly for now, you'll have to wait a little longer, or, if you are
-      feeling adventurous, you can speed up this process by
-      <a href="/about/#contribute">contributing</a>
-    </p>
+
+    <FlagCards flags={bookmarks} />
   </section>
 </div>
