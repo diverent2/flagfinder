@@ -53,6 +53,7 @@
     height: 0;
     width: 0;
   }
+  
   .colorButtons {
     max-width: 360px;
     margin-top: var(--spacing-small);

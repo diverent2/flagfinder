@@ -17,7 +17,6 @@
   });
 
   beforeUpdate(() => {
-    console.log($bookmarkedFlags);
     getBookmarks();
   });
 
@@ -57,12 +56,11 @@
 
 <div class="container container-padding-top">
   <section>
-    <h2 class="text--center">Coming soon</h2>
+    <h2 class="text--center">Your bookmarked flags</h2>
     <p>
       You've found your favortite flag and don't want to forget what it was
-      called again? Soon you'll have to look no further than this very page
-      where all your beloved (or the ones you just keep forgetting the name of)
-      flags can be found.
+      called again? You can add flags as bookmarks on their details page and then come back here
+      where all your favorite flags (or atleast the ones you just keep forgetting the name of) can be found.
     </p>
 
     <FlagCards flags={bookmarks} />
