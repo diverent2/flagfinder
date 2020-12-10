@@ -74,7 +74,7 @@
 
   function checkIfFlagMatchesSearchRequest(flag, searchterm) {
     const { name, keywords, description, origin, category, props } = flag;
-    const { firstAppearance, timeframe } = origin;
+    const { author, publicationDate } = origin;
 
     const colors = [];
     props.colors.forEach(_color => {
@@ -87,10 +87,10 @@
       name,
       keywords,
       description,
-      firstAppearance,
+      author,
       category,
       colors.flat(),
-      timeframe
+      publicationDate
     ].flat();
 
     const fieldsToCheck_cleaned = Array.from(fieldsToCheck, field => {
