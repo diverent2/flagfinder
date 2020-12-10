@@ -69,25 +69,19 @@ describe('Category filter', () => {
   });
 
   it('all results match one filter', () => {
-    cy.get('[data-cy-filter-category="gender"]')
-      .click()
-      .then(() => {
-        cy.checkIfComponentIsUpdated('.flag-results', 'data-changing').then(
-          () => {
-            cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-              (categoriesList) => {
-                cy.get(categoriesList)
-                  .find('[data-cy-labelbutton-text]')
-                  .invoke('text')
-                  .then((combined_label_texts) => {
-                    expect(combined_label_texts).match(/gender/);
-                  });
-              }
-            );
-          }
-        );
-      });
+    cy.get('[data-cy-filter-category="gender"]').click();
+    cy.get('[data-cy-flagcard]').each(
+      (flag) => {
+        cy.get(flag)
+        .find('[data-cy-flagcard-categories]')
+        .invoke('text')
+        .then((combined_label_texts) => {
+          expect(combined_label_texts).match(/gender/);
+        });
+      }
+    );
   });
+  
   it('returns more results applying two filters', () => {
     cy.get('[data-cy-filter-category="gender"]').click();
     cy.get('[data-cy-searchresults-number]').then((resultCount_one) => {
@@ -102,24 +96,19 @@ describe('Category filter', () => {
         });
     });
   });
+
   it('all results match atleast one of the filters', () => {
-    cy.get('[data-cy-filter-category="gender"]')
-      .click()
-      .then(() => {
-        cy.get('[data-cy-filter-category="attraction"]')
-          .click()
-          .then(() => {
-            cy.get('[data-cy-flagcard] [data-cy-flagcard-categories]').each(
-              (categoriesList) => {
-                cy.get(categoriesList)
-                  .find('[data-cy-labelbutton-text]')
-                  .invoke('text')
-                  .then((combined_label_texts) => {
-                    expect(combined_label_texts).match(/(attraction|gender)/);
-                  });
-              }
-            );
-          });
-      });
+    cy.get('[data-cy-filter-category="gender"]').click();
+    cy.get('[data-cy-filter-category="attraction"]').click();
+    cy.get('[data-cy-flagcard]').each(
+      (flag) => {
+        cy.get(flag)
+        .find('[data-cy-flagcard-categories]')
+        .invoke('text')
+        .then((combined_label_texts) => {
+          expect(combined_label_texts).match(/(attraction|gender)/);
+        });
+      }
+    );
   });
 });
