@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Fix filter category test
+- Fix search by using the origin name
 - Fix wrong form elements labels (using `id` instead of `name` now)
 - #64 Allow png for og:image even if flag is an svg
 - Fix too small FlagCard images scaling
@@ -22,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### ➕ Added
 
+- #69 Add Percy Visual Regression Testing
 - Activate Cypress Dashboard Usage
 - Automatically add flag color names/ids using [api.color.pizza](https://github.com/meodai/color-names)
 - Google Console Verification
