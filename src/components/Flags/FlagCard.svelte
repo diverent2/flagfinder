@@ -37,6 +37,7 @@
 
   .flagCard__image {
     border-radius: inherit;
+    min-width: 150px;
   }
 
   .flagCard__header {
@@ -105,6 +106,7 @@
 
     .flagCard__image {
       width: 100%;
+      min-width: auto;
       height: auto;
       flex-grow: 1;
       object-fit: cover;
