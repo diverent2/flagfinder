@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Fix scaling issue for flagCard images
 - Fix filter category test
 - Fix search by using the origin name
 - Fix wrong form elements labels (using `id` instead of `name` now)
