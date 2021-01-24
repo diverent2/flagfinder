@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('flag details', () => {
   it('displays the content consistently'),
     () => {
@@ -10,6 +12,24 @@ describe('flag details', () => {
       cy.visit('/flag/genderqueer');
       cy.percySnapshot('flag-details--genderqueer');
     };
+});
+
+describe('shows the correct content', () => {
+
+  beforeEach(() => {
+    cy.visit('/flag/gay');
+  });
+
+  it('shows only one tab content on mobile', () => {
+    cy.viewport('iphone-6');
+    cy.get('[data-cy-flag-details-section="general"]').should('be.visible');
+    cy.get('[data-cy-flag-details-section="details"]').should('be.not.visible');
+  });
+  it('shows the full content on desktop', () => {
+    cy.viewport('macbook-11');
+    cy.get('[data-cy-flag-details-section="general"]').should('be.visible');
+    cy.get('[data-cy-flag-details-section="details"]').should('be.visible');
+  })
 });
 
 describe('flag details have the correct meta data', () => {

@@ -1,10 +1,6 @@
 <script>
   import { afterUpdate } from "svelte";
 
-  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
-
-  import { matchMedia } from "./../../data/global.js";
-
   import Icon from "./../Elements/Icon.svelte";
   import Tabs from "./../Elements/Tabs.svelte";
 

@@ -117,7 +117,7 @@
   }
 </style>
 
-<section>
+<section data-cy-flag-details-section="general">
   <h2 data-section-title>General</h2>
 
   <h3>

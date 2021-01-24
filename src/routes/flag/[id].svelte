@@ -22,7 +22,6 @@
 
 <script>
   import _startCase from "lodash/startCase";
-  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
 
   import { app_name, app_baseUrl, matchMedia } from "../../data/global.js";
 
@@ -89,17 +88,16 @@
 
 <main class="container">
   <div class="subcontainer" aria-live="polite">
-    <MediaQuery query={matchMedia.medium_down} let:matches>
-      {#if matches}
-        {#if activeTab === 1}
-          <General {flag} />
-        {:else}
-          <Details {flag} />
-        {/if}
-      {:else}
+    <div class="hide-for-medium_up">
+      {#if activeTab === 1}
         <General {flag} />
+      {:else}
         <Details {flag} />
       {/if}
-    </MediaQuery>
+    </div>
+    <div class="show-for-medium_up">
+      <General {flag} />
+      <Details {flag} />
+    </div>
   </div>
 </main>

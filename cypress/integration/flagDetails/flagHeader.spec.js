@@ -6,6 +6,7 @@ describe('Header for flag info', () => {
 
   it('changes the header consistantly', () => {
     cy.visit(`/flag/gay`);
+    cy.wait(100);
     cy.percySnapshot('flag-header--default');
     cy.scrollTo(0, 100);
     cy.percySnapshot('flag-header--scrolled-down');
