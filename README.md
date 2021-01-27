@@ -1,7 +1,6 @@
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/diverent2/flagfinder?color=blue&label=Version&sort=semver)
 
-![Testing](https://github.com/diverent2/flagfinder/workflows/Testing/badge.svg?branch=master)
-![go to Cypress Dashboard](https://img.shields.io/static/v1?label=&message=Cypress%20Dashboard&color=2e3138&logo=cypress&link=https://dashboard.cypress.io/projects/ywge99)
+![Testing](https://github.com/diverent2/flagfinder/workflows/Testing/badge.svg?branch=master) ![go to Cypress Dashboard](https://img.shields.io/static/v1?label=&message=Cypress%20Dashboard&color=2e3138&logo=cypress&link=https://dashboard.cypress.io/projects/ywge99) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/691489c8/Flagfinder)
 
 # Prideflags.info 🔎🏳️‍🌈
 
