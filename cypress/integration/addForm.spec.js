@@ -1,11 +1,13 @@
 describe('Add Flag form', () => {
   beforeEach(() => {
+    const now = new Date(2021, 0, 1);
+    cy.clock(now); ////freeze time to Jan 1st 2021
+
     cy.visit('/add');
     cy.wait(100);
   });
 
   it('can generate flag data by filling out the form', () => {
-    cy.wait(100);
     cy.filloutFormElement('input#name', 'gay bear pride');
     cy.filloutFormElement('input#id', 'gay-bear');
     cy.get('[data-cy-form-category="sexuality"]').click();
