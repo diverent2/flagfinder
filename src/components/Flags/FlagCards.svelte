@@ -64,13 +64,16 @@
   }
 </style>
 
-<div class="flag-results" aria-live="polite" aria-relevant="additions removals">
+<div
+  class="flag-results"
+  aria-live="polite"
+  aria-relevant="additions removals">
   {#if flags.length}
     {#each flags as flag, index (flag)}
       <div
         in:fly={{ duration: 200, x: 100 }}
-        animate:flip={{ duration: 200, easing: quintOut }}
-        out:fade={{ duration: 200 }}>
+        animate:flip={{ duration: 200, easing: quintOut }} 
+      >
         <FlagCard {flag} titleVisibility={flag.titleVisibility} />
       </div>
     {/each}

@@ -1,10 +1,6 @@
 <script>
   import { afterUpdate } from "svelte";
 
-  import MediaQuery from "svelte-media-query/src/MediaQuery.svelte";
-
-  import { matchMedia } from "./../../data/global.js";
-
   import Icon from "./../Elements/Icon.svelte";
   import Tabs from "./../Elements/Tabs.svelte";
 
@@ -39,7 +35,7 @@
     top: 0;
     will-change: height;
 
-    width: 100vw;
+    width: 100%;
     padding: var(--spacing);
     padding-bottom: var(--spacing-large);
     color: var(--white);
@@ -131,6 +127,10 @@
         margin-left: 190px;
       }
     }
+
+    .tabButtons {
+      display: none;
+    }
   }
 
   @media (--large-up) and (--min-height) {
@@ -184,11 +184,7 @@
         data-cy-flag-header-image />
     </div>
   </div>
-  <MediaQuery query={matchMedia.medium_down} let:matches>
-    {#if matches}
-      <div class="tabButtons">
-        <Tabs tab1="General" tab2="Details" bind:activeTab />
-      </div>
-    {/if}
-  </MediaQuery>
+  <div class="tabButtons">
+    <Tabs tab1="General" tab2="Details" bind:activeTab />
+  </div>
 </header>

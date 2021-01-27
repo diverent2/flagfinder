@@ -18,3 +18,23 @@ $large: 900px;
 @custom-media --large-up (width > 800px);
 
 @custom-media --min-height (height > 450px);
+
+
+.show-for-medium_up {
+    display: none;
+}
+
+.hide-for-medium_up {
+    display: block;
+}
+
+@media (--medium-up) {
+
+    .show-for-medium_up {
+      display: block;
+    }
+
+    .hide-for-medium_up {
+      display: none;
+    }
+}

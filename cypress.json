@@ -1,4 +1,10 @@
 {
-	"baseUrl": "http://localhost:3000",
-	"video": false
+  "baseUrl": "http://localhost:3000",
+  "video": false,
+  "projectId": "ywge99",
+  "env": {
+    "small": 375,
+    "medium": 950,
+    "large": 1980
+  }
 }

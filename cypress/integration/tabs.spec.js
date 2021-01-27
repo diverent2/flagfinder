@@ -29,6 +29,9 @@ describe('Detail Tabs', () => {
         cy.get('section [data-section-title]').should('contain', tabText);
         cy.contains(tabText);
       });
+    cy.percySnapshot('tabs--first-tab-active', {
+      widths: [Cypress.env('small')],
+    });
 
     cy.get('@tab')
       .not('[data-tab-active]')
@@ -39,6 +42,9 @@ describe('Detail Tabs', () => {
         cy.get('section [data-section-title]').should('contain', tabText);
         cy.contains(tabText);
       });
+    cy.percySnapshot('tabs--second-tab-active', {
+      widths: [Cypress.env('small')],
+    });
   });
   it('only shows tabs on mobile', () => {
     cy.get('@tab').should('be.visible');

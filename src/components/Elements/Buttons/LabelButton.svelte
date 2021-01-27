@@ -1,11 +1,11 @@
 <script>
-  export let icon = "search";
-  export let color = "var(--white)";
+  export let icon = 'search';
+  export let color = 'var(--white)';
   export let colorHover = color;
-  export let colorBackground = "var(--blue-dark)";
+  export let colorBackground = 'var(--blue-dark)';
   export let colorBackgroundHover = colorBackground;
   export let showLabel = true;
-  export let scale = "1rem";
+  export let scale = '1rem';
 </script>
 
 <style lang="scss">
@@ -39,7 +39,7 @@
     transition: all 0.2s ease-in-out;
     transform-origin: center;
 
-    &[data-display="false"] {
+    &[data-display='false'] {
       width: 0;
       height: 0;
       opacity: 0;
@@ -60,7 +60,7 @@
     viewBox="0 0 512 512">
     <use href="icons/{icon}.svg#{icon}" />
   </svg>
-  <span class="text" data-display={showLabel} data-cy-button-text>
+  <span class="text" data-display={showLabel} data-cy-labelbutton-text>
     <slot />
   </span>
 </div>

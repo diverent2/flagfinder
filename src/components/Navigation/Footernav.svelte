@@ -25,7 +25,7 @@
       left: 0;
       top: 0;
       height: 100%;
-      width: 100vw;
+      width: 100%;
       pointer-events: none;
       z-index: -1;
     }

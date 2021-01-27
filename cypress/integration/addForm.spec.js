@@ -1,11 +1,13 @@
 describe('Add Flag form', () => {
   beforeEach(() => {
+    const now = new Date(2021, 0, 1);
+    cy.clock(now); ////freeze time to Jan 1st 2021
+
     cy.visit('/add');
     cy.wait(100);
   });
 
   it('can generate flag data by filling out the form', () => {
-    cy.wait(100);
     cy.filloutFormElement('input#name', 'gay bear pride');
     cy.filloutFormElement('input#id', 'gay-bear');
     cy.get('[data-cy-form-category="sexuality"]').click();
@@ -122,6 +124,7 @@ describe('Add Flag form', () => {
       .select('green')
       .should('have.value', 'green')
       .and('have.css', 'border-left-color', 'rgb(17, 131, 1)');
+    cy.percySnapshot('addForm--color-preview');
 
     cy.get('button[data-cy-add-color]').click();
     cy.get('select[data-cy-form-color-hue]')
@@ -162,6 +165,7 @@ describe('Add Flag form', () => {
     cy.get('button[data-ql-add-flag-alteration]').click();
     cy.get('[data-ql-flag-alteration]').should('have.length', 3);
     cy.filloutFormElement('input[name="flagAlteration-title"]', 'title_C', 2);
+    cy.percySnapshot('addForm--mulitiple-alterations');
 
     cy.log('Remove second source element');
     cy.get('button[data-ql-remove-flag-alteration]').eq(1).click();

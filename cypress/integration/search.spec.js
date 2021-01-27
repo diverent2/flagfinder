@@ -6,10 +6,16 @@ describe('Search', () => {
   });
 
   it('updates result count correctly', () => {
+    cy.get('[data-cy-searchresults-number]').invoke('text').as('resultCount');
+    cy.get('@resultCount').then((resultCount) => {
+      cy.get('[data-cy-flagcard]').should('have.length', resultCount);
+    });
+
     cy.get('[data-cy-filter-category="attraction"]').click();
-    cy.get('[data-cy-searchresults-number]').then(($counter) => {
-      const amount = $counter.text();
-      cy.get('[data-cy-flagcard]').should('have.length', amount);
+
+    cy.get('[data-cy-searchresults-number]').invoke('text').as('resultCount');
+    cy.get('@resultCount').then((resultCount) => {
+      cy.get('[data-cy-flagcard]').should('have.length', resultCount);
     });
   });
 

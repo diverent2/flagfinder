@@ -66,7 +66,7 @@
   }
 </style>
 
-<section>
+<section data-cy-flag-details-section="details">
   <h2 data-section-title>Details</h2>
 
   <h3>

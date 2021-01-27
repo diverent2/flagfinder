@@ -10,18 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### 🛠️ Fixed
-
-- Fix wrong form elements labels (using `id` instead of `name` now)
-- #64 Allow png for og:image even if flag is an svg
-- Fix too small FlagCard images scaling
-- Fix wrong flag page state if scroll speed is too fast
-- Resolve warning about empty initial "activeTab" value
-- Tab Title Test Selector
-- Fix overscaled Flags in FlagCard for small [Safari]
-
 ### ➕ Added
 
+- #69 Add Percy Visual Regression Testing
+- Activate Cypress Dashboard Usage
 - Automatically add flag color names/ids using [api.color.pizza](https://github.com/meodai/color-names)
 - Google Console Verification
 - Make footer credits dynamic
@@ -33,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
+- Optimized tests for visual regression testing
+- Update readme
 - Refactor add-form + test
 - Better handling for fonts
 - Update dependencies (cypress, rollup, svelte/sapper, ...)
@@ -42,8 +36,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🛠️ Fixed
 
+- Fix scaling issue for flagCard images
+- Fix filter category test
+- Fix search by using the origin name
+- Fix wrong form elements labels (using `id` instead of `name` now)
+- #64 Allow png for og:image even if flag is an svg
+- Fix too small FlagCard images scaling
+- Fix wrong flag page state if scroll speed is too fast
+- Resolve warning about empty initial "activeTab" value
+- Tab Title Test Selector
+- Fix overscaled Flags in FlagCard for small [Safari]
+- Stying issues regarding device width
 - Issues after dependencies update
 - Add space between icon and text in flag details headings
+
+### 🗑️ Removed
+
+- Svelte-media-query module
 
 ## [0.6 - The Navigation Update] - 2020-06-16
 

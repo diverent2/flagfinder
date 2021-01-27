@@ -1,9 +1,9 @@
 <script>
-  export let icon = "search";
-  export let scale = "1rem";
-  export let color = "var(--white)";
+  export let icon = 'search';
+  export let scale = '1rem';
+  export let color = 'var(--white)';
   export let colorHover = color;
-  export let colorBackground = "var(--blue-dark)";
+  export let colorBackground = 'var(--blue-dark)';
   export let colorBackgroundHover = colorBackground;
   export let showLabel = false;
   export let showBorder = false;
@@ -45,7 +45,7 @@
     height: var(--scale);
   }
 
-  .text[data-display="false"] {
+  .text[data-display='false'] {
     width: 0;
     height: 0;
     opacity: 0;
@@ -67,7 +67,7 @@
       <use href="icons/{icon}.svg#{icon}" />
     </svg>
   </div>
-  <span class="text" data-display={showLabel} data-cy-button-text>
+  <span class="text" data-display={showLabel} data-cy-roundbutton-text>
     <slot />
   </span>
 </div>
