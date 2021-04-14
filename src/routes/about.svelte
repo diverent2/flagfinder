@@ -86,7 +86,7 @@
       I'm
     </a>
     working on this app, I would like to address some likely to be asked
-    questions
+    questions:
   </p>
 
   <section>
@@ -95,7 +95,7 @@
 
     <h3>What is this project about?</h3>
     <p>
-      The idea of this site is to collactivly provide information on queer (and
+      The idea of this site is to collectively provide information on queer (and
       non queer) identities in one place. It covers different fields and is
       supposed to work as a starting point to talk about these complicated
       topics.
@@ -124,16 +124,16 @@
       <a href="/about/#contribute">improve</a>
       the wording and content.
       <br />
-      To achieve gender neutral/inclusive language, I've decided to use singluar
+      To achieve gender neutral/inclusive language, I've decided to use singular
       "they". If this sounds strange to you, that's ok. However please be
       respectful and accept my choice. If you want to find out more about
-      singluar "they" here's
+      singular "they" here's
       <a rel="external" href="https://iheartsingularthey.com/" target="blank">
         a good and entertaining resource
       </a>
       for that.
       <br />
-      In some occations I also rely on using the asterisks (*) to indicate
+      In some occasions I also rely on using the asterisks (*) to indicate
       people who aren't automatically associated with certain terms or who sort
       of fall inbetween categories.
       <br />
@@ -150,7 +150,7 @@
         title="@diverent2 on twitter">
         me.
       </a>
-      To do so, I research the content and try not to be too opionated while
+      To do so, I research the content and try not to be too opinionated while
       also trying my hardest to keep the list organised and clean.
       <br />
       You can also
