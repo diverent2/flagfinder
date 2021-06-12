@@ -11,6 +11,7 @@ const flags = [
       author: 'Daniel Quasar',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality', 'attraction', 'gender', 'kink'],
     image: 'progressive.png',
     props: {
@@ -173,6 +174,7 @@ const flags = [
         },
       ],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'gay/gay.png',
     props: {
@@ -276,6 +278,7 @@ const flags = [
       publicationDate: '1995',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'gay-bear.png',
     props: {
@@ -369,6 +372,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'gay-twink.png',
     props: {
@@ -441,6 +445,7 @@ const flags = [
       publicationDate: '2010',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'asexual.png',
     props: {
@@ -523,6 +528,7 @@ const flags = [
       publicationDate: 'December 5, 1998',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'bisexual.png',
     props: {
@@ -594,6 +600,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'demisexual.png',
     props: {
@@ -688,6 +695,7 @@ const flags = [
         },
       ],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'heterosexual/heterosexual.png',
     props: {
@@ -750,6 +758,7 @@ const flags = [
         },
       ],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'lesbian/lesbian.png',
     props: {
@@ -840,6 +849,7 @@ const flags = [
       publicationDate: '1999',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'lesbian-labry.png',
     props: {
@@ -916,6 +926,7 @@ const flags = [
       publicationDate: 'july 28, 2010',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'lesbian-lipstick.png',
     props: {
@@ -1026,6 +1037,7 @@ const flags = [
       publicationDate: '2010',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'pansexual.png',
     props: {
@@ -1102,6 +1114,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'omnisexual/omnisexual.svg',
     props: {
@@ -1185,6 +1198,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'polysexual.png',
     props: {
@@ -1243,6 +1257,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['sexuality'],
     image: 'straight-ally.png',
     props: {
@@ -1356,6 +1371,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'agender.png',
     props: {
@@ -1430,6 +1446,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'androgyne.png',
     props: {
@@ -1506,6 +1523,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'genderfluid.png',
     props: {
@@ -1595,6 +1613,7 @@ const flags = [
         },
       ],
     },
+    facts: [],
     categories: ['gender'],
     image: 'genderqueer/genderqueer.png',
     props: {
@@ -1675,6 +1694,7 @@ const flags = [
       publicationDate: '2014',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'nonbinary.png',
     props: {
@@ -1752,6 +1772,7 @@ const flags = [
       publicationDate: '1999',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'transgender.png',
     props: {
@@ -1825,6 +1846,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'demigirl.png',
     props: {
@@ -1896,6 +1918,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'demiboy.png',
     props: {
@@ -1971,6 +1994,7 @@ const flags = [
         },
       ],
     },
+    facts: [],
     categories: ['gender'],
     image: 'bigender/bigender.png',
     props: {
@@ -2071,6 +2095,7 @@ const flags = [
       publicationDate: 'June 2014',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'cisgender.png',
     props: {
@@ -2123,6 +2148,7 @@ const flags = [
       publicationDate: '2013',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['gender'],
     image: 'intersex.png',
     props: {
@@ -2189,6 +2215,7 @@ const flags = [
       publicationDate: '2014',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['attraction'],
     image: 'aromantic.png',
     props: {
@@ -2268,6 +2295,7 @@ const flags = [
       publicationDate: '',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['attraction'],
     image: 'polyamory.png',
     props: {
@@ -2356,6 +2384,7 @@ const flags = [
       publicationDate: '1989',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['kink'],
     image: 'leather.png',
     props: {
@@ -2428,6 +2457,7 @@ const flags = [
       publicationDate: '1994',
       flagAlterations: [],
     },
+    facts: [],
     categories: ['kink'],
     image: 'rubber/rubber.svg',
     props: {

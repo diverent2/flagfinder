@@ -101,6 +101,27 @@
   <hr class="rainbow" />
 
   <h3>
+    <span class="icon">🤓</span>
+    Bonus Facts:
+  </h3>
+
+  {#if flag.facts.length}
+  <ul class="facts">
+    {#each flag.facts as fact}
+      <li class="fact">
+        <div>
+          {@html fact}
+        </div>
+      </li>
+    {/each}
+  </ul>
+{:else}
+  <p class="field--empty">No facts found.</p>
+{/if}
+<hr class="rainbow" />
+
+
+  <h3>
     <span class="icon">🔎</span>
     Sources
   </h3>
