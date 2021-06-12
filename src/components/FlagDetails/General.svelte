@@ -237,7 +237,9 @@
     <ul class="keywords">
       {#each flag.keywords as keyword}
         <li class="keyword">
-          <span class="keyword_inner">{keyword}</span>
+          <a href="/?searchterm={keyword}" data-cy-keyword="{keyword}">
+            <span class="keyword_inner">{keyword}</span>
+          </a>
         </li>
       {/each}
     </ul>

@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+  
   import { app_name, app_baseUrl } from "../data/global.js";
 
   import Metainfos from "../components/Helpers/Metainfos.svelte";
@@ -23,6 +25,13 @@
   let activeColorFilters = [];
   let activeCategoryFilters = [];
   let searchterm = "";
+
+  onMount(async => {
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.has('searchterm')) {
+      searchterm = queryParams.get('searchterm');
+    }
+  });
 
   $: activeFilters = [activeColorFilters, activeCategoryFilters];
 

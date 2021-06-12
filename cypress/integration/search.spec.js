@@ -19,6 +19,13 @@ describe('Search', () => {
     });
   });
 
+  it('can search fot flags bc clicking a label', () => {
+    cy.visit('/flag/gay');
+    cy.wait(100);
+    cy.get('[data-cy-keyword="gay"]').last().click();
+    cy.get('#search').should('have.value', 'gay');
+  });
+
   it('can find flags independent of case or spacing', () => {
     cy.get('#search').type('gay');
     cy.get('[data-cy-flagcard]').should('not.have.length', 0);
