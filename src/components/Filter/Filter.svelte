@@ -15,15 +15,9 @@
 </script>
 
 <script>
-  /*Data*/
+  import { colorFilters, categoryFilters } from './../../data/stores/searchQuery';
   import { filterColors, filterCategories } from "../../data/_filter";
   import ColorSpot from "../Elements/ColorSpot.svelte";
-
-  export let activeColorFilters;
-  $: activeColorFilters;
-
-  export let activeCategoryFilters;
-  $: activeCategoryFilters;
 </script>
 
 <style lang="scss">
@@ -212,8 +206,8 @@
               value={filterCategory.id}
               aria-label="Filter flags by the color '{filterCategory.selected}'"
               bind:checked={filterCategory.selected}
-              bind:group={activeCategoryFilters} />
-            <svg
+              bind:group={$categoryFilters} />
+              <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               class="categoryButton_icon">
@@ -244,7 +238,7 @@
           <input
             type="checkbox"
             value={filterColor.id}
-            bind:group={activeColorFilters}
+            bind:group={$colorFilters}
             bind:checked={filterColor.selected} />
           <div class="colorButton_checkmark">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

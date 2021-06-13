@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+
+  import { searchterm, colorFilters, categoryFilters } from './../data/stores/searchQuery';
   
   import { app_name, app_baseUrl } from "../data/global.js";
 
@@ -22,24 +24,28 @@
     flag.keywords.push("valid");
   });
 
-  let activeColorFilters = [];
-  let activeCategoryFilters = [];
-  let searchterm = "";
-
   onMount(async => {
+
+    if ($categoryFilters.length || $colorFilters.length || $searchterm) {
+      filterExpanded = true;
+    }
+
     const queryParams = new URLSearchParams(window.location.search);
     if (queryParams.has('searchterm')) {
-      searchterm = queryParams.get('searchterm');
+      searchterm.set(queryParams.get('searchterm'));
+      categoryFilters.set([]);
+      colorFilters.set([]);
     }
   });
 
-  $: activeFilters = [activeColorFilters, activeCategoryFilters];
+
+  $: activeFilters = [$colorFilters, $categoryFilters];
 
   let filtedFlags;
 
   $: searchresults_amount = filtedFlags.length;
 
-  $: if (activeFilters.flat().length || searchterm.length) {
+  $: if (activeFilters.flat().length || $searchterm.length) {
     filtedFlags = getFilteredFlags();
   } else {
     filtedFlags = flags;
@@ -47,19 +53,19 @@
 
   function getFilteredFlags() {
     let matchingFlags = flags;
-    if (activeColorFilters.length) {
+    if ($colorFilters.length) {
       matchingFlags = flags.filter(flag => {
-        return checkIfFlagMatchesColorFilters(flag, activeColorFilters);
+        return checkIfFlagMatchesColorFilters(flag, $colorFilters);
       });
     }
-    if (searchterm.length) {
+    if ($searchterm.length) {
       matchingFlags = matchingFlags.filter(flag => {
-        return checkIfFlagMatchesSearchRequest(flag, searchterm);
+        return checkIfFlagMatchesSearchRequest(flag, $searchterm);
       });
     }
-    if (activeCategoryFilters.length) {
+    if ($categoryFilters.length) {
       matchingFlags = matchingFlags.filter(flag => {
-        return checkIfFlagMatchesCategories(flag, activeCategoryFilters);
+        return checkIfFlagMatchesCategories(flag, $categoryFilters);
       });
     }
     return matchingFlags;
@@ -134,9 +140,6 @@
 <h1>Search</h1>
 
 <MainOptions
-  bind:activeColorFilters
-  bind:searchterm
-  bind:activeCategoryFilters
   {searchresults_amount} />
 
 <div class="container">
