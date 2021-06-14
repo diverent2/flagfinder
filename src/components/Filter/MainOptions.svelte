@@ -7,7 +7,7 @@
 
   export let allowFilterReset = false;
 
-  let expanded = false;
+  export let expanded = false;
 
   export let searchresults_amount = 0;
 
@@ -167,7 +167,7 @@
   }
 </style>
 
-<div class="options" class:expanded>
+<div class="options" class:expanded data-cy-filter-options data-cy-expanded={expanded}>
 
   <div class="main_container">
     <div class="main">

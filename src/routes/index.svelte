@@ -4,6 +4,7 @@
   import { searchterm, colorFilters, categoryFilters } from './../data/stores/searchQuery';
   
   import { app_name, app_baseUrl } from "../data/global.js";
+  import { filterCategories } from "./../data/_filter";
 
   import Metainfos from "../components/Helpers/Metainfos.svelte";
   import MainOptions from "../components/Filter/MainOptions.svelte";
@@ -24,6 +25,8 @@
     flag.keywords.push("valid");
   });
 
+  let filterExpanded = false;
+
   onMount(async => {
 
     if ($categoryFilters.length || $colorFilters.length || $searchterm) {
@@ -35,6 +38,17 @@
       searchterm.set(queryParams.get('searchterm'));
       categoryFilters.set([]);
       colorFilters.set([]);
+    }
+    if (queryParams.has('category')) {
+      const paramCategory = queryParams.get('category');
+      const filterIds = filterCategories.map( (e) => { return e.id});
+      const filterExists = filterIds.includes(paramCategory);
+      if(filterExists) {
+        categoryFilters.set([queryParams.get('category')]);
+        colorFilters.set([]);
+        searchterm.set("");
+        filterExpanded = true;
+      }
     }
   });
 
@@ -140,6 +154,7 @@
 <h1>Search</h1>
 
 <MainOptions
+  bind:expanded={filterExpanded}
   {searchresults_amount} />
 
 <div class="container">

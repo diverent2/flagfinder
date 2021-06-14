@@ -15,9 +15,25 @@
 </script>
 
 <script>
+    import { beforeUpdate } from "svelte";
+
   import { colorFilters, categoryFilters } from './../../data/stores/searchQuery';
   import { filterColors, filterCategories } from "../../data/_filter";
   import ColorSpot from "../Elements/ColorSpot.svelte";
+
+  let filterCategoriesList = filterCategories;
+
+  beforeUpdate(() => {
+    for (const filter of filterCategoriesList) {
+      const filterExists = $categoryFilters.includes(filter.id);
+      if(filterExists) {
+        filter.selected = true;
+      } else {
+        filter.selected = false;
+      }
+    }
+    filterCategoriesList = filterCategoriesList;
+  })
 </script>
 
 <style lang="scss">
@@ -189,7 +205,7 @@
   <fieldset class="filter-category">
     <legend>Categories</legend>
     <div class="categoryButtons">
-      {#each filterCategories as filterCategory}
+      {#each filterCategoriesList as filterCategory}
         <label
           title={filterCategory.id}
           for="category-{filterCategory.id}"

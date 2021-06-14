@@ -19,10 +19,12 @@ describe('Search', () => {
     });
   });
 
-  it('can search fot flags bc clicking a label', () => {
+  it('can search for flags bc clicking a category label', () => {
     cy.visit('/flag/gay');
     cy.wait(100);
     cy.get('[data-cy-keyword="gay"]').last().click();
+    cy.location('search').should('eq', '?searchterm=gay');
+    cy.get("[data-cy-filter-options]").should('have.attr', 'data-cy-expanded', 'false');
     cy.get('#search').should('have.value', 'gay');
   });
 

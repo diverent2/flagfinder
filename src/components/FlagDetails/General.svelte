@@ -110,6 +110,7 @@
   .category {
     padding-right: var(--spacing);
     padding-bottom: var(--spacing);
+    text-decoration: none;
   }
 
   .category:last-child {
@@ -217,14 +218,14 @@
   </h3>
   <div class="general__categories">
     {#each flag.categories as category}
-      <div class="category">
+      <a class="category" href="/?category={category}" data-cy-category="{category}">
         <LabelButton
           icon={category}
           colorBackground={getCategoryColor(category)}
           scale="var(--spacing)">
           {category}
         </LabelButton>
-      </div>
+      </a>
     {/each}
   </div>
 
