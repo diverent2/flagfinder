@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - #44 Flag Alteration Component
 - #44 Flag History Data
 - #28 Trigger search on click on category/keyword
+- Add keywords to flag details
 
 ### 🔄 Changed
 
