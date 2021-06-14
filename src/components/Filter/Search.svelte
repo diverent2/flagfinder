@@ -1,10 +1,12 @@
 <script>
   import { createEventDispatcher } from "svelte";
+
+  import { searchterm } from './../../data/stores/searchQuery';
+
   import Icon from "./../Elements/Icon.svelte";
 
   const dispatch = createEventDispatcher();
 
-  export let searchterm;
   export let allowFilterReset = false;
 </script>
 
@@ -63,7 +65,7 @@
   <Icon icon="search" scale="var(--spacing-large)" />
   <input
     class="inputfield"
-    bind:value={searchterm}
+    bind:value={$searchterm}
     id="search"
     name="search"
     autocomplete="off"

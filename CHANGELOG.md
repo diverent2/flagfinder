@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rainbow Seperators for flag details
 - #44 Flag Alteration Component
 - #44 Flag History Data
+- #28 Trigger search on click on category/keyword
 
 ### 🔄 Changed
 
@@ -33,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mark external links as such
 - Update font styles
 - Rearrange/Update flag data
+- Turn searchfilters into global $store
 
 ### 🛠️ Fixed
 

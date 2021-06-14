@@ -1,19 +1,13 @@
 <script>
+  import { searchterm, colorFilters, categoryFilters } from './../../data/stores/searchQuery';
+
   import Search from "./Search.svelte";
   import Icon from "./../Elements/Icon.svelte";
   import Filter, { clearFilter } from "./Filter.svelte";
 
   export let allowFilterReset = false;
 
-  export let activeColorFilters = [];
-  $: activeColorFilters;
-
-  export let activeCategoryFilters = [];
-  $: activeCategoryFilters;
-
-  export let searchterm = "";
-
-  let expanded = false;
+  export let expanded = false;
 
   export let searchresults_amount = 0;
 
@@ -22,9 +16,9 @@
   }
 
   $: if (
-    searchterm.length ||
-    activeColorFilters.length ||
-    activeCategoryFilters.length
+    $searchterm.length ||
+    $colorFilters.length ||
+    $categoryFilters.length
   ) {
     allowFilterReset = true;
   } else {
@@ -32,9 +26,9 @@
   }
 
   function clearFilters(event) {
-    searchterm = "";
-    activeCategoryFilters = [];
-    activeColorFilters = [];
+    searchterm.set("");
+    categoryFilters.set([]);
+    colorFilters.set([]);
     clearFilter();
   }
 
@@ -173,17 +167,16 @@
   }
 </style>
 
-<div class="options" class:expanded>
+<div class="options" class:expanded data-cy-filter-options data-cy-expanded={expanded}>
 
   <div class="main_container">
     <div class="main">
       <Search
-        bind:searchterm
         {allowFilterReset}
         on:clearFiltersEvent={clearFilters} />
 
       <div class="filter">
-        <Filter bind:activeColorFilters bind:activeCategoryFilters />
+        <Filter />
       </div>
     </div>
   </div>

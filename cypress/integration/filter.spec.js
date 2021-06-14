@@ -112,3 +112,20 @@ describe('Category filter', () => {
     );
   });
 });
+
+describe('Category filter', () => {
+  beforeEach(() => {
+    cy.visit('/flag/gay');
+    cy.wait(100);
+  });
+
+  it.only('can search for flags bc clicking a category label', () => {
+    cy.get('[data-cy-category="sexuality"]').last().click();
+    cy.location('search').should('eq', '?category=sexuality');
+    cy.get("[data-cy-filter-options]").should('have.attr', 'data-cy-expanded', 'true');
+    cy.get('[data-cy-filter-category="sexuality"]').should('have.class', 'selected');
+    cy.get('[data-cy-filter-category="attraction"]').should('not.have.class', 'selected');
+    cy.get('[data-cy-filter-category="gender"]').should('not.have.class', 'selected');
+    cy.get('[data-cy-filter-category="kink"]').should('not.have.class', 'selected');
+  });
+});

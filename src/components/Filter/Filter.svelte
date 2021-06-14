@@ -15,15 +15,25 @@
 </script>
 
 <script>
-  /*Data*/
+    import { beforeUpdate } from "svelte";
+
+  import { colorFilters, categoryFilters } from './../../data/stores/searchQuery';
   import { filterColors, filterCategories } from "../../data/_filter";
   import ColorSpot from "../Elements/ColorSpot.svelte";
 
-  export let activeColorFilters;
-  $: activeColorFilters;
+  let filterCategoriesList = filterCategories;
 
-  export let activeCategoryFilters;
-  $: activeCategoryFilters;
+  beforeUpdate(() => {
+    for (const filter of filterCategoriesList) {
+      const filterExists = $categoryFilters.includes(filter.id);
+      if(filterExists) {
+        filter.selected = true;
+      } else {
+        filter.selected = false;
+      }
+    }
+    filterCategoriesList = filterCategoriesList;
+  })
 </script>
 
 <style lang="scss">
@@ -195,7 +205,7 @@
   <fieldset class="filter-category">
     <legend>Categories</legend>
     <div class="categoryButtons">
-      {#each filterCategories as filterCategory}
+      {#each filterCategoriesList as filterCategory}
         <label
           title={filterCategory.id}
           for="category-{filterCategory.id}"
@@ -212,8 +222,8 @@
               value={filterCategory.id}
               aria-label="Filter flags by the color '{filterCategory.selected}'"
               bind:checked={filterCategory.selected}
-              bind:group={activeCategoryFilters} />
-            <svg
+              bind:group={$categoryFilters} />
+              <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               class="categoryButton_icon">
@@ -244,7 +254,7 @@
           <input
             type="checkbox"
             value={filterColor.id}
-            bind:group={activeColorFilters}
+            bind:group={$colorFilters}
             bind:checked={filterColor.selected} />
           <div class="colorButton_checkmark">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
