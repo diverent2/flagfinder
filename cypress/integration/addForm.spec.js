@@ -60,7 +60,8 @@ describe('Add Flag form', () => {
     cy.filloutFormElement(
       'textarea[name="colorMeaning"]',
       'Possible attraction to ...'
-    );
+      );
+    cy.filloutFormElement('textarea[name="fact"]', 'Some interesting fact');
     cy.filloutFormElement('input[name="sourceName"]', 'Awesome Website');
     cy.filloutFormElement(
       '[name="sourceLink"]',
@@ -102,9 +103,9 @@ describe('Add Flag form', () => {
       .should('contain.value', 'purple')
       .should('contain.value', 'Possible attraction to ...')
       .should('contain.value', 'double mars')
-      .should('contain.value', 'double-mars')
       .should('contain.value', './icons/double-mars.svg')
       .should('contain.value', 'male* sexuality')
+      .should('contain.value', 'Some interesting fact')
       .should('contain.value', 'Awesome Website')
       .should('contain.value', 'https://www.awesome-website.com')
       .should('contain.value', '2020-01-01')
@@ -222,6 +223,31 @@ describe('Add Flag form', () => {
       .last()
       .invoke('val')
       .should('eq', 'symbol_name_C');
+  });
+
+  it('facts: can add and remove multiple facts', () => {
+    cy.get('button[data-ql-add-fact]').as('add');
+    cy.get('[data-ql-fact]').as('facts');
+
+    cy.get('@facts').should('have.length', 1);
+    cy.filloutFormElement('textarea[name="fact"]', 'fact 1', 'first');
+    cy.get('@add').click();
+    cy.get('@facts').should('have.length', 2);
+    cy.filloutFormElement('textarea[name="fact"]', 'fact 2', 1);
+     cy.get('@add').click();
+    cy.get('@facts').should('have.length', 3);
+    cy.filloutFormElement('textarea[name="fact"]', 'fact 3', 2);
+    cy.log('Remove second fact element');
+    cy.get('button[data-ql-remove-fact]').eq(1).click();
+    cy.get('@facts').should('have.length', 2);
+    cy.get('textarea[name="fact"]')
+      .first()
+      .invoke('val')
+      .should('eq', 'fact 1');
+    cy.get('textarea[name="fact"]')
+      .last()
+      .invoke('val')
+      .should('eq', 'fact 3'); 
   });
 
   it('sources: can add and remove multiple sources', () => {

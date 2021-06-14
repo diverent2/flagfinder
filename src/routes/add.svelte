@@ -6,6 +6,7 @@
   import FormColors from "./../components/Form-elements/Add-Form/FormColors.svelte";
   import FormSources from "./../components/Form-elements/Add-Form/FormSources.svelte";
   import FormSymbols from "./../components/Form-elements/Add-Form/FormSymbols.svelte";
+  import FormFacts from "./../components/Form-elements/Add-Form/FormFacts.svelte";
   import FormFlagAlterations from "./../components/Form-elements/Add-Form/FormFlagAlterations.svelte";
   import { filterCategories } from "./../data/_filter";
 
@@ -67,6 +68,7 @@
           }
         ]
       },
+      facts: [""],
       categories: [],
       image: "",
       props: {
@@ -444,6 +446,10 @@
 
     <div style="grid-column: 1 / -1">
       <FormSymbols bind:symbols={flagData.props.symbols} />
+    </div>
+
+    <div style="grid-column: 1 / -1">
+      <FormFacts bind:facts={flagData.facts} />
     </div>
 
     <div style="grid-column: 1 / -1">
