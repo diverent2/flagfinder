@@ -2374,6 +2374,156 @@ const flags = [
     ],
   },
   {
+    id: "qpr",
+    name: "Queerplatonic Relationship Pride",
+    description: `A Queerplatonic Relationship (short: <i>QPR</i>), also known as <i>Quasiplatonic</i> or <i>Quirkyplatonic Partnership (QPPs)</i>, describes a long-term commited platonic relationship which exceeds the general understanding of a "traditional friendship".<br>
+                    As such, it isn't based on romance but consults of the same or even a stronger emotional commitment. The involved people may have a deep emotional (platonic) connection, may consider spending their future together and maybe even (plan on) raising a child together.<br><br>
+                    Despite this relationship term being quite popular in the <a href="/flag/aromantic">aromantic community</a>, everyone can be in such a partnership, if they find it fitting for their type of engagement.<br>
+                    It also means some people in a QPM are having sexual interactions, others don't. Despite what some websites claim, the lack of sexuality isn't an requirement for having a QPR.<br>
+                  `,
+    origin: {
+      history: `The word <i>queer</i> (in this context: "different") describes the relationship as differing from the general understanding of relationships but doesn't imply the identity of the envolved people.<br>
+                  The term  was created as a counter to the general believe that a (monogamous) romantic relationship is the most important type of relationship and the ultimate (and only) way to happiness (this phenomenon is called "<i>amatonormativity</i>").<br>
+                  As such QPR are understood as (at least) equally valued to a more traditional romantic relationship.`,
+      publicationDate: "",
+      author: "anonymous [but known]",
+      flagAlterations: [
+        {
+          title: "Alternative design",
+          imageAlt: "The color schema remains the same, but the heart of the flag is missing and the symmetry is gone.",
+          imageUrl: "qpr/queerplatonic-relationship_simple.png",
+          description: "This version is more simplified and alining with the typical type of prideflags. It's also easer to replicate and/or print."
+        }
+      ]
+    },
+    facts: [
+      `Queerplatonic Partners refer to each by the terms of their choosing: Some calling themselves friends, others (life-)partners, QPP (queerplatonic partner) or another term. With some using the term "my zucchini" to describe one another, which originally was a joke to fill the gap of a proper term for queerplatonic parties.`,
+      `The term <i>queerplatonic</i> first appeared on December 2010 in a thread called "<a href="https://kaz.dreamwidth.org/238564.html">Kaz's Scribblings</a>"`,
+      `If one has the wish to form a deep (non-romantic) bond to someone and be their queerplatonic partner, it's called "having a <i>squish</i> on someone".`,
+      `The term <i>amatonormativity</i> originates from a book called <a href="https://elizabethbrake.com/minimizing-marriage/">"Minimizing marriage"</a> by Elizabeth Brake.`,
+      `The proposed day for celebrating QPRs is the annual <i>third Saturday of July</i>`
+    ],
+    categories: [
+      "attraction"
+    ],
+    image: "qpr/queerplatonic-relationship.png",
+    props: {
+      colors: [
+        {
+          id: "himalayan-balsam",
+          name: "himalayan balsam",
+          hue: "lightpink",
+          meaning: "Lighter version of red, which commonly means romantic attraction, but also still differs from it.",
+          value: "#ff93ca"
+        },
+        {
+          id: "the-end",
+          name: "the end",
+          hue: "black",
+          meaning: "Possibly resembles the gray-aro spectrum.",
+          value: "#2a2a2a"
+        },
+        {
+          id: "platinum-granite",
+          name: "platinum granite",
+          hue: "gray",
+          meaning: "Possibly resembles the gray-aro spectrum.",
+          value: "#7f7f7f"
+        },
+        {
+          id: "white",
+          name: "white",
+          hue: "white",
+          meaning: "Possibly resembles the gray-aro spectrum.",
+          value: "#ffffff"
+        },
+        {
+          id: "flat-yellow",
+          name: "flat yellow",
+          hue: "yellow",
+          meaning: "Platonic attraction",
+          value: "#fef103"
+        }
+      ],
+      symbols: [
+        {
+          id: "heart",
+          name: "heart",
+          meaning: "",
+          icon: "heart.svg"
+        }
+      ]
+    },
+    matches: {
+      colors: [
+        "lightpink",
+        "black",
+        "gray",
+        "white",
+        "yellow"
+      ],
+      symbols: [
+        "heart"
+      ]
+    },
+    keywords: [
+      "qpr",
+      "couple",
+      "dating",
+      "relationship",
+      "aromantic",
+      "zucchini",
+      "squish"
+    ],
+    sources: [
+      {
+        link: "https://pride-color-schemes.tumblr.com/post/147022014680/queerplatonic-quasiplatonic-or-quirkyplatonic",
+        name: "Pride-Colors-Schemes.tumblr.com | queerplatonic, quasiplatonic or quirkyplatonic",
+        researchDate: "2021-01-09"
+      },
+      {
+        link: "http://wiki.asexuality.org/Queerplatonic",
+        name: "Asexuality Wiki | Queerplatonic",
+        researchDate: "2021-01-23"
+      },
+      {
+        link: "https://www.pinknews.co.uk/2018/04/18/what-is-a-quasiplatonic-aka-queerplatonic-relationship-friendship/",
+        name: "Pinknews | What is a quasiplatonic relationship",
+        researchDate: "2021-01-23"
+      },
+      {
+        link: "https://www.slanglang.net/slang/lgbtq/queerplatonic/",
+        name: "Slanglang | Queerplatonic",
+        researchDate: "2021-06-10"
+      },
+      {
+        link: "https://aminoapps.com/c/lgbt-1/page/item/queerplatonic-relationships/6PwZ_JWguYI6zEpk38LW4pml0VJdkpGLRZj",
+        name: "aminoapps LGBT | Queerplatonic Relationships",
+        researchDate: "2021-06-10"
+      },
+      {
+        link: "https://mogai.fandom.com/wiki/Queerplatonic",
+        name: "MOGAI Fandom | Queerplatonic",
+        researchDate: "2021-06-22"
+      },
+      {
+        link: "https://www.youtube.com/watch?v=J6Xg9sA6XWA",
+        name: "Youtube - Evie Lupine | What are Queerplatonic Relationships? (QPRs)",
+        researchDate: "2021-06-22"
+      },
+      {
+        link: "https://lgbta.wikia.org/wiki/Queerplatonic_Relationship",
+        name: "LGBTA Wikia | Queerplatonic Relationship",
+        researchDate: "2021-06-22"
+      },
+      {
+        link: "https://aromantic.wikia.org/wiki/QPR_Day",
+        name: "aromantic Wikia | QPR Day",
+        researchDate: "2021-06-24"
+      }
+    ]
+  },
+  {
     id: 'leather',
     name: 'leather fetish pride',
     description: 'A representation of the BDSM leather fetish community.',
