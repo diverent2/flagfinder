@@ -150,11 +150,12 @@ const flags = [
   },
   {
     id: 'gay',
-    name: 'gay pride',
+    name: 'rainbow/gay pride',
     description:
-      'Traditional symbol of the LGBTQ+ movement. It represents people who identify as homosexual as well as the queer community as a whole.',
+      'Traditional symbol of the LGBTQ+ movement. It represents people who identify as gay as well as the queer community as a whole.<br> The term <i>"gay"</i> describes the attraction to the same (or a similar) gender. While it originally was used by <a href="flag/mlm">gay men</a> and <a href="/flags/lesbian">lesbians</a> it nowadays is also commonly used by <a href="/flag/nonbinary">non-binary</a>, GNC and <a href="/flags/agender">agender</a> people.',
     origin: {
-      history: '',
+      history:
+        'The rainbow pride flag was created in 1978 by the artist Gilbert Baker and debuted at the San Francisco Gay Freedom Day Parade. The flag also is the traditional symbol of the LGBTQ+ movement and now represents the queer community as a whole.',
       author: 'Gilbert Baker in San Francisco',
       publicationDate: '1979',
       flagAlterations: [
@@ -163,7 +164,7 @@ const flags = [
           imageUrl: 'gay/gay_v1.svg',
           imageAlt: 'First Pride Flag Design',
           description:
-            'The original version of the flag included two aditional stripes for <i>sexuality</i> (pink) and <i>magic and art</i> (turqoise).',
+            'The original version of the flag included two aditional stripes for <i>sexuality</i> (pink) and <i>magic and art</i> (turqoise). They got removed because of fabric availability which lead to the nowadays well known and recognized form.',
         },
         {
           title: 'Philadelphia Pride Flag (2017)',
@@ -238,6 +239,7 @@ const flags = [
       '🌈',
       '⚣',
       'queer',
+      'reason for rainbow capatalism',
       'LGBTQ*+',
       'Stonewall',
     ],
@@ -245,24 +247,185 @@ const flags = [
       {
         link: 'https://commons.wikimedia.org/wiki/Sexual_identity_symbols',
         name: 'Wiki Commons - sexual identity symbols',
-        researchDate: '2019.10.09',
+        researchDate: '2019-10-09',
       },
       {
         link:
           'https://www.pride.com/pride/2018/6/13/complete-guide-queer-pride-flags-0#media-gallery-media-4',
         name: 'Pride.com - queer flag guide',
-        researchDate: '2019.10.09',
+        researchDate: '2019-10-09',
       },
       {
         link: 'https://medium.com/matthews-place/lgbtq-symbols-7d925b396ebe',
         name: 'Matthews place on Medium - lgtbq symbols',
-        researchDate: '2019.10.09',
+        researchDate: '2019-10-09',
       },
       {
         link:
           'https://www.phillymag.com/news/2017/06/08/philly-pride-flag-black-brown/',
         name: 'phillymag.com - Philadelphia Pride Flag',
-        researchDate: '2020.06.28',
+        researchDate: '2020-06-28',
+      },
+      {
+        link:
+          'https://lgbta.wikia.org/wiki/Gay',
+        name: 'LGBTA Wikia.org - Gay',
+        researchDate: '2021-07-11',
+      },
+    ],
+  },
+  {
+    id: 'mlm',
+    name: 'MLM pride (gay men*)',
+    description:
+      'Vincian is a term used to describe homosexual men* who love other men* (mlm, MLM). It can describe all kind of gay men, including (but not exclusive to) <a href="flag/aromantic">aro</a>, <a href="flag/asexual">ace</a>, questioning, <a href="flag/nonbinary">NB</a> and gender-non-conforming men.',
+    origin: {
+      history:
+        'The creator Triton used the original proposed design by Hermy as inspiration and refined the <i>gay man flag colors<i> and added meaning to the different stripes. The meaning was inspired by Triton own reasearch on queer history, his (and others) own experiences as gay men and <a href="/flag/gay">the original rainbow flag</a>, <q>which [he] love[s] dearly and hold[s] close to [his] heart, this flag is not meant to replace or erase it in any way! [He] would love for them to be used in tandem.</q>',
+      publicationDate: 'July 2019',
+      author: 'Triton [he/him]; <a href="https://gayflagblog.tumblr.com/">@gayflagblog</a> on tumblr',
+      flagAlterations: [
+        {
+          title: 'Alteration of the flag with only 5 stripes',
+          imageUrl: '/MLM/MLM_alternative.png',
+          imageAlt: 'The MLM current flag but with different amount of stripes',
+          description:
+            'Similar to the original design but with less stripes to make it easier to reuse and reproduce.<br>There are many alterations and variations but the meaning of the stripes always remains the same.For more alterations see the different versions <a href="https://imgur.com/a/kfPndcP" target="_blank">listed here</a>.',
+        },
+        {
+          title: 'Originally proposed Flag',
+          imageUrl: '/MLM/MLM_original_proposal.png',
+          imageAlt:
+            'The first known proposal for an MLM flag with 7 stripes and a green and blue color schema.',
+          description:
+            'As a response to a anonymous user on tumblr, the  Moderator Hermy from <a href="https://ask-pride-color-schemes.tumblr.com/post/149449006549/relating-to-the-old-discussion-on-a-separate-flag">@ask-pride-color-schemes</a> proposed this design using a blue and green [orignally asked for blue and purple, but was changed to green, to be different from the butch lesbian flag] color schema derivation of the <a href="/flag//lesbian-lipstick">lipstick lesbian flag<a> as the anonymous request suggested.',
+        },
+        {
+          title: 'First gay man Flag',
+          imageUrl: '/MLM/MLM_first_version.png',
+          imageAlt:
+            'A flag similar to the current mlm flag, but based on the shades of azure and blue.',
+          description:
+            'This is the first well-known flag design covering mlm as its motive. It got creaded by Valentin Belyaev in mid-2010s to combat gayphobia and later spread throughout the internet.',
+        },
+      ],
+    },
+    facts: ["The term vincian is based on the famous artist and polymath Leonardo da Vinci, who seemed to have been involved in various homosexual relationships."],
+    categories: ['sexuality', 'attraction'],
+    image: '/MLM/MLM.png',
+    props: {
+      colors: [
+        {
+          id: 'free-speech-aquamarine',
+          name: 'free speech aquamarine',
+          hue: 'green',
+          meaning:
+            'Community;<br> Also represent <i>Nature</i>, as love between men often still gets seen as "<i>unnatural</i>" to society and in many religions.<br>Green flowers/plants like the carnation also were historically used by gay men to symbolize their love and connection to nature.',
+          value: '#078D70',
+        },
+        {
+          id: 'shamrock',
+          name: 'shamrock',
+          hue: 'lightgreen',
+          meaning: 'Healing',
+          value: '#26CEAA',
+        },
+        {
+          id: 'teal',
+          name: 'teal',
+          hue: 'green',
+          meaning:
+            'Joy;<br> Also represent <i>Nature</i>, as love between men often still gets seen as "<i>unnatural</i>" to society and in many religions.<br>Green flowers/plants like the carnation also were historically used by gay men to symbolize their love and connection to nature.',
+          value: '#98E8C1',
+        },
+        {
+          id: 'ghost-white',
+          name: 'ghost white',
+          hue: 'white',
+          meaning:
+            'GNC (Gender Non Conforming) & Trans Men;<br> The stripe is inspired by the <a href="flag/transgender">trans pride flag</a> as many trans, nb and GNC men are often excluded and deserve more representation in the (gay men) community.',
+          value: '#F1EFFF',
+        },
+        {
+          id: 'jordy-blue',
+          name: 'jordy blue',
+          hue: 'lightblue',
+          meaning:
+            'Pure Love;<br>The transition from lightblue to purple, which is a mix of red and blue, is used to show how some mlm might be stereotypical while other might not be. Some are also in-between or fluid in their identity. <br>But all deserve the same respect.',
+          value: '#7BADE2',
+        },
+        {
+          id: 'free-speech-blue',
+          name: 'free speech blue',
+          hue: 'purple',
+          meaning:
+            'Fortitude;<br>Purple representing the true diversity of men being in love with other men <q>in presentation, relationships, & life experience</q> and goes against the stereotyping and fetishizing often put upon gay men.',
+          value: '#5049CC',
+        },
+        {
+          id: 'persian-indigo',
+          name: 'persian indigo',
+          hue: 'purple',
+          meaning:
+            'Diversity;<br>Purple representing the true diversity of men being in love with other men <q>in presentation, relationships, & life experience</q> and goes against the stereotyping and fetishizing often put upon gay men.',
+          value: '#3D1A78',
+        },
+      ],
+      symbols: [],
+    },
+    matches: {
+      colors: [
+        'green',
+        'lightgreen',
+        'green',
+        'white',
+        'lightblue',
+        'purple',
+      ],
+      symbols: [],
+    },
+    keywords: [
+      'gay',
+      'man',
+      'masc',
+      'men',
+      'MLM',
+      'vincian',
+      'achillean',
+      'men loving men',
+      'gay men',
+    ],
+    sources: [
+      {
+        link:
+          'https://gayflagblog.tumblr.com/post/186181118619/gay-man-flag-russian-%D1%80%D0%BE%D1%81%D1%81%D0%B8-%D1%8F-portuguese',
+        name: 'gayflagblog.tumblr.com | gay man flag',
+        researchDate: '2020-08-03',
+      },
+      {
+        link:
+          'https://ask-pride-color-schemes.tumblr.com/post/149449006549/relating-to-the-old-discussion-on-a-separate-flag',
+        name:
+          'ask-pride-color-schemes.tumblr.com | Original Proposal for the MLM flag',
+        researchDate: '2020-08-20',
+      },
+      {
+        link:
+          'https://archivalflags.tumblr.com/post/619083546572849152/image-transcription-a-flag-with-seven',
+        name: 'archivalflags.tumblr.com | The history of the MLM flag',
+        researchDate: '2020-08-20',
+      },
+      {
+        link:
+          'https://pride-color-schemes.tumblr.com/post/162294430961/gay-man-some-proposed-flags-to-represent',
+        name: 'pride-color-schemes.tumblr.com | Gay man proposed flag',
+        researchDate: '2020-09-29',
+      },
+      {
+        link:
+          'https://lgbta.wikia.org/wiki/Vincian',
+        name: 'lgbta.wikia.org | Vincian',
+        researchDate: '2021-07-01',
       },
     ],
   },
@@ -1105,7 +1268,7 @@ const flags = [
   },
   {
     id: 'omnisexual',
-    name: 'omnisexual',
+    name: 'omnisexual pride',
     description:
       'A omnisexual person (<i>omni</i> from lat. "all") is attracted to people of all genders as well as genderless identities.<br><br>It often gets confused or used as a synonym to <a href="flags/pansexual">pansexuality</a>, however there is one very important difference between the two:<br>Someone who\'s pansexual is thought of as <i>"gender-blind"</i>, pretty much seeing through the gender towards the heart inside, thous meaning they are attracted to anyone regardless of their gender.<br>An omnisexual persons attraction is gender-inclusive, so they like people of every gender and people who are <a href="flag/agender>genderless.</a>',
     origin: {

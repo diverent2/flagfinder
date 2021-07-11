@@ -174,7 +174,7 @@
       </h4>
       <p>
         {#if flag.origin.author}
-          {flag.origin.author}
+          {@html flag.origin.author}
         {:else}
           <span class="field--empty">unknown</span>
         {/if}
