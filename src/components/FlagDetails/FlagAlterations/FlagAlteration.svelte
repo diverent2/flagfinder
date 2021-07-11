@@ -50,6 +50,9 @@
   img {
     box-sizing: content-box;
     border: var(--white) 2px solid;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
   }
 </style>
 
