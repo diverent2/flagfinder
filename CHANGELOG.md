@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🔄 Changed
 
+- Updated Social Media Prev Image
 - Optimized tests for visual regression testing
 - Update readme
 - Refactor add-form + test
